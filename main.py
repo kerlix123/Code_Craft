@@ -38,6 +38,8 @@ random.shuffle(playlist)
 pygame.mixer.music.load(playlist[current_song_index])
 pygame.mixer.music.play()
 
+music_on = True
+
 def play_next_track():
     global current_song_index
     current_song_index = (current_song_index + 1) % len(playlist)
@@ -71,7 +73,7 @@ minecraft_font_smaller = pygame.font.Font("/Users/antoniomatijevic/Documents/Cod
 
 def menu():
     while True:
-        if not pygame.mixer.music.get_busy():
+        if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
         mouse = pygame.mouse.get_pos()
 
@@ -114,7 +116,7 @@ def menu():
 
 def level_menu():
     while True:
-        if not pygame.mixer.music.get_busy():
+        if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
@@ -170,7 +172,10 @@ def tutorial():
     print("Tutorial")
 
 def options():
+    global music_on
     while True:
+        if not pygame.mixer.music.get_busy() and music_on:
+            play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -179,6 +184,12 @@ def options():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     menu()
+                if 420 <= mouse[0] <= 820 and 80 <= mouse[1] <= 120:
+                    if music_on:
+                        pygame.mixer.music.pause()
+                    else:
+                        pygame.mixer.music.unpause()
+                    music_on = not music_on
         background = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/background.png")
         background = pygame.transform.scale(background, (1240, 620))
         
@@ -187,6 +198,9 @@ def options():
         background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
         background_overlay.fill((0, 0, 0, 50))
         window.blit(background_overlay, (0, 0))
+
+        music_state = "On" if music_on else "Off"
+        menu_button(420, 80, 420+(400-minecraft_font_small.size(f"Audio: {music_state}")[0])//2, f"Audio: {music_state}", 400, 40, mouse)
 
         #back_button
         back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/unselect.png")
@@ -204,7 +218,7 @@ def options():
 def game(level):
     global code_lang
     while True:
-        if not pygame.mixer.music.get_busy():
+        if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
         window.fill((30, 30, 30))
 
@@ -228,7 +242,6 @@ def game(level):
                     else:
                         code_lang = 0
                         
-        
         code_input.update(events)
         code_input.render(window)
 
