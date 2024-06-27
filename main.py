@@ -14,6 +14,7 @@ class Level:
         self.size = size
         self.unlocked = level <= levels["last_finished_level"]+1
         self.text_closed = text_closed
+        self.text_page = 0
     def get_level(self):
         return self.level
     def hover(self, x2, y2):
@@ -64,7 +65,7 @@ code_input = TextInputBox(605, 10, font_family="/Users/antoniomatijevic/Document
 font = pygame.font.Font(pygame.font.match_font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf"), 20)
 pygame.key.set_repeat(200, 25)
 
-languages = ["Python", "Kotlin"]
+languages = ["Python"]
 code_lang = 0
 
 minecraft_font_big = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 75)
@@ -274,10 +275,12 @@ def game(level):
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
                     print(code_input.get_text())
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
-                    if code_lang < 1:
-                        code_lang += 1
-                    else:
-                        code_lang = 0
+                    code_lang = (code_lang + 1) % len(languages)
+                elif not game_levels[level].text_closed:
+                    if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
+                        game_levels[level].text_page += 1
+                    if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479 and game_levels[level].text_page > 0:
+                        game_levels[level].text_page -= 1
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & pygame.KMOD_CTRL:
                     game_levels[level].text_closed = not game_levels[level].text_closed
@@ -340,21 +343,37 @@ def game(level):
             window.blit(book, (80, 79))
 
             y = 122
-            for el in levels[f"level{level}"][0]["text"]:
+            for el in levels[f"level{level}"][0]["text"][game_levels[level].text_page]:
                 window.blit(minecraft_font_book.render(el, True, (0, 0, 0)), (165, y))
                 y += 28.8
 
-            page_forward = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/page_forward.png")
-            page_forward = pygame.transform.scale(page_forward, (42, 24))
+            if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
+                page_forward = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/page_forward.png")
+                page_forward = pygame.transform.scale(page_forward, (42, 24))
 
-            window.blit(page_forward, (375, 455))
+                window.blit(page_forward, (375, 455))
 
-            if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479:
-                transparent_surface = pygame.Surface((36, 19), pygame.SRCALPHA)
-                transparent_surface.fill((170, 170, 170, 120))
-                window.blit(transparent_surface, (380, 459))
+                if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479:
+                    transparent_surface = pygame.Surface((36, 19), pygame.SRCALPHA)
+                    transparent_surface.fill((170, 170, 170, 120))
+                    window.blit(transparent_surface, (380, 459))
+            
+            if game_levels[level].text_page > 0:
+                page_backward = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/page_backward.png")
+                page_backward = pygame.transform.scale(page_backward, (42, 24))
 
+                window.blit(page_backward, (165, 455))
+
+                if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479:
+                    transparent_surface = pygame.Surface((36, 19), pygame.SRCALPHA)
+                    transparent_surface.fill((170, 170, 170, 120))
+                    window.blit(transparent_surface, (170, 459))
         
+        if game_levels[level].text_closed:
+            page_forward = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/message.png")
+            page_forward = pygame.transform.scale(page_forward, (312.5, 200))
+
+            window.blit(page_forward, (302, 80))
 
         cursor_pos = font.render(f"Ln {code_input.cursor_y_pos + 1}, Col {code_input.cursor_x_pos + 1}", True, (255, 255, 255))
         window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 600))

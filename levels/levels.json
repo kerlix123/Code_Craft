@@ -14,12 +14,96 @@
       2,
       80,
       false
+    ],
+    [
+      220,
+      20,
+      3,
+      80,
+      false
     ]
   ],
   "level1": [
     {
       "character": "steve",
-      "text": ["Welcome to Code_Craft", "", "This game is developed", "by Antonio - NEX", "", "In this game you can learn", "basics of programing ", "in a Minecraft-like", "enviroment", "", "Let's start!"],
+      "text": [
+        ["Welcome to Code_Craft", "", "This game is developed", "by Antonio - NEX", "", "In this game you can learn", "basics of programing ", "in a Minecraft-like", "enviroment", "", "Let's start!"],
+        ["Level 1.", "", "Let's learn how to", "output something on screen"],
+        ["Bojna", "Cavoglave"]
+      ],
+      "pages": 3,
+      "blocks": [
+        [
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png"
+        ],
+        [
+          "grass_top.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "grass_top.png"
+        ],
+        [
+          "grass_top.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "grass_top.png"
+        ],
+        [
+          "grass_top.png",
+          "dirt.png",
+          "dirt.png",
+          "steve_front.png",
+          "dirt.png",
+          "dirt.png",
+          "grass_top.png"
+        ],
+        [
+          "grass_top.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "grass_top.png"
+        ],
+        [
+          "grass_top.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "dirt.png",
+          "grass_top.png"
+        ],
+        [
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png",
+          "grass_top.png"
+        ]
+      ]
+    }
+  ],
+  "level2": [
+    {
+      "character": "steve",
+      "text": [],
+      "pages": 0,
       "blocks": [
         [
           "crafting_table_top.png",
@@ -87,7 +171,7 @@
       ]
     }
   ],
-  "level2": [
+  "level3": [
     {
       "character": "alex",
       "blocks": [
