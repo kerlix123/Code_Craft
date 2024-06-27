@@ -1,23 +1,23 @@
 import pygame, random, json
 from pygametextboxinput import *
 
+json_file = open('/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json')
+levels = json.load(json_file)  
+
+game_levels = []
+
 class Level:
-    def __init__(self, x, y, level, size, unlocked):
+    def __init__(self, x, y, level, size, text_closed):
         self.x = x
         self.y = y
         self.level = level
         self.size = size
-        self.unlocked = unlocked
+        self.unlocked = level <= levels["last_finished_level"]+1
+        self.text_closed = text_closed
     def get_level(self):
         return self.level
     def hover(self, x2, y2):
         return self.x <= x2 <= self.x + self.size and self.y <= y2 <= self.y + self.size
-
-#json
-json_file = open('/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json')
-levels = json.load(json_file)
-
-game_levels = []
 
 for p in levels["level_p"]:
     game_levels.append(Level(p[0], p[1], p[2], p[3], p[4]))
@@ -70,6 +70,7 @@ code_lang = 0
 minecraft_font_big = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 75)
 minecraft_font_small = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 25)
 minecraft_font_smaller = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 15)
+minecraft_font_book = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 20)
 
 def menu():
     while True:
@@ -83,7 +84,7 @@ def menu():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 420 <= mouse[0] <= 820 and 250 <= mouse[1] <= 290:
-                    game(1)
+                    game(levels["last_finished_level"]+1)
                 elif 420 <= mouse[0] <= 820 and 300 <= mouse[1] <= 340:
                     level_menu()
                 elif 420 <= mouse[0] <= 820 and 350 <= mouse[1] <= 390:
@@ -165,11 +166,47 @@ def level_menu():
 
             if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                 pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
+                play_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/select.png")
+                play_button = pygame.transform.scale(play_button, (lvl.size, lvl.size))
+                window.blit(play_button, (lvl.x, lvl.y))
 
         pygame.display.flip()
 
 def tutorial():
-    print("Tutorial")
+    global music_on
+    while True:
+        if not pygame.mixer.music.get_busy() and music_on:
+            play_next_track()
+        events = pygame.event.get()
+        mouse = pygame.mouse.get_pos()
+        for event in events:
+            if event.type == pygame.QUIT:
+                exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    menu()
+                    
+        background = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/background.png")
+        background = pygame.transform.scale(background, (1240, 620))
+        
+        window.blit(background, (0, 0))
+
+        background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
+        background_overlay.fill((0, 0, 0, 50))
+        window.blit(background_overlay, (0, 0))
+
+        #back_button
+        back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/unselect.png")
+        back_button = pygame.transform.scale(back_button, (40, 40))
+
+        window.blit(back_button, (15, 565))
+
+        if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+            transparent_surface = pygame.Surface((30, 30), pygame.SRCALPHA)
+            transparent_surface.fill((170, 170, 170, 120))
+            window.blit(transparent_surface, (14, 571))
+
+        pygame.display.flip()
 
 def options():
     global music_on
@@ -241,6 +278,9 @@ def game(level):
                         code_lang += 1
                     else:
                         code_lang = 0
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_e and pygame.key.get_mods() & pygame.KMOD_CTRL:
+                    game_levels[level].text_closed = not game_levels[level].text_closed
                         
         code_input.update(events)
         code_input.render(window)
@@ -292,6 +332,29 @@ def game(level):
                 j += 85
             j = 0
             i += 85
+
+        if not game_levels[level].text_closed:
+            book = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/book.png")
+            book = pygame.transform.scale(book, (612, 612))
+
+            window.blit(book, (80, 79))
+
+            y = 122
+            for el in levels[f"level{level}"][0]["text"]:
+                window.blit(minecraft_font_book.render(el, True, (0, 0, 0)), (165, y))
+                y += 28.8
+
+            page_forward = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/page_forward.png")
+            page_forward = pygame.transform.scale(page_forward, (42, 24))
+
+            window.blit(page_forward, (375, 455))
+
+            if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479:
+                transparent_surface = pygame.Surface((36, 19), pygame.SRCALPHA)
+                transparent_surface.fill((170, 170, 170, 120))
+                window.blit(transparent_surface, (380, 459))
+
+        
 
         cursor_pos = font.render(f"Ln {code_input.cursor_y_pos + 1}, Col {code_input.cursor_x_pos + 1}", True, (255, 255, 255))
         window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 600))

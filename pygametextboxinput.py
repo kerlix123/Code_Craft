@@ -117,6 +117,8 @@ class TextInputBox:
                     self._process_ctrlc()
 
             elif event.type == pygame.KEYDOWN and active:
+                if event.key == pygame.K_e and pygame.key.get_mods() & pygame.KMOD_CTRL:
+                    continue 
                 self.cursor_visible = True  # So the user sees where he writes
                 self._process_keydown(event)
 
