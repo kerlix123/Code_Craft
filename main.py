@@ -83,7 +83,6 @@ def minecraft_cmd(l):
 code_input = TextInputBox(605, 10, font_family="/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", font_size=24, max_width=620, max_height=620)
 font = pygame.font.Font(pygame.font.match_font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf"), 20)
 pygame.key.set_repeat(200, 25)
-code_input_active = False
 
 languages = ["Python"]
 code_lang = 0
@@ -290,7 +289,8 @@ def options_win():
         pygame.display.flip()
 
 def game(level):
-    global code_lang, code_runned, code_input_active, level_finished
+    code_input.set_text(levels[f"level{level}"][0]["input_text"])
+    global code_lang, code_runned, level_finished
     messages = []
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
@@ -322,13 +322,12 @@ def game(level):
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & pygame.KMOD_CTRL:
                     game_levels[level].text_closed = not game_levels[level].text_closed
-                    code_input_active = not code_input_active
                 if event.key == pygame.K_k and pygame.key.get_mods() & pygame.KMOD_CTRL:
                     messages = []
                 if event.key == pygame.K_r and pygame.key.get_mods() & pygame.KMOD_CTRL:
                     code_runned = True
                         
-        code_input.update(events, code_input_active)
+        code_input.update(events)
         code_input.render(window)
 
         if level_finished:
@@ -385,7 +384,6 @@ def game(level):
             i += 85
 
         if not game_levels[level].text_closed:
-            code_input_active = False
             book = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/book.png")
             book = pygame.transform.scale(book, (612, 612))
 
@@ -418,22 +416,35 @@ def game(level):
                     transparent_surface.fill((170, 170, 170, 120))
                     window.blit(transparent_surface, (170, 459))
 
-        if code_runned and code_input_active:
+        if code_runned:
             code = code_input.get_text().split("\n")
             cbd = []
+            variables = {}
             for i in range(0, len(code)):
                 cbd.append(cbd_maker(code, i))
                 if cbd[i][0] == "print":
                     if cbd[i][1] == "(":
                         if cbd[i][-1] == ")":
+                            sb = ""
+                            print("lele")
+                            for el in cbd[i][2:-1]:
+                                if el in variables:
+                                    sb += str(variables[el]) + " "
+                                else:
+                                    if el[0] == '"' and el[-1] == '"':
+                                        sb += str(el[1:-1]) + " "
+                                    else:
+                                        sb += str(el) + " "
                             messages.append("out")
-                            messages.append(cbd[i][2])
+                            messages.append(sb[:-1])
+                elif cbd[i][1] == "=":
+                    variables[cbd[i][0]] = eval(''.join(cbd[i][2:]))
+                    print(variables)
 
             #correct solution
             if levels[f"level{level}"][0]["solution"][0] == cbd:
                 messages.append("admin")
                 messages.append("Great job!")
-                code_input_active = False
                 levels["last_finished_level"] = level
                 code_input.clear_text()
                 level += 1

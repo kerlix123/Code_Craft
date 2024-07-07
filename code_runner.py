@@ -14,24 +14,8 @@ def cbd_maker(code, i):
             j += 1
             sb = '"'
             while code[i][j] != '"':
-                if code[i][j] == '$':
-                    if code[i][j+1] == '{':
-                        sb2 = ""
-                        while code[i][j] != '}':
-                            sb2 += code[i][j]
-                            j += 1
-                        sb2 += '}'
-                        j += 1
-                        sb += sb2
-                    else:
-                        sb2 = ""
-                        while code[i][j] != ' ':
-                            sb2 += code[i][j]
-                            j += 1
-                        sb += sb2
-                else:
-                    sb += code[i][j]
-                    j += 1
+                sb += code[i][j]
+                j += 1
             j += 1
             sb += '"'
             cbd.append(sb)

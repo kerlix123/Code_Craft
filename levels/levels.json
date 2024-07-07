@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 0,
+    "last_finished_level": 3,
     "level_p": [
         [
             20,
@@ -32,6 +32,7 @@
     ],
     "level1": [
         {
+            "input_text": "",
             "character": "steve",
             "solution": [
                 [
@@ -61,11 +62,27 @@
                     "Level 1.",
                     "",
                     "Let's learn how to",
-                    "output something on screen"
+                    "output something on screen",
+                    "",
+                    "In Python we use: \"print()\"",
+                    "function for that:",
+                    "",
+                    "print(\"Code_Craft\")",
+                    "Code above will output",
+                    "Code_Craft on screen"
                 ],
                 [
-                    "Bojna",
-                    "Cavoglave"
+                    "Try to output:",
+                    "",
+                    "Hello, World!",
+                    "",
+                    "To close/open this book use:",
+                    "Ctrl+E",
+                    "Run your code with:",
+                    "Ctrl+R or button at the",
+                    "bottom of the screen",
+                    "Delete output log with:",
+                    "Ctrl+K"
                 ]
             ],
             "pages": 3,
@@ -138,26 +155,47 @@
     ],
     "level2": [
         {
+            "input_text": "print(\"Steve\")",
             "character": "steve",
             "solution": [
                 [
                     [
-                        "a",
-                        "=",
-                        "5"
-                    ],
-                    [
+                        "#",
                         "print",
                         "(",
-                        "a",
+                        "\"Steve\"",
                         ")"
                     ]
                 ]
             ],
             "text": [
-                "lele"
+                [
+                    "Level 2.",
+                    "",
+                    "In this level we will talk",
+                    "about comments in code",
+                    "",
+                    "We use comments to explain",
+                    "the code and sometimes to",
+                    "prevent the code from",
+                    "running",
+                    "",
+                    "Comment is a block of code",
+                    "that doesn't get executed"
+                ],
+                [
+                    "Here is a example of a",
+                    "comment in Python:",
+                    "",
+                    "#this is a comment",
+                    "",
+                    "Try to prevent",
+                    "print(\"Steve\") from",
+                    "executing by making it",
+                    "a comment"
+                ]
             ],
-            "pages": 1,
+            "pages": 2,
             "blocks": [
                 [
                     "crafting_table_top.png",
@@ -227,11 +265,77 @@
     ],
     "level3": [
         {
+            "input_text": "",
             "character": "alex",
-            "text": [
-                "tele"
+            "solution": [
+                [
+                    [
+                        "b",
+                        "=",
+                        "3"
+                    ],
+                    [
+                        "print",
+                        "(",
+                        "b",
+                        ")"
+                    ],
+                    [
+                        "b",
+                        "=",
+                        "4",
+                        ".",
+                        "5"
+                    ],
+                    [
+                        "print",
+                        "(",
+                        "b",
+                        ")"
+                    ]
+                ]
             ],
-            "pages": 1,
+            "text": [
+                [
+                    "Level 3.",
+                    "",
+                    "In this level we will",
+                    "learn about variables",
+                    "",
+                    "Variables are used for",
+                    "storing data",
+                    "",
+                    "In Python variable is",
+                    "created when you assign it",
+                    "a value for the first time"
+                ],
+                [
+                    "a = 5",
+                    "b = 5.5",
+                    "c = \"Nether\"",
+                    "d = True",
+                    "",
+                    "Above are examples of",
+                    "variables of various",
+                    "data types",
+                    "",
+                    "To output a variable",
+                    "we use print()"
+                ],
+                [
+                    "print(a) will output",
+                    "5 on the screen",
+                    "",
+                    "a = 6.25 will change a",
+                    "from 5 to 6.25",
+                    "",
+                    "Try to make a variable b,",
+                    "assign 3 to it and print it,",
+                    "after that change it's value",
+                    "to 4.5 and print it again"
+                ]
+            ],
+            "pages": 3,
             "blocks": [
                 [
                     "grass_top.png",
