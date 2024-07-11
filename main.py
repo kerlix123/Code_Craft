@@ -421,19 +421,18 @@ def game(level):
             cbd = []
             variables = {}
             for i in range(0, len(code)):
-                cbd.append(cbd_maker(code, i))
+                cbd.append(cbd_maker(code[i]))
                 if cbd[i][0] == "print":
                     if cbd[i][1] == "(":
                         if cbd[i][-1] == ")":
                             sb = ""
-                            for el in cbd[i][2:-1]:
-                                if el in variables:
-                                    sb += str(variables[el]) + " "
-                                else:
-                                    if el[0] == '"' and el[-1] == '"':
-                                        sb += str(el[1:-1]) + " "
-                                    else:
-                                        sb += str(el) + " "
+                            for el in code[i].split("(")[1].split(")")[0].split(","):
+                                el = cbd_maker(el.strip())
+                                for k in range(0, len(el)):
+                                    if el[k] in variables:
+                                        el[k] = str(variables[el[k]])
+                                sb += str(eval(''.join(el))) + " "
+                                
                             messages.append("out")
                             messages.append(sb[:-1])
                 elif cbd[i][1] == "=":
