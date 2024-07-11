@@ -426,7 +426,6 @@ def game(level):
                     if cbd[i][1] == "(":
                         if cbd[i][-1] == ")":
                             sb = ""
-                            print("lele")
                             for el in cbd[i][2:-1]:
                                 if el in variables:
                                     sb += str(variables[el]) + " "
@@ -438,20 +437,47 @@ def game(level):
                             messages.append("out")
                             messages.append(sb[:-1])
                 elif cbd[i][1] == "=":
-                    variables[cbd[i][0]] = eval(''.join(cbd[i][2:]))
-                    print(variables)
+                    if cbd[i][2] == "str":
+                        continue
+                    else:
+                        for k in range(1, len(cbd[i])):
+                            if cbd[i][k] in variables:
+                                cbd[i][k] = str(variables[cbd[i][k]])
+                        print(cbd[i])
+                        variables[cbd[i][0]] = eval(''.join(cbd[i][2:]))
+                elif cbd[i][1] == "+" and cbd[i][2] == "=":
+                    if cbd[i][0] in variables:
+                        for k in range(2, len(cbd[i])):
+                            if cbd[i][k] in variables:
+                                cbd[i][k] = str(variables[cbd[i][k]])
+                        variables[cbd[i][0]] += eval(''.join(cbd[i][3:]))
 
             #correct solution
+            solution = False
             if levels[f"level{level}"][0]["solution"][0] == cbd:
+                solution = True
+            
+            if level == 4:
+                l = []
+                ll = ["<class 'bool'>", "<class 'float'>", "<class 'int'>", "<class 'str'>"]
+                for el in list(variables.values()):
+                    l.append(str(type(el)))
+                l.sort()
+                if l == ll:
+                    solution = True
+
+            if solution:
                 messages.append("admin")
                 messages.append("Great job!")
-                levels["last_finished_level"] = level
+                if level > levels["last_finished_level"]:
+                    levels["last_finished_level"] = level
                 code_input.clear_text()
                 level += 1
                 game_levels[level-1].unlocked = True
                 with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
                     json.dump(levels, file, indent=4)
                 level_finished = True
+
             code_runned = False
 
         minecraft_cmd(messages)
