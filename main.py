@@ -69,15 +69,20 @@ def menu_button(x, y, text_x, text, width, height, mouse):
 
 def minecraft_cmd(l):
     ll = len(l)
-    y = 590 - ll//2*30
+    y = 590 - ll*30
     index = 0
     while index < ll:
         transparent_surface = pygame.Surface((595, 30), pygame.SRCALPHA)
         transparent_surface.fill((0, 0, 0, 100))
         window.blit(transparent_surface, (0, y))
-        window.blit(minecraft_font_small.render(f"<{l[index]}> {l[index+1]}", True, (255, 255, 255)), (10, y+4))
-        index += 2
+        window.blit(minecraft_font_small.render(l[index], True, (255, 255, 255)), (10, y+4))
+        index += 1
         y += 30
+
+class Function:
+    def __init__(self, params, fun_code):
+        self.params = params
+        self.fun_code = fun_code
 
 
 code_input = TextInputBox(605, 10, font_family="/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", font_size=24, max_width=620, max_height=620)
@@ -416,40 +421,21 @@ def game(level):
                     transparent_surface.fill((170, 170, 170, 120))
                     window.blit(transparent_surface, (170, 459))
 
+        #code
         if code_runned:
             code = code_input.get_text().split("\n")
             cbd = []
-            variables = {}
-            for i in range(0, len(code)):
-                cbd.append(cbd_maker(code[i]))
-                if cbd[i][0] == "print":
-                    if cbd[i][1] == "(":
-                        if cbd[i][-1] == ")":
-                            sb = ""
-                            for el in code[i].split("(")[1].split(")")[0].split(","):
-                                el = cbd_maker(el.strip())
-                                for k in range(0, len(el)):
-                                    if el[k] in variables:
-                                        el[k] = str(variables[el[k]])
-                                sb += str(eval(''.join(el))) + " "
-                                
-                            messages.append("out")
-                            messages.append(sb[:-1])
-                elif cbd[i][1] == "=":
-                    if cbd[i][2] == "str":
-                        continue
-                    else:
-                        for k in range(1, len(cbd[i])):
-                            if cbd[i][k] in variables:
-                                cbd[i][k] = str(variables[cbd[i][k]])
-                        print(cbd[i])
-                        variables[cbd[i][0]] = eval(''.join(cbd[i][2:]))
-                elif cbd[i][1] == "+" and cbd[i][2] == "=":
-                    if cbd[i][0] in variables:
-                        for k in range(2, len(cbd[i])):
-                            if cbd[i][k] in variables:
-                                cbd[i][k] = str(variables[cbd[i][k]])
-                        variables[cbd[i][0]] += eval(''.join(cbd[i][3:]))
+            code_len = len(code)
+            i = 0
+            while i < code_len:
+                cbdd = cbd_maker(code[i])     
+                if cbdd:           
+                    cbd.append(cbdd)
+                i += 1
+
+            executed_code = exec_code(code_input.get_text())
+            messages += executed_code["out"]
+            variables = executed_code["vars"]
 
             #correct solution
             solution = False
@@ -466,7 +452,6 @@ def game(level):
                     solution = True
 
             if solution:
-                messages.append("admin")
                 messages.append("Great job!")
                 if level > levels["last_finished_level"]:
                     levels["last_finished_level"] = level

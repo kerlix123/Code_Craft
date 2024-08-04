@@ -1,3 +1,16 @@
+import io
+import sys
+
+def exec_code(code):
+    buffer = io.StringIO()
+    sys.stdout = buffer
+    variables = {}
+    exec(code, {}, variables)
+    sys.stdout = sys.__stdout__
+    output = buffer.getvalue().splitlines()
+    buffer.close()
+    return {"out": output, "vars": variables}
+
 def cbd_maker(code):
     cbd = []
     j = 0

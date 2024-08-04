@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 6,
+    "last_finished_level": 9,
     "level_p": [
         [
             20,
@@ -40,6 +40,34 @@
             520,
             20,
             6,
+            80,
+            false
+        ],
+        [
+            620,
+            20,
+            7,
+            80,
+            false
+        ],
+        [
+            720,
+            20,
+            8,
+            80,
+            false
+        ],
+        [
+            820,
+            20,
+            9,
+            80,
+            false
+        ],
+        [
+            920,
+            20,
+            10,
             80,
             false
         ],
@@ -706,7 +734,7 @@
                     [
                         "b",
                         "=",
-                        "14.5",
+                        "a",
                         ">",
                         "4",
                         ".",
@@ -855,6 +883,664 @@
                     "grass_top.png",
                     "grass_top.png",
                     "gold_ore.png"
+                ]
+            ]
+        }
+    ],
+    "level7": [
+        {
+            "input_text": "",
+            "character": "",
+            "solution": [
+                [
+                    [
+                        "def",
+                        "mult",
+                        "(",
+                        "a",
+                        "b",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "return",
+                        "a",
+                        "*",
+                        "b"
+                    ],
+                    [
+                        "print",
+                        "(",
+                        "mult",
+                        "(",
+                        "5",
+                        "3",
+                        ")",
+                        ")"
+                    ]
+                ]
+            ],
+            "text": [
+                [
+                    "Level 7.",
+                    "",
+                    "In this level we will explain",
+                    "what is a function",
+                    "",
+                    "Function is a block of code",
+                    "that can be reused and it's",
+                    "only executed when called",
+                    "",
+                    "You can pass data into",
+                    "function and that data is",
+                    "called parameters"
+                ],
+                [
+                    "Functions can return data",
+                    "as a result",
+                    "",
+                    "In Python functions are",
+                    "defined with \"def\" keyword",
+                    "",
+                    "def hello():",
+                    "   print(\"Hello\")",
+                    "",
+                    "def add(a, b):",
+                    "   return a+b"
+                ],
+                [
+                    "To call a function, we use",
+                    "function name followed by",
+                    "parenthesis:",
+                    "",
+                    "hello() -> prints Hello",
+                    "add(1, 2) -> returns 3",
+                    "",
+                    "a = add(3, 2) -> a = 5"
+                ],
+                [
+                    "Make a function named mult",
+                    "which takes two variables a",
+                    "and b and returns thier product",
+                    "call the function from print()",
+                    "a = 5, b = 3"
+                ]
+            ],
+            "pages": 4,
+            "blocks": [
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "sand.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cactus_top.png",
+                    "cactus_top.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "oak_trapdoor.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "gold_ore.png"
+                ]
+            ]
+        }
+    ],
+    "level8": [
+        {
+            "input_text": "",
+            "character": "",
+            "solution": [
+                [
+                    [
+                        "class",
+                        "Dog",
+                        ":"
+                    ],
+                    [
+                        "def",
+                        "_",
+                        "_",
+                        "init",
+                        "_",
+                        "_",
+                        "(",
+                        "self",
+                        "name",
+                        "age",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "name",
+                        "=",
+                        "name"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "age",
+                        "=",
+                        "age"
+                    ],
+                    [
+                        "def",
+                        "dog",
+                        "_",
+                        "age",
+                        "(",
+                        "self",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "print",
+                        "(",
+                        "self",
+                        ".",
+                        "age",
+                        ")"
+                    ],
+                    [
+                        "dog1",
+                        "=",
+                        "Dog",
+                        "(",
+                        "\"Buddy\"",
+                        "3",
+                        ")"
+                    ],
+                    [
+                        "dog1",
+                        ".",
+                        "dog",
+                        "_",
+                        "age",
+                        "(",
+                        ")"
+                    ]
+                ]
+            ],
+            "text": [
+                [
+                    "Level 8.",
+                    "",
+                    "In this level we will talk",
+                    "about classes, they are",
+                    "\"blueprints\" for creating",
+                    "objects",
+                    "class Class:",
+                    "   x = 8",
+                    "This is a class",
+                    "object = Class()",
+                    "and this is a object"
+                ],
+                [
+                    "We can access it's properties",
+                    "like this:",
+                    "print(object.x) -> 8",
+                    "",
+                    "For now we can't do much",
+                    "with classes but using",
+                    "__init__ function we can",
+                    "assign our own parameter",
+                    "values"
+                ],
+                [
+                    "class Cat:",
+                    "   def __init__(self, name):",
+                    "       self.name = name",
+                    "",
+                    "cat1 = Cat(\"Dudek\")",
+                    "",
+                    "self parameter is a",
+                    "reference to the current",
+                    "instance of the class, you",
+                    "can rename it but it always",
+                    "needs to be the first",
+                    "paramater of class function"
+                ],
+                [
+                    "Methods are functions that",
+                    "belong to the object",
+                    "",
+                    "class Cat:",
+                    "   def __init__(self, name):",
+                    "       self.name = name",
+                    "   def meow(self)",
+                    "       print(\"Meow\" + self.name)",
+                    "",
+                    "cat1 = Cat(\"Dudek\")",
+                    "cat1.meow() -> Meow Dudek"
+                ],
+                [
+                    "Make a class named Dog with",
+                    "name and age parameters, ",
+                    "make a method named dog_age",
+                    "which prints dog's age and",
+                    "make object called dog1 with",
+                    "name \"Buddy\" and age 3,",
+                    "use method you made to print",
+                    "dog's age"
+                ]
+            ],
+            "pages": 5,
+            "blocks": [
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "sand.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cactus_top.png",
+                    "cactus_top.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "oak_trapdoor.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "gold_ore.png"
+                ]
+            ]
+        }
+    ],
+    "level9": [
+        {
+            "input_text": "",
+            "character": "",
+            "solution": [
+                [
+                    [
+                        "class",
+                        "Steve",
+                        ":"
+                    ],
+                    [
+                        "def",
+                        "_",
+                        "_",
+                        "init",
+                        "_",
+                        "_",
+                        "(",
+                        "self",
+                        "x",
+                        "y",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "x",
+                        "=",
+                        "x"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "y",
+                        "=",
+                        "y"
+                    ],
+                    [
+                        "def",
+                        "go",
+                        "_",
+                        "up",
+                        "(",
+                        "self",
+                        "n",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "y",
+                        "+",
+                        "=",
+                        "n"
+                    ],
+                    [
+                        "def",
+                        "go",
+                        "_",
+                        "down",
+                        "(",
+                        "self",
+                        "n",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "y",
+                        "-",
+                        "=",
+                        "n"
+                    ],
+                    [
+                        "def",
+                        "go",
+                        "_",
+                        "right",
+                        "(",
+                        "self",
+                        "n",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "x",
+                        "+",
+                        "=",
+                        "n"
+                    ],
+                    [
+                        "def",
+                        "go",
+                        "_",
+                        "left",
+                        "(",
+                        "self",
+                        "n",
+                        ")",
+                        ":"
+                    ],
+                    [
+                        "self",
+                        ".",
+                        "x",
+                        "-",
+                        "=",
+                        "n"
+                    ]
+                ]
+            ],
+            "text": [
+                [
+                    "Level 9.",
+                    "",
+                    "From this level on we will do",
+                    "something a little bit different",
+                    "We will use code to move",
+                    "Steve across the map behind",
+                    "the book until he is on the",
+                    "trapdoor, that is the finish"
+                ],
+                [
+                    "First of all we need a class",
+                    "for Steve which will have two",
+                    "parameters x and y and four",
+                    "methods: go_up, go_down,",
+                    "go_right, go_left, each of",
+                    "those methods take number",
+                    "(call that number n)",
+                    "of blocks you want to go in",
+                    "that direction and increments",
+                    "or decrements Steve's x and",
+                    "y as needed"
+                ],
+                [
+                    "Make that class."
+                ]
+            ],
+            "pages": 3,
+            "blocks": [
+                [
+                    "crafting_table_top.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ]
+            ]
+        }
+    ],
+    "level10": [
+        {
+            "input_text": "",
+            "character": "",
+            "solution": [
+                [
+                    
+                ]
+            ],
+            "text": [
+                [
+                    "Level 10.",
+                    "",
+                    "In this level you will use code",
+                    "to move Steve around the",
+                    "map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks"
+                ]
+            ],
+            "pages": 1,
+            "blocks": [
+                [
+                    "crafting_table_top.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
                 ]
             ]
         }
