@@ -10,6 +10,21 @@ options = json.load(json_options)
 
 game_levels = []
 
+stevexy = [0, 510]
+
+def move(grass_x, grass_y):
+    steve = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/steve_front.png")
+    steve = pygame.transform.scale(steve, (85, 85))
+
+    window.blit(steve, (stevexy[0], stevexy[1]))
+    pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
+
+    window.blit(pygame.transform.scale(pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/grass_top.png"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
+    pygame.draw.rect(window, (0, 0, 0), (stevexy[0]+grass_x, stevexy[1]+grass_y, 85, 85), 1)
+    pygame.display.update()
+    clock.tick(60)
+    time.sleep(0.1)
+
 class Level:
     def __init__(self, x, y, level, size, text_closed):
         self.x = x
@@ -294,9 +309,9 @@ def options_win():
         pygame.display.flip()
 
 def game(level):
-    code_input.set_text(levels[f"level{level}"][0]["input_text"])
     global code_lang, code_runned, level_finished
     messages = []
+    code_input.set_text(levels[f"level{level}"][0]["input_text"])
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
@@ -331,13 +346,14 @@ def game(level):
                     messages = []
                 if event.key == pygame.K_r and pygame.key.get_mods() & pygame.KMOD_CTRL:
                     code_runned = True
-                        
+
         code_input.update(events)
         code_input.render(window)
 
         if level_finished:
             time.sleep(0.5)
             messages = []
+            code_input.clear_text()
             level_finished = False
 
         pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
@@ -421,6 +437,12 @@ def game(level):
                     transparent_surface.fill((170, 170, 170, 120))
                     window.blit(transparent_surface, (170, 459))
 
+        steve = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/steve_front.png")
+        steve = pygame.transform.scale(steve, (85, 85))
+    
+        window.blit(steve, (stevexy[0], stevexy[1]))
+        pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
+
         #code
         if code_runned:
             code = code_input.get_text().split("\n")
@@ -437,6 +459,8 @@ def game(level):
             messages += executed_code["out"]
             variables = executed_code["vars"]
 
+            print(variables['steve'].x, variables["steve"].y)
+
             #correct solution
             solution = False
             if levels[f"level{level}"][0]["solution"][0] == cbd:
@@ -451,11 +475,37 @@ def game(level):
                 if l == ll:
                     solution = True
 
+            if level >= 10:
+                stevexy[0] = variables["steve"].x*85
+                stevexy[1] = (6-variables["steve"].y)*85
+                """steve_com = []
+                for el in cbd[13:]:
+                    if el[0] == "steve" and el[1] == ".":
+                        steve_com.append(el)
+
+                for com in steve_com:
+                    if com[2] == "go" and com[3] == "_" and com[5] == "(" and com[7] == ")":
+                        if com[4] == "right":
+                            for _ in range(int(com[6])):
+                                stevexy[0] += 85
+                                move(-85, 0)
+                        elif com[4] == "left":
+                            for _ in range(int(com[6])):
+                                stevexy[0] -= 85
+                                move(85, 0)
+                        elif com[4] == "up":
+                            for _ in range(int(com[6])):
+                                stevexy[1] -= 85
+                                move(0, 85)
+                        elif com[4] == "down":
+                            for _ in range(int(com[6])):
+                                stevexy[1] += 85
+                                move(0, -85)
+                """
             if solution:
                 messages.append("Great job!")
                 if level > levels["last_finished_level"]:
                     levels["last_finished_level"] = level
-                code_input.clear_text()
                 level += 1
                 game_levels[level-1].unlocked = True
                 with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:

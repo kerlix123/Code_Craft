@@ -853,12 +853,12 @@ class TextInputBox:
                         break
                 
                 ## Join all words that fit in width into one line
-                final_line = ' '.join(line_of_word)
+                final_line = ' '.join(line_of_word).replace('\x12', '')
                 self.wrapped_lines.append(final_line)
         
         if self.input_string[-1] == '\n':
             self.wrapped_lines.append('')
-        
+
         self.cursor_pos_to_x_y()
         self.visible_content()
         self._rerender()

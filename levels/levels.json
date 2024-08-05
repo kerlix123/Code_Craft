@@ -1457,12 +1457,10 @@
     ],
     "level10": [
         {
-            "input_text": "",
+            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
             "character": "",
             "solution": [
-                [
-                    
-                ]
+                []
             ],
             "text": [
                 [
@@ -1475,9 +1473,17 @@
                     "Finish is the trapdoor and",
                     "you can only go on grass",
                     "blocks"
+                ],
+                [
+                    "Use functions from class",
+                    "Steve to move Steve across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
                 ]
             ],
-            "pages": 1,
+            "pages": 2,
             "blocks": [
                 [
                     "crafting_table_top.png",
