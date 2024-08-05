@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 9,
+    "last_finished_level": 10,
     "level_p": [
         [
             20,
@@ -1457,6 +1457,10 @@
     ],
     "level10": [
         {
+            "steve_xy": [
+                0,
+                0
+            ],
             "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
             "character": "",
             "solution": [

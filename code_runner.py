@@ -5,7 +5,7 @@ def exec_code(code):
     buffer = io.StringIO()
     sys.stdout = buffer
     variables = {}
-    exec(code, {}, variables)
+    exec(code, variables, variables)
     sys.stdout = sys.__stdout__
     output = buffer.getvalue().splitlines()
     buffer.close()

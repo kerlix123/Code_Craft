@@ -312,6 +312,9 @@ def game(level):
     global code_lang, code_runned, level_finished
     messages = []
     code_input.set_text(levels[f"level{level}"][0]["input_text"])
+    if level >= 10:
+        stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+        stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
@@ -354,6 +357,9 @@ def game(level):
             time.sleep(0.5)
             messages = []
             code_input.clear_text()
+            if level >= 10:
+                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
             level_finished = False
 
         pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
@@ -437,11 +443,12 @@ def game(level):
                     transparent_surface.fill((170, 170, 170, 120))
                     window.blit(transparent_surface, (170, 459))
 
-        steve = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/steve_front.png")
-        steve = pygame.transform.scale(steve, (85, 85))
-    
-        window.blit(steve, (stevexy[0], stevexy[1]))
-        pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
+        if level >= 10:
+            steve = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/steve_front.png")
+            steve = pygame.transform.scale(steve, (85, 85))
+        
+            window.blit(steve, (stevexy[0], stevexy[1]))
+            pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
 
         #code
         if code_runned:
@@ -455,11 +462,35 @@ def game(level):
                     cbd.append(cbdd)
                 i += 1
 
-            executed_code = exec_code(code_input.get_text())
+            if level < 10:
+                executed_code = exec_code(code_input.get_text())
+            else:
+                def_code = f"""coms = []
+class Steve:
+    global coms
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    def go_up(self, n):
+        self.y += n
+        coms.append(("up", n))
+    def go_down(self, n):
+        self.y -= n
+        coms.append(("down", n))
+    def go_right(self, n):
+        self.x += n
+        coms.append(("right", n))
+    def go_left(self, n):
+        self.x -= n
+        coms.append(("left", n))
+steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})
+"""
+                input_code = '\n'.join(code_input.get_text().split("\n")[13:])
+                
+                executed_code = exec_code(def_code + input_code)
+
             messages += executed_code["out"]
             variables = executed_code["vars"]
-
-            print(variables['steve'].x, variables["steve"].y)
 
             #correct solution
             solution = False
@@ -476,33 +507,47 @@ def game(level):
                     solution = True
 
             if level >= 10:
-                stevexy[0] = variables["steve"].x*85
-                stevexy[1] = (6-variables["steve"].y)*85
-                """steve_com = []
-                for el in cbd[13:]:
-                    if el[0] == "steve" and el[1] == ".":
-                        steve_com.append(el)
-
-                for com in steve_com:
-                    if com[2] == "go" and com[3] == "_" and com[5] == "(" and com[7] == ")":
-                        if com[4] == "right":
-                            for _ in range(int(com[6])):
-                                stevexy[0] += 85
-                                move(-85, 0)
-                        elif com[4] == "left":
-                            for _ in range(int(com[6])):
-                                stevexy[0] -= 85
-                                move(85, 0)
-                        elif com[4] == "up":
-                            for _ in range(int(com[6])):
-                                stevexy[1] -= 85
-                                move(0, 85)
-                        elif com[4] == "down":
-                            for _ in range(int(com[6])):
-                                stevexy[1] += 85
-                                move(0, -85)
-                """
+                coms = variables["coms"]
+                def check():
+                    if levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "oak_trapdoor.png":
+                        return True
+                    elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "grass_top.png":
+                        messages.append("You can only go on grass!")
+                        code_input.clear_text()
+                        code_input.set_text(levels[f"level{level}"][0]["input_text"])
+                        stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+                        stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+                    return False
+                        
+                for com in coms:
+                    if com[0] == "right":
+                        for _ in range(int(com[1])):
+                            stevexy[0] += 85
+                            move(-85, 0)
+                            check()
+                    elif com[0] == "left":
+                        for _ in range(int(com[1])):
+                            stevexy[0] -= 85
+                            move(85, 0)
+                            check()
+                    elif com[0] == "up":
+                        for _ in range(int(com[1])):
+                            stevexy[1] -= 85
+                            move(0, 85)
+                            check()
+                    elif com[0] == "down":
+                        for _ in range(int(com[1])):
+                            stevexy[1] += 85
+                            move(0, -85)
+                            check()
+                
+                if check():
+                    solution = True
+                
             if solution:
+                if level >= 10:
+                    sound = pygame.mixer.Sound("/Users/antoniomatijevic/Documents/CodeCraft/sounds/trapdoor.mp3")
+                    sound.play()                
                 messages.append("Great job!")
                 if level > levels["last_finished_level"]:
                     levels["last_finished_level"] = level
