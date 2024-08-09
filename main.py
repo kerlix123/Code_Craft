@@ -59,6 +59,7 @@ pygame.mixer.music.load(playlist[current_song_index])
 pygame.mixer.music.play()
 
 music_on = options["music_on"]
+fx_on = options["fx_on"]
 if not music_on:
     pygame.mixer.music.pause()
 
@@ -115,6 +116,11 @@ minecraft_font_big = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCra
 minecraft_font_small = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 25)
 minecraft_font_smaller = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 15)
 minecraft_font_book = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 20)
+
+def description(string):
+    pygame.draw.rect(window, (194, 194, 194), (223, 598, 150, 19))
+    window.blit(minecraft_font_smaller.render(string, True, (255, 255, 255)), ((595-minecraft_font_smaller.size(string)[0])//2, 601))
+    pygame.draw.rect(window, (0, 0, 0), (223, 598, 150, 19), 1)
 
 def menu():
     while True:
@@ -255,7 +261,7 @@ def tutorial():
         pygame.display.flip()
 
 def options_win():
-    global music_on
+    global music_on, fx_on
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
@@ -277,6 +283,11 @@ def options_win():
                     with open("/Users/antoniomatijevic/Documents/CodeCraft/options.json", 'w') as file:
                         json.dump(options, file, indent=4)
                 if 420 <= mouse[0] <= 820 and 130 <= mouse[1] <= 170:
+                    fx_on = not fx_on
+                    options["fx_on"] = fx_on
+                    with open("/Users/antoniomatijevic/Documents/CodeCraft/options.json", 'w') as file:
+                        json.dump(options, file, indent=4)
+                if 420 <= mouse[0] <= 820 and 180 <= mouse[1] <= 220:
                     levels["last_finished_level"] = 0
                     with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
                         json.dump(levels, file, indent=4)
@@ -293,7 +304,10 @@ def options_win():
         music_state = "On" if music_on else "Off"
         menu_button(420, 80, 420+(400-minecraft_font_small.size(f"Audio: {music_state}")[0])//2, f"Audio: {music_state}", 400, 40, mouse)
 
-        menu_button(420, 130, 527, "Clear Progress", 400, 40, mouse)
+        fx_state = "On" if fx_on else "Off"
+        menu_button(420, 130, 444+(400-minecraft_font_small.size(f"Audio: {music_state}")[0])//2, f"FX: {fx_state}", 400, 40, mouse)
+
+        menu_button(420, 180, 527, "Clear Progress", 400, 40, mouse)
 
         #back_button
         back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/unselect.png")
@@ -311,6 +325,7 @@ def options_win():
 def game(level):
     global code_lang, code_runned, level_finished
     messages = []
+    restart_code = False
     code_input.set_text(levels[f"level{level}"][0]["input_text"])
     if level >= 10:
         stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
@@ -333,8 +348,9 @@ def game(level):
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
-                    if game_levels[level].text_closed:
-                        code_runned = True
+                    code_runned = True
+                elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
+                    restart_code = True
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     code_lang = (code_lang + 1) % len(languages)
                 elif not game_levels[level].text_closed:
@@ -378,6 +394,8 @@ def game(level):
         back_button = pygame.transform.scale(back_button, (22, 22))
 
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+            description("Exit")
+
             transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
             transparent_surface.fill((170, 170, 170, 120))
             window.blit(transparent_surface, (12, 597))
@@ -387,14 +405,26 @@ def game(level):
         #run_button
         run_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/select.png")
         run_button = pygame.transform.scale(run_button, (28, 28))
-        
-        window.blit(run_button, (30, 593))
 
         if 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
+            description("Run")
+
             transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
             transparent_surface.fill((170, 170, 170, 120))
             window.blit(transparent_surface, (34, 598))
         window.blit(run_button, (30, 593))
+
+        #restart_button
+        restart_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/reject.png")
+        restart_button = pygame.transform.scale(restart_button, (26, 26))
+
+        if 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
+            description("Restart")
+            
+            transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
+            transparent_surface.fill((170, 170, 170, 120))
+            window.blit(transparent_surface, (599, 598))
+        window.blit(restart_button, (595, 595))
 
         #blocks
         i = 0
@@ -449,6 +479,17 @@ def game(level):
         
             window.blit(steve, (stevexy[0], stevexy[1]))
             pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
+
+        def restart():
+            code_input.clear_text()
+            code_input.set_text(levels[f"level{level}"][0]["input_text"])
+            if level >= 10:
+                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+
+        if restart_code:
+            restart()
+            restart_code = False
 
         #code
         if code_runned:
@@ -513,10 +554,7 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                         return True
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "grass_top.png":
                         messages.append("You can only go on grass!")
-                        code_input.clear_text()
-                        code_input.set_text(levels[f"level{level}"][0]["input_text"])
-                        stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-                        stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+                        restart()
                     return False
                         
                 for com in coms:
@@ -543,11 +581,16 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                 
                 if check():
                     solution = True
+                else:
+                    messages.append("Wrong solution! Try again.")
+                    restart()
                 
             if solution:
                 if level >= 10:
-                    sound = pygame.mixer.Sound("/Users/antoniomatijevic/Documents/CodeCraft/sounds/trapdoor.mp3")
-                    sound.play()                
+                    if fx_on:
+                        sound = pygame.mixer.Sound("/Users/antoniomatijevic/Documents/CodeCraft/sounds/trapdoor.mp3")
+                        sound.play()
+                                        
                 messages.append("Great job!")
                 if level > levels["last_finished_level"]:
                     levels["last_finished_level"] = level
