@@ -369,6 +369,13 @@ def game(level):
         code_input.update(events)
         code_input.render(window)
 
+        def restart():
+            code_input.clear_text()
+            code_input.set_text(levels[f"level{level}"][0]["input_text"])
+            if level >= 10:
+                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+
         if level_finished:
             time.sleep(0.5)
             messages = []
@@ -377,6 +384,9 @@ def game(level):
                 stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
                 stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
             level_finished = False
+            restart()
+            time.sleep(0.01)
+            restart()
 
         pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
 
@@ -479,13 +489,6 @@ def game(level):
         
             window.blit(steve, (stevexy[0], stevexy[1]))
             pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
-
-        def restart():
-            code_input.clear_text()
-            code_input.set_text(levels[f"level{level}"][0]["input_text"])
-            if level >= 10:
-                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
 
         if restart_code:
             restart()
@@ -599,6 +602,9 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                 with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
                     json.dump(levels, file, indent=4)
                 level_finished = True
+                code_input.clear_text()
+                code_input.clear_text()
+                code_input.set_text(levels[f"level{level}"][0]["input_text"])
 
             code_runned = False
 
