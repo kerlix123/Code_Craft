@@ -1,73 +1,101 @@
 {
-    "last_finished_level": 10,
+    "last_finished_level": 11,
     "level_p": [
         [
-            20,
-            20,
+            30,
+            30,
             1,
             80,
             false
         ],
         [
-            120,
-            20,
+            130,
+            30,
             2,
             80,
             false
         ],
         [
-            220,
-            20,
+            230,
+            30,
             3,
             80,
             false
         ],
         [
-            320,
-            20,
+            330,
+            30,
             4,
             80,
             false
         ],
         [
-            420,
-            20,
+            430,
+            30,
             5,
             80,
             false
         ],
         [
-            520,
-            20,
+            530,
+            30,
             6,
             80,
             false
         ],
         [
-            620,
-            20,
+            630,
+            30,
             7,
             80,
             false
         ],
         [
-            720,
-            20,
+            730,
+            30,
             8,
             80,
             false
         ],
         [
-            820,
-            20,
+            830,
+            30,
             9,
             80,
             false
         ],
         [
-            920,
-            20,
+            930,
+            30,
             10,
+            80,
+            false
+        ],
+        [
+            1030,
+            30,
+            11,
+            80,
+            false
+        ],
+        [
+            1130,
+            30,
+            12,
+            80,
+            false
+        ],
+        [
+            30,
+            140,
+            13,
+            80,
+            false
+        ],
+        [
+            130,
+            140,
+            14,
             80,
             false
         ],
@@ -1551,6 +1579,406 @@
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png"
+                ]
+            ]
+        }
+    ],
+    "level11": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "character": "",
+            "solution": [
+                []
+            ],
+            "text": [
+                [
+                    "Level 11.",
+                    "",
+                    "In this level you will use code",
+                    "to move Steve around the",
+                    "map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks"
+                ],
+                [
+                    "Use functions from class",
+                    "Steve to move Steve across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cactus_top.png",
+                    "cactus_top.png",
+                    "sandstone_top.png"
+                ],
+                [
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cactus_top.png",
+                    "sand.png",
+                    "sandstone_top.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "gold_ore.png",
+                    "gold_ore.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "sand.png",
+                    "sandstone_top.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "sand.png",
+                    "sandstone_top.png"
+                ],
+                [
+                    "sand.png",
+                    "sand.png",
+                    "sand.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "sand.png",
+                    "sandstone_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "sandstone_top.png",
+                    "sandstone_top.png",
+                    "sandstone_top.png"
+                ]
+            ]
+        }
+    ],
+    "level12": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "character": "",
+            "solution": [
+                []
+            ],
+            "text": [
+                [
+                    "Level 12.",
+                    "",
+                    "In this level you will use code",
+                    "to move Steve around the",
+                    "map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks"
+                ],
+                [
+                    "Use functions from class",
+                    "Steve to move Steve across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "oak_trapdoor.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "crafting_table_top.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "melon_top.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "pumpkin_top.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ]
+            ]
+        }
+    ],
+    "level13": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "character": "",
+            "solution": [
+                []
+            ],
+            "text": [
+                [
+                    "Level 13.",
+                    "",
+                    "In this level you will use code",
+                    "to move Steve around the",
+                    "map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks"
+                ],
+                [
+                    "Use functions from class",
+                    "Steve to move Steve across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "emerald_ore.png",
+                    "emerald_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "grass_top.png"
+                ],
+                [
+                    "gold_ore.png",
+                    "gold_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "emerald_ore.png",
+                    "diamond_ore.png",
+                    "diamond_ore.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "coal_ore.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "coal_ore.png"
+                ],
+                [
+                    "gold_ore.png",
+                    "gold_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "coal_ore.png"
+                ],
+                [
+                    "oak_trapdoor.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "coal_ore.png"
+                ]
+            ]
+        }
+    ],
+    "level14": [
+        {
+            "steve_xy": [
+                3,
+                0
+            ],
+            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "character": "",
+            "solution": [
+                []
+            ],
+            "text": [
+                [
+                    "Level 14.",
+                    "",
+                    "In this level you will use code",
+                    "to move Steve around the",
+                    "map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks"
+                ],
+                [
+                    "Use functions from class",
+                    "Steve to move Steve across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "oak_trapdoor.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
                 ]
             ]
         }

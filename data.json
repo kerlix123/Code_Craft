@@ -1,0 +1,102 @@
+{
+    "skin": "chicken",
+    "skins": {
+        "steve": [
+            30,
+            30,
+            0,
+            true
+        ],
+        "alex": [
+            130,
+            30,
+            10,
+            false
+        ],
+        "chicken": [
+            230,
+            30,
+            15,
+            true
+        ],
+        "cow": [
+            330,
+            30,
+            15,
+            false
+        ],
+        "pig": [
+            430,
+            30,
+            15,
+            false
+        ],
+        "sheep": [
+            530,
+            30,
+            15,
+            false
+        ],
+        "villager": [
+            630,
+            30,
+            15,
+            false
+        ],
+        "spider": [
+            730,
+            30,
+            15,
+            false
+        ],
+        "creeper": [
+            830,
+            30,
+            15,
+            false
+        ],
+        "skeleton": [
+            930,
+            30,
+            15,
+            false
+        ],
+        "zombie": [
+            1030,
+            30,
+            15,
+            false
+        ],
+        "cat": [
+            1130,
+            30,
+            25,
+            false
+        ],
+        "enderman": [
+            30,
+            140,
+            30,
+            false
+        ],
+        "wither_skeleton": [
+            130,
+            140,
+            65,
+            false
+        ],
+        "wither": [
+            230,
+            140,
+            100,
+            false
+        ],
+        "herobrine": [
+            330,
+            140,
+            150,
+            false
+        ]
+    },
+    "emeralds": 415
+}
