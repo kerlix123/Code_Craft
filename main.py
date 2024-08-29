@@ -16,14 +16,14 @@ game_skins = []
 
 stevexy = [0, 510]
 
-def move(grass_x, grass_y):
+def move(grass_x, grass_y, level):
     steve = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/skins/{data["skin"]}.png")
     steve = pygame.transform.scale(steve, (85, 85))
 
     window.blit(steve, (stevexy[0], stevexy[1]))
     pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
 
-    window.blit(pygame.transform.scale(pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/grass_top.png"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
+    window.blit(pygame.transform.scale(pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/{levels[f"level{level}"][0]["blocks"][(stevexy[1]+grass_y)//85][(stevexy[0]+grass_x)//85]}"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
     pygame.draw.rect(window, (0, 0, 0), (stevexy[0]+grass_x, stevexy[1]+grass_y, 85, 85), 1)
     pygame.display.update()
     clock.tick(60)
@@ -667,6 +667,8 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                     solution = True
 
             if level >= 10:
+                if level >= 14:
+                    plate_activated = False
                 coms = variables["coms"]
                 def check():
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
@@ -674,6 +676,8 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                         restart()
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "oak_trapdoor.png":
                         return True
+                    elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "pressure_plate.png":
+                        plate_activated = True
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "grass_top.png":
                         messages.append("You can only go on grass!")
                         restart()
@@ -683,26 +687,29 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                     if com[0] == "right":
                         for _ in range(int(com[1])):
                             stevexy[0] += 85
-                            move(-85, 0)
+                            move(-85, 0, level)
                             check()
                     elif com[0] == "left":
                         for _ in range(int(com[1])):
                             stevexy[0] -= 85
-                            move(85, 0)
+                            move(85, 0, level)
                             check()
                     elif com[0] == "up":
                         for _ in range(int(com[1])):
                             stevexy[1] -= 85
-                            move(0, 85)
+                            move(0, 85, level)
                             check()
                     elif com[0] == "down":
                         for _ in range(int(com[1])):
                             stevexy[1] += 85
-                            move(0, -85)
+                            move(0, -85, level)
                             check()
                 
                 if check():
-                    solution = True
+                    if level >= 14 and plate_activated:
+                        solution = True
+                    elif level >= 10:
+                        solution = True
                 else:
                     messages.append("Wrong solution! Try again.")
                     restart()
@@ -714,11 +721,14 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                         sound.play()
                                         
                 messages.append("Great job!")
-                messages.append("+5 Emeralds")
+                emeralds = 5
+                if level >= 10:
+                    emeralds = 10
+                messages.append(f"+{emeralds} Emeralds")
+                data["emeralds"] += emeralds
                 if level > levels["last_finished_level"]:
                     levels["last_finished_level"] = level
                 level += 1
-                data["emeralds"] += 5
                 with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
                     json.dump(data, file, indent=4)
                 game_levels[level-1].unlocked = True
@@ -743,3 +753,4 @@ menu()
 
 json_levels.close()
 json_options.close()
+json_data.close()

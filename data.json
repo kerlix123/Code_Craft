@@ -1,5 +1,5 @@
 {
-    "skin": "chicken",
+    "skin": "wither",
     "skins": {
         "steve": [
             30,
@@ -89,7 +89,7 @@
             230,
             140,
             100,
-            false
+            true
         ],
         "herobrine": [
             330,
@@ -98,5 +98,5 @@
             false
         ]
     },
-    "emeralds": 415
+    "emeralds": 425
 }
