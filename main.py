@@ -671,10 +671,14 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                     plate_activated = False
                 coms = variables["coms"]
                 def check():
+                    nonlocal plate_activated
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
                         messages.append("You can only go on grass!")
                         restart()
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "oak_trapdoor.png":
+                        if level >= 14 and not plate_activated:
+                            messages.append("Door is not unlocked!")
+                            restart()
                         return True
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "pressure_plate.png":
                         plate_activated = True
@@ -704,11 +708,11 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                             stevexy[1] += 85
                             move(0, -85, level)
                             check()
-                
+
                 if check():
                     if level >= 14 and plate_activated:
                         solution = True
-                    elif level >= 10:
+                    elif level >= 10 and level < 14:
                         solution = True
                 else:
                     messages.append("Wrong solution! Try again.")
@@ -724,6 +728,8 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                 emeralds = 5
                 if level >= 10:
                     emeralds = 10
+                if level >= 14:
+                    emeralds = 15
                 messages.append(f"+{emeralds} Emeralds")
                 data["emeralds"] += emeralds
                 if level > levels["last_finished_level"]:
