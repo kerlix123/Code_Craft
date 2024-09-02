@@ -40,8 +40,10 @@ def cbd_maker(code):
 
 def grade_code(p1_code, p1_coms, p2_code, p2_coms):
     grades = [0, 0]
+    p1_s = [el for el in p1_code.split("\n") if el != ""]
+    p2_s = [el for el in p2_code.split("\n") if el != ""]
     
-    l = [len(p1_code), len(p1_code.split("\n")), len(p1_coms), len(p2_code), len(p2_code.split("\n")), len(p2_coms)]
+    l = [len(''.join(p1_s)), len(p1_s), len(p1_coms), len(''.join(p2_s)), len(p2_s), len(p2_coms)]
 
     if l[0] < l[3]:
         grades[0] += 1
