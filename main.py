@@ -467,6 +467,29 @@ def game(level):
                     code_runned = True
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
                     restart_code = True
+                elif 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
+                    if level_finished:
+                        if level > levels["last_finished_level"]:
+                            levels["last_finished_level"] = level
+                        level += 1
+                        with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
+                            json.dump(data, file, indent=4)
+                        game_levels[level-1].unlocked = True
+                        with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
+                            json.dump(levels, file, indent=4)
+                        code_input.clear_text()
+                        code_input.clear_text()
+                        code_input.set_text(levels[f"level{level}"][0]["input_text"])
+                        time.sleep(0.25)
+                        messages = []
+                        code_input.clear_text()
+                        if level >= 10:
+                            stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+                            stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+                        level_finished = False
+                        restart()
+                        time.sleep(0.01)
+                        restart()
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     code_lang = (code_lang + 1) % len(languages)
                 elif not game_levels[level].text_closed:
@@ -491,18 +514,6 @@ def game(level):
             if level >= 10:
                 stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
                 stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
-
-        if level_finished:
-            time.sleep(0.5)
-            messages = []
-            code_input.clear_text()
-            if level >= 10:
-                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
-            level_finished = False
-            restart()
-            time.sleep(0.01)
-            restart()
 
         pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
 
@@ -551,6 +562,19 @@ def game(level):
             transparent_surface.fill((170, 170, 170, 120))
             window.blit(transparent_surface, (599, 598))
         window.blit(restart_button, (595, 595))
+
+        #next_button
+        if level_finished:
+            next_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/accept.png")
+            next_button = pygame.transform.scale(next_button, (29, 29))
+
+            if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
+                description("Next level")
+                
+                transparent_surface = pygame.Surface((22, 20), pygame.SRCALPHA)
+                transparent_surface.fill((170, 170, 170, 120))
+                window.blit(transparent_surface, (566, 598))
+            window.blit(next_button, (562, 592))
 
         #blocks
         i = 0
@@ -626,7 +650,7 @@ def game(level):
                 executed_code = exec_code(code_input.get_text())
             else:
                 def_code = f"""coms = []
-class Steve:
+class Mob:
     global coms
     def __init__(self, x, y):
         self.x = x
@@ -643,10 +667,9 @@ class Steve:
     def go_left(self, n):
         self.x -= n
         coms.append(("left", n))
-steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})
+mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})
 """
                 input_code = '\n'.join(code_input.get_text().split("\n")[13:])
-                
                 executed_code = exec_code(def_code + input_code)
 
             messages += executed_code["out"]
@@ -670,6 +693,9 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                 if level >= 14:
                     plate_activated = False
                 coms = variables["coms"]
+
+                print(grade_code("mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(6)", [('right', 6), ('up', 6)], '\n'.join(code_input.get_text().split("\n")[13:]), coms))
+                
                 def check():
                     nonlocal plate_activated
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
@@ -732,18 +758,7 @@ steve = Steve({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level
                     emeralds = 15
                 messages.append(f"+{emeralds} Emeralds")
                 data["emeralds"] += emeralds
-                if level > levels["last_finished_level"]:
-                    levels["last_finished_level"] = level
-                level += 1
-                with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
-                    json.dump(data, file, indent=4)
-                game_levels[level-1].unlocked = True
-                with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
-                    json.dump(levels, file, indent=4)
-                level_finished = True
-                code_input.clear_text()
-                code_input.clear_text()
-                code_input.set_text(levels[f"level{level}"][0]["input_text"])
+                level_finished = True   
 
             code_runned = False
 

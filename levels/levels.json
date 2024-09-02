@@ -124,7 +124,6 @@
     "level1": [
         {
             "input_text": "",
-            "character": "steve",
             "solution": [
                 [
                     [
@@ -247,7 +246,6 @@
     "level2": [
         {
             "input_text": "print(\"Steve\")",
-            "character": "steve",
             "solution": [
                 [
                     [
@@ -1292,7 +1290,7 @@
                 [
                     [
                         "class",
-                        "Steve",
+                        "Mob",
                         ":"
                     ],
                     [
@@ -1408,13 +1406,13 @@
                     "From this level on we will do",
                     "something a little bit different",
                     "We will use code to move",
-                    "Steve across the map behind",
-                    "the book until he is on the",
+                    "Mobs across the map behind",
+                    "the book until they are on the",
                     "trapdoor, that is the finish"
                 ],
                 [
                     "First of all we need a class",
-                    "for Steve which will have two",
+                    "for Mob which will have two",
                     "parameters x and y and four",
                     "methods: go_up, go_down,",
                     "go_right, go_left, each of",
@@ -1422,7 +1420,7 @@
                     "(call that number n)",
                     "of blocks you want to go in",
                     "that direction and increments",
-                    "or decrements Steve's x and",
+                    "or decrements Mob's x and",
                     "y as needed"
                 ],
                 [
@@ -1503,7 +1501,7 @@
                 0,
                 0
             ],
-            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
             "solution": [
                 []
@@ -1513,7 +1511,7 @@
                     "Level 10.",
                     "",
                     "In this level you will use code",
-                    "to move Steve around the",
+                    "to move Mob around the",
                     "map",
                     "",
                     "Finish is the trapdoor and",
@@ -1522,7 +1520,7 @@
                 ],
                 [
                     "Use functions from class",
-                    "Steve to move Steve across",
+                    "Mob to move Mob across",
                     "the map to finish",
                     "",
                     "To close this book use",
@@ -1603,7 +1601,7 @@
                 0,
                 0
             ],
-            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
             "solution": [
                 []
@@ -1613,7 +1611,7 @@
                     "Level 11.",
                     "",
                     "In this level you will use code",
-                    "to move Steve around the",
+                    "to move Mob around the",
                     "map",
                     "",
                     "Finish is the trapdoor and",
@@ -1622,7 +1620,7 @@
                 ],
                 [
                     "Use functions from class",
-                    "Steve to move Steve across",
+                    "Mob to move Mob across",
                     "the map to finish",
                     "",
                     "To close this book use",
@@ -1703,7 +1701,7 @@
                 0,
                 0
             ],
-            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
             "solution": [
                 []
@@ -1713,7 +1711,7 @@
                     "Level 12.",
                     "",
                     "In this level you will use code",
-                    "to move Steve around the",
+                    "to move Mob around the",
                     "map",
                     "",
                     "Finish is the trapdoor and",
@@ -1722,7 +1720,7 @@
                 ],
                 [
                     "Use functions from class",
-                    "Steve to move Steve across",
+                    "Mob to move Mob across",
                     "the map to finish",
                     "",
                     "To close this book use",
@@ -1803,7 +1801,7 @@
                 0,
                 6
             ],
-            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
             "solution": [
                 []
@@ -1813,7 +1811,7 @@
                     "Level 13.",
                     "",
                     "In this level you will use code",
-                    "to move Steve around the",
+                    "to move Mob around the",
                     "map",
                     "",
                     "Finish is the trapdoor and",
@@ -1822,7 +1820,7 @@
                 ],
                 [
                     "Use functions from class",
-                    "Steve to move Steve across",
+                    "Mob to move Mob across",
                     "the map to finish",
                     "",
                     "To close this book use",
@@ -1903,7 +1901,7 @@
                 3,
                 0
             ],
-            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
             "solution": [
                 []
@@ -1913,7 +1911,7 @@
                     "Level 14.",
                     "",
                     "In this level you will use code",
-                    "to move Steve around the",
+                    "to move Mob around the",
                     "map",
                     "",
                     "Finish is the trapdoor and",
@@ -1924,7 +1922,7 @@
                 ],
                 [
                     "Use functions from class",
-                    "Steve to move Steve across",
+                    "Mob to move Mob across",
                     "the map to finish",
                     "",
                     "To close this book use",
@@ -2005,7 +2003,7 @@
                 0,
                 0
             ],
-            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
             "solution": [
                 []
@@ -2015,7 +2013,7 @@
                     "Level 16.",
                     "",
                     "In this level you will use code",
-                    "to move Steve around the",
+                    "to move Mob around the",
                     "map",
                     "",
                     "Finish is the trapdoor and",
@@ -2026,7 +2024,7 @@
                 ],
                 [
                     "Use functions from class",
-                    "Steve to move Steve across",
+                    "Mob to move Mob across",
                     "the map to finish",
                     "",
                     "To close this book use",
@@ -2107,7 +2105,7 @@
                 0,
                 0
             ],
-            "input_text": "class Steve:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nsteve = Steve(0, 0)",
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
             "solution": [
                 []
@@ -2117,7 +2115,7 @@
                     "Level 15.",
                     "",
                     "In this level you will use code",
-                    "to move Steve around the",
+                    "to move Mob around the",
                     "map",
                     "",
                     "Finish is the trapdoor and",
@@ -2128,7 +2126,7 @@
                 ],
                 [
                     "Use functions from class",
-                    "Steve to move Steve across",
+                    "Mob to move Mob across",
                     "the map to finish",
                     "",
                     "To close this book use",
