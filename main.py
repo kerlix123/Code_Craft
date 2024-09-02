@@ -129,8 +129,8 @@ languages = ["Python"]
 code_lang = 0
 
 code_runned = False
-
 level_finished = False
+grades = [0, 0]
 
 minecraft_font_big = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 75)
 minecraft_font_small = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 25)
@@ -138,9 +138,14 @@ minecraft_font_smaller = pygame.font.Font("/Users/antoniomatijevic/Documents/Cod
 minecraft_font_book = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 20)
 
 def description(string):
-    pygame.draw.rect(window, (194, 194, 194), (223, 598, 150, 19))
+    length = 150
+    x = 223
+    if len(string) > 18:
+        length = 300
+        x = 147
+    pygame.draw.rect(window, (194, 194, 194), (x, 598, length, 19))
     window.blit(minecraft_font_smaller.render(string, True, (255, 255, 255)), ((595-minecraft_font_smaller.size(string)[0])//2, 601))
-    pygame.draw.rect(window, (0, 0, 0), (223, 598, 150, 19), 1)
+    pygame.draw.rect(window, (0, 0, 0), (x, 598, length, 19), 1)
 
 def menu():
     while True:
@@ -576,6 +581,18 @@ def game(level):
                 window.blit(transparent_surface, (566, 598))
             window.blit(next_button, (562, 592))
 
+            if grades[0] > 0:
+                optimization_warning = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/report_button.png")
+                optimization_warning = pygame.transform.scale(optimization_warning, (19, 19))
+
+                if 630 <= mouse[0] <= 649 and 598 <= mouse[1] <= 617:
+                    description("Your code can be more optimized!")
+                    
+                    transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
+                    transparent_surface.fill((170, 170, 170, 120))
+                    window.blit(transparent_surface, (629, 597))
+                window.blit(optimization_warning, (630, 598))
+
         #blocks
         i = 0
         j = 0
@@ -677,7 +694,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
 
             #correct solution
             solution = False
-            if levels[f"level{level}"][0]["solution"][0] == cbd:
+            if level < 10 and levels[f"level{level}"][0]["solution"][0] == cbd:
                 solution = True
             
             if level == 4:
@@ -694,7 +711,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                     plate_activated = False
                 coms = variables["coms"]
 
-                print(grade_code("mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(6)", [('right', 6), ('up', 6)], '\n'.join(code_input.get_text().split("\n")[13:]), coms))
+                grades = grade_code(levels[f"level{level}"][0]["best_solution"][0], levels[f"level{level}"][0]["best_coms"], '\n'.join(code_input.get_text().split("\n")[13:]), coms)
                 
                 def check():
                     nonlocal plate_activated
