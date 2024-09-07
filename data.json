@@ -1,5 +1,5 @@
 {
-    "skin": "wither",
+    "skin": "herobrine",
     "skins": {
         "steve": [
             30,
@@ -95,8 +95,8 @@
             330,
             140,
             150,
-            false
+            true
         ]
     },
-    "emeralds": 630
+    "emeralds": 745
 }

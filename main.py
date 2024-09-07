@@ -477,8 +477,6 @@ def game(level):
                         if level > levels["last_finished_level"]:
                             levels["last_finished_level"] = level
                         level += 1
-                        with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
-                            json.dump(data, file, indent=4)
                         game_levels[level-1].unlocked = True
                         with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
                             json.dump(levels, file, indent=4)
@@ -514,6 +512,7 @@ def game(level):
         code_input.render(window)
 
         def restart():
+            messages.clear()
             code_input.clear_text()
             code_input.set_text(levels[f"level{level}"][0]["input_text"])
             if level >= 10:
@@ -707,7 +706,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                     solution = True
 
             if level >= 10:
-                if level >= 14:
+                if level >= 14 and level < 17:
                     plate_activated = False
                 coms = variables["coms"]
 
@@ -719,7 +718,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                         messages.append("You can only go on grass!")
                         restart()
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "oak_trapdoor.png":
-                        if level >= 14 and not plate_activated:
+                        if level >= 14 and level < 17 and not plate_activated:
                             messages.append("Door is not unlocked!")
                             restart()
                         return True
@@ -729,7 +728,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                         messages.append("You can only go on grass!")
                         restart()
                     return False
-                        
+                print(coms)        
                 for com in coms:
                     if com[0] == "right":
                         for _ in range(int(com[1])):
@@ -753,9 +752,9 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                             check()
 
                 if check():
-                    if level >= 14 and plate_activated:
+                    if level >= 14 and level < 17 and plate_activated:
                         solution = True
-                    elif level >= 10 and level < 14:
+                    elif level >= 10 and level < 14 or level >= 17:
                         solution = True
                 else:
                     messages.append("Wrong solution! Try again.")
@@ -776,6 +775,8 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                 messages.append(f"+{emeralds} Emeralds")
                 data["emeralds"] += emeralds
                 level_finished = True   
+                with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
+                    json.dump(data, file, indent=4)
 
             code_runned = False
 

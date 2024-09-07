@@ -114,6 +114,13 @@
             false
         ],
         [
+            430,
+            140,
+            17,
+            80,
+            false
+        ],
+        [
             -1,
             -1,
             -1,
@@ -1502,11 +1509,19 @@
                 0
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "character": "",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(6)"
             ],
-            "best_coms": [["right", 6], ["up", 6]],
+            "best_coms": [
+                [
+                    "right",
+                    6
+                ],
+                [
+                    "up",
+                    6
+                ]
+            ],
             "text": [
                 [
                     "Level 10.",
@@ -1604,8 +1619,22 @@
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
-            "solution": [
-                []
+            "best_solution": [
+                "mob = Mob(0, 0)\nmob.go_right(3)\nmob.go_up(6)\nmob.go_right(3)"
+            ],
+            "best_coms": [
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "up",
+                    6
+                ],
+                [
+                    "right",
+                    3
+                ]
             ],
             "text": [
                 [
@@ -1703,9 +1732,30 @@
                 0
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "character": "",
-            "solution": [
-                []
+            "best_solution": [
+                "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(2)\nmob.go_left(2)\nmob.go_up(4)\nmob.go_left(4)"
+            ],
+            "best_coms": [
+                [
+                    "right",
+                    6
+                ],
+                [
+                    "up",
+                    2
+                ],
+                [
+                    "left",
+                    2
+                ],
+                [
+                    "up",
+                    4
+                ],
+                [
+                    "left",
+                    4
+                ]
             ],
             "text": [
                 [
@@ -1803,9 +1853,15 @@
                 6
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "character": "",
-            "solution": [
-                []
+            "best_solution": [
+                "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_down(2)\nmob.go_left(3)\nmob.go_down(4)\nmob.go_left(3)"
+            ],
+            "best_coms" :[
+                ["right", 6],
+                ["down", 2],
+                ["left", 3],
+                ["down", 4],
+                ["left", 3]
             ],
             "text": [
                 [
@@ -1904,8 +1960,11 @@
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "character": "",
-            "solution": [
-                []
+            "best_solution": [
+                "mob = Mob(0, 0)\nmob.go_up(6)"
+            ],
+            "best_coms": [
+                ["up", 6]
             ],
             "text": [
                 [
@@ -1998,6 +2057,115 @@
             ]
         }
     ],
+    "level15": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(2)\nmob.go_left(2)\nmob.go_up(2)\nmob.go_right(2)\nmob.go_up(2)"
+            ],
+            "best_coms": [
+                ["right", 6],
+                ["up", 2],
+                ["left", 2],
+                ["up", 2],
+                ["right", 2],
+                ["up", 2]
+            ],
+            "text": [
+                [
+                    "Level 15.",
+                    "",
+                    "In this level you will use code",
+                    "to move Mob around the",
+                    "map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks and you need to step",
+                    "on pressure plate to unlock",
+                    "the trapdoor"
+                ],
+                [
+                    "Use functions from class",
+                    "Mob to move Mob across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "crafting_table_top.png",
+                    "pumpkin_top.png",
+                    "pumpkin_top.png",
+                    "farmland.png",
+                    "oak_log_top.png",
+                    "oak_log_top.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "farmland.png",
+                    "oak_log_top.png",
+                    "oak_log_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "farmland.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "hay_block_top.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "pressure_plate.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "hay_block_top.png",
+                    "hay_block_top.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "hay_block_top.png",
+                    "hay_block_top.png",
+                    "hay_block_top.png",
+                    "hay_block_top.png",
+                    "hay_block_top.png",
+                    "hay_block_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ]
+            ]
+        }
+    ],
     "level16": [
         {
             "steve_xy": [
@@ -2005,9 +2173,16 @@
                 0
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "character": "",
-            "solution": [
-                []
+            "best_solution": [
+                "mob = Mob(0, 0)\nmob.go_right(3)\nmob.go_up(3)\nmob.go_right(1)\nmob.go_left(1)\nmob.go_up(3)\nmob.go_right(3)"
+            ],
+            "best_coms": [
+                ["right", 3],
+                ["up", 3],
+                ["right", 1],
+                ["left", 1],
+                ["up", 3],
+                ["right", 3]
             ],
             "text": [
                 [
@@ -2100,104 +2275,140 @@
             ]
         }
     ],
-    "level15": [
+    "level17": [
         {
             "steve_xy": [
-                0,
+                3,
                 0
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "character": "",
-            "solution": [
-                []
+            "best_solution": [
+                "mob = Mob(0, 0)\nfor i in range(6):\n    mob.go_up(1)"
+            ],
+            "best_coms": [
+                ["up", 1],
+                ["up", 1],
+                ["up", 1],
+                ["up", 1],
+                ["up", 1],
+                ["up", 1]
             ],
             "text": [
                 [
-                    "Level 15.",
+                    "Level 17.",
                     "",
-                    "In this level you will use code",
-                    "to move Mob around the",
+                    "In this level you will learn",
+                    "about loops and implement",
+                    "them in your code",
                     "map",
                     "",
-                    "Finish is the trapdoor and",
-                    "you can only go on grass",
-                    "blocks and you need to step",
-                    "on pressure plate to unlock",
-                    "the trapdoor"
+                    "For loops in Python are",
+                    "written like this:",
+                    "for i in range(5):",
+                    "   #code"
                 ],
                 [
-                    "Use functions from class",
-                    "Mob to move Mob across",
-                    "the map to finish",
+                    "i - variable which will",
+                    "be changed for every",
+                    "iteration of the loop",
+                    "",
+                    "range(5) - generates a",
+                    "sequence of numbers from",
+                    "0 up to 5 (5 is not included)",
+                    "[0, 1, 2, 3, 4]",
+                    "",
+                    "The code inside the loop",
+                    "for each value of i in",
+                    "that range"
+                ],
+                [
+                    "for i in range(5):",
+                    "   print(i)",
+                    "",
+                    "output:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                [
+                    "Move Mob to the finish",
+                    "which is the trapdoor but",
+                    "only using: mob.go_up(1)",
+                    "",
+                    "Do this by repeating",
+                    "that function in for loop",
+                    "6 times",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "pages": 2,
+            "pages": 4,
             "blocks": [
                 [
-                    "crafting_table_top.png",
-                    "pumpkin_top.png",
-                    "pumpkin_top.png",
-                    "farmland.png",
-                    "oak_log_top.png",
-                    "oak_log_top.png",
-                    "oak_trapdoor.png"
+                    "netherrack.png",
+                    "netherrack.png",
+                    "nether_quartz.png",
+                    "oak_trapdoor.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_soil.png"
                 ],
                 [
-                    "dirt.png",
-                    "azalea_leaves.png",
-                    "azalea_leaves.png",
-                    "farmland.png",
-                    "oak_log_top.png",
-                    "oak_log_top.png",
-                    "grass_top.png"
+                    "netherrack.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "grass_top.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
                 ],
                 [
-                    "dirt.png",
-                    "azalea_leaves.png",
-                    "azalea_leaves.png",
-                    "farmland.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
                     "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "soul_soil.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
                 ],
                 [
-                    "dirt.png",
-                    "hay_block_top.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "pressure_plate.png",
-                    "dirt.png",
-                    "grass_top.png"
+                    "netherrack.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "grass_top.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
                 ],
                 [
-                    "hay_block_top.png",
-                    "hay_block_top.png",
-                    "farmland.png",
-                    "farmland.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_soil.png",
                     "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "netherrack.png"
                 ],
                 [
-                    "hay_block_top.png",
-                    "hay_block_top.png",
-                    "hay_block_top.png",
-                    "hay_block_top.png",
-                    "hay_block_top.png",
-                    "hay_block_top.png",
-                    "grass_top.png"
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "grass_top.png",
+                    "soul_soil.png",
+                    "netherrack.png",
+                    "netherrack.png"
                 ],
                 [
+                    "netherrack.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
                     "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "netherrack.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png"
                 ]
             ]
         }
