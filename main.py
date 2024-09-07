@@ -727,8 +727,8 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "grass_top.png":
                         messages.append("You can only go on grass!")
                         restart()
-                    return False
-                print(coms)        
+                        return False
+                    return False      
                 for com in coms:
                     if com[0] == "right":
                         for _ in range(int(com[1])):

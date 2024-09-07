@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 16,
+    "last_finished_level": 20,
     "level_p": [
         [
             30,
@@ -117,6 +117,27 @@
             430,
             140,
             17,
+            80,
+            false
+        ],
+        [
+            530,
+            140,
+            18,
+            80,
+            false
+        ],
+        [
+            630,
+            140,
+            19,
+            80,
+            false
+        ],
+        [
+            730,
+            140,
+            20,
             80,
             false
         ],
@@ -1856,12 +1877,27 @@
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_down(2)\nmob.go_left(3)\nmob.go_down(4)\nmob.go_left(3)"
             ],
-            "best_coms" :[
-                ["right", 6],
-                ["down", 2],
-                ["left", 3],
-                ["down", 4],
-                ["left", 3]
+            "best_coms": [
+                [
+                    "right",
+                    6
+                ],
+                [
+                    "down",
+                    2
+                ],
+                [
+                    "left",
+                    3
+                ],
+                [
+                    "down",
+                    4
+                ],
+                [
+                    "left",
+                    3
+                ]
             ],
             "text": [
                 [
@@ -1964,7 +2000,10 @@
                 "mob = Mob(0, 0)\nmob.go_up(6)"
             ],
             "best_coms": [
-                ["up", 6]
+                [
+                    "up",
+                    6
+                ]
             ],
             "text": [
                 [
@@ -2068,12 +2107,30 @@
                 "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(2)\nmob.go_left(2)\nmob.go_up(2)\nmob.go_right(2)\nmob.go_up(2)"
             ],
             "best_coms": [
-                ["right", 6],
-                ["up", 2],
-                ["left", 2],
-                ["up", 2],
-                ["right", 2],
-                ["up", 2]
+                [
+                    "right",
+                    6
+                ],
+                [
+                    "up",
+                    2
+                ],
+                [
+                    "left",
+                    2
+                ],
+                [
+                    "up",
+                    2
+                ],
+                [
+                    "right",
+                    2
+                ],
+                [
+                    "up",
+                    2
+                ]
             ],
             "text": [
                 [
@@ -2177,12 +2234,30 @@
                 "mob = Mob(0, 0)\nmob.go_right(3)\nmob.go_up(3)\nmob.go_right(1)\nmob.go_left(1)\nmob.go_up(3)\nmob.go_right(3)"
             ],
             "best_coms": [
-                ["right", 3],
-                ["up", 3],
-                ["right", 1],
-                ["left", 1],
-                ["up", 3],
-                ["right", 3]
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "up",
+                    3
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "left",
+                    1
+                ],
+                [
+                    "up",
+                    3
+                ],
+                [
+                    "right",
+                    3
+                ]
             ],
             "text": [
                 [
@@ -2286,12 +2361,30 @@
                 "mob = Mob(0, 0)\nfor i in range(6):\n    mob.go_up(1)"
             ],
             "best_coms": [
-                ["up", 1],
-                ["up", 1],
-                ["up", 1],
-                ["up", 1],
-                ["up", 1],
-                ["up", 1]
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ]
             ],
             "text": [
                 [
@@ -2409,6 +2502,395 @@
                     "netherrack.png",
                     "nether_quartz.png",
                     "nether_quartz.png"
+                ]
+            ]
+        }
+    ],
+    "level18": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\nfor i in range(2):\n    mob.go_up(3)\n    mob.go_right(3)"
+            ],
+            "best_coms": [
+                [
+                    "up",
+                    3
+                ],
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "up",
+                    3
+                ],
+                [
+                    "right",
+                    3
+                ]
+            ],
+            "text": [
+                [
+                    "Level 18.",
+                    "",
+                    "In this level you will use code",
+                    "with for loops to move Mob",
+                    "around the map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks and you need to step",
+                    "on pressure plate to unlock",
+                    "the trapdoor"
+                ],
+                [
+                    "Use functions from class",
+                    "Mob to move Mob across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "grass_top.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "nether_gold_ore.png",
+                    "netherrack.png",
+                    "grass_top.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png"
+                ],
+                [
+                    "grass_top.png",
+                    "nether_gold_ore.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "grass_top.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "grass_top.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ]
+            ]
+        }
+    ],
+    "level19": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\nfor i in range(2):\n    mob.go_right(3)\n    mob.go_down(3)"
+            ],
+            "best_coms": [
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "down",
+                    3
+                ],
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "down",
+                    3
+                ]
+            ],
+            "text": [
+                [
+                    "Level 19.",
+                    "",
+                    "In this level you will use code",
+                    "with for loops to move Mob",
+                    "around the map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks and you need to step",
+                    "on pressure plate to unlock",
+                    "the trapdoor"
+                ],
+                [
+                    "Use functions from class",
+                    "Mob to move Mob across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "grass_top.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "nether_gold_ore.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "grass_top.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "soul_sand.png",
+                    "nether_quartz.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "nether_wart_block.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "soul_soil.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "grass_top.png"
+                ],
+                [
+                    "nether_wart_block.png",
+                    "nether_wart_block.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "grass_top.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "nether_wart_block.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "oak_trapdoor.png"
+                ]
+            ]
+        }
+    ],
+    "level20": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\nfor i in range(6):\n    mob.go_up(1)\n    mob.go_right(1)"
+            ],
+            "best_coms": [
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ]
+            ],
+            "text": [
+                [
+                    "Level 20.",
+                    "",
+                    "In this level you will use code",
+                    "with for loops to move Mob",
+                    "around the map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks and you need to step",
+                    "on pressure plate to unlock",
+                    "the trapdoor"
+                ],
+                [
+                    "Use functions from class",
+                    "Mob to move Mob across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "grass_top.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "nether_gold_ore.png"
+                ],
+                [
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png"
+                ],
+                [
+                    "netherrack.png",
+                    "netherrack.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "netherrack.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "grass_top.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "netherrack.png"
                 ]
             ]
         }
