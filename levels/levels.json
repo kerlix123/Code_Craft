@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 20,
+    "last_finished_level": 24,
     "level_p": [
         [
             30,
@@ -138,6 +138,34 @@
             730,
             140,
             20,
+            80,
+            false
+        ],
+        [
+            830,
+            140,
+            21,
+            80,
+            false
+        ],
+        [
+            930,
+            140,
+            22,
+            80,
+            false
+        ],
+        [
+            1030,
+            140,
+            23,
+            80,
+            false
+        ],
+        [
+            1130,
+            140,
+            24,
             80,
             false
         ],
@@ -2393,7 +2421,6 @@
                     "In this level you will learn",
                     "about loops and implement",
                     "them in your code",
-                    "map",
                     "",
                     "For loops in Python are",
                     "written like this:",
@@ -2431,7 +2458,7 @@
                     "only using: mob.go_up(1)",
                     "",
                     "Do this by repeating",
-                    "that function in for loop",
+                    "that function with for loop",
                     "6 times",
                     "",
                     "To close this book use",
@@ -2893,6 +2920,381 @@
                     "netherrack.png"
                 ]
             ]
+        }
+    ],
+    "level21": [
+        {
+            "steve_xy": [
+                3,
+                0
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(1)\n    i += 1"
+            ],
+            "best_coms": [
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ]
+            ],
+            "text": [
+                [
+                    "Level 21.",
+                    "",
+                    "In this level you will learn",
+                    "about while loops and",
+                    "implement them in your code",
+                    "",
+                    "While loops are another",
+                    "type of loops in Python",
+                    "With the while loop we",
+                    "can execute code inside of",
+                    "as long as a condition is",
+                    "true"
+                ],
+                [
+                    "i = 0",
+                    "while i < 6:",
+                    "   print(i)",
+                    "   i += 1",
+                    "",
+                    "output:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                [
+                    "When using while loops",
+                    "we need to make a",
+                    "variable which will be",
+                    "changed in the loop",
+                    "before the loop as you",
+                    "could see in the example",
+                    "on previous page"
+                ],
+                [
+                    "Move Mob to the finish",
+                    "which is the trapdoor but",
+                    "only using: mob.go_up(1)",
+                    "",
+                    "Do this by repeating",
+                    "that function with while loop",
+                    "6 times",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 4,
+            "blocks": [
+                [
+                    "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png", "oak_trapdoor.png", "end_stone.png", "end_stone.png", "end_stone.png"
+                ],
+                [
+                    "end_stone_bricks.png", "end_stone.png", "end_stone.png", "grass_top.png", "end_stone.png", "end_stone.png", "end_stone_bricks.png"
+                ],
+                [
+                    "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "end_stone_bricks.png"
+                ],
+                [
+                    "end_stone_bricks.png", "end_stone.png", "purpur_block.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "end_stone_bricks.png"
+                ],
+                [
+                    "purpur_block.png", "purpur_block.png", "purpur_block.png", "grass_top.png", "purpur_block.png", "end_stone.png", "end_stone_bricks.png"
+                ],
+                [
+                    "end_stone.png", "end_stone.png", "purpur_block.png", "grass_top.png", "chorus_plant.png", "chorus_flower.png", "end_stone_bricks.png"
+                ],
+                [
+                    "end_stone_bricks.png", "chorus_plant.png", "chorus_plant.png", "grass_top.png", "chorus_flower.png", "chorus_flower.png", "oak_trapdoor.png"
+                ]
+            ]                      
+        }
+    ],
+    "level22": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\ni = 0\nwhile i < 2:\n    mob.go_up(3)\n    mob.go_right(3)\n    i += 1"
+            ],
+            "best_coms": [
+                [
+                    "up",
+                    3
+                ],
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "up",
+                    3
+                ],
+                [
+                    "right",
+                    3
+                ]
+            ],
+            "text": [
+                [
+                    "Level 22.",
+                    "",
+                    "In this level you will use code",
+                    "with while loops to move Mob",
+                    "around the map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks and you need to step",
+                    "on pressure plate to unlock",
+                    "the trapdoor"
+                ],
+                [
+                    "Use functions from class",
+                    "Mob to move Mob across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "grass_top.png", "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png", "chorus_plant.png", "chorus_plant.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "purpur_block.png"
+                ],
+                [
+                    "end_stone.png", "chorus_flower.png", "end_stone_bricks.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "purpur_block.png"
+                ],
+                [
+                    "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png", "chorus_flower.png", "chorus_flower.png", "chorus_flower.png"
+                ],
+                [
+                    "grass_top.png", "chorus_flower.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png"
+                ],
+                [
+                    "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "end_stone.png", "end_stone.png", "end_stone.png"
+                ],
+                [
+                    "grass_top.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png"
+                ]
+            ]            
+        }
+    ],
+    "level23": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\ni = 0\nwhile i < 2:\n    mob.go_right(3)\n    mob.go_down(3)\n    i += 1"
+            ],
+            "best_coms": [
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "down",
+                    3
+                ],
+                [
+                    "right",
+                    3
+                ],
+                [
+                    "down",
+                    3
+                ]
+            ],
+            "text": [
+                [
+                    "Level 23.",
+                    "",
+                    "In this level you will use code",
+                    "with for loops to move Mob",
+                    "around the map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks and you need to step",
+                    "on pressure plate to unlock",
+                    "the trapdoor"
+                ],
+                [
+                    "Use functions from class",
+                    "Mob to move Mob across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png", "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png"
+                ],
+                [
+                    "end_stone_bricks.png", "end_stone.png", "end_stone.png", "grass_top.png", "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png"
+                ],
+                [
+                    "chorus_plant.png", "end_stone.png", "end_stone.png", "grass_top.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png"
+                ],
+                [
+                    "end_stone_bricks.png", "chorus_plant.png", "purpur_block.png", "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png"
+                ],
+                [
+                    "purpur_block.png", "purpur_block.png", "purpur_block.png", "end_stone_bricks.png", "purpur_block.png", "chorus_plant.png", "grass_top.png"
+                ],
+                [
+                    "purpur_block.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_flower.png", "chorus_flower.png", "grass_top.png"
+                ],
+                [
+                    "end_stone_bricks.png", "purpur_block.png", "chorus_plant.png", "purpur_block.png", "purpur_block.png", "chorus_flower.png", "oak_trapdoor.png"
+                ]
+            ] 
+        }
+    ],
+    "level24": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "best_solution": [
+                "mob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(1)\n    mob.go_right(1)\n    i += 1"
+            ],
+            "best_coms": [
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ],
+                [
+                    "up",
+                    1
+                ],
+                [
+                    "right",
+                    1
+                ]
+            ],
+            "text": [
+                [
+                    "Level 24.",
+                    "",
+                    "In this level you will use code",
+                    "with for loops to move Mob",
+                    "around the map",
+                    "",
+                    "Finish is the trapdoor and",
+                    "you can only go on grass",
+                    "blocks and you need to step",
+                    "on pressure plate to unlock",
+                    "the trapdoor"
+                ],
+                [
+                    "Use functions from class",
+                    "Mob to move Mob across",
+                    "the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png"
+                ],
+                [
+                    "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png"
+                ],
+                [
+                    "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png"
+                ],
+                [
+                    "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png"
+                ],
+                [
+                    "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png", "end_stone.png"
+                ]
+            ]            
         }
     ]
 }
