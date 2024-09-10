@@ -3011,27 +3011,69 @@
             "pages": 4,
             "blocks": [
                 [
-                    "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png", "oak_trapdoor.png", "end_stone.png", "end_stone.png", "end_stone.png"
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png",
+                    "oak_trapdoor.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png"
                 ],
                 [
-                    "end_stone_bricks.png", "end_stone.png", "end_stone.png", "grass_top.png", "end_stone.png", "end_stone.png", "end_stone_bricks.png"
+                    "end_stone_bricks.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone_bricks.png"
                 ],
                 [
-                    "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "end_stone_bricks.png"
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone_bricks.png"
                 ],
                 [
-                    "end_stone_bricks.png", "end_stone.png", "purpur_block.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "end_stone_bricks.png"
+                    "end_stone_bricks.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone_bricks.png"
                 ],
                 [
-                    "purpur_block.png", "purpur_block.png", "purpur_block.png", "grass_top.png", "purpur_block.png", "end_stone.png", "end_stone_bricks.png"
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone_bricks.png"
                 ],
                 [
-                    "end_stone.png", "end_stone.png", "purpur_block.png", "grass_top.png", "chorus_plant.png", "chorus_flower.png", "end_stone_bricks.png"
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "grass_top.png",
+                    "chorus_plant.png",
+                    "chorus_flower.png",
+                    "end_stone_bricks.png"
                 ],
                 [
-                    "end_stone_bricks.png", "chorus_plant.png", "chorus_plant.png", "grass_top.png", "chorus_flower.png", "chorus_flower.png", "oak_trapdoor.png"
+                    "end_stone_bricks.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "grass_top.png",
+                    "chorus_flower.png",
+                    "chorus_flower.png",
+                    "oak_trapdoor.png"
                 ]
-            ]                      
+            ]
         }
     ],
     "level22": [
@@ -3088,27 +3130,69 @@
             "pages": 2,
             "blocks": [
                 [
-                    "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "grass_top.png", "oak_trapdoor.png"
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "oak_trapdoor.png"
                 ],
                 [
-                    "end_stone.png", "chorus_plant.png", "chorus_plant.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "purpur_block.png"
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "purpur_block.png"
                 ],
                 [
-                    "end_stone.png", "chorus_flower.png", "end_stone_bricks.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "purpur_block.png"
+                    "end_stone.png",
+                    "chorus_flower.png",
+                    "end_stone_bricks.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "purpur_block.png"
                 ],
                 [
-                    "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png", "chorus_flower.png", "chorus_flower.png", "chorus_flower.png"
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "chorus_flower.png",
+                    "chorus_flower.png",
+                    "chorus_flower.png"
                 ],
                 [
-                    "grass_top.png", "chorus_flower.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png"
+                    "grass_top.png",
+                    "chorus_flower.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
                 ],
                 [
-                    "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "end_stone.png", "end_stone.png", "end_stone.png"
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png"
                 ],
                 [
-                    "grass_top.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png"
+                    "grass_top.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png"
                 ]
-            ]            
+            ]
         }
     ],
     "level23": [
@@ -3165,27 +3249,69 @@
             "pages": 2,
             "blocks": [
                 [
-                    "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png", "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png"
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png"
                 ],
                 [
-                    "end_stone_bricks.png", "end_stone.png", "end_stone.png", "grass_top.png", "end_stone_bricks.png", "end_stone_bricks.png", "end_stone_bricks.png"
+                    "end_stone_bricks.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png"
                 ],
                 [
-                    "chorus_plant.png", "end_stone.png", "end_stone.png", "grass_top.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png"
+                    "chorus_plant.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
                 ],
                 [
-                    "end_stone_bricks.png", "chorus_plant.png", "purpur_block.png", "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png"
+                    "end_stone_bricks.png",
+                    "chorus_plant.png",
+                    "purpur_block.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
                 ],
                 [
-                    "purpur_block.png", "purpur_block.png", "purpur_block.png", "end_stone_bricks.png", "purpur_block.png", "chorus_plant.png", "grass_top.png"
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone_bricks.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "grass_top.png"
                 ],
                 [
-                    "purpur_block.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_flower.png", "chorus_flower.png", "grass_top.png"
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "chorus_flower.png",
+                    "chorus_flower.png",
+                    "grass_top.png"
                 ],
                 [
-                    "end_stone_bricks.png", "purpur_block.png", "chorus_plant.png", "purpur_block.png", "purpur_block.png", "chorus_flower.png", "oak_trapdoor.png"
+                    "end_stone_bricks.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_flower.png",
+                    "oak_trapdoor.png"
                 ]
-            ] 
+            ]
         }
     ],
     "level24": [
@@ -3274,27 +3400,69 @@
             "pages": 2,
             "blocks": [
                 [
-                    "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "oak_trapdoor.png"
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "oak_trapdoor.png"
                 ],
                 [
-                    "end_stone.png", "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png"
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "purpur_block.png"
                 ],
                 [
-                    "end_stone.png", "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png"
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png"
                 ],
                 [
-                    "end_stone.png", "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png"
+                    "end_stone.png",
+                    "end_stone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_plant.png"
                 ],
                 [
-                    "end_stone.png", "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png"
+                    "end_stone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
                 ],
                 [
-                    "grass_top.png", "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png"
+                    "grass_top.png",
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
                 ],
                 [
-                    "grass_top.png", "purpur_block.png", "purpur_block.png", "chorus_plant.png", "chorus_plant.png", "chorus_plant.png", "end_stone.png"
+                    "grass_top.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
                 ]
-            ]            
+            ]
         }
     ]
 }

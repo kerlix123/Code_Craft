@@ -121,7 +121,7 @@ class Function:
         self.fun_code = fun_code
 
 
-code_input = TextInputBox(605, 10, font_family="/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", font_size=24, max_width=620, max_height=620)
+code_input = Textbox(595, 0, 645, 620, "/Users/antoniomatijevic/Documents/PyTextBox/Minecraft.ttf")
 font = pygame.font.Font(pygame.font.match_font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf"), 20)
 pygame.key.set_repeat(200, 25)
 
@@ -474,6 +474,8 @@ def game(level):
                     restart_code = True
                 elif 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                     if level_finished:
+                        code_input.i = 0
+                        code_input.cursor_pos = 0
                         if level > levels["last_finished_level"]:
                             levels["last_finished_level"] = level
                         level += 1
@@ -508,13 +510,16 @@ def game(level):
                 if event.key == pygame.K_r and pygame.key.get_mods() & pygame.KMOD_CTRL:
                     code_runned = True
 
-        code_input.update(events)
-        code_input.render(window)
+            if not level_finished:
+                code_input.handle_events(event)
+        code_input.draw(window)
 
         def restart():
             messages.clear()
             code_input.clear_text()
             code_input.set_text(levels[f"level{level}"][0]["input_text"])
+            code_input.i = 0
+            code_input.cursor_pos = 0
             if level >= 10:
                 stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
                 stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
@@ -782,7 +787,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
 
         minecraft_cmd(messages)
 
-        cursor_pos = font.render(f"Ln {code_input.cursor_y_pos + 1}, Col {code_input.cursor_x_pos + 1}", True, (255, 255, 255))
+        cursor_pos = font.render(f"Ln {code_input.i + 1}, Col {code_input.cursor_pos + 1}", True, (255, 255, 255))
         window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 600))
         
         pygame.display.update()
