@@ -444,7 +444,7 @@ def skins():
         pygame.display.flip()
 
 def game(level):
-    global code_lang, code_runned, level_finished
+    global code_lang, code_runned, level_finished, grades
     messages = []
     restart_code = False
     code_input.set_text(levels[f"level{level}"][0]["input_text"])

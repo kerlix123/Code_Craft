@@ -1,5 +1,5 @@
 {
-    "skin": "herobrine",
+    "skin": "steve",
     "skins": {
         "steve": [
             30,
@@ -17,7 +17,7 @@
             230,
             30,
             15,
-            true
+            false
         ],
         "cow": [
             330,
@@ -89,14 +89,14 @@
             230,
             140,
             100,
-            true
+            false
         ],
         "herobrine": [
             330,
             140,
             150,
-            true
+            false
         ]
     },
-    "emeralds": 965
+    "emeralds": 250
 }
