@@ -1,15 +1,26 @@
 import io
 import sys
 
+import io
+import sys
+
 def exec_code(code):
     buffer = io.StringIO()
     sys.stdout = buffer
     variables = {}
-    exec(code, variables, variables)
+    result = {"out": [], "vars": variables, "error": None}
+    
+    try:
+        exec(code, variables, variables)
+    except Exception as e:
+        result["error"] = str(e)
+    
     sys.stdout = sys.__stdout__
-    output = buffer.getvalue().splitlines()
+    result["out"] = buffer.getvalue().splitlines()
     buffer.close()
-    return {"out": output, "vars": variables}
+    
+    return result
+
 
 def cbd_maker(code):
     cbd = []

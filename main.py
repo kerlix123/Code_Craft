@@ -111,10 +111,13 @@ def minecraft_cmd(l):
     y = 590 - ll*30
     index = 0
     while index < ll:
+        color = (255, 255, 255)
         transparent_surface = pygame.Surface((595, 30), pygame.SRCALPHA)
         transparent_surface.fill((0, 0, 0, 100))
         window.blit(transparent_surface, (0, y))
-        window.blit(minecraft_font_small.render(l[index], True, (255, 255, 255)), (10, y+4))
+        if l[index][0:7] == "Error: ":
+            color = (255, 85, 85)
+        window.blit(minecraft_font_small.render(l[index], True, color), (10, y+4))
         index += 1
         y += 30
 
@@ -672,6 +675,8 @@ def game(level):
 
             if level < 10:
                 executed_code = exec_code(code_input.get_text())
+                if executed_code["error"] != None:
+                    messages.append("Error: " + executed_code['error'])
             else:
                 def_code = f"""coms = []
 class Mob:
@@ -791,7 +796,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
 
         minecraft_cmd(messages)
 
-        cursor_pos = minecraft_font_book.render(f"Ln {code_input.i + 1}, Col {code_input.cursor_pos + 1}", True, (255, 255, 255))
+        cursor_pos = minecraft_font_smaller.render(f"Ln {code_input.i + 1}, Col {code_input.cursor_pos + 1}", True, (255, 255, 255))
         window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 600))
         
         pygame.display.update()
