@@ -475,7 +475,7 @@ def game(level):
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
                     restart_code = True
                 elif 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
-                    if level_finished:
+                    if level_finished and level < 24:
                         code_input.i = 0
                         code_input.cursor_pos = 0
                         if level > levels["last_finished_level"]:
@@ -575,7 +575,7 @@ def game(level):
         window.blit(restart_button, (595, 595))
 
         #next_button
-        if level_finished:
+        if level_finished and level < 24:
             next_button = pygame.image.load(PATH / "drawable" / "accept.png")
             next_button = pygame.transform.scale(next_button, (29, 29))
 
