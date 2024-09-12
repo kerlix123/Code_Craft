@@ -1,14 +1,17 @@
 import pygame, random, json, time
 from pygametextboxinput import *
 from code_runner import *
+from pathlib import Path
 
-json_levels = open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json")
+PATH = Path.cwd()
+
+json_levels = open(PATH / "levels" / "levels.json")
 levels = json.load(json_levels)
 
-json_options = open("/Users/antoniomatijevic/Documents/CodeCraft/options.json")
+json_options = open(PATH / "options.json")
 options = json.load(json_options)
 
-json_data = open("/Users/antoniomatijevic/Documents/CodeCraft/data.json")
+json_data = open(PATH / "data.json")
 data = json.load(json_data)
 
 game_levels = []
@@ -17,13 +20,13 @@ game_skins = []
 stevexy = [0, 510]
 
 def move(grass_x, grass_y, level):
-    steve = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/skins/{data["skin"]}.png")
+    steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
     steve = pygame.transform.scale(steve, (85, 85))
 
     window.blit(steve, (stevexy[0], stevexy[1]))
     pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
 
-    window.blit(pygame.transform.scale(pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/{levels[f"level{level}"][0]["blocks"][(stevexy[1]+grass_y)//85][(stevexy[0]+grass_x)//85]}"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
+    window.blit(pygame.transform.scale(pygame.image.load(PATH / "blocks" / f"{levels[f"level{level}"][0]["blocks"][(stevexy[1]+grass_y)//85][(stevexy[0]+grass_x)//85]}"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
     pygame.draw.rect(window, (0, 0, 0), (stevexy[0]+grass_x, stevexy[1]+grass_y, 85, 85), 1)
     pygame.display.update()
     clock.tick(60)
@@ -66,14 +69,14 @@ pygame.init()
 
 #music
 current_song_index = 0
-playlist = ["/Users/antoniomatijevic/Documents/CodeCraft/music/DryHands.mp3", 
-            "/Users/antoniomatijevic/Documents/CodeCraft/music/Haggstrom.mp3", 
-            "/Users/antoniomatijevic/Documents/CodeCraft/music/LivingMice.mp3",
-            "/Users/antoniomatijevic/Documents/CodeCraft/music/MiceOnVenus.mp3",
-            "/Users/antoniomatijevic/Documents/CodeCraft/music/Minecraft.mp3",
-            "/Users/antoniomatijevic/Documents/CodeCraft/music/SubwooferLullaby.mp3",
-            "/Users/antoniomatijevic/Documents/CodeCraft/music/Sweden.mp3",
-            "/Users/antoniomatijevic/Documents/CodeCraft/music/WetHands.mp3"]
+playlist = [PATH / "music" / "DryHands.mp3", 
+            PATH / "music" / "Haggstrom.mp3", 
+            PATH / "music" / "LivingMice.mp3",
+            PATH / "music" / "MiceOnVenus.mp3",
+            PATH / "music" / "Minecraft.mp3",
+            PATH / "music" / "SubwooferLullaby.mp3",
+            PATH / "music" / "Sweden.mp3",
+            PATH / "music" / "WetHands.mp3"]
 random.shuffle(playlist)
 pygame.mixer.music.load(playlist[current_song_index])
 pygame.mixer.music.play()
@@ -91,7 +94,7 @@ def play_next_track():
 
 window = pygame.display.set_mode((1240, 620))
 pygame.display.set_caption("Code_Craft")
-pygame.display.set_icon(pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/crafting_table.png"))
+pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "crafting_table.png"))
 clock = pygame.time.Clock()
 
 def menu_button(x, y, text_x, text, width, height, mouse):
@@ -121,8 +124,7 @@ class Function:
         self.fun_code = fun_code
 
 
-code_input = Textbox(595, 0, 645, 620, "/Users/antoniomatijevic/Documents/PyTextBox/Minecraft.ttf")
-font = pygame.font.Font(pygame.font.match_font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf"), 20)
+code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 pygame.key.set_repeat(200, 25)
 
 languages = ["Python"]
@@ -132,10 +134,10 @@ code_runned = False
 level_finished = False
 grades = [0, 0]
 
-minecraft_font_big = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 75)
-minecraft_font_small = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 25)
-minecraft_font_smaller = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 15)
-minecraft_font_book = pygame.font.Font("/Users/antoniomatijevic/Documents/CodeCraft/Minecraft.ttf", 20)
+minecraft_font_big = pygame.font.Font(PATH / "Minecraft.ttf", 75)
+minecraft_font_small = pygame.font.Font(PATH / "Minecraft.ttf", 25)
+minecraft_font_smaller = pygame.font.Font(PATH / "Minecraft.ttf", 15)
+minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
 
 def description(string):
     length = 150
@@ -169,16 +171,16 @@ def menu():
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
                     exit()
         
-        background = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/background.png")
+        background = pygame.image.load(PATH / "drawable" / "background.png")
         background = pygame.transform.scale(background, (1240, 620))
         
         window.blit(background, (0, 0))
 
-        big_title = pygame.transform.scale(pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/Code_Craft.png"), (491, 127))
+        big_title = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "Code_Craft.png"), (491, 127))
         
         window.blit(big_title, (374, 60))
 
-        emerald = pygame.transform.scale(pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/emerald.png"), (32, 32))
+        emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
 
         window.blit(emerald, (1210, 0))
 
@@ -213,7 +215,7 @@ def level_menu():
                         game(lvl.level)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     menu()
-        background = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/background.png")
+        background = pygame.image.load(PATH / "drawable" / "background.png")
         background = pygame.transform.scale(background, (1240, 620))
         
         window.blit(background, (0, 0))
@@ -223,7 +225,7 @@ def level_menu():
         window.blit(background_overlay, (0, 0))
 
         #back_button
-        back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/unselect.png")
+        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
         back_button = pygame.transform.scale(back_button, (40, 40))
 
         window.blit(back_button, (15, 565))
@@ -250,7 +252,7 @@ def level_menu():
 
                 if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    play_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/select.png")
+                    play_button = pygame.image.load(PATH / "drawable" / "select.png")
                     play_button = pygame.transform.scale(play_button, (lvl.size, lvl.size))
                     window.blit(play_button, (lvl.x, lvl.y))
 
@@ -269,7 +271,7 @@ def tutorial():
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     menu()
                     
-        background = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/background.png")
+        background = pygame.image.load(PATH / "drawable" / "background.png")
         background = pygame.transform.scale(background, (1240, 620))
         
         window.blit(background, (0, 0))
@@ -279,7 +281,7 @@ def tutorial():
         window.blit(background_overlay, (0, 0))
 
         #back_button
-        back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/unselect.png")
+        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
         back_button = pygame.transform.scale(back_button, (40, 40))
 
         window.blit(back_button, (15, 565))
@@ -313,12 +315,12 @@ def options_win():
                         pygame.mixer.music.unpause()
                     music_on = not music_on
                     options["music_on"] = music_on
-                    with open("/Users/antoniomatijevic/Documents/CodeCraft/options.json", 'w') as file:
+                    with open(PATH / "options.json", 'w') as file:
                         json.dump(options, file, indent=4)
                 if 420 <= mouse[0] <= 820 and 180 <= mouse[1] <= 220:
                     fx_on = not fx_on
                     options["fx_on"] = fx_on
-                    with open("/Users/antoniomatijevic/Documents/CodeCraft/options.json", 'w') as file:
+                    with open(PATH / "options.json", 'w') as file:
                         json.dump(options, file, indent=4)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
                     levels["last_finished_level"] = 0
@@ -329,13 +331,13 @@ def options_win():
                         game_skins[i].unlocked = False
                     data["emeralds"] = 0
                     data["skin"] = "steve"
-                    with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
+                    with open(PATH / "levels" / "levels.json", 'w') as file:
                         json.dump(levels, file, indent=4)
-                    with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
+                    with open(PATH / "data.json", 'w') as file:
                         json.dump(data, file, indent=4)
                     exit()
                     
-        background = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/background.png")
+        background = pygame.image.load(PATH / "drawable" / "background.png")
         background = pygame.transform.scale(background, (1240, 620))
         
         window.blit(background, (0, 0))
@@ -355,7 +357,7 @@ def options_win():
         menu_button(420, 230, 452, "Clear Progress (Exit's app)", 400, 40, mouse)
 
         #back_button
-        back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/unselect.png")
+        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
         back_button = pygame.transform.scale(back_button, (40, 40))
 
         window.blit(back_button, (15, 565))
@@ -383,7 +385,7 @@ def skins():
                     if skin.hover(mouse[0], mouse[1]):
                         if skin.unlocked:
                             data["skin"] = skin.name
-                            with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
+                            with open(PATH / "data.json", 'w') as file:
                                 json.dump(data, file, indent=4)
                         else:
                             if data["emeralds"] >= skin.price:
@@ -391,10 +393,10 @@ def skins():
                                 data["skins"][skin.name][3] = True
                                 data["skin"] = skin.name
                                 data["emeralds"] -= skin.price
-                                with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
+                                with open(PATH / "data.json", 'w') as file:
                                     json.dump(data, file, indent=4)
                     
-        background = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/background.png")
+        background = pygame.image.load(PATH / "drawable" / "background.png")
         background = pygame.transform.scale(background, (1240, 620))
         
         window.blit(background, (0, 0))
@@ -407,7 +409,7 @@ def skins():
             pygame.draw.rect(window, (130, 130, 130), (skin.x, skin.y, skin.size, skin.size))
             pygame.draw.rect(window, (0, 0, 0), (skin.x, skin.y, skin.size, skin.size), 1)
 
-            skin_image = pygame.transform.scale(pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/skins/{skin.name}.png"), (skin.size, skin.size))
+            skin_image = pygame.transform.scale(pygame.image.load(PATH / "skins" / f"{skin.name}.png"), (skin.size, skin.size))
 
             window.blit(skin_image, (skin.x, skin.y))
 
@@ -415,7 +417,7 @@ def skins():
                 transparent_surface = pygame.Surface((skin.size, skin.size), pygame.SRCALPHA)
                 transparent_surface.fill((0, 0, 0, 50))
                 window.blit(transparent_surface, (skin.x, skin.y))
-                emerald = pygame.transform.scale(pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/emerald.png"), (32, 32))
+                emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
                 text_width = minecraft_font_small.size(str(skin.price))[0]
                 window.blit(emerald, (skin.x + (skin.size-text_width)//2-17, skin.y+24))
                 window.blit(minecraft_font_small.render(str(skin.price), True, (255, 255, 255)), (skin.x + (skin.size-text_width)//2 + 11, skin.y+30))
@@ -426,12 +428,12 @@ def skins():
             if skin.hover(mouse[0], mouse[1]):
                 pygame.draw.rect(window, (255, 255, 255), (skin.x, skin.y, skin.size, skin.size), 3)
                 if skin.unlocked:
-                    play_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/select.png")
+                    play_button = pygame.image.load(PATH / "drawable" / "select.png")
                     play_button = pygame.transform.scale(play_button, (skin.size, skin.size))
                     window.blit(play_button, (skin.x, skin.y))
 
         #back_button
-        back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/unselect.png")
+        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
         back_button = pygame.transform.scale(back_button, (40, 40))
 
         window.blit(back_button, (15, 565))
@@ -480,7 +482,7 @@ def game(level):
                             levels["last_finished_level"] = level
                         level += 1
                         game_levels[level-1].unlocked = True
-                        with open("/Users/antoniomatijevic/Documents/CodeCraft/levels/levels.json", 'w') as file:
+                        with open(PATH / "levels" / "levels.json", 'w') as file:
                             json.dump(levels, file, indent=4)
                         code_input.clear_text()
                         code_input.clear_text()
@@ -536,7 +538,7 @@ def game(level):
             window.blit(transparent_surface, (lang_text_x, 600))
 
         #back_button
-        back_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/close.png")
+        back_button = pygame.image.load(PATH / "drawable" / "close.png")
         back_button = pygame.transform.scale(back_button, (22, 22))
 
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
@@ -549,7 +551,7 @@ def game(level):
         window.blit(back_button, (10, 596))
 
         #run_button
-        run_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/select.png")
+        run_button = pygame.image.load(PATH / "drawable" / "select.png")
         run_button = pygame.transform.scale(run_button, (28, 28))
 
         if 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
@@ -561,7 +563,7 @@ def game(level):
         window.blit(run_button, (30, 593))
 
         #restart_button
-        restart_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/reject.png")
+        restart_button = pygame.image.load(PATH / "drawable" / "reject.png")
         restart_button = pygame.transform.scale(restart_button, (26, 26))
 
         if 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
@@ -574,7 +576,7 @@ def game(level):
 
         #next_button
         if level_finished:
-            next_button = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/accept.png")
+            next_button = pygame.image.load(PATH / "drawable" / "accept.png")
             next_button = pygame.transform.scale(next_button, (29, 29))
 
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
@@ -586,7 +588,7 @@ def game(level):
             window.blit(next_button, (562, 592))
 
             if grades[0] > 0:
-                optimization_warning = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/report_button.png")
+                optimization_warning = pygame.image.load(PATH / "drawable" / "report_button.png")
                 optimization_warning = pygame.transform.scale(optimization_warning, (19, 19))
 
                 if 630 <= mouse[0] <= 649 and 598 <= mouse[1] <= 617:
@@ -602,7 +604,7 @@ def game(level):
         j = 0
         while i < 595:
             while j < 595:
-                block = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/blocks/{levels[f"level{level}"][0]["blocks"][j//85][i//85]}")
+                block = pygame.image.load(PATH / "blocks" / f"{levels[f"level{level}"][0]["blocks"][j//85][i//85]}")
                 block = pygame.transform.scale(block, (85, 85))
          
                 window.blit(block, (i, j))
@@ -612,7 +614,7 @@ def game(level):
             i += 85
 
         if not game_levels[level].text_closed:
-            book = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/book.png")
+            book = pygame.image.load(PATH / "drawable" / "book.png")
             book = pygame.transform.scale(book, (612, 612))
 
             window.blit(book, (80, 79))
@@ -623,7 +625,7 @@ def game(level):
                 y += 28.8
 
             if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
-                page_forward = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/page_forward.png")
+                page_forward = pygame.image.load(PATH / "drawable" / "page_forward.png")
                 page_forward = pygame.transform.scale(page_forward, (42, 24))
 
                 window.blit(page_forward, (375, 455))
@@ -634,7 +636,7 @@ def game(level):
                     window.blit(transparent_surface, (380, 459))
             
             if game_levels[level].text_page > 0:
-                page_backward = pygame.image.load("/Users/antoniomatijevic/Documents/CodeCraft/drawable/page_backward.png")
+                page_backward = pygame.image.load(PATH / "drawable" / "page_backward.png")
                 page_backward = pygame.transform.scale(page_backward, (42, 24))
 
                 window.blit(page_backward, (165, 455))
@@ -645,7 +647,7 @@ def game(level):
                     window.blit(transparent_surface, (170, 459))
 
         if level >= 10:
-            steve = pygame.image.load(f"/Users/antoniomatijevic/Documents/CodeCraft/skins/{data["skin"]}.png")
+            steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
             steve = pygame.transform.scale(steve, (85, 85))
         
             window.blit(steve, (stevexy[0], stevexy[1]))
@@ -768,7 +770,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
             if solution:
                 if level >= 10:
                     if fx_on:
-                        sound = pygame.mixer.Sound("/Users/antoniomatijevic/Documents/CodeCraft/sounds/trapdoor.mp3")
+                        sound = pygame.mixer.Sound(PATH / "sounds" / "trapdoor.mp3")
                         sound.play()
                                         
                 messages.append("Great job!")
@@ -780,14 +782,14 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                 messages.append(f"+{emeralds} Emeralds")
                 data["emeralds"] += emeralds
                 level_finished = True   
-                with open("/Users/antoniomatijevic/Documents/CodeCraft/data.json", 'w') as file:
+                with open(PATH / "data.json", 'w') as file:
                     json.dump(data, file, indent=4)
 
             code_runned = False
 
         minecraft_cmd(messages)
 
-        cursor_pos = font.render(f"Ln {code_input.i + 1}, Col {code_input.cursor_pos + 1}", True, (255, 255, 255))
+        cursor_pos = minecraft_font_book.render(f"Ln {code_input.i + 1}, Col {code_input.cursor_pos + 1}", True, (255, 255, 255))
         window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 600))
         
         pygame.display.update()

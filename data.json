@@ -1,5 +1,5 @@
 {
-    "skin": "steve",
+    "skin": "alex",
     "skins": {
         "steve": [
             30,
@@ -11,7 +11,7 @@
             130,
             30,
             10,
-            false
+            true
         ],
         "chicken": [
             230,
@@ -98,5 +98,5 @@
             false
         ]
     },
-    "emeralds": 250
+    "emeralds": 240
 }
