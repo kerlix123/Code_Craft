@@ -706,8 +706,9 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
             if level == 4:
                 l = []
                 ll = ["<class 'bool'>", "<class 'float'>", "<class 'int'>", "<class 'str'>"]
-                for el in list(variables.values()):
-                    l.append(str(type(el)))
+                for el in list(variables.keys()):
+                    if el != "__builtins__":
+                        l.append(str(type(variables[el])))
                 l.sort()
                 if l == ll:
                     solution = True
