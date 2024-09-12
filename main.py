@@ -161,7 +161,8 @@ def menu():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 420 <= mouse[0] <= 820 and 250 <= mouse[1] <= 290:
-                    game(levels["last_finished_level"]+1)
+                    if levels["last_finished_level"] < 24:
+                        game(levels["last_finished_level"]+1)
                 elif 420 <= mouse[0] <= 820 and 300 <= mouse[1] <= 340:
                     level_menu()
                 elif 420 <= mouse[0] <= 820 and 350 <= mouse[1] <= 390:
