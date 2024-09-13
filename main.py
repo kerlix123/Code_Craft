@@ -134,6 +134,8 @@ def minecraft_cmd(l):
         trans_surface(595, 30, (0, 0, 0, 100), 0, y)
         if l[index][0:7] == "Error: ":
             color = (255, 85, 85)
+        if l[index] == "Player 1. won." or l[index] == "Player 2. won.":
+            color = (0, 255, 0)
         window.blit(minecraft_font_small.render(l[index], True, color), (10, y+4))
         index += 1
         y += 30
@@ -409,6 +411,7 @@ def game(level):
     restart_code = False
     one_v_one = False
     one_v_one_code = [False, False]
+    one_v_one_time = [0, 0]
     player = 1
     code_input.set_text(levels[f"level{level}"][0]["input_text"])
     if level >= 10:
@@ -668,7 +671,10 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
 """             
                 input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
                 input_code = '\n'.join(input_code.split("\n")[13:])
+                start_time = time.time()
                 executed_code = exec_code(def_code + input_code)
+                end_time = time.time()
+                one_v_one_time[player-1] = end_time - start_time
 
             messages += executed_code["out"]
             variables = executed_code["vars"]
@@ -694,8 +700,6 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                 if level >= 14 and level < 17:
                     plate_activated = False
                 coms = variables["coms"]
-
-                grades = grade_code(levels[f"level{level}"][0]["best_solution"][0], levels[f"level{level}"][0]["best_coms"], '\n'.join(code_input.get_text().split("\n")[13:]), coms)
                 
                 def check():
                     nonlocal plate_activated
@@ -751,8 +755,15 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
             
             if one_v_one:
                 if one_v_one_code[0] and one_v_one_code[1]:
-                    #grading system here
-                    pass
+                    grades = grade_code(code_input.get_text(), code_input_2.get_text(), one_v_one_time)
+                    messages.append(f"Player 1. scored: {grades[0]}/3")
+                    messages.append(f"Player 2. scored: {grades[1]}/3")
+                    won = 0
+                    if grades[0] > grades[1]:
+                        won = 1
+                    elif grades[1] > grades[0]:
+                        won = 2
+                    messages.append(f"Player {won}. won.")
 
             if solution:
                 if level >= 10:

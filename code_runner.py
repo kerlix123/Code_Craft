@@ -49,26 +49,26 @@ def cbd_maker(code):
             j += 1
     return cbd
 
-def grade_code(p1_code, p1_coms, p2_code, p2_coms):
+def grade_code(p1_code, p2_code, times):
     grades = [0, 0]
     p1_s = [el for el in p1_code.split("\n") if el != ""]
     p2_s = [el for el in p2_code.split("\n") if el != ""]
     
-    l = [len(''.join(p1_s)), len(p1_s), len(p1_coms), len(''.join(p2_s)), len(p2_s), len(p2_coms)]
+    l = [len(''.join(p1_s)), len(p1_s), len(''.join(p2_s)), len(p2_s)]
 
-    if l[0] < l[3]:
+    if l[0] < l[2]:
         grades[0] += 1
-    elif l[0] > l[3]:
+    elif l[0] > l[2]:
         grades[1] += 1
 
-    if l[1] < l[4]:
+    if l[1] < l[3]:
         grades[0] += 1
-    elif l[1] > l[4]:
+    elif l[1] > l[3]:
         grades[1] += 1
 
-    if l[2] < l[5]:
+    if times[0] < times[1]:
         grades[0] += 1
-    elif l[2] > l[5]:
+    else:
         grades[1] += 1
 
     return grades
