@@ -106,15 +106,18 @@ def menu_button(x, y, text_x, text, width, height, mouse):
     if x <= mouse[0] <= x+width and y <= mouse[1] <= y+height:
         pygame.draw.rect(window, (255, 255, 255), (x, y, width, height), 3)
 
+def trans_surface(width, height, color, x, y):
+    transparent_surface = pygame.Surface((width, height), pygame.SRCALPHA)
+    transparent_surface.fill(color)
+    window.blit(transparent_surface, (x, y))
+
 def minecraft_cmd(l):
     ll = len(l)
     y = 590 - ll*30
     index = 0
     while index < ll:
         color = (255, 255, 255)
-        transparent_surface = pygame.Surface((595, 30), pygame.SRCALPHA)
-        transparent_surface.fill((0, 0, 0, 100))
-        window.blit(transparent_surface, (0, y))
+        trans_surface(595, 30, (0, 0, 0, 100), 0, y)
         if l[index][0:7] == "Error: ":
             color = (255, 85, 85)
         window.blit(minecraft_font_small.render(l[index], True, color), (10, y+4))
@@ -235,9 +238,7 @@ def level_menu():
         window.blit(back_button, (15, 565))
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            transparent_surface = pygame.Surface((30, 30), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (14, 571))
+            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         #level_button
         for lvl in game_levels:
@@ -250,9 +251,7 @@ def level_menu():
                 window.blit(minecraft_font_small.render(str(lvl.level), True, (255, 255, 255)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
 
                 if not lvl.unlocked:
-                    transparent_surface = pygame.Surface((lvl.size, lvl.size), pygame.SRCALPHA)
-                    transparent_surface.fill((0, 0, 0, 50))
-                    window.blit(transparent_surface, (lvl.x, lvl.y))
+                    trans_surface(lvl.size, lvl.size, (0, 0, 0, 50), lvl.x, lvl.y)
 
                 if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
@@ -291,9 +290,7 @@ def tutorial():
         window.blit(back_button, (15, 565))
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            transparent_surface = pygame.Surface((30, 30), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (14, 571))
+            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         pygame.display.flip()
 
@@ -367,9 +364,7 @@ def options_win():
         window.blit(back_button, (15, 565))
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            transparent_surface = pygame.Surface((30, 30), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (14, 571))
+            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         pygame.display.flip()
 
@@ -418,9 +413,7 @@ def skins():
             window.blit(skin_image, (skin.x, skin.y))
 
             if not skin.unlocked:
-                transparent_surface = pygame.Surface((skin.size, skin.size), pygame.SRCALPHA)
-                transparent_surface.fill((0, 0, 0, 50))
-                window.blit(transparent_surface, (skin.x, skin.y))
+                trans_surface(skin.size, skin.size, (0, 0, 0, 50), skin.x, skin.y)
                 emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
                 text_width = minecraft_font_small.size(str(skin.price))[0]
                 window.blit(emerald, (skin.x + (skin.size-text_width)//2-17, skin.y+24))
@@ -443,9 +436,7 @@ def skins():
         window.blit(back_button, (15, 565))
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            transparent_surface = pygame.Surface((30, 30), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (14, 571))
+            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         pygame.display.flip()
 
@@ -566,9 +557,7 @@ def game(level):
         window.blit(minecraft_font_smaller.render(languages[code_lang], True, (255, 255, 255)), (lang_text_x, 600))
 
         if lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
-            transparent_surface = pygame.Surface((lang_text_length, 15), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (lang_text_x, 600))
+            trans_surface(lang_text_length, 15, (170, 170, 170, 120), lang_text_x, 600)
 
         #back_button
         back_button = pygame.image.load(PATH / "drawable" / "close.png")
@@ -576,10 +565,7 @@ def game(level):
 
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
             description("Exit")
-
-            transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (12, 597))
+            trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
 
         window.blit(back_button, (10, 596))
 
@@ -589,10 +575,7 @@ def game(level):
 
         if 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
             description("Run")
-
-            transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (34, 598))
+            trans_surface(20, 20, (170, 170, 170, 120), 34, 598)
         window.blit(run_button, (30, 593))
 
         #restart_button
@@ -601,10 +584,7 @@ def game(level):
 
         if 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
             description("Restart")
-            
-            transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
-            transparent_surface.fill((170, 170, 170, 120))
-            window.blit(transparent_surface, (599, 598))
+            trans_surface(20, 20, (170, 170, 170, 120), 599, 598)
         window.blit(restart_button, (595, 595))
 
         #next_button and optimization warning
@@ -614,10 +594,7 @@ def game(level):
 
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                 description("Next level")
-                
-                transparent_surface = pygame.Surface((22, 20), pygame.SRCALPHA)
-                transparent_surface.fill((170, 170, 170, 120))
-                window.blit(transparent_surface, (566, 598))
+                trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
             window.blit(next_button, (562, 592))
 
             if grades[0] > 0:
@@ -626,10 +603,7 @@ def game(level):
 
                 if 630 <= mouse[0] <= 649 and 598 <= mouse[1] <= 617:
                     description("Your code can be more optimized!")
-                    
-                    transparent_surface = pygame.Surface((20, 20), pygame.SRCALPHA)
-                    transparent_surface.fill((170, 170, 170, 120))
-                    window.blit(transparent_surface, (629, 597))
+                    trans_surface(20, 20, (170, 170, 170, 120), 629, 597)
                 window.blit(optimization_warning, (630, 598))
 
         #1v1 button
@@ -638,22 +612,16 @@ def game(level):
                 window.blit(minecraft_font_smaller.render("1v1", True, (255, 255, 255)), (630, 600))
                 if 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615:
                     description("1 vs 1 with a friend")
-                    transparent_surface = pygame.Surface((24, 15), pygame.SRCALPHA)
-                    transparent_surface.fill((170, 170, 170, 120))
-                    window.blit(transparent_surface, (630, 600))
+                    trans_surface(24, 15, (170, 170, 170, 120), 630, 600)
             else:
                 window.blit(minecraft_font_smaller.render("1.", True, (255, 255, 255)), (630, 600))
                 if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615:
                     description("1st player")
-                    transparent_surface = pygame.Surface((10, 15), pygame.SRCALPHA)
-                    transparent_surface.fill((170, 170, 170, 120))
-                    window.blit(transparent_surface, (630, 600))
+                    trans_surface(10, 15, (170, 170, 170, 120), 630, 600)
                 window.blit(minecraft_font_smaller.render("2.", True, (255, 255, 255)), (650, 600))
                 if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615:
                     description("2nd player")
-                    transparent_surface = pygame.Surface((10, 15), pygame.SRCALPHA)
-                    transparent_surface.fill((170, 170, 170, 120))
-                    window.blit(transparent_surface, (650, 600))
+                    trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
 
         
 
@@ -689,9 +657,7 @@ def game(level):
                 window.blit(page_forward, (375, 455))
 
                 if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479:
-                    transparent_surface = pygame.Surface((36, 19), pygame.SRCALPHA)
-                    transparent_surface.fill((170, 170, 170, 120))
-                    window.blit(transparent_surface, (380, 459))
+                    trans_surface(36, 19, (170, 170, 170, 120), 380, 459)
             
             if game_levels[level].text_page > 0:
                 page_backward = pygame.image.load(PATH / "drawable" / "page_backward.png")
@@ -700,9 +666,7 @@ def game(level):
                 window.blit(page_backward, (165, 455))
 
                 if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479:
-                    transparent_surface = pygame.Surface((36, 19), pygame.SRCALPHA)
-                    transparent_surface.fill((170, 170, 170, 120))
-                    window.blit(transparent_surface, (170, 459))
+                    trans_surface(36, 19, (170, 170, 170, 120), 170, 459)
 
         if level >= 10:
             steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
