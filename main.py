@@ -413,6 +413,8 @@ def game(level):
     one_v_one_code = [False, False]
     one_v_one_time = [0, 0]
     player = 1
+    code_input.i = 0
+    code_input.cursor_pos = 0
     code_input.set_text(levels[f"level{level}"][0]["input_text"])
     if level >= 10:
         stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
@@ -479,11 +481,11 @@ def game(level):
                     if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479 and game_levels[level].text_page > 0:
                         game_levels[level].text_page -= 1
             if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_e and pygame.key.get_mods() & pygame.KMOD_CTRL:
+                if event.key == pygame.K_e and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     game_levels[level].text_closed = not game_levels[level].text_closed
-                if event.key == pygame.K_k and pygame.key.get_mods() & pygame.KMOD_CTRL:
+                if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     messages = []
-                if event.key == pygame.K_r and pygame.key.get_mods() & pygame.KMOD_CTRL:
+                if event.key == pygame.K_r and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     code_runned = True
 
             if not level_finished:
@@ -713,8 +715,16 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                         return True
                     elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "pressure_plate.png":
                         plate_activated = True
-                    elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "grass_top.png":
+                    elif level < 17 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "grass_top.png":
                         messages.append("You can only go on grass!")
+                        restart()
+                        return False
+                    elif level < 21 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "bedrock.png":
+                        messages.append("You can only go on bedrock!")
+                        restart()
+                        return False
+                    elif level >= 21 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "purpur_block.png":
+                        messages.append("You can only go on purpur blocks!")
                         restart()
                         return False
                     return False      
