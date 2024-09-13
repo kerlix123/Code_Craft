@@ -453,6 +453,9 @@ def game(level):
     global code_lang, code_runned, level_finished, grades
     messages = []
     restart_code = False
+    one_v_one = False
+    one_v_one_code = [False, False]
+    player = 1
     code_input.set_text(levels[f"level{level}"][0]["input_text"])
     if level >= 10:
         stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
@@ -480,6 +483,8 @@ def game(level):
                     restart_code = True
                 elif 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                     if level_finished and level < 24:
+                        one_v_one = False
+                        player = 1
                         code_input.i = 0
                         code_input.cursor_pos = 0
                         if level > levels["last_finished_level"]:
@@ -501,6 +506,14 @@ def game(level):
                         restart()
                         time.sleep(0.01)
                         restart()
+                elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and level >= 10:
+                    one_v_one = True
+                    code_input_2 = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
+                    code_input_2.set_text(levels[f"level{level}"][0]["input_text"])
+                if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and level >= 10:
+                    player = 1
+                if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and level >= 10:
+                    player = 2
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     code_lang = (code_lang + 1) % len(languages)
                 elif not game_levels[level].text_closed:
@@ -517,15 +530,31 @@ def game(level):
                     code_runned = True
 
             if not level_finished:
-                code_input.handle_events(event)
-        code_input.draw(window)
+                if player == 1 and not one_v_one_code[0]:
+                    code_input.handle_events(event) 
+                elif player == 2 and not one_v_one_code[1]:
+                    code_input_2.handle_events(event)
+
+        if one_v_one:
+            if player == 1:
+                code_input.draw(window)
+            elif player == 2:
+                code_input_2.draw(window)
+        else:
+            code_input.draw(window)
 
         def restart():
             messages.clear()
-            code_input.clear_text()
-            code_input.set_text(levels[f"level{level}"][0]["input_text"])
-            code_input.i = 0
-            code_input.cursor_pos = 0
+            if player == 1:
+                code_input.clear_text()
+                code_input.set_text(levels[f"level{level}"][0]["input_text"])
+                code_input.i = 0
+                code_input.cursor_pos = 0
+            elif player == 2:
+                code_input_2.clear_text()
+                code_input_2.set_text(levels[f"level{level}"][0]["input_text"])
+                code_input_2.i = 0
+                code_input_2.cursor_pos = 0
             if level >= 10:
                 stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
                 stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
@@ -578,7 +607,7 @@ def game(level):
             window.blit(transparent_surface, (599, 598))
         window.blit(restart_button, (595, 595))
 
-        #next_button
+        #next_button and optimization warning
         if level_finished and level < 24:
             next_button = pygame.image.load(PATH / "drawable" / "accept.png")
             next_button = pygame.transform.scale(next_button, (29, 29))
@@ -602,6 +631,31 @@ def game(level):
                     transparent_surface.fill((170, 170, 170, 120))
                     window.blit(transparent_surface, (629, 597))
                 window.blit(optimization_warning, (630, 598))
+
+        #1v1 button
+        if level >= 10:
+            if not one_v_one:
+                window.blit(minecraft_font_smaller.render("1v1", True, (255, 255, 255)), (630, 600))
+                if 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615:
+                    description("1 vs 1 with a friend")
+                    transparent_surface = pygame.Surface((24, 15), pygame.SRCALPHA)
+                    transparent_surface.fill((170, 170, 170, 120))
+                    window.blit(transparent_surface, (630, 600))
+            else:
+                window.blit(minecraft_font_smaller.render("1.", True, (255, 255, 255)), (630, 600))
+                if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615:
+                    description("1st player")
+                    transparent_surface = pygame.Surface((10, 15), pygame.SRCALPHA)
+                    transparent_surface.fill((170, 170, 170, 120))
+                    window.blit(transparent_surface, (630, 600))
+                window.blit(minecraft_font_smaller.render("2.", True, (255, 255, 255)), (650, 600))
+                if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615:
+                    description("2nd player")
+                    transparent_surface = pygame.Surface((10, 15), pygame.SRCALPHA)
+                    transparent_surface.fill((170, 170, 170, 120))
+                    window.blit(transparent_surface, (650, 600))
+
+        
 
         #blocks
         i = 0
@@ -697,8 +751,9 @@ class Mob:
         self.x -= n
         coms.append(("left", n))
 mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})
-"""
-                input_code = '\n'.join(code_input.get_text().split("\n")[13:])
+"""             
+                input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
+                input_code = '\n'.join(input_code.split("\n")[13:])
                 executed_code = exec_code(def_code + input_code)
 
             messages += executed_code["out"]
@@ -720,6 +775,8 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                     solution = True
 
             if level >= 10:
+                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
                 if level >= 14 and level < 17:
                     plate_activated = False
                 coms = variables["coms"]
@@ -766,14 +823,23 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                             check()
 
                 if check():
-                    if level >= 14 and level < 17 and plate_activated:
-                        solution = True
-                    elif level >= 10 and level < 14 or level >= 17:
-                        solution = True
+                    if one_v_one:
+                        one_v_one_code[player-1] = True
+                        messages.append(f"Player {player}. finished the level!")
+                    else:
+                        if level >= 14 and level < 17 and plate_activated:
+                            solution = True
+                        elif level >= 10 and level < 14 or level >= 17:
+                            solution = True
                 else:
                     messages.append("Wrong solution! Try again.")
                     restart()
-                
+            
+            if one_v_one:
+                if one_v_one_code[0] and one_v_one_code[1]:
+                    #grading system here
+                    pass
+
             if solution:
                 if level >= 10:
                     if fx_on:
