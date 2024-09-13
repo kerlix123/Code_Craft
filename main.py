@@ -97,6 +97,10 @@ pygame.display.set_caption("Code_Craft")
 pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "crafting_table.png"))
 clock = pygame.time.Clock()
 
+def button(path, width, height, x, y):
+    b_button = pygame.transform.scale(pygame.image.load(path), (width, height))
+    window.blit(b_button, (x, y))
+
 def menu_button(x, y, text_x, text, width, height, mouse):
     pygame.draw.rect(window, (130, 130, 130), (x, y, width, height))
     pygame.draw.rect(window, (0, 0, 0), (x, y, width, height), 1)
@@ -111,6 +115,16 @@ def trans_surface(width, height, color, x, y):
     transparent_surface.fill(color)
     window.blit(transparent_surface, (x, y))
 
+def background():
+    background = pygame.image.load(PATH / "drawable" / "background.png")
+    background = pygame.transform.scale(background, (1240, 620))
+    window.blit(background, (0, 0))
+
+def bg_overlay():
+    background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
+    background_overlay.fill((0, 0, 0, 50))
+    window.blit(background_overlay, (0, 0))
+
 def minecraft_cmd(l):
     ll = len(l)
     y = 590 - ll*30
@@ -123,12 +137,6 @@ def minecraft_cmd(l):
         window.blit(minecraft_font_small.render(l[index], True, color), (10, y+4))
         index += 1
         y += 30
-
-class Function:
-    def __init__(self, params, fun_code):
-        self.params = params
-        self.fun_code = fun_code
-
 
 code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 pygame.key.set_repeat(200, 25)
@@ -159,8 +167,8 @@ def menu():
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
-        mouse = pygame.mouse.get_pos()
 
+        mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
@@ -178,19 +186,13 @@ def menu():
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
                     exit()
         
-        background = pygame.image.load(PATH / "drawable" / "background.png")
-        background = pygame.transform.scale(background, (1240, 620))
-        
-        window.blit(background, (0, 0))
+        background()
 
         big_title = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "Code_Craft.png"), (491, 127))
-        
         window.blit(big_title, (374, 60))
 
         emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
-
         window.blit(emerald, (1210, 0))
-
         window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 8.8))
 
         menu_button(420, 250, 594, "Play", 400, 40, mouse)
@@ -222,20 +224,12 @@ def level_menu():
                         game(lvl.level)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     menu()
-        background = pygame.image.load(PATH / "drawable" / "background.png")
-        background = pygame.transform.scale(background, (1240, 620))
         
-        window.blit(background, (0, 0))
-
-        background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
-        background_overlay.fill((0, 0, 0, 50))
-        window.blit(background_overlay, (0, 0))
+        background()
+        bg_overlay()
 
         #back_button
-        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
-        back_button = pygame.transform.scale(back_button, (40, 40))
-
-        window.blit(back_button, (15, 565))
+        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -255,9 +249,7 @@ def level_menu():
 
                 if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    play_button = pygame.image.load(PATH / "drawable" / "select.png")
-                    play_button = pygame.transform.scale(play_button, (lvl.size, lvl.size))
-                    window.blit(play_button, (lvl.x, lvl.y))
+                    button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
 
         pygame.display.flip()
 
@@ -274,20 +266,11 @@ def tutorial():
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     menu()
                     
-        background = pygame.image.load(PATH / "drawable" / "background.png")
-        background = pygame.transform.scale(background, (1240, 620))
-        
-        window.blit(background, (0, 0))
-
-        background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
-        background_overlay.fill((0, 0, 0, 50))
-        window.blit(background_overlay, (0, 0))
+        background()
+        bg_overlay()
 
         #back_button
-        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
-        back_button = pygame.transform.scale(back_button, (40, 40))
-
-        window.blit(back_button, (15, 565))
+        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -338,14 +321,8 @@ def options_win():
                         json.dump(data, file, indent=4)
                     exit()
                     
-        background = pygame.image.load(PATH / "drawable" / "background.png")
-        background = pygame.transform.scale(background, (1240, 620))
-        
-        window.blit(background, (0, 0))
-
-        background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
-        background_overlay.fill((0, 0, 0, 50))
-        window.blit(background_overlay, (0, 0))
+        background()
+        bg_overlay()
 
         menu_button(420, 80, 587, "Skins", 400, 40, mouse)
 
@@ -358,10 +335,7 @@ def options_win():
         menu_button(420, 230, 452, "Clear Progress (Exit's app)", 400, 40, mouse)
 
         #back_button
-        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
-        back_button = pygame.transform.scale(back_button, (40, 40))
-
-        window.blit(back_button, (15, 565))
+        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -395,14 +369,8 @@ def skins():
                                 with open(PATH / "data.json", 'w') as file:
                                     json.dump(data, file, indent=4)
                     
-        background = pygame.image.load(PATH / "drawable" / "background.png")
-        background = pygame.transform.scale(background, (1240, 620))
-        
-        window.blit(background, (0, 0))
-
-        background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
-        background_overlay.fill((0, 0, 0, 50))
-        window.blit(background_overlay, (0, 0))
+        background()
+        bg_overlay()
 
         for skin in game_skins:
             pygame.draw.rect(window, (130, 130, 130), (skin.x, skin.y, skin.size, skin.size))
@@ -425,15 +393,10 @@ def skins():
             if skin.hover(mouse[0], mouse[1]):
                 pygame.draw.rect(window, (255, 255, 255), (skin.x, skin.y, skin.size, skin.size), 3)
                 if skin.unlocked:
-                    play_button = pygame.image.load(PATH / "drawable" / "select.png")
-                    play_button = pygame.transform.scale(play_button, (skin.size, skin.size))
-                    window.blit(play_button, (skin.x, skin.y))
+                    button(PATH / "drawable" / "select.png", skin.size, skin.size, skin.x, skin.y)
 
         #back_button
-        back_button = pygame.image.load(PATH / "drawable" / "unselect.png")
-        back_button = pygame.transform.scale(back_button, (40, 40))
-
-        window.blit(back_button, (15, 565))
+        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -559,52 +522,39 @@ def game(level):
         if lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
             trans_surface(lang_text_length, 15, (170, 170, 170, 120), lang_text_x, 600)
 
-        #back_button
-        back_button = pygame.image.load(PATH / "drawable" / "close.png")
-        back_button = pygame.transform.scale(back_button, (22, 22))
-
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
             description("Exit")
             trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
-
-        window.blit(back_button, (10, 596))
-
-        #run_button
-        run_button = pygame.image.load(PATH / "drawable" / "select.png")
-        run_button = pygame.transform.scale(run_button, (28, 28))
+        
+        #back_button
+        button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
 
         if 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
             description("Run")
             trans_surface(20, 20, (170, 170, 170, 120), 34, 598)
-        window.blit(run_button, (30, 593))
 
-        #restart_button
-        restart_button = pygame.image.load(PATH / "drawable" / "reject.png")
-        restart_button = pygame.transform.scale(restart_button, (26, 26))
+        #run_button
+        button(PATH / "drawable" / "select.png", 28, 28, 30, 593)
 
         if 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
             description("Restart")
             trans_surface(20, 20, (170, 170, 170, 120), 599, 598)
-        window.blit(restart_button, (595, 595))
+
+        #restart_button
+        button(PATH / "drawable" / "reject.png", 26, 26, 595, 595)
 
         #next_button and optimization warning
         if level_finished and level < 24:
-            next_button = pygame.image.load(PATH / "drawable" / "accept.png")
-            next_button = pygame.transform.scale(next_button, (29, 29))
-
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                 description("Next level")
                 trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
-            window.blit(next_button, (562, 592))
+            button(PATH / "drawable" / "accept.png", 29, 29, 562, 592)
 
             if grades[0] > 0:
-                optimization_warning = pygame.image.load(PATH / "drawable" / "report_button.png")
-                optimization_warning = pygame.transform.scale(optimization_warning, (19, 19))
-
                 if 630 <= mouse[0] <= 649 and 598 <= mouse[1] <= 617:
                     description("Your code can be more optimized!")
                     trans_surface(20, 20, (170, 170, 170, 120), 629, 597)
-                window.blit(optimization_warning, (630, 598))
+                button(PATH / "drawable" / "report_button.png", 19, 19, 630, 598)
 
         #1v1 button
         if level >= 10:
