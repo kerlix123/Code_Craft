@@ -11,7 +11,7 @@
             130,
             30,
             10,
-            true
+            false
         ],
         "chicken": [
             230,
@@ -98,5 +98,5 @@
             false
         ]
     },
-    "emeralds": 1520
+    "emeralds": 0
 }

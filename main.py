@@ -719,7 +719,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                         messages.append("You can only go on grass!")
                         restart()
                         return False
-                    elif level < 21 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "bedrock.png":
+                    elif level >= 17 and level < 21 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "bedrock.png":
                         messages.append("You can only go on bedrock!")
                         restart()
                         return False
