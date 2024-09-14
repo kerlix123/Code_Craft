@@ -503,7 +503,6 @@ def game(level):
             code_input.draw(window)
 
         def restart():
-            messages.clear()
             if player == 1:
                 code_input.clear_text()
                 code_input.set_text(levels[f"level{level}"][0]["input_text"])
@@ -675,11 +674,15 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                 input_code = '\n'.join(input_code.split("\n")[13:])
                 start_time = time.time()
                 executed_code = exec_code(def_code + input_code)
+                if executed_code["error"] != None:
+                    print(executed_code["error"])
+                    messages.append("Error: " + executed_code['error'])
                 end_time = time.time()
                 one_v_one_time[player-1] = end_time - start_time
 
             messages += executed_code["out"]
             variables = executed_code["vars"]
+            del variables["__builtins__"]
 
             #correct solution
             solution = False
@@ -690,8 +693,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                 l = []
                 ll = ["<class 'bool'>", "<class 'float'>", "<class 'int'>", "<class 'str'>"]
                 for el in list(variables.keys()):
-                    if el != "__builtins__":
-                        l.append(str(type(variables[el])))
+                    l.append(str(type(variables[el])))
                 l.sort()
                 if l == ll:
                     solution = True
@@ -701,7 +703,10 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                 stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
                 if level >= 14 and level < 17:
                     plate_activated = False
-                coms = variables["coms"]
+                try:
+                    coms = variables["coms"]
+                except Exception:
+                    coms = []
                 
                 def check():
                     nonlocal plate_activated
@@ -760,7 +765,9 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                         elif level >= 10 and level < 14 or level >= 17:
                             solution = True
                 else:
+                    print("..")
                     messages.append("Wrong solution! Try again.")
+                    print(messages)
                     restart()
             
             if one_v_one:
