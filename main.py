@@ -143,7 +143,7 @@ def minecraft_cmd(l):
 code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 pygame.key.set_repeat(200, 25)
 
-languages = ["Python"]
+languages = ["Python", "C"]
 code_lang = 0
 
 code_runned = False
@@ -415,7 +415,7 @@ def game(level):
     player = 1
     code_input.i = 0
     code_input.cursor_pos = 0
-    code_input.set_text(levels[f"level{level}"][0]["input_text"])
+    code_input.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
     if level >= 10:
         stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
         stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
@@ -454,7 +454,7 @@ def game(level):
                             json.dump(levels, file, indent=4)
                         code_input.clear_text()
                         code_input.clear_text()
-                        code_input.set_text(levels[f"level{level}"][0]["input_text"])
+                        code_input.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
                         time.sleep(0.25)
                         messages = []
                         code_input.clear_text()
@@ -468,13 +468,14 @@ def game(level):
                 elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and level >= 10:
                     one_v_one = True
                     code_input_2 = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
-                    code_input_2.set_text(levels[f"level{level}"][0]["input_text"])
+                    code_input_2.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
                 if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and level >= 10:
                     player = 1
                 if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and level >= 10:
                     player = 2
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     code_lang = (code_lang + 1) % len(languages)
+                    restart()
                 elif not game_levels[level].text_closed:
                     if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
                         game_levels[level].text_page += 1
@@ -505,12 +506,12 @@ def game(level):
         def restart():
             if player == 1:
                 code_input.clear_text()
-                code_input.set_text(levels[f"level{level}"][0]["input_text"])
+                code_input.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
                 code_input.i = 0
                 code_input.cursor_pos = 0
             elif player == 2:
                 code_input_2.clear_text()
-                code_input_2.set_text(levels[f"level{level}"][0]["input_text"])
+                code_input_2.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
                 code_input_2.i = 0
                 code_input_2.cursor_pos = 0
             if level >= 10:
@@ -650,7 +651,7 @@ def game(level):
                 if executed_code["error"] != None:
                     messages.append("Error: " + executed_code['error'])
             else:
-                def_code = f"""coms = []
+                def_code_python = f"""coms = []
 class Mob:
     global coms
     def __init__(self, x, y):
@@ -670,19 +671,50 @@ class Mob:
         coms.append(("left", n))
 mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})
 """             
+                def_code_c = f"""#include <stdio.h>
+typedef struct {{
+    int x;
+    int y;
+}} Mob;
+void go_up(Mob *mob, int n) {{
+    mob->y += n;
+    printf("up %d\\n", n);
+}}
+void go_down(Mob *mob, int n) {{
+    mob->y -= n;
+    printf("down %d\\n", n);
+}}
+void go_right(Mob *mob, int n) {{
+    mob->x += n;
+    printf("right %d\\n", n);
+}}
+void go_left(Mob *mob, int n) {{
+    mob->x -= n;
+    printf("left %d\\n", n);
+}}
+int main() {'{'}
+    Mob mob = {{{levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]}}};
+"""
+                
                 input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
-                input_code = '\n'.join(input_code.split("\n")[13:])
+                if code_lang == 0:
+                    input_code = '\n'.join(input_code.split("\n")[13:])
+                elif code_lang == 1:
+                    input_code = '\n'.join(input_code.split("\n")[19:])
                 start_time = time.time()
-                executed_code = exec_code(def_code + input_code)
+                if code_lang == 0:
+                    executed_code = exec_code(def_code_python + input_code)
+                elif code_lang == 1:
+                    executed_code = exec_c_code(def_code_c + input_code, "C")
                 if executed_code["error"] != None:
-                    print(executed_code["error"])
                     messages.append("Error: " + executed_code['error'])
                 end_time = time.time()
                 one_v_one_time[player-1] = end_time - start_time
 
-            messages += executed_code["out"]
-            variables = executed_code["vars"]
-            del variables["__builtins__"]
+            if code_lang == 0:
+                messages += executed_code["out"]
+                variables = executed_code["vars"]
+                del variables["__builtins__"]
 
             #correct solution
             solution = False
@@ -704,7 +736,12 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                 if level >= 14 and level < 17:
                     plate_activated = False
                 try:
-                    coms = variables["coms"]
+                    if code_lang == 0:
+                        coms = variables["coms"]
+                    elif code_lang == 1:
+                        coms = []
+                        for el in executed_code["out"]:
+                            coms.append(el.split(" "))
                 except Exception:
                     coms = []
                 
@@ -765,9 +802,7 @@ mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][
                         elif level >= 10 and level < 14 or level >= 17:
                             solution = True
                 else:
-                    print("..")
                     messages.append("Wrong solution! Try again.")
-                    print(messages)
                     restart()
             
             if one_v_one:

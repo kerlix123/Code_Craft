@@ -1,8 +1,6 @@
 import io
 import sys
-
-import io
-import sys
+import shutil, os, tempfile, subprocess
 
 def exec_code(code):
     buffer = io.StringIO()
@@ -21,6 +19,40 @@ def exec_code(code):
     
     return result
 
+def exec_c_code(code, l):
+    if l == "C":
+        compiler = "gcc"
+    elif l == "C++":
+        compiler = "g++"
+    if shutil.which(compiler) is None:
+        return {"out": [], "error": f"You need to have {compiler.upper()} installed to use {l}!"}
+
+    with tempfile.TemporaryDirectory() as tmpdirname:
+        c_file = os.path.join(tmpdirname, "temp.c")
+        executable_file = os.path.join(tmpdirname, "temp_executable")
+        
+        with open(c_file, "w") as f:
+            f.write(code)
+        
+        compile_process = subprocess.run(
+            [compiler, c_file, "-o", executable_file],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        
+        if compile_process.returncode != 0:
+            return {"out": [], "error": compile_process.stderr.decode()}
+        
+        run_process = subprocess.run(
+            [executable_file],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+        
+        return {
+            "out": run_process.stdout.decode().splitlines(),
+            "error": run_process.stderr.decode() if run_process.stderr else None
+        }
 
 def cbd_maker(code):
     cbd = []
