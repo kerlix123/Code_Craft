@@ -113,8 +113,6 @@ class Textbox:
             self.handle_cut()
         elif key == "a" and (pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA)):
             self.handle_select_all()
-        elif key == "r" and (pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA)):
-            pass
         elif key == "k" and (pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA)):
             pass
         elif key == "e" and (pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA)):

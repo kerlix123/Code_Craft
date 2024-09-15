@@ -2,6 +2,7 @@ import pygame, random, json, time
 from pygametextboxinput import *
 from code_runner import *
 from pathlib import Path
+from def_codes import *
 
 PATH = Path.cwd()
 
@@ -407,6 +408,7 @@ def skins():
 
 def game(level):
     global code_lang, code_runned, level_finished, grades
+    global def_code_python, def_code_c
     messages = []
     restart_code = False
     one_v_one = False
@@ -486,14 +488,11 @@ def game(level):
                     game_levels[level].text_closed = not game_levels[level].text_closed
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     messages = []
-                if event.key == pygame.K_r and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
-                    code_runned = True
 
-            if not level_finished:
-                if player == 1 and not one_v_one_code[0]:
-                    code_input.handle_events(event) 
-                elif player == 2 and not one_v_one_code[1]:
-                    code_input_2.handle_events(event)
+            if player == 1 and not one_v_one_code[0]:
+                code_input.handle_events(event) 
+            elif player == 2 and not one_v_one_code[1]:
+                code_input_2.handle_events(event)
 
         if one_v_one:
             if player == 1:
@@ -647,62 +646,24 @@ def game(level):
                 i += 1
 
             if level < 10:
-                executed_code = exec_code(code_input.get_text())
+                if code_lang == 0:
+                    executed_code = exec_code(code_input.get_text())
+                elif code_lang == 1:
+                    executed_code = exec_c_code(code_input.get_text(), "C")
                 if executed_code["error"] != None:
                     messages.append("Error: " + executed_code['error'])
             else:
-                def_code_python = f"""coms = []
-class Mob:
-    global coms
-    def __init__(self, x, y):
-        self.x = x
-        self.y = y
-    def go_up(self, n):
-        self.y += n
-        coms.append(("up", n))
-    def go_down(self, n):
-        self.y -= n
-        coms.append(("down", n))
-    def go_right(self, n):
-        self.x += n
-        coms.append(("right", n))
-    def go_left(self, n):
-        self.x -= n
-        coms.append(("left", n))
-mob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})
-"""             
-                def_code_c = f"""#include <stdio.h>
-typedef struct {{
-    int x;
-    int y;
-}} Mob;
-void go_up(Mob *mob, int n) {{
-    mob->y += n;
-    printf("up %d\\n", n);
-}}
-void go_down(Mob *mob, int n) {{
-    mob->y -= n;
-    printf("down %d\\n", n);
-}}
-void go_right(Mob *mob, int n) {{
-    mob->x += n;
-    printf("right %d\\n", n);
-}}
-void go_left(Mob *mob, int n) {{
-    mob->x -= n;
-    printf("left %d\\n", n);
-}}
-int main() {'{'}
-    Mob mob = {{{levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]}}};
-"""
+                def_code_python += f"\nmob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})\n"         
+                def_code_c += f"\n    Mob mob = {{{levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]}}};"
                 
                 input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
                 if code_lang == 0:
-                    input_code = '\n'.join(input_code.split("\n")[13:])
+                    input_code = '\n'.join(input_code.split("\n")[14:])
                 elif code_lang == 1:
                     input_code = '\n'.join(input_code.split("\n")[19:])
                 start_time = time.time()
                 if code_lang == 0:
+                    print(def_code_python + input_code)
                     executed_code = exec_code(def_code_python + input_code)
                 elif code_lang == 1:
                     executed_code = exec_c_code(def_code_c + input_code, "C")
@@ -715,10 +676,14 @@ int main() {'{'}
                 messages += executed_code["out"]
                 variables = executed_code["vars"]
                 del variables["__builtins__"]
+            elif code_lang == 1:
+                for el in executed_code["out"]:
+                    if el.split(" ")[0] not in ["right", "left", "up", "down"]:
+                        messages += [el]
 
             #correct solution
             solution = False
-            if level < 10 and levels[f"level{level}"][0]["solution"][0] == cbd:
+            if level < 10 and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
                 solution = True
             
             if level == 4:
@@ -741,7 +706,9 @@ int main() {'{'}
                     elif code_lang == 1:
                         coms = []
                         for el in executed_code["out"]:
-                            coms.append(el.split(" "))
+                            el_splited = el.split(" ")
+                            if el_splited[0] in ["right", "left", "up", "down"]:
+                                coms.append(el.split(" "))
                 except Exception:
                     coms = []
                 
