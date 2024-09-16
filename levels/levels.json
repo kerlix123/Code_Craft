@@ -191,6 +191,41 @@
                     ]
                 ]
             ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"Hello, World!\"",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
             "text": [
                 [
                     "Welcome to Code_Craft",

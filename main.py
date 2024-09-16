@@ -421,6 +421,8 @@ def game(level):
     if level >= 10:
         stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
         stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+        def_code_python += f"\nmob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})\n"         
+        def_code_c += f"\n    Mob mob = {{{levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]}}};"
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
@@ -653,9 +655,6 @@ def game(level):
                 if executed_code["error"] != None:
                     messages.append("Error: " + executed_code['error'])
             else:
-                def_code_python += f"\nmob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})\n"         
-                def_code_c += f"\n    Mob mob = {{{levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]}}};"
-                
                 input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
                 if code_lang == 0:
                     input_code = '\n'.join(input_code.split("\n")[14:])
@@ -663,9 +662,9 @@ def game(level):
                     input_code = '\n'.join(input_code.split("\n")[19:])
                 start_time = time.time()
                 if code_lang == 0:
-                    print(def_code_python + input_code)
                     executed_code = exec_code(def_code_python + input_code)
                 elif code_lang == 1:
+                    print(def_code_c)
                     executed_code = exec_c_code(def_code_c + input_code, "C")
                 if executed_code["error"] != None:
                     messages.append("Error: " + executed_code['error'])

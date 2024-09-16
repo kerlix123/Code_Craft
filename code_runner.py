@@ -33,7 +33,6 @@ def exec_c_code(code, l):
         
         with open(c_file, "w") as f:
             f.write(code)
-        
         compile_process = subprocess.run(
             [compiler, c_file, "-o", executable_file],
             stdout=subprocess.PIPE,
