@@ -696,7 +696,15 @@ def game(level):
                     if l == ll:
                         solution = True
                 elif code_lang == 1:
-                    #c
+                    c = 0
+                    for el in cbd:
+                        if el[0] == "int" and el[2] == "=":
+                            c += 1
+                        elif el[0] == "float" and el[2] == "=" and el[4] == ".":
+                            c += 1
+                        elif el[0] == "char" and el[2] == "[" and el[3] == "]" and el[4] == "=":
+                            c += 1
+                    solution = c == 3
                     pass
 
             if level >= 10:

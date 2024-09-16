@@ -687,6 +687,12 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "solution_Python": [
+                []
+            ],
+            "solution_C": [
+                []
+            ],
             "text": [
                 [
                     "Level 4.",
@@ -812,7 +818,8 @@
     ],
     "level5": [
         {
-            "input_text": "",
+            "input_text_Python": "",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
             "solution": [
                 [
                     [
