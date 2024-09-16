@@ -337,7 +337,8 @@
     ],
     "level2": [
         {
-            "input_text": "print(\"Steve\")",
+            "input_text_Python": "print(\"Steve\")",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    printf(\"Steve\");\n    return 0;\n}",
             "solution": [
                 [
                     [
@@ -346,6 +347,43 @@
                         "(",
                         "\"Steve\"",
                         ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "/",
+                        "/",
+                        "printf",
+                        "(",
+                        "\"Steve\"",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
                     ]
                 ]
             ],
@@ -446,9 +484,9 @@
     ],
     "level3": [
         {
-            "input_text": "",
-            "character": "alex",
-            "solution": [
+            "input_text_Python": "",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "solution_Python": [
                 [
                     [
                         "b",
@@ -462,7 +500,7 @@
                         ")"
                     ],
                     [
-                        "b",
+                        "a",
                         "=",
                         "4",
                         ".",
@@ -471,8 +509,68 @@
                     [
                         "print",
                         "(",
-                        "b",
+                        "a",
                         ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "3",
+                        ";"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"%d\"",
+                        "b",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"\\n%f\"",
+                        "a",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
                     ]
                 ]
             ],
@@ -512,8 +610,9 @@
                     "",
                     "Try to make a variable b,",
                     "assign 3 to it and print it,",
-                    "after that change it's value",
-                    "to 4.5 and print it again"
+                    "after that make variable a",
+                    "with value 4.5 and print it",
+                    "in new line"
                 ]
             ],
             "pages": 3,
@@ -586,13 +685,8 @@
     ],
     "level4": [
         {
-            "input_text": "",
-            "character": "alex",
-            "solution": [
-                [
-                    []
-                ]
-            ],
+            "input_text_Python": "",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 4.",
@@ -719,7 +813,6 @@
     "level5": [
         {
             "input_text": "",
-            "character": "",
             "solution": [
                 [
                     [
@@ -841,7 +934,6 @@
     "level6": [
         {
             "input_text": "",
-            "character": "",
             "solution": [
                 [
                     [
@@ -1022,7 +1114,6 @@
     "level7": [
         {
             "input_text": "",
-            "character": "",
             "solution": [
                 [
                     [
@@ -1169,7 +1260,6 @@
     "level8": [
         {
             "input_text": "",
-            "character": "",
             "solution": [
                 [
                     [
@@ -1377,7 +1467,6 @@
     "level9": [
         {
             "input_text": "",
-            "character": "",
             "solution": [
                 [
                     [
@@ -1704,7 +1793,6 @@
                 0
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "character": "",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(3)\nmob.go_up(6)\nmob.go_right(3)"
             ],
@@ -2060,7 +2148,6 @@
                 0
             ],
             "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "character": "",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_up(6)"
             ],

@@ -682,17 +682,22 @@ def game(level):
 
             #correct solution
             solution = False
+            print(cbd)
             if level < 10 and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
                 solution = True
             
             if level == 4:
-                l = []
-                ll = ["<class 'bool'>", "<class 'float'>", "<class 'int'>", "<class 'str'>"]
-                for el in list(variables.keys()):
-                    l.append(str(type(variables[el])))
-                l.sort()
-                if l == ll:
-                    solution = True
+                if code_lang == 0:
+                    l = []
+                    ll = ["<class 'bool'>", "<class 'float'>", "<class 'int'>", "<class 'str'>"]
+                    for el in list(variables.keys()):
+                        l.append(str(type(variables[el])))
+                    l.sort()
+                    if l == ll:
+                        solution = True
+                elif code_lang == 1:
+                    #c
+                    pass
 
             if level >= 10:
                 stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
