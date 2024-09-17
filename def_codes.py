@@ -19,23 +19,23 @@ class Mob:
 """ 
 
 def_code_c = f"""#include <stdio.h>
-typedef struct {{
+struct Mob {{
     int x;
     int y;
-}} Mob;
-void go_up(Mob *mob, int n) {{
+}};
+void go_up(struct Mob *mob, int n) {{
     mob->y += n;
     printf("up %d\\n", n);
 }}
-void go_down(Mob *mob, int n) {{
+void go_down(struct Mob *mob, int n) {{
     mob->y -= n;
     printf("down %d\\n", n);
 }}
-void go_right(Mob *mob, int n) {{
+void go_right(struct Mob *mob, int n) {{
     mob->x += n;
     printf("right %d\\n", n);
 }}
-void go_left(Mob *mob, int n) {{
+void go_left(struct Mob *mob, int n) {{
     mob->x -= n;
     printf("left %d\\n", n);
 }}

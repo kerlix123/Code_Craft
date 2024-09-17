@@ -820,7 +820,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
-            "solution": [
+            "solution_Python": [
                 [
                     [
                         "a",
@@ -832,10 +832,57 @@
                     [
                         "b",
                         "=",
-                        "str",
+                        "int",
                         "(",
                         "a",
                         ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "5",
+                        ".",
+                        "65",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "(",
+                        "int",
+                        ")",
+                        "a",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
                     ]
                 ]
             ],
@@ -865,9 +912,9 @@
                 ],
                 [
                     "Assign the value 5.65 to",
-                    "the variable a and its string",
+                    "the variable a and its int",
                     "representation to the",
-                    "variable b using str()"
+                    "variable b using int()"
                 ]
             ],
             "pages": 3,
@@ -940,13 +987,16 @@
     ],
     "level6": [
         {
-            "input_text": "",
-            "solution": [
+            "input_text_Python": "",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "solution_Python": [
                 [
                     [
                         "a",
                         "=",
-                        "10"
+                        "10",
+                        ".",
+                        "5"
                     ],
                     [
                         "a",
@@ -976,6 +1026,79 @@
                         "(",
                         "b",
                         ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "10",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "a",
+                        "+",
+                        "=",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"%f\"",
+                        "a",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "a",
+                        ">",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"\\n%d\"",
+                        "b",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
                     ]
                 ]
             ],
@@ -1042,12 +1165,13 @@
                 ],
                 [
                     "Make a variable a and",
-                    "assign 10 to it, using",
+                    "assign 10.5 to it, using",
                     "assignment operators add",
                     "4.5 to it and print it, make",
                     "a variable b and inside",
                     "of it check if a is bigger",
-                    "than 4.5 and print it"
+                    "than 4.5 and print it on",
+                    "new line"
                 ]
             ],
             "pages": 6,
@@ -1120,8 +1244,9 @@
     ],
     "level7": [
         {
-            "input_text": "",
-            "solution": [
+            "input_text_Python": "",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "solution_Python": [
                 [
                     [
                         "def",
@@ -1147,6 +1272,67 @@
                         "3",
                         ")",
                         ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "mult",
+                        "(",
+                        "int",
+                        "a",
+                        "int",
+                        "b",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "return",
+                        "a",
+                        "*",
+                        "b",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"%d\"",
+                        "mult",
+                        "(",
+                        "5",
+                        "3",
+                        ")",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
                     ]
                 ]
             ],
@@ -1190,7 +1376,7 @@
                 ],
                 [
                     "Make a function named mult",
-                    "which takes two variables a",
+                    "which takes two integers a",
                     "and b and returns thier product",
                     "call the function from print()",
                     "a = 5, b = 3"
@@ -1266,8 +1452,9 @@
     ],
     "level8": [
         {
-            "input_text": "",
-            "solution": [
+            "input_text_Python": "",
+            "input_text_C":"#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "solution_Python": [
                 [
                     [
                         "class",
@@ -1337,6 +1524,104 @@
                         "age",
                         "(",
                         ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "struct",
+                        "Dog",
+                        "{"
+                    ],
+                    [
+                        "char",
+                        "name",
+                        "[",
+                        "50",
+                        "]",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "age",
+                        ";"
+                    ],
+                    [
+                        "}",
+                        ";"
+                    ],
+                    [
+                        "void",
+                        "dog",
+                        "_",
+                        "age",
+                        "(",
+                        "struct",
+                        "Dog",
+                        "*",
+                        "dog",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"%d\"",
+                        "dog",
+                        "-",
+                        ">",
+                        "age",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "struct",
+                        "Dog",
+                        "dog1",
+                        "=",
+                        "{",
+                        "\"Buddy\"",
+                        "3",
+                        "}",
+                        ";"
+                    ],
+                    [
+                        "dog",
+                        "_",
+                        "age",
+                        "(",
+                        "&",
+                        "dog1",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
                     ]
                 ]
             ],
@@ -1690,7 +1975,7 @@
                 0
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\ntypedef struct {\n    int x;\n    int y;\n} Mob;\nvoid go_up(Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(6)"
             ],
