@@ -663,7 +663,6 @@ def game(level):
                 elif code_lang == 1:
                     executed_code = exec_c_code(def_code_c + input_code, "C")
                 if executed_code["error"] != None:
-                    print(executed_code["error"])
                     messages.append("Error: " + executed_code['error'])
                 end_time = time.time()
                 one_v_one_time[player-1] = end_time - start_time

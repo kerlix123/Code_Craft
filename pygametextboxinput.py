@@ -31,7 +31,7 @@ class Textbox:
                     self.selecting = True
                     mouse_x = mouse[0] - self.x
                     mouse_y = mouse[1] - self.y
-                    line_index = min(mouse_y // self.line_height, len(self.string) - 1)
+                    line_index = min((mouse_y // self.line_height) + self.scroll_offset, len(self.string) - 1)
                     s = 0
                     index = 0
                     for k in self.string[line_index]:
@@ -54,7 +54,7 @@ class Textbox:
                 if self.x <= mouse[0] <= self.x + self.width and self.y <= mouse[1] <= self.y + self.height:
                     mouse_x = mouse[0] - self.x
                     mouse_y = mouse[1] - self.y
-                    line_index = min(mouse_y // self.line_height, len(self.string) - 1)
+                    line_index = min((mouse_y // self.line_height) + self.scroll_offset, len(self.string) - 1)
                     s = 0
                     index = 0
                     for k in self.string[line_index]:
