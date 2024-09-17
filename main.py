@@ -421,8 +421,6 @@ def game(level):
     if level >= 10:
         stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
         stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
-        def_code_python += f"\nmob = Mob({levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]})\n"         
-        def_code_c += f"\n    struct Mob mob = {{{levels[f"level{level}"][0]["steve_xy"][0]}, {levels[f"level{level}"][0]["steve_xy"][1]}}};"
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
@@ -646,7 +644,6 @@ def game(level):
                 if cbdd:           
                     cbd.append(cbdd)
                 i += 1
-            print(cbd)
             if level < 10:
                 if code_lang == 0:
                     executed_code = exec_code(code_input.get_text())
@@ -666,6 +663,7 @@ def game(level):
                 elif code_lang == 1:
                     executed_code = exec_c_code(def_code_c + input_code, "C")
                 if executed_code["error"] != None:
+                    print(executed_code["error"])
                     messages.append("Error: " + executed_code['error'])
                 end_time = time.time()
                 one_v_one_time[player-1] = end_time - start_time

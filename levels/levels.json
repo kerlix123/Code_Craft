@@ -1453,7 +1453,7 @@
     "level8": [
         {
             "input_text_Python": "",
-            "input_text_C":"#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -1758,8 +1758,9 @@
     ],
     "level9": [
         {
-            "input_text": "",
-            "solution": [
+            "input_text_Python": "",
+            "input_text_C": "#include <stdio.h>\n",
+            "solution_Python": [
                 [
                     [
                         "class",
@@ -1869,6 +1870,150 @@
                         "-",
                         "=",
                         "n"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "struct",
+                        "Mob",
+                        "{"
+                    ],
+                    [
+                        "int",
+                        "x",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "y",
+                        ";"
+                    ],
+                    [
+                        "}",
+                        ";"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "up",
+                        "(",
+                        "struct",
+                        "Mob",
+                        "*",
+                        "mob",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "mob",
+                        "-",
+                        ">",
+                        "y",
+                        "+",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "down",
+                        "(",
+                        "struct",
+                        "Mob",
+                        "*",
+                        "mob",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "mob",
+                        "-",
+                        ">",
+                        "y",
+                        "-",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "right",
+                        "(",
+                        "struct",
+                        "Mob",
+                        "*",
+                        "mob",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "mob",
+                        "-",
+                        ">",
+                        "x",
+                        "+",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "left",
+                        "(",
+                        "struct",
+                        "Mob",
+                        "*",
+                        "mob",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "mob",
+                        "-",
+                        ">",
+                        "x",
+                        "-",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
                     ]
                 ]
             ],
@@ -2084,7 +2229,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(3)\nmob.go_up(6)\nmob.go_right(3)"
             ],
@@ -2197,7 +2343,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(2)\nmob.go_left(2)\nmob.go_up(4)\nmob.go_left(4)"
             ],
@@ -2318,7 +2465,8 @@
                 0,
                 6
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_down(2)\nmob.go_left(3)\nmob.go_down(4)\nmob.go_left(3)"
             ],
@@ -2439,7 +2587,8 @@
                 3,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_up(6)"
             ],
@@ -2546,7 +2695,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(6)\nmob.go_up(2)\nmob.go_left(2)\nmob.go_up(2)\nmob.go_right(2)\nmob.go_up(2)"
             ],
@@ -2673,7 +2823,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nmob.go_right(3)\nmob.go_up(3)\nmob.go_right(1)\nmob.go_left(1)\nmob.go_up(3)\nmob.go_right(3)"
             ],
@@ -2800,7 +2951,8 @@
                 3,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nfor i in range(6):\n    mob.go_up(1)"
             ],
@@ -2955,7 +3107,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nfor i in range(2):\n    mob.go_up(3)\n    mob.go_right(3)"
             ],
@@ -3074,7 +3227,8 @@
                 0,
                 6
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nfor i in range(2):\n    mob.go_right(3)\n    mob.go_down(3)"
             ],
@@ -3193,7 +3347,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\nfor i in range(6):\n    mob.go_up(1)\n    mob.go_right(1)"
             ],
@@ -3344,7 +3499,8 @@
                 3,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(1)\n    i += 1"
             ],
@@ -3498,7 +3654,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\ni = 0\nwhile i < 2:\n    mob.go_up(3)\n    mob.go_right(3)\n    i += 1"
             ],
@@ -3617,7 +3774,8 @@
                 0,
                 6
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\ni = 0\nwhile i < 2:\n    mob.go_right(3)\n    mob.go_down(3)\n    i += 1"
             ],
@@ -3736,7 +3894,8 @@
                 0,
                 0
             ],
-            "input_text": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "best_solution": [
                 "mob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(1)\n    mob.go_right(1)\n    i += 1"
             ],

@@ -76,6 +76,14 @@ class Textbox:
                 if self.selection_start[0] > self.selection_end[0] or self.selection_start[1] > self.selection_end[1]:
                     self.selection_start, self.selection_end = self.selection_end, self.selection_start
 
+        elif event.type == pygame.MOUSEWHEEL:
+            if event.y > 0:  # Scroll up
+                if self.scroll_offset > 0:
+                    self.scroll_offset -= 1
+            elif event.y < 0:  # Scroll down
+                if self.scroll_offset + self.visible_lines < len(self.string):
+                    self.scroll_offset += 1
+        
         elif event.type == pygame.KEYDOWN:
             self.handle_key_event(event)
 
@@ -119,6 +127,13 @@ class Textbox:
             pass
         elif len(key) == 1 and key.isalnum() or key in [".", ",", "!", "?", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", "\\", "|", ";", ":", "'", "\"", ",", ".", "/", "<", ">", "`", "~"]:
             self.handle_alnum(key)
+
+    def scroll_up(self):
+        self.scroll_offset = max(0, self.scroll_offset - 1)
+
+    def scroll_down(self):
+        if self.scroll_offset + self.visible_lines < len(self.string):
+            self.scroll_offset += 1
 
     def handle_backspace(self):
         if self.selection_start != self.selection_end:
@@ -168,19 +183,26 @@ class Textbox:
         if self.i > 0:
             self.i -= 1
             self.cursor_pos = min(len(self.string[self.i]), self.cursor_pos)
+            if self.i < self.scroll_offset:
+                self.scroll_up()
 
     def handle_down(self):
         if self.i < len(self.string) - 1:
             self.i += 1
             self.cursor_pos = min(len(self.string[self.i]), self.cursor_pos)
+            if self.i >= self.scroll_offset + self.visible_lines:
+                self.scroll_down()
 
     def handle_page_up(self):
         self.i = max(0, self.i - self.visible_lines)
         self.cursor_pos = min(len(self.string[self.i]), self.cursor_pos)
+        self.scroll_offset = max(0, self.scroll_offset - self.visible_lines)
 
     def handle_page_down(self):
         self.i = min(len(self.string) - 1, self.i + self.visible_lines)
         self.cursor_pos = min(len(self.string[self.i]), self.cursor_pos)
+        if self.scroll_offset + self.visible_lines < len(self.string):
+            self.scroll_offset += self.visible_lines
 
     def handle_home(self):
         self.cursor_pos = 0

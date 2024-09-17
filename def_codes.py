@@ -16,6 +16,7 @@ class Mob:
     def go_left(self, n):
         self.x -= n
         coms.append(("left", n))
+mob = Mob(0, 0)
 """ 
 
 def_code_c = f"""#include <stdio.h>
@@ -40,4 +41,5 @@ void go_left(struct Mob *mob, int n) {{
     printf("left %d\\n", n);
 }}
 int main() {'{'}
+    struct Mob mob = {{0, 0}};
 """
