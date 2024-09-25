@@ -181,6 +181,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -214,6 +215,45 @@
                         "(",
                         "\"Hello, World!\"",
                         ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "\"Hello, World!\"",
                         ";"
                     ],
                     [
@@ -339,6 +379,7 @@
         {
             "input_text_Python": "print(\"Steve\")",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    printf(\"Steve\");\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cout << \"Steve\";\n    return 0;\n}",
             "solution": [
                 [
                     [
@@ -375,6 +416,47 @@
                         "(",
                         "\"Steve\"",
                         ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "/",
+                        "/",
+                        "cout",
+                        "<",
+                        "<",
+                        "\"Steve\"",
                         ";"
                     ],
                     [
@@ -486,6 +568,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -562,6 +645,71 @@
                         "\"\\n%f\"",
                         "a",
                         ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "3",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "b",
+                        ";"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "endl",
+                        "<",
+                        "<",
+                        "a",
                         ";"
                     ],
                     [
@@ -687,10 +835,14 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 []
             ],
             "solution_C": [
+                []
+            ],
+            "solution_C++": [
                 []
             ],
             "text": [
@@ -820,6 +972,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -849,6 +1002,57 @@
                         ".",
                         "h",
                         ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "5",
+                        ".",
+                        "65",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "(",
+                        "int",
+                        ")",
+                        "a",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
                     ],
                     [
                         "int",
@@ -989,6 +1193,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++":"#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -1090,6 +1295,84 @@
                         "\"\\n%d\"",
                         "b",
                         ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "10",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "a",
+                        "+",
+                        "=",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "a",
+                        ";"
+                    ],
+                    [
+                        "bool",
+                        "b",
+                        "=",
+                        "a",
+                        ">",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "endl",
+                        "<",
+                        "<",
+                        "b",
                         ";"
                     ],
                     [
@@ -1246,6 +1529,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -1323,6 +1607,70 @@
                         "5",
                         "3",
                         ")",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "mult",
+                        "(",
+                        "int",
+                        "a",
+                        "int",
+                        "b",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "return",
+                        "a",
+                        "*",
+                        "b",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "mult",
+                        "(",
+                        "5",
+                        "3",
                         ")",
                         ";"
                     ],
@@ -1454,6 +1802,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -1625,6 +1974,131 @@
                     ]
                 ]
             ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "string",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "class",
+                        "Dog",
+                        "{"
+                    ],
+                    [
+                        "public",
+                        ":"
+                    ],
+                    [
+                        "string",
+                        "name",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "age",
+                        ";"
+                    ],
+                    [
+                        "Dog",
+                        "(",
+                        "string",
+                        "a",
+                        "int",
+                        "b",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "name",
+                        "=",
+                        "a",
+                        ";"
+                    ],
+                    [
+                        "age",
+                        "=",
+                        "b",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "dog",
+                        "_",
+                        "age",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "age",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "}",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "Dog",
+                        "dog1",
+                        "(",
+                        "\"Buddy\"",
+                        "3",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "dog1",
+                        ".",
+                        "dog",
+                        "_",
+                        "age",
+                        "(",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
             "text": [
                 [
                     "Level 8.",
@@ -1760,6 +2234,7 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n",
             "solution_Python": [
                 [
                     [
@@ -2017,6 +2492,162 @@
                     ]
                 ]
             ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "string",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "class",
+                        "Mob",
+                        "{"
+                    ],
+                    [
+                        "public",
+                        ":"
+                    ],
+                    [
+                        "int",
+                        "x",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "y",
+                        ";"
+                    ],
+                    [
+                        "Mob",
+                        "(",
+                        "int",
+                        "a",
+                        "int",
+                        "b",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "x",
+                        "=",
+                        "a",
+                        ";"
+                    ],
+                    [
+                        "y",
+                        "=",
+                        "b",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "up",
+                        "(",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "y",
+                        "+",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "down",
+                        "(",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "y",
+                        "-",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "right",
+                        "(",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "x",
+                        "+",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "void",
+                        "go",
+                        "_",
+                        "left",
+                        "(",
+                        "int",
+                        "n",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "x",
+                        "-",
+                        "=",
+                        "n",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "}",
+                        ";"
+                    ]
+                ]
+            ],
             "text": [
                 [
                     "Level 9.",
@@ -2121,6 +2752,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 10.",
@@ -2218,6 +2850,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 11.",
@@ -2315,6 +2948,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 12.",
@@ -2412,6 +3046,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 13.",
@@ -2509,6 +3144,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 14.",
@@ -2608,6 +3244,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 15.",
@@ -2707,6 +3344,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 16.",
@@ -2806,6 +3444,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 17.",
@@ -2933,6 +3572,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 18.",
@@ -3032,6 +3672,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 19.",
@@ -3131,6 +3772,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 20.",
@@ -3230,6 +3872,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 21.",
@@ -3356,6 +3999,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 22.",
@@ -3455,6 +4099,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 23.",
@@ -3554,6 +4199,7 @@
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text": [
                 [
                     "Level 24.",

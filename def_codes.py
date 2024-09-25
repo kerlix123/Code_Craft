@@ -43,3 +43,35 @@ void go_left(struct Mob *mob, int n) {{
 int main() {'{'}
     struct Mob mob = {{0, 0}};
 """
+
+def_code_cpp = f"""#include <iostream>
+#include <string>
+using namespace std;
+class Mob {{
+    public:
+        int x;
+        int y;
+        Mob(int a, int b) {{
+            x = a;
+            y = b;
+        }}
+        void go_up(int n) {{
+            y += n;
+            cout << "up " << n << endl;
+        }}
+        void go_down(int n) {{
+            y -= n;
+            cout << "down " << n << endl;
+        }}
+        void go_right(int n) {{
+            x += n;
+            cout << "right " << n << endl;
+        }}
+        void go_left(int n) {{
+            cout << "left " << n << endl;
+            x -= n;
+        }}
+}};
+int main() {'{'}
+    Mob mob(0, 0);
+"""

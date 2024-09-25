@@ -144,7 +144,7 @@ def minecraft_cmd(l):
 code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 pygame.key.set_repeat(200, 25)
 
-languages = ["Python", "C"]
+languages = ["Python", "C", "C++"]
 code_lang = 0
 
 code_runned = False
@@ -271,6 +271,10 @@ def tutorial():
                     
         background()
         bg_overlay()
+
+        menu_button(420, 80, 579, "Python", 400, 40, mouse)
+
+        menu_button(420, 130, 612, "C", 400, 40, mouse)
 
         #back_button
         button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
@@ -408,7 +412,7 @@ def skins():
 
 def game(level):
     global code_lang, code_runned, level_finished, grades
-    global def_code_python, def_code_c
+    global def_code_python, def_code_c, def_code_cpp
     messages = []
     restart_code = False
     one_v_one = False
@@ -605,19 +609,13 @@ def game(level):
                 y += 28.8
 
             if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
-                page_forward = pygame.image.load(PATH / "drawable" / "page_forward.png")
-                page_forward = pygame.transform.scale(page_forward, (42, 24))
-
-                window.blit(page_forward, (375, 455))
+                button(PATH / "drawable" / "page_forward.png", 42, 24, 375, 455)
 
                 if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479:
                     trans_surface(36, 19, (170, 170, 170, 120), 380, 459)
             
             if game_levels[level].text_page > 0:
-                page_backward = pygame.image.load(PATH / "drawable" / "page_backward.png")
-                page_backward = pygame.transform.scale(page_backward, (42, 24))
-
-                window.blit(page_backward, (165, 455))
+                button(PATH / "drawable" / "page_backward.png", 42, 24, 165, 455)
 
                 if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479:
                     trans_surface(36, 19, (170, 170, 170, 120), 170, 459)
@@ -649,6 +647,8 @@ def game(level):
                     executed_code = exec_code(code_input.get_text())
                 elif code_lang == 1:
                     executed_code = exec_c_code(code_input.get_text(), "C")
+                elif code_lang == 2:
+                    executed_code = exec_c_code(code_input.get_text(), "C++")
                 if executed_code["error"] != None:
                     messages.append("Error: " + executed_code['error'])
             else:
@@ -657,11 +657,15 @@ def game(level):
                     input_code = '\n'.join(input_code.split("\n")[14:])
                 elif code_lang == 1:
                     input_code = '\n'.join(input_code.split("\n")[19:])
+                elif code_lang == 2:
+                    input_code = '\n'.join(input_code.split("\n")[26:])
                 start_time = time.time()
                 if code_lang == 0:
                     executed_code = exec_code(def_code_python + input_code)
                 elif code_lang == 1:
                     executed_code = exec_c_code(def_code_c + input_code, "C")
+                elif code_lang == 2:
+                    executed_code = exec_c_code(def_code_cpp + input_code, "C++")
                 if executed_code["error"] != None:
                     messages.append("Error: " + executed_code['error'])
                 end_time = time.time()
@@ -671,7 +675,7 @@ def game(level):
                 messages += executed_code["out"]
                 variables = executed_code["vars"]
                 del variables["__builtins__"]
-            elif code_lang == 1:
+            elif code_lang == 1 or code_lang == 2:
                 for el in executed_code["out"]:
                     if el.split(" ")[0] not in ["right", "left", "up", "down"]:
                         messages += [el]
@@ -701,6 +705,19 @@ def game(level):
                             c += 1
                     solution = c == 3
                     pass
+                elif code_lang == 2:
+                    c = 0
+                    for el in cbd:
+                        if el[0] == "int" and el[2] == "=":
+                            c += 1
+                        elif el[0] == "float" and el[2] == "=" and el[4] == ".":
+                            c += 1
+                        elif el[0] == "string" and el[2] == "=":
+                            c += 1
+                        elif el[0] == "bool" and el[2] == "=":
+                            c += 1
+                    solution = c == 4
+                    pass
 
             if level >= 10:
                 stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
@@ -710,7 +727,7 @@ def game(level):
                 try:
                     if code_lang == 0:
                         coms = variables["coms"]
-                    elif code_lang == 1:
+                    elif code_lang == 1 or code_lang == 2:
                         coms = []
                         for el in executed_code["out"]:
                             el_splited = el.split(" ")
@@ -770,6 +787,9 @@ def game(level):
                     if one_v_one:
                         one_v_one_code[player-1] = True
                         messages.append(f"Player {player}. finished the level!")
+                        if not (one_v_one_code[0] and one_v_one_code[1]):
+                            stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
+                            stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
                     else:
                         if level >= 14 and level < 17 and plate_activated:
                             solution = True

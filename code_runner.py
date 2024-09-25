@@ -28,7 +28,7 @@ def exec_c_code(code, l):
         return {"out": [], "error": f"You need to have {compiler.upper()} installed to use {l}!"}
 
     with tempfile.TemporaryDirectory() as tmpdirname:
-        c_file = os.path.join(tmpdirname, "temp.c")
+        c_file = os.path.join(tmpdirname, f"temp.{"c" if l == "C" else "cpp"}")
         executable_file = os.path.join(tmpdirname, "temp_executable")
         
         with open(c_file, "w") as f:

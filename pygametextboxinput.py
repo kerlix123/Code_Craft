@@ -227,13 +227,10 @@ class Textbox:
             self.handle_cut()
 
         self.string[self.i] = self.string[self.i][:self.cursor_pos] + pasted_lines[0]
-        rest_of_line = self.string[self.i][self.cursor_pos:]
 
         for j in range(1, len(pasted_lines)):
             self.i += 1
             self.string.insert(self.i, pasted_lines[j])
-
-        self.string[self.i] += rest_of_line
         self.cursor_pos = len(pasted_lines[-1])
 
     def handle_cut(self):
