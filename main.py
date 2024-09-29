@@ -15,6 +15,9 @@ options = json.load(json_options)
 json_data = open(PATH / "data.json")
 data = json.load(json_data)
 
+json_tutorial = open(PATH / "tutorial.json")
+tutorial_text = json.load(json_tutorial)
+
 game_levels = []
 game_skins = []
 
@@ -125,6 +128,11 @@ def bg_overlay():
     background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
     background_overlay.fill((0, 0, 0, 50))
     window.blit(background_overlay, (0, 0))
+
+def render_text(x, y, text, inc):
+    for el in text:
+        window.blit(minecraft_font_book.render(el, True, (0, 0, 0)), (x, y))
+        y += inc
 
 def minecraft_cmd(l):
     ll = len(l)
@@ -268,6 +276,8 @@ def tutorial():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     menu()
+                if 420 <= mouse[0] <= 820 and 80 <= mouse[1] <= 120:
+                    lang_tutorial()
                     
         background()
         bg_overlay()
@@ -275,6 +285,60 @@ def tutorial():
         menu_button(420, 80, 579, "Python", 400, 40, mouse)
 
         menu_button(420, 130, 612, "C", 400, 40, mouse)
+
+        #back_button
+        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+
+        if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
+
+        pygame.display.flip()
+
+def lang_tutorial():
+    page = 0
+    while True:
+        if not pygame.mixer.music.get_busy() and music_on:
+            play_next_track()
+        events = pygame.event.get()
+        mouse = pygame.mouse.get_pos()
+        for event in events:
+            if event.type == pygame.QUIT:
+                exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    tutorial()
+                if page < tutorial_text["pages_Python"]-2 and 990 <= mouse[0] <= 1032 and 545 <= mouse[1] <= 569:
+                    page += 2
+                if page > 0 and 175 <= mouse[0] <= 217 and 545 <= mouse[1] <= 569:
+                    page -= 2
+                    
+        background()
+        bg_overlay()
+
+        #book
+        book = pygame.image.load(PATH / "drawable" / "book.png")
+        book = pygame.transform.scale(book, (850, 850))
+        book2 = pygame.image.load(PATH / "drawable" / "book2.png")
+        book2 = pygame.transform.scale(book2, (850, 850))
+
+        window.blit(book2, (60, 9))
+        window.blit(book, (555, 9))
+
+        #render text
+        render_text(170, 60, tutorial_text["tutorial_Python"][page], 20)
+        render_text(665, 60, tutorial_text["tutorial_Python"][page+1], 20)
+
+        if page < tutorial_text["pages_Python"]-2:
+            button(PATH / "drawable" / "page_forward.png", 42, 24, 990, 545)
+
+            if 990 <= mouse[0] <= 1032 and 545 <= mouse[1] <= 569:
+                trans_surface(36, 19, (170, 170, 170, 120), 995, 549)
+        
+        if page > 0:
+            button(PATH / "drawable" / "page_backward.png", 42, 24, 175, 545)
+
+            if 175 <= mouse[0] <= 217 and 545 <= mouse[1] <= 569:
+                trans_surface(36, 19, (170, 170, 170, 120), 179, 549)
 
         #back_button
         button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
@@ -597,16 +661,14 @@ def game(level):
             j = 0
             i += 85
 
+        #book
         if not game_levels[level].text_closed:
             book = pygame.image.load(PATH / "drawable" / "book.png")
             book = pygame.transform.scale(book, (612, 612))
 
             window.blit(book, (80, 79))
 
-            y = 122
-            for el in levels[f"level{level}"][0]["text"][game_levels[level].text_page]:
-                window.blit(minecraft_font_book.render(el, True, (0, 0, 0)), (165, y))
-                y += 28.8
+            render_text(165, 122, levels[f"level{level}"][0]["text"][game_levels[level].text_page], 28.8)
 
             if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
                 button(PATH / "drawable" / "page_forward.png", 42, 24, 375, 455)
@@ -839,7 +901,8 @@ def game(level):
         pygame.display.update()
         clock.tick(60)
 
-menu()
+#main()
+lang_tutorial()
 
 json_levels.close()
 json_options.close()

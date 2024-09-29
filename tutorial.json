@@ -1,0 +1,65 @@
+{
+    "tutorial_Python": [
+        [
+            "In this tutorial you will learn Python basics.",
+            "",
+            "Python is one of the most popular",
+            "programming languages and it was",
+            "created by Guido van Rossum, and",
+            "released in 1991.",
+            "",
+            "Python is used almost everywhere and has",
+            "simple syntax similar to the English",
+            "language. Python uses new lines to",
+            "complete a command, as opposed to other",
+            "programming languages which often use",
+            "semicolons or parentheses.",
+            "",
+            "Python relies on indentation, using",
+            "whitespace, to define scope (such as",
+            "the scope of loops, functions and classes).",
+            "",
+            "Other programming languages often use",
+            "curly-brackets for this purpose.", 
+            "Python is interpreted language which",
+            "means that it is executed line by line",
+            "by a program called interpreter.",
+            "",
+            ""
+        ],
+        [
+            "Output in Python",
+            "",
+            "To output something on screen in Python,",
+            "we use the print() function. We just need",
+            "to type in the print function and pass it a",
+            "text surrounded with quotes.",
+            "(In Python, it doesn't matter if they are",
+            "single or double, but in this game we will",
+            "stick with double quotes). To output",
+            "'Code_Craft' on screen we will do it like this:",
+            "    print(\"Code_Craft\")"
+        ],  
+        [
+            "ja sam mlaa pa sam pala",
+            "will learn Python"
+        ],
+        [
+            "In this you",
+            "will learn Python"
+        ],
+        [
+            "ja sam pa sam pala",
+            "will Python"
+        ],
+        [
+            "In this you",
+            "will Python"
+        ],
+        [
+            "ja sam pa pala",
+            "will learn Python"
+        ]
+    ],
+    "pages_Python": 6
+}
