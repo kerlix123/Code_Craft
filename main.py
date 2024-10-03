@@ -326,7 +326,8 @@ def lang_tutorial():
 
         #render text
         render_text(170, 60, tutorial_text["tutorial_Python"][page], 20)
-        render_text(665, 60, tutorial_text["tutorial_Python"][page+1], 20)
+        if page+1 < tutorial_text["pages_Python"]:
+            render_text(665, 60, tutorial_text["tutorial_Python"][page+1], 20)
 
         if page < tutorial_text["pages_Python"]-2:
             button(PATH / "drawable" / "page_forward.png", 42, 24, 990, 545)
