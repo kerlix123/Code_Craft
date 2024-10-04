@@ -164,6 +164,8 @@ minecraft_font_small = pygame.font.Font(PATH / "Minecraft.ttf", 25)
 minecraft_font_smaller = pygame.font.Font(PATH / "Minecraft.ttf", 15)
 minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
 
+click_sound = pygame.mixer.Sound(PATH / "sounds" / "minecraft_click.mp3")
+
 def description(string):
     length = 150
     x = 223
@@ -186,13 +188,21 @@ def menu():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 420 <= mouse[0] <= 820 and 250 <= mouse[1] <= 290:
+                    if fx_on:
+                        click_sound.play()
                     if levels["last_finished_level"] < 24:
                         game(levels["last_finished_level"]+1)
                 elif 420 <= mouse[0] <= 820 and 300 <= mouse[1] <= 340:
+                    if fx_on:
+                        click_sound.play()
                     level_menu()
                 elif 420 <= mouse[0] <= 820 and 350 <= mouse[1] <= 390:
+                    if fx_on:
+                        click_sound.play()
                     tutorial()
                 elif 420 <= mouse[0] <= 615 and 420 <= mouse[1] <= 460:
+                    if fx_on:
+                        click_sound.play()
                     options_win()
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
                     exit()
@@ -232,8 +242,12 @@ def level_menu():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for lvl in game_levels:
                     if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
+                        if fx_on:
+                            click_sound.play()
                         game(lvl.level)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    if fx_on:
+                        click_sound.play()
                     menu()
         
         background()
@@ -275,6 +289,8 @@ def tutorial():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    if fx_on:
+                        click_sound.play()
                     menu()
                 if 420 <= mouse[0] <= 820 and 80 <= mouse[1] <= 120:
                     lang_tutorial()
@@ -361,8 +377,12 @@ def options_win():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    if fx_on:
+                        click_sound.play()
                     menu()
                 if 420 <= mouse[0] <= 820 and 80 <= mouse[1] <= 120:
+                    if fx_on:
+                        click_sound.play()
                     skins()
                 if 420 <= mouse[0] <= 820 and 130 <= mouse[1] <= 170:
                     if music_on:
@@ -379,6 +399,8 @@ def options_win():
                     with open(PATH / "options.json", 'w') as file:
                         json.dump(options, file, indent=4)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
+                    if fx_on:
+                        click_sound.play()
                     levels["last_finished_level"] = 0
                     for k in data["skins"]:
                         if k != "steve":
@@ -425,9 +447,13 @@ def skins():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    if fx_on:
+                        click_sound.play()
                     options_win()
                 for skin in game_skins:
                     if skin.hover(mouse[0], mouse[1]):
+                        if fx_on:
+                            click_sound.play()
                         if skin.unlocked:
                             data["skin"] = skin.name
                             with open(PATH / "data.json", 'w') as file:
@@ -506,6 +532,8 @@ def game(level):
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+                    if fx_on:
+                        click_sound.play()
                     menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
                     code_runned = True
@@ -540,9 +568,9 @@ def game(level):
                     one_v_one = True
                     code_input_2 = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
                     code_input_2.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
-                if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and level >= 10:
+                elif 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and level >= 10:
                     player = 1
-                if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and level >= 10:
+                elif 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and level >= 10:
                     player = 2
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     code_lang = (code_lang + 1) % len(languages)
@@ -552,6 +580,12 @@ def game(level):
                         game_levels[level].text_page += 1
                     if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479 and game_levels[level].text_page > 0:
                         game_levels[level].text_page -= 1
+                elif 626 <= mouse[0] <= 637 and 597 <= mouse[1] <= 617:
+                    #TODO - hint 1
+                    pass
+                elif 640 <= mouse[0] <= 654 and 597 <= mouse[1] <= 617:
+                    #TODO - hint 2
+                    pass
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     game_levels[level].text_closed = not game_levels[level].text_closed
@@ -590,9 +624,11 @@ def game(level):
 
         pygame.draw.rect(window, (0, 118, 197), (0, 595, 1240, 25))
 
+        #language
         window.blit(minecraft_font_smaller.render(languages[code_lang], True, (255, 255, 255)), (lang_text_x, 600))
 
         if lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
+            description("Change language")
             trans_surface(lang_text_length, 15, (170, 170, 170, 120), lang_text_x, 600)
 
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
@@ -616,18 +652,26 @@ def game(level):
         #restart_button
         button(PATH / "drawable" / "reject.png", 26, 26, 595, 595)
 
-        #next_button and optimization warning
+        #hint1_button
+        button(PATH / "drawable" / "torch1.png", 31, 31, 615, 586)
+        
+        if 626 <= mouse[0] <= 637 and 597 <= mouse[1] <= 617:
+            description("Hint 1. (5 emeralds)")
+            trans_surface(11, 20, (170, 170, 170, 120), 626, 597)
+        
+        #hint2_button
+        button(PATH / "drawable" / "torch2.png", 31, 31, 630, 586)
+
+        if 640 <= mouse[0] <= 654 and 597 <= mouse[1] <= 617:
+            description("Hint 2. (15 emeralds)")
+            trans_surface(14, 20, (170, 170, 170, 120), 640, 597)
+
+        #next_button
         if level_finished and level < 24:
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                 description("Next level")
                 trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
             button(PATH / "drawable" / "accept.png", 29, 29, 562, 592)
-
-            if grades[0] > 0:
-                if 630 <= mouse[0] <= 649 and 598 <= mouse[1] <= 617:
-                    description("Your code can be more optimized!")
-                    trans_surface(20, 20, (170, 170, 170, 120), 629, 597)
-                button(PATH / "drawable" / "report_button.png", 19, 19, 630, 598)
 
         #1v1 button
         if level >= 10:
@@ -665,9 +709,9 @@ def game(level):
         #book
         if not game_levels[level].text_closed:
             book = pygame.image.load(PATH / "drawable" / "book.png")
-            book = pygame.transform.scale(book, (612, 612))
+            book = pygame.transform.scale(book, (800, 800))
 
-            window.blit(book, (80, 79))
+            window.blit(book, (6, 12))
 
             render_text(165, 122, levels[f"level{level}"][0]["text"][game_levels[level].text_page], 28.8)
 
@@ -902,8 +946,7 @@ def game(level):
         pygame.display.update()
         clock.tick(60)
 
-#main()
-lang_tutorial()
+menu()
 
 json_levels.close()
 json_options.close()

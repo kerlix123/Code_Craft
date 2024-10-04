@@ -11,31 +11,31 @@
             130,
             30,
             10,
-            false
+            true
         ],
         "chicken": [
             230,
             30,
             15,
-            false
+            true
         ],
         "cow": [
             330,
             30,
             15,
-            false
+            true
         ],
         "pig": [
             430,
             30,
             15,
-            false
+            true
         ],
         "sheep": [
             530,
             30,
             15,
-            false
+            true
         ],
         "villager": [
             630,
@@ -77,26 +77,26 @@
             30,
             140,
             30,
-            false
+            true
         ],
         "wither_skeleton": [
             130,
             140,
             65,
-            false
+            true
         ],
         "wither": [
             230,
             140,
             100,
-            false
+            true
         ],
         "herobrine": [
             330,
             140,
             150,
-            false
+            true
         ]
     },
-    "emeralds": 420
+    "emeralds": 10
 }
