@@ -240,6 +240,10 @@ def level_menu():
             if event.type == pygame.QUIT:
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
+                if 1010 <= mouse[0] <= 1210 and 550 <= mouse[1] <= 590:
+                    if fx_on:
+                        click_sound.play()
+                    level_builder()
                 for lvl in game_levels:
                     if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                         if fx_on:
@@ -275,6 +279,81 @@ def level_menu():
                 if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
                     button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
+
+        menu_button(1010, 550, 1033, "Level builder", 200, 40, mouse)
+        
+        pygame.display.flip()
+
+def level_builder():
+    plus_x_y = [0, 0]
+    blocks = [["plus.png"] * 7] * 7
+    block_file_names = [
+        ["azalea_leaves.png", "bedrock.png", "cactus_top.png", "chorus_flower.png", "chorus_plant.png", "coal_ore.png"],
+        ["crafting_table_top.png", "diamond_ore.png", "dirt.png", "emerald_ore.png", "end_stone_bricks.png", "end_stone.png"],
+        ["farmland_moist.png", "farmland.png", "gold_ore.png", "grass_top.png", "hay_block_top.png", "melon_top.png"],
+        ["nether_quartz.png", "nether_wart_block.png", "netherrack.png", "oak_log_top.png", "oak_trapdoor.png", "pressure_plate.png"],
+        ["pumpkin_top.png", "purpur_block.png", "sand.png", "sandstone_top.png", "soul_sand.png", "soul_soil.png"],
+        ["cobblestone.png", "nether_gold_ore.png"]
+    ]
+    while True:
+        if not pygame.mixer.music.get_busy() and music_on:
+            play_next_track()
+        events = pygame.event.get()
+        mouse = pygame.mouse.get_pos()
+        for event in events:
+            if event.type == pygame.QUIT:
+                exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if mouse[0] <= 595 and mouse[1] <= 595:
+                    plus_x_y = [mouse[0]//85, mouse[1]//85]
+                if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+                    if fx_on:
+                        click_sound.play()
+                    level_menu()
+                    
+        background()
+        bg_overlay()
+
+        pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
+
+        pygame.draw.rect(window, (0, 118, 197), (0, 595, 1240, 25))
+        pygame.draw.rect(window, (0, 118, 197), (595, 0, 50, 620))
+
+        i = 0
+        j = 0
+        while i < 595:
+            while j < 595:
+                block = pygame.image.load(PATH / "blocks" / blocks[j//85][i//85])
+                block = pygame.transform.scale(block, (85, 85))
+         
+                window.blit(block, (i, j))
+                pygame.draw.rect(window, (0, 0, 0), (i, j, 85, 85), 1)
+                j += 85
+            j = 0
+            i += 85
+        
+
+        i = 645
+        j = 0
+        while i < 1155:
+            while j < 425:
+                block = pygame.image.load(PATH / "blocks" / block_file_names[j//85][(i-645)//85])
+                block = pygame.transform.scale(block, (85, 85))
+         
+                window.blit(block, (i, j))
+                pygame.draw.rect(window, (0, 0, 0), (i, j, 85, 85), 1)
+                j += 85
+            j = 0
+            i += 85
+
+        pygame.draw.rect(window, (0, 255, 0), (plus_x_y[0]*85, plus_x_y[1]*85, 85, 85), 2)
+        
+        if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+            description("Exit")
+            trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
+        
+        #back_button
+        button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
 
         pygame.display.flip()
 
@@ -653,18 +732,21 @@ def game(level):
         button(PATH / "drawable" / "reject.png", 26, 26, 595, 595)
 
         #hint1_button
-        button(PATH / "drawable" / "torch1.png", 31, 31, 615, 586)
+        hint_x = 626
+        if level >= 10:
+            hint_x += 38
+        button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
         
-        if 626 <= mouse[0] <= 637 and 597 <= mouse[1] <= 617:
+        if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
             description("Hint 1. (5 emeralds)")
-            trans_surface(11, 20, (170, 170, 170, 120), 626, 597)
+            trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
         
         #hint2_button
-        button(PATH / "drawable" / "torch2.png", 31, 31, 630, 586)
+        button(PATH / "drawable" / "torch2.png", 31, 31, hint_x+4, 586)
 
-        if 640 <= mouse[0] <= 654 and 597 <= mouse[1] <= 617:
+        if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
             description("Hint 2. (15 emeralds)")
-            trans_surface(14, 20, (170, 170, 170, 120), 640, 597)
+            trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
 
         #next_button
         if level_finished and level < 24:
@@ -946,7 +1028,8 @@ def game(level):
         pygame.display.update()
         clock.tick(60)
 
-menu()
+#menu()
+level_builder()
 
 json_levels.close()
 json_options.close()
