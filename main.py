@@ -286,7 +286,7 @@ def level_menu():
 
 def level_builder():
     plus_x_y = [0, 0]
-    blocks = [["plus.png"] * 7] * 7
+    blocks = [["plus.png" for _ in range(7)] for _ in range(7)]
     block_file_names = [
         ["azalea_leaves.png", "bedrock.png", "cactus_top.png", "chorus_flower.png", "chorus_plant.png", "coal_ore.png"],
         ["crafting_table_top.png", "diamond_ore.png", "dirt.png", "emerald_ore.png", "end_stone_bricks.png", "end_stone.png"],
@@ -306,7 +306,13 @@ def level_builder():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if mouse[0] <= 595 and mouse[1] <= 595:
                     plus_x_y = [mouse[0]//85, mouse[1]//85]
-                if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+                elif 675 <= mouse[0] <= 1184 and 30 <= mouse[1] <= 540:
+                    if (mouse[1]-32)//85 == 5 and (mouse[0]-675)//85 >= 2:
+                        pass
+                    else:
+                        blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                        print(blocks)
+                elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     if fx_on:
                         click_sound.play()
                     level_menu()
@@ -314,7 +320,7 @@ def level_builder():
         background()
         bg_overlay()
 
-        pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
+        pygame.draw.rect(window, (205, 205, 205), (0, 0, 1240, 595))
 
         pygame.draw.rect(window, (0, 118, 197), (0, 595, 1240, 25))
         pygame.draw.rect(window, (0, 118, 197), (595, 0, 50, 620))
@@ -333,18 +339,22 @@ def level_builder():
             i += 85
         
 
-        i = 645
-        j = 0
-        while i < 1155:
-            while j < 425:
-                block = pygame.image.load(PATH / "blocks" / block_file_names[j//85][(i-645)//85])
-                block = pygame.transform.scale(block, (85, 85))
-         
-                window.blit(block, (i, j))
-                pygame.draw.rect(window, (0, 0, 0), (i, j, 85, 85), 1)
-                j += 85
-            j = 0
-            i += 85
+        i = 675
+        j = 30
+
+        while i < 1184:
+            while j < 30 + 6 * 85:
+                if (i - 645) // 85 < len(block_file_names[j // 85]):
+                    block = pygame.image.load(PATH / "blocks" / block_file_names[j // 85][(i - 645) // 85])
+                    block = pygame.transform.scale(block, (85, 85))
+
+                    window.blit(block, (i, j))
+                    pygame.draw.rect(window, (0, 0, 0), (i, j, 85, 85), 1)
+
+                j += 90
+            
+            j = 30
+            i += 90
 
         pygame.draw.rect(window, (0, 255, 0), (plus_x_y[0]*85, plus_x_y[1]*85, 85, 85), 2)
         
