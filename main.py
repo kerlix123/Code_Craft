@@ -18,6 +18,9 @@ data = json.load(json_data)
 json_tutorial = open(PATH / "tutorial.json")
 tutorial_text = json.load(json_tutorial)
 
+json_player_levels = open(PATH / "levels" / "player_levels.json")
+player_levels = json.load(json_player_levels)
+
 game_levels = []
 game_skins = []
 
@@ -45,8 +48,6 @@ class Level:
         self.unlocked = level <= levels["last_finished_level"]+1
         self.text_closed = text_closed
         self.text_page = 0
-    def get_level(self):
-        return self.level
     def hover(self, x2, y2):
         return self.x <= x2 <= self.x + self.size and self.y <= y2 <= self.y + self.size
 
@@ -61,8 +62,6 @@ class Skin:
         self.price = price
         self.size = 80
         self.unlocked = unlocked
-    def get_level(self):
-        return self.level
     def hover(self, x2, y2):
         return self.x <= x2 <= self.x + self.size and self.y <= y2 <= self.y + self.size
 
@@ -291,10 +290,13 @@ def level_builder():
         ["azalea_leaves.png", "bedrock.png", "cactus_top.png", "chorus_flower.png", "chorus_plant.png", "coal_ore.png"],
         ["crafting_table_top.png", "diamond_ore.png", "dirt.png", "emerald_ore.png", "end_stone_bricks.png", "end_stone.png"],
         ["farmland_moist.png", "farmland.png", "gold_ore.png", "grass_top.png", "hay_block_top.png", "melon_top.png"],
-        ["nether_quartz.png", "nether_wart_block.png", "netherrack.png", "oak_log_top.png", "oak_trapdoor.png", "pressure_plate.png"],
+        ["nether_quartz.png", "nether_wart_block.png", "netherrack.png", "oak_log_top.png", "oak_trapdoor.png", "nether_gold_ore.png"],
         ["pumpkin_top.png", "purpur_block.png", "sand.png", "sandstone_top.png", "soul_sand.png", "soul_soil.png"],
-        ["cobblestone.png", "nether_gold_ore.png"]
+        ["cobblestone.png"]
     ]
+    start = []
+    path_block = "plus.png"
+    path_select = False
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
@@ -307,11 +309,24 @@ def level_builder():
                 if mouse[0] <= 595 and mouse[1] <= 595:
                     plus_x_y = [mouse[0]//85, mouse[1]//85]
                 elif 675 <= mouse[0] <= 1184 and 30 <= mouse[1] <= 540:
-                    if (mouse[1]-32)//85 == 5 and (mouse[0]-675)//85 >= 2:
+                    if (mouse[1]-32)//85 == 5 and (mouse[0]-675)//85 >= 1:
                         pass
                     else:
-                        blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
-                        print(blocks)
+                        a = False
+                        for el in blocks:
+                            a = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] in el
+                        if block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] != "oak_trapdoor.png":
+                            if path_select:
+                                path_block = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                                path_select = False
+                            else:
+                                blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                        elif not a:
+                            blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                elif 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
+                    start = plus_x_y.copy()
+                elif 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
+                    path_select = True
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     if fx_on:
                         click_sound.play()
@@ -357,6 +372,9 @@ def level_builder():
             i += 90
 
         pygame.draw.rect(window, (0, 255, 0), (plus_x_y[0]*85, plus_x_y[1]*85, 85, 85), 2)
+
+        if start:
+            pygame.draw.rect(window, (255, 0, 0), (start[0]*85, start[1]*85, 85, 85), 2)
         
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
             description("Exit")
@@ -364,6 +382,20 @@ def level_builder():
         
         #back_button
         button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
+
+        if 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
+            description("Set start position")
+            trans_surface(20, 20, (170, 170, 170, 120), 609, 20)
+
+        #start button
+        button(PATH / "drawable" / "select.png", 28, 28, 605, 15)
+        
+        if 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
+            description("Set path block")
+            trans_surface(28, 28, (170, 170, 170, 120), 605, 60)
+
+        #path select
+        button(PATH / "blocks" / path_block, 28, 28, 605, 60)
 
         pygame.display.flip()
 
@@ -1044,3 +1076,4 @@ level_builder()
 json_levels.close()
 json_options.close()
 json_data.close()
+json_player_levels.close()
