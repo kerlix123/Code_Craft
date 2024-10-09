@@ -327,6 +327,86 @@ def level_builder():
                     start = plus_x_y.copy()
                 elif 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
                     path_select = True
+                elif 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
+                    curr = {"steve_xy": [
+                                0,
+                                0
+                            ],
+                            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+                            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+                            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+                            "path_block": "",
+                            "blocks": [
+                                [
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png"
+                                ],
+                                [
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png"
+                                ],
+                                [
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png"
+                                ],
+                                [
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png"
+                                ],
+                                [
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png"
+                                ],
+                                [
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png"
+                                ],
+                                [
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png",
+                                    "plus.png"
+                                ]
+                    ]}
+                    curr["steve_xy"] = [start[0], 6-start[1]]
+                    curr["blocks"] = blocks
+                    curr["path_block"] = path_block
+                    player_levels["level1"] = [curr]
+                    with open(PATH / "levels" / "player_levels.json", 'w') as file:
+                        json.dump(player_levels, file, indent=4)
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     if fx_on:
                         click_sound.play()
@@ -389,13 +469,19 @@ def level_builder():
 
         #start button
         button(PATH / "drawable" / "select.png", 28, 28, 605, 15)
-        
+
+        #path select
+        button(PATH / "blocks" / path_block, 28, 28, 605, 60)
         if 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
             description("Set path block")
             trans_surface(28, 28, (170, 170, 170, 120), 605, 60)
 
-        #path select
-        button(PATH / "blocks" / path_block, 28, 28, 605, 60)
+        if 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
+            description("Save level")
+            trans_surface(22, 21, (170, 170, 170, 120), 609, 104)
+
+        #save button
+        button(PATH / "drawable" / "accept.png", 29, 29, 605, 100)
 
         pygame.display.flip()
 
