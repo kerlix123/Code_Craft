@@ -22,18 +22,21 @@ json_player_levels = open(PATH / "levels" / "player_levels.json")
 player_levels = json.load(json_player_levels)
 
 game_levels = []
+player_game_levels = []
 game_skins = []
 
 stevexy = [0, 510]
 
-def move(grass_x, grass_y, level):
+def move(grass_x, grass_y, level, player_l=False):
     steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
     steve = pygame.transform.scale(steve, (85, 85))
 
     window.blit(steve, (stevexy[0], stevexy[1]))
     pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
 
-    window.blit(pygame.transform.scale(pygame.image.load(PATH / "blocks" / f"{levels[f"level{level}"][0]["blocks"][(stevexy[1]+grass_y)//85][(stevexy[0]+grass_x)//85]}"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
+    block_path = levels[f"level{level}"][0]["blocks"] if not player_l else player_levels[f"level{level}"][0]["blocks"]
+
+    window.blit(pygame.transform.scale(pygame.image.load(PATH / "blocks" / f"{block_path[(stevexy[1]+grass_y)//85][(stevexy[0]+grass_x)//85]}"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
     pygame.draw.rect(window, (0, 0, 0), (stevexy[0]+grass_x, stevexy[1]+grass_y, 85, 85), 1)
     pygame.display.update()
     clock.tick(60)
@@ -53,6 +56,10 @@ class Level:
 
 for p in levels["level_p"]:
     game_levels.append(Level(p[0], p[1], p[2], p[3], p[4]))
+
+if player_levels["last_level"] > 0:
+    for p in player_levels["level_p"]:
+        player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4]))
 
 class Skin:
     def __init__(self, name, x, y, price, unlocked):
@@ -239,10 +246,14 @@ def level_menu():
             if event.type == pygame.QUIT:
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if 1010 <= mouse[0] <= 1210 and 550 <= mouse[1] <= 590:
+                if 830 <= mouse[0] <= 1030 and 550 <= mouse[1] <= 590:
                     if fx_on:
                         click_sound.play()
                     level_builder()
+                if 1050 <= mouse[0] <= 1210 and 550 <= mouse[1] <= 590:
+                    if fx_on:
+                        click_sound.play()
+                    your_levels_menu()
                 for lvl in game_levels:
                     if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                         if fx_on:
@@ -279,11 +290,60 @@ def level_menu():
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
                     button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
 
-        menu_button(1010, 550, 1033, "Level builder", 200, 40, mouse)
+        menu_button(830, 550, 853, "Level builder", 200, 40, mouse)
+
+        menu_button(1050, 550, 1063, "Your levels", 160, 40, mouse)
+        
+        pygame.display.flip()
+
+def your_levels_menu():
+    while True:
+        if not pygame.mixer.music.get_busy() and music_on:
+            play_next_track()
+        mouse = pygame.mouse.get_pos()
+        events = pygame.event.get()
+        for event in events:
+            if event.type == pygame.QUIT:
+                exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for lvl in player_game_levels:
+                    if lvl.hover(mouse[0], mouse[1]) and lvl.level != -1:
+                        if fx_on:
+                            click_sound.play()
+                        game(lvl.level, True)
+                if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    if fx_on:
+                        click_sound.play()
+                    level_menu()
+        
+        background()
+        bg_overlay()
+
+        #back_button
+        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+
+        if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
+
+        #level_button
+        for lvl in player_game_levels:
+            if lvl.x != -1 and lvl.y != -1:
+                pygame.draw.rect(window, (130, 130, 130), (lvl.x, lvl.y, lvl.size, lvl.size))
+                pygame.draw.rect(window, (0, 0, 0), (lvl.x, lvl.y, lvl.size, lvl.size), 1)
+
+                text_width = minecraft_font_small.size(str(lvl.level))[0]
+
+                window.blit(minecraft_font_small.render(str(lvl.level), True, (255, 255, 255)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
+
+                if lvl.hover(mouse[0], mouse[1]):
+                    pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
+                    button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
         
         pygame.display.flip()
 
 def level_builder():
+    saved = False
+    curr_level = player_levels["last_level"]+1
     plus_x_y = [0, 0]
     blocks = [["plus.png" for _ in range(7)] for _ in range(7)]
     block_file_names = [
@@ -328,86 +388,32 @@ def level_builder():
                 elif 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
                     path_select = True
                 elif 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
-                    curr = {"steve_xy": [
-                                0,
-                                0
-                            ],
-                            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-                            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-                            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-                            "path_block": "",
-                            "blocks": [
-                                [
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png"
-                                ],
-                                [
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png"
-                                ],
-                                [
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png"
-                                ],
-                                [
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png"
-                                ],
-                                [
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png"
-                                ],
-                                [
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png"
-                                ],
-                                [
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png",
-                                    "plus.png"
-                                ]
-                    ]}
-                    curr["steve_xy"] = [start[0], 6-start[1]]
-                    curr["blocks"] = blocks
-                    curr["path_block"] = path_block
-                    player_levels["level1"] = [curr]
-                    with open(PATH / "levels" / "player_levels.json", 'w') as file:
-                        json.dump(player_levels, file, indent=4)
+                    if start:
+                        curr = new_level_curr
+                        curr["steve_xy"] = [start[0], 6-start[1]]
+                        curr["blocks"] = blocks
+                        curr["path_block"] = path_block
+                        player_levels[f"level{curr_level}"] = [curr]
+                        with open(PATH / "levels" / "player_levels.json", 'w') as file:
+                            json.dump(player_levels, file, indent=4)
+                        saved = True
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+                    if saved:
+                        if curr_level > 1:
+                            curr_level_p = [0] * 5
+                            curr = player_levels["level_p"][-2]
+                            curr_level_p[0] = curr[0]+100 if curr[0] < 1130 else 30
+                            curr_level_p[1] = curr[1] if curr[0] < 1130 else curr[1]+110
+                            curr_level_p[2] = curr_level
+                            curr_level_p[3] = 80
+                            curr_level_p[4] = True
+                            player_levels["level_p"].insert(-1, curr_level_p)
+                        player_levels["last_level"] += 1
+                        if player_levels["last_level"] > 0:
+                            for p in player_levels["level_p"]:
+                                player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4]))
+                        with open(PATH / "levels" / "player_levels.json", 'w') as file:
+                            json.dump(player_levels, file, indent=4)
                     if fx_on:
                         click_sound.play()
                     level_menu()
@@ -708,7 +714,7 @@ def skins():
 
         pygame.display.flip()
 
-def game(level):
+def game(level, player_l = False):
     global code_lang, code_runned, level_finished, grades
     global def_code_python, def_code_c, def_code_cpp
     messages = []
@@ -719,10 +725,12 @@ def game(level):
     player = 1
     code_input.i = 0
     code_input.cursor_pos = 0
-    code_input.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
+    text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
+    code_input.set_text(text_path)
     if level >= 10:
-        stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-        stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+        xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
+        stevexy[0] = xy[0]*85
+        stevexy[1] = (6-xy[1])*85
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             play_next_track()
@@ -741,13 +749,16 @@ def game(level):
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     if fx_on:
                         click_sound.play()
-                    menu()
+                    if player_l:
+                        your_levels_menu()
+                    else:
+                        level_menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
                     code_runned = True
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
                     restart_code = True
                 elif 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
-                    if level_finished and level < 24:
+                    if not player_l and level_finished and level < 24:
                         one_v_one = False
                         player = 1
                         code_input.i = 0
@@ -765,19 +776,21 @@ def game(level):
                         messages = []
                         code_input.clear_text()
                         if level >= 10:
-                            stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-                            stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+                            xy = levels[f"level{level}"][0]["steve_xy"]
+                            stevexy[0] = xy[0]*85
+                            stevexy[1] = (6-xy[1])*85
                         level_finished = False
                         restart()
                         time.sleep(0.01)
                         restart()
-                elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and level >= 10:
+                elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and (level >= 10 or player_l):
                     one_v_one = True
                     code_input_2 = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
-                    code_input_2.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
-                elif 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and level >= 10:
+                    text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
+                    code_input_2.set_text(text_path)
+                elif 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
                     player = 1
-                elif 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and level >= 10:
+                elif 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
                     player = 2
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     code_lang = (code_lang + 1) % len(languages)
@@ -787,15 +800,16 @@ def game(level):
                         game_levels[level].text_page += 1
                     if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479 and game_levels[level].text_page > 0:
                         game_levels[level].text_page -= 1
-                elif 626 <= mouse[0] <= 637 and 597 <= mouse[1] <= 617:
+                elif not player_l and 626 <= mouse[0] <= 637 and 597 <= mouse[1] <= 617:
                     #TODO - hint 1
                     pass
-                elif 640 <= mouse[0] <= 654 and 597 <= mouse[1] <= 617:
+                elif not player_l and 640 <= mouse[0] <= 654 and 597 <= mouse[1] <= 617:
                     #TODO - hint 2
                     pass
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
-                    game_levels[level].text_closed = not game_levels[level].text_closed
+                    if not player_l:
+                        game_levels[level].text_closed = not game_levels[level].text_closed
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     messages = []
 
@@ -815,17 +829,20 @@ def game(level):
         def restart():
             if player == 1:
                 code_input.clear_text()
-                code_input.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
+                text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
+                code_input.set_text(text_path)
                 code_input.i = 0
                 code_input.cursor_pos = 0
             elif player == 2:
                 code_input_2.clear_text()
-                code_input_2.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
+                text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
+                code_input_2.set_text(text_path)
                 code_input_2.i = 0
                 code_input_2.cursor_pos = 0
-            if level >= 10:
-                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+            if player_l or level >= 10:
+                xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
+                stevexy[0] = xy[0]*85
+                stevexy[1] = (6-xy[1])*85
 
         pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
 
@@ -859,32 +876,33 @@ def game(level):
         #restart_button
         button(PATH / "drawable" / "reject.png", 26, 26, 595, 595)
 
-        #hint1_button
-        hint_x = 626
-        if level >= 10:
-            hint_x += 38
-        button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
-        
-        if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
-            description("Hint 1. (5 emeralds)")
-            trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
-        
-        #hint2_button
-        button(PATH / "drawable" / "torch2.png", 31, 31, hint_x+4, 586)
+        if not player_l:
+            #hint1_button
+            hint_x = 626
+            if level >= 10:
+                hint_x += 38
+            button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
+            
+            if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
+                description("Hint 1. (5 emeralds)")
+                trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
+            
+            #hint2_button
+            button(PATH / "drawable" / "torch2.png", 31, 31, hint_x+4, 586)
 
-        if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
-            description("Hint 2. (15 emeralds)")
-            trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
+            if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
+                description("Hint 2. (15 emeralds)")
+                trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
 
         #next_button
-        if level_finished and level < 24:
+        if not player_l and level_finished and level < 24:
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                 description("Next level")
                 trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
             button(PATH / "drawable" / "accept.png", 29, 29, 562, 592)
 
         #1v1 button
-        if level >= 10:
+        if level >= 10 or player_l:
             if not one_v_one:
                 window.blit(minecraft_font_smaller.render("1v1", True, (255, 255, 255)), (630, 600))
                 if 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615:
@@ -900,14 +918,13 @@ def game(level):
                     description("2nd player")
                     trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
 
-        
-
         #blocks
         i = 0
         j = 0
         while i < 595:
             while j < 595:
-                block = pygame.image.load(PATH / "blocks" / f"{levels[f"level{level}"][0]["blocks"][j//85][i//85]}")
+                block_path = PATH / "blocks" / f"{levels[f"level{level}"][0]["blocks"][j//85][i//85]}" if not player_l else PATH / "blocks" / f"{player_levels[f"level{level}"][0]["blocks"][j//85][i//85]}"
+                block = pygame.image.load(block_path)
                 block = pygame.transform.scale(block, (85, 85))
          
                 window.blit(block, (i, j))
@@ -917,7 +934,7 @@ def game(level):
             i += 85
 
         #book
-        if not game_levels[level].text_closed:
+        if not player_l and not game_levels[level].text_closed:
             book = pygame.image.load(PATH / "drawable" / "book.png")
             book = pygame.transform.scale(book, (800, 800))
 
@@ -937,7 +954,7 @@ def game(level):
                 if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479:
                     trans_surface(36, 19, (170, 170, 170, 120), 170, 459)
 
-        if level >= 10:
+        if level >= 10 or player_l:
             steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
             steve = pygame.transform.scale(steve, (85, 85))
         
@@ -959,7 +976,7 @@ def game(level):
                 if cbdd:           
                     cbd.append(cbdd)
                 i += 1
-            if level < 10:
+            if not player_l and level < 10:
                 if code_lang == 0:
                     executed_code = exec_code(code_input.get_text())
                 elif code_lang == 1:
@@ -999,10 +1016,10 @@ def game(level):
 
             #correct solution
             solution = False
-            if level < 10 and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
+            if not player_l and level < 10 and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
                 solution = True
             
-            if level == 4:
+            if not player_l and level == 4:
                 if code_lang == 0:
                     l = []
                     ll = ["<class 'bool'>", "<class 'float'>", "<class 'int'>", "<class 'str'>"]
@@ -1036,10 +1053,11 @@ def game(level):
                     solution = c == 4
                     pass
 
-            if level >= 10:
-                stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-                stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
-                if level >= 14 and level < 17:
+            if player_l or level >= 10:
+                xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
+                stevexy[0] = xy[0]*85
+                stevexy[1] = (6-xy[1])*85
+                if not player_l and level >= 14 and level < 17:
                     plate_activated = False
                 try:
                     if code_lang == 0:
@@ -1054,26 +1072,32 @@ def game(level):
                     coms = []
                 
                 def check():
-                    nonlocal plate_activated
+                    nonlocal plate_activated, player_l
+                    block = levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] if not player_l else player_levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
                         messages.append("You can only go on grass!")
                         restart()
-                    elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "oak_trapdoor.png":
+                    elif block == "oak_trapdoor.png":
                         if level >= 14 and level < 17 and not plate_activated:
                             messages.append("Door is not unlocked!")
                             restart()
                         return True
-                    elif levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] == "pressure_plate.png":
+                    elif block == "pressure_plate.png":
                         plate_activated = True
-                    elif level < 17 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "grass_top.png":
+                    elif player_l:
+                        if block != player_levels[f"level{level}"][0]["path_block"]:
+                            messages.append("You can't go on this block!")
+                            restart()
+                            return False
+                    elif level < 17 and block != "grass_top.png":
                         messages.append("You can only go on grass!")
                         restart()
                         return False
-                    elif level >= 17 and level < 21 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "bedrock.png":
+                    elif level >= 17 and level < 21 and block != "bedrock.png":
                         messages.append("You can only go on bedrock!")
                         restart()
                         return False
-                    elif level >= 21 and levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] != "purpur_block.png":
+                    elif level >= 21 and block != "purpur_block.png":
                         messages.append("You can only go on purpur blocks!")
                         restart()
                         return False
@@ -1082,22 +1106,22 @@ def game(level):
                     if com[0] == "right":
                         for _ in range(int(com[1])):
                             stevexy[0] += 85
-                            move(-85, 0, level)
+                            move(-85, 0, level, player_l)
                             check()
                     elif com[0] == "left":
                         for _ in range(int(com[1])):
                             stevexy[0] -= 85
-                            move(85, 0, level)
+                            move(85, 0, level, player_l)
                             check()
                     elif com[0] == "up":
                         for _ in range(int(com[1])):
                             stevexy[1] -= 85
-                            move(0, 85, level)
+                            move(0, 85, level, player_l)
                             check()
                     elif com[0] == "down":
                         for _ in range(int(com[1])):
                             stevexy[1] += 85
-                            move(0, -85, level)
+                            move(0, -85, level, player_l)
                             check()
 
                 if check():
@@ -1105,10 +1129,13 @@ def game(level):
                         one_v_one_code[player-1] = True
                         messages.append(f"Player {player}. finished the level!")
                         if not (one_v_one_code[0] and one_v_one_code[1]):
-                            stevexy[0] = levels[f"level{level}"][0]["steve_xy"][0]*85
-                            stevexy[1] = (6-levels[f"level{level}"][0]["steve_xy"][1])*85
+                            xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
+                            stevexy[0] = xy[0]*85
+                            stevexy[1] = (6-xy[1])*85
                     else:
-                        if level >= 14 and level < 17 and plate_activated:
+                        if player_l:
+                            solution = True
+                        elif level >= 14 and level < 17 and plate_activated:
                             solution = True
                         elif level >= 10 and level < 14 or level >= 17:
                             solution = True
@@ -1140,8 +1167,9 @@ def game(level):
                     emeralds = 10
                 if level >= 14:
                     emeralds = 15
-                messages.append(f"+{emeralds} Emeralds")
-                data["emeralds"] += emeralds
+                if not player_l:
+                    messages.append(f"+{emeralds} Emeralds")
+                    data["emeralds"] += emeralds
                 level_finished = True   
                 with open(PATH / "data.json", 'w') as file:
                     json.dump(data, file, indent=4)
@@ -1157,7 +1185,7 @@ def game(level):
         clock.tick(60)
 
 #menu()
-level_builder()
+level_menu()
 
 json_levels.close()
 json_options.close()
