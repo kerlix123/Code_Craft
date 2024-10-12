@@ -15,9 +15,6 @@ options = json.load(json_options)
 json_data = open(PATH / "data.json")
 data = json.load(json_data)
 
-json_tutorial = open(PATH / "tutorial.json")
-tutorial_text = json.load(json_tutorial)
-
 json_player_levels = open(PATH / "levels" / "player_levels.json")
 player_levels = json.load(json_player_levels)
 
@@ -505,70 +502,9 @@ def tutorial():
                     if fx_on:
                         click_sound.play()
                     menu()
-                if 420 <= mouse[0] <= 820 and 80 <= mouse[1] <= 120:
-                    lang_tutorial()
                     
         background()
         bg_overlay()
-
-        menu_button(420, 80, 579, "Python", 400, 40, mouse)
-
-        menu_button(420, 130, 612, "C", 400, 40, mouse)
-
-        #back_button
-        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
-
-        if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
-
-        pygame.display.flip()
-
-def lang_tutorial():
-    page = 0
-    while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
-        events = pygame.event.get()
-        mouse = pygame.mouse.get_pos()
-        for event in events:
-            if event.type == pygame.QUIT:
-                exit()
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-                    tutorial()
-                if page < tutorial_text["pages_Python"]-2 and 990 <= mouse[0] <= 1032 and 545 <= mouse[1] <= 569:
-                    page += 2
-                if page > 0 and 175 <= mouse[0] <= 217 and 545 <= mouse[1] <= 569:
-                    page -= 2
-                    
-        background()
-        bg_overlay()
-
-        #book
-        book = pygame.image.load(PATH / "drawable" / "book.png")
-        book = pygame.transform.scale(book, (850, 850))
-        book2 = pygame.image.load(PATH / "drawable" / "book2.png")
-        book2 = pygame.transform.scale(book2, (850, 850))
-
-        window.blit(book2, (60, 9))
-        window.blit(book, (555, 9))
-
-        #render text
-        render_text(170, 60, tutorial_text["tutorial_Python"][page], 20)
-        if page+1 < tutorial_text["pages_Python"]:
-            render_text(665, 60, tutorial_text["tutorial_Python"][page+1], 20)
-
-        if page < tutorial_text["pages_Python"]-2:
-            button(PATH / "drawable" / "page_forward.png", 42, 24, 990, 545)
-
-            if 990 <= mouse[0] <= 1032 and 545 <= mouse[1] <= 569:
-                trans_surface(36, 19, (170, 170, 170, 120), 995, 549)
-        
-        if page > 0:
-            button(PATH / "drawable" / "page_backward.png", 42, 24, 175, 545)
-
-            if 175 <= mouse[0] <= 217 and 545 <= mouse[1] <= 569:
-                trans_surface(36, 19, (170, 170, 170, 120), 179, 549)
 
         #back_button
         button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
@@ -788,24 +724,25 @@ def game(level, player_l = False):
                     code_input_2 = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
                     text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
                     code_input_2.set_text(text_path)
-                elif 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
+                elif one_v_one and 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
                     player = 1
-                elif 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
+                elif one_v_one and 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
                     player = 2
+                elif one_v_one and 668 <= mouse[0] <= 684 and 598 <= mouse[1] <= 614:
+                    player = 1
+                    one_v_one = False
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     code_lang = (code_lang + 1) % len(languages)
                     restart()
+                elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
+                    print("hint 1")
+                elif not player_l and 70 <= mouse[0] <= 84 and 597 <= mouse[1] <= 617:
+                    print("hint 2")
                 elif not game_levels[level].text_closed:
                     if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
                         game_levels[level].text_page += 1
                     if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479 and game_levels[level].text_page > 0:
                         game_levels[level].text_page -= 1
-                elif not player_l and 626 <= mouse[0] <= 637 and 597 <= mouse[1] <= 617:
-                    #TODO - hint 1
-                    pass
-                elif not player_l and 640 <= mouse[0] <= 654 and 597 <= mouse[1] <= 617:
-                    #TODO - hint 2
-                    pass
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     if not player_l:
@@ -878,9 +815,7 @@ def game(level, player_l = False):
 
         if not player_l:
             #hint1_button
-            hint_x = 626
-            if level >= 10:
-                hint_x += 38
+            hint_x = 56
             button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
             
             if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
@@ -917,6 +852,13 @@ def game(level, player_l = False):
                 if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615:
                     description("2nd player")
                     trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
+
+                if 668 <= mouse[0] <= 684 and 598 <= mouse[1] <= 614:
+                    description("Exit 1v1")
+                    trans_surface(16, 16, (170, 170, 170, 120), 668, 598)
+
+                #exit_1v1_button
+                button(PATH / "drawable" / "close.png", 16, 16, 668, 598)
 
         #blocks
         i = 0
@@ -984,7 +926,10 @@ def game(level, player_l = False):
                 elif code_lang == 2:
                     executed_code = exec_c_code(code_input.get_text(), "C++")
                 if executed_code["error"] != None:
-                    messages.append("Error: " + executed_code['error'])
+                    err = executed_code["error"]
+                    if "error:" in err:
+                        err = executed_code["error"].rsplit("\n")[0].rsplit("error:")[1].strip()
+                    messages.append("Error: " + err)
             else:
                 input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
                 if code_lang == 0:
@@ -1001,7 +946,7 @@ def game(level, player_l = False):
                 elif code_lang == 2:
                     executed_code = exec_c_code(def_code_cpp + input_code, "C++")
                 if executed_code["error"] != None:
-                    messages.append("Error: " + executed_code['error'])
+                    messages.append("Error in code!")
                 end_time = time.time()
                 one_v_one_time[player-1] = end_time - start_time
 
@@ -1184,8 +1129,7 @@ def game(level, player_l = False):
         pygame.display.update()
         clock.tick(60)
 
-#menu()
-level_menu()
+menu()
 
 json_levels.close()
 json_options.close()
