@@ -3,76 +3,22 @@ from pygametextboxinput import *
 from code_runner import *
 from pathlib import Path
 from def_codes import *
+from classes import *
+from utils import *
 
 PATH = Path.cwd()
 
-json_levels = open(PATH / "levels" / "levels.json")
-levels = json.load(json_levels)
-
-json_options = open(PATH / "options.json")
-options = json.load(json_options)
-
-json_data = open(PATH / "data.json")
-data = json.load(json_data)
-
-json_player_levels = open(PATH / "levels" / "player_levels.json")
-player_levels = json.load(json_player_levels)
-
-game_levels = []
-player_game_levels = []
-game_skins = []
-
-stevexy = [0, 510]
-
-def move(grass_x, grass_y, level, player_l=False):
-    steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
-    steve = pygame.transform.scale(steve, (85, 85))
-
-    window.blit(steve, (stevexy[0], stevexy[1]))
-    pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
-
-    block_path = levels[f"level{level}"][0]["blocks"] if not player_l else player_levels[f"level{level}"][0]["blocks"]
-
-    window.blit(pygame.transform.scale(pygame.image.load(PATH / "blocks" / f"{block_path[(stevexy[1]+grass_y)//85][(stevexy[0]+grass_x)//85]}"), (85, 85)), (stevexy[0]+grass_x, stevexy[1]+grass_y))
-    pygame.draw.rect(window, (0, 0, 0), (stevexy[0]+grass_x, stevexy[1]+grass_y, 85, 85), 1)
-    pygame.display.update()
-    clock.tick(60)
-    time.sleep(0.1)
-
-class Level:
-    def __init__(self, x, y, level, size, text_closed):
-        self.x = x
-        self.y = y
-        self.level = level
-        self.size = size
-        self.unlocked = level <= levels["last_finished_level"]+1
-        self.text_closed = text_closed
-        self.text_page = 0
-    def hover(self, x2, y2):
-        return self.x <= x2 <= self.x + self.size and self.y <= y2 <= self.y + self.size
-
-for p in levels["level_p"]:
-    game_levels.append(Level(p[0], p[1], p[2], p[3], p[4]))
-
-if player_levels["last_level"] > 0:
-    for p in player_levels["level_p"]:
-        player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4]))
-
-class Skin:
-    def __init__(self, name, x, y, price, unlocked):
-        self.name = name
-        self.x = x
-        self.y = y
-        self.price = price
-        self.size = 80
-        self.unlocked = unlocked
-    def hover(self, x2, y2):
-        return self.x <= x2 <= self.x + self.size and self.y <= y2 <= self.y + self.size
-
-for k in data["skins"]:
-    game_skins.append(Skin(k, data["skins"][k][0], data["skins"][k][1], data["skins"][k][2], data["skins"][k][3]))
-
 pygame.init()
+
+window = pygame.display.set_mode((1240, 620))
+pygame.display.set_caption("Code_Craft")
+pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "crafting_table.png"))
+clock = pygame.time.Clock()
+
+minecraft_font_big = pygame.font.Font(PATH / "Minecraft.ttf", 75)
+minecraft_font_small = pygame.font.Font(PATH / "Minecraft.ttf", 25)
+minecraft_font_smaller = pygame.font.Font(PATH / "Minecraft.ttf", 15)
+minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
 
 #music
 current_song_index = 0
@@ -84,6 +30,36 @@ playlist = [PATH / "music" / "DryHands.mp3",
             PATH / "music" / "SubwooferLullaby.mp3",
             PATH / "music" / "Sweden.mp3",
             PATH / "music" / "WetHands.mp3"]
+
+def load_json_file(file):
+    with open(file) as json_file:
+        return json.load(json_file)
+
+levels = load_json_file(PATH / "levels" / "levels.json")
+
+options = load_json_file(PATH / "options.json")
+
+data = load_json_file(PATH / "data.json")
+
+player_levels = load_json_file(PATH / "levels" / "player_levels.json")
+
+stevexy = [0, 510]
+
+game_utils = GameUtils(window, pygame, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, PATH)
+
+game_levels = []
+for p in levels["level_p"]:
+    game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
+
+player_game_levels = []
+if player_levels["last_level"] > 0:
+    for p in player_levels["level_p"]:
+        player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
+
+game_skins = []
+for k in data["skins"]:
+    game_skins.append(Skin(k, data["skins"][k][0], data["skins"][k][1], data["skins"][k][2], data["skins"][k][3]))
+
 random.shuffle(playlist)
 pygame.mixer.music.load(playlist[current_song_index])
 pygame.mixer.music.play()
@@ -92,65 +68,6 @@ music_on = options["music_on"]
 fx_on = options["fx_on"]
 if not music_on:
     pygame.mixer.music.pause()
-
-def play_next_track():
-    global current_song_index
-    current_song_index = (current_song_index + 1) % len(playlist)
-    pygame.mixer.music.load(playlist[current_song_index])
-    pygame.mixer.music.play()
-
-window = pygame.display.set_mode((1240, 620))
-pygame.display.set_caption("Code_Craft")
-pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "crafting_table.png"))
-clock = pygame.time.Clock()
-
-def button(path, width, height, x, y):
-    b_button = pygame.transform.scale(pygame.image.load(path), (width, height))
-    window.blit(b_button, (x, y))
-
-def menu_button(x, y, text_x, text, width, height, mouse):
-    pygame.draw.rect(window, (130, 130, 130), (x, y, width, height))
-    pygame.draw.rect(window, (0, 0, 0), (x, y, width, height), 1)
-
-    window.blit(minecraft_font_small.render(text, True, (255, 255, 255)), (text_x, y+10))
-
-    if x <= mouse[0] <= x+width and y <= mouse[1] <= y+height:
-        pygame.draw.rect(window, (255, 255, 255), (x, y, width, height), 3)
-
-def trans_surface(width, height, color, x, y):
-    transparent_surface = pygame.Surface((width, height), pygame.SRCALPHA)
-    transparent_surface.fill(color)
-    window.blit(transparent_surface, (x, y))
-
-def background():
-    background = pygame.image.load(PATH / "drawable" / "background.png")
-    background = pygame.transform.scale(background, (1240, 620))
-    window.blit(background, (0, 0))
-
-def bg_overlay():
-    background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
-    background_overlay.fill((0, 0, 0, 50))
-    window.blit(background_overlay, (0, 0))
-
-def render_text(x, y, text, inc):
-    for el in text:
-        window.blit(minecraft_font_book.render(el, True, (0, 0, 0)), (x, y))
-        y += inc
-
-def minecraft_cmd(l):
-    ll = len(l)
-    y = 590 - ll*30
-    index = 0
-    while index < ll:
-        color = (255, 255, 255)
-        trans_surface(595, 30, (0, 0, 0, 100), 0, y)
-        if l[index][0:7] == "Error: ":
-            color = (255, 85, 85)
-        if l[index] == "Player 1. won." or l[index] == "Player 2. won.":
-            color = (0, 255, 0)
-        window.blit(minecraft_font_small.render(l[index], True, color), (10, y+4))
-        index += 1
-        y += 30
 
 code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 pygame.key.set_repeat(200, 25)
@@ -162,27 +79,12 @@ code_runned = False
 level_finished = False
 grades = [0, 0]
 
-minecraft_font_big = pygame.font.Font(PATH / "Minecraft.ttf", 75)
-minecraft_font_small = pygame.font.Font(PATH / "Minecraft.ttf", 25)
-minecraft_font_smaller = pygame.font.Font(PATH / "Minecraft.ttf", 15)
-minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
-
 click_sound = pygame.mixer.Sound(PATH / "sounds" / "minecraft_click.mp3")
-
-def description(string):
-    length = 150
-    x = 223
-    if len(string) > 18:
-        length = 300
-        x = 147
-    pygame.draw.rect(window, (194, 194, 194), (x, 598, length, 19))
-    window.blit(minecraft_font_smaller.render(string, True, (255, 255, 255)), ((595-minecraft_font_smaller.size(string)[0])//2, 601))
-    pygame.draw.rect(window, (0, 0, 0), (x, 598, length, 19), 1)
 
 def menu():
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
 
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
@@ -210,7 +112,7 @@ def menu():
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
                     exit()
         
-        background()
+        game_utils.background()
 
         big_title = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "Code_Craft.png"), (491, 127))
         window.blit(big_title, (374, 60))
@@ -219,15 +121,15 @@ def menu():
         window.blit(emerald, (1210, 0))
         window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 8.8))
 
-        menu_button(420, 250, 594, "Play", 400, 40, mouse)
+        game_utils.menu_button(420, 250, 594, "Play", 400, 40, mouse)
 
-        menu_button(420, 300, 580, "Levels", 400, 40, mouse)
+        game_utils.menu_button(420, 300, 580, "Levels", 400, 40, mouse)
 
-        menu_button(420, 350, 573, "Tutorial", 400, 40, mouse)
+        game_utils.menu_button(420, 350, 573, "Tutorial", 400, 40, mouse)
 
-        menu_button(420, 420, 464, "Options...", 195, 40, mouse)
+        game_utils.menu_button(420, 420, 464, "Options...", 195, 40, mouse)
 
-        menu_button(625, 420, 659, "Quit Game", 195, 40, mouse)
+        game_utils.menu_button(625, 420, 659, "Quit Game", 195, 40, mouse)
 
         pygame.display.flip()     
 
@@ -236,7 +138,7 @@ def level_menu():
         lvl.unlocked = lvl.level <= levels["last_finished_level"]+1
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
         for event in events:
@@ -261,14 +163,14 @@ def level_menu():
                         click_sound.play()
                     menu()
         
-        background()
-        bg_overlay()
+        game_utils.background()
+        game_utils.bg_overlay()
 
         #back_button
-        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
+            game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         #level_button
         for lvl in game_levels:
@@ -281,22 +183,22 @@ def level_menu():
                 window.blit(minecraft_font_small.render(str(lvl.level), True, (255, 255, 255)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
 
                 if not lvl.unlocked:
-                    trans_surface(lvl.size, lvl.size, (0, 0, 0, 50), lvl.x, lvl.y)
+                    game_utils.trans_surface(lvl.size, lvl.size, (0, 0, 0, 50), lvl.x, lvl.y)
 
                 if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
+                    game_utils.button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
 
-        menu_button(830, 550, 853, "Level builder", 200, 40, mouse)
+        game_utils.menu_button(830, 550, 853, "Level builder", 200, 40, mouse)
 
-        menu_button(1050, 550, 1063, "Your levels", 160, 40, mouse)
+        game_utils.menu_button(1050, 550, 1063, "Your levels", 160, 40, mouse)
         
         pygame.display.flip()
 
 def your_levels_menu():
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
         for event in events:
@@ -313,14 +215,14 @@ def your_levels_menu():
                         click_sound.play()
                     level_menu()
         
-        background()
-        bg_overlay()
+        game_utils.background()
+        game_utils.bg_overlay()
 
         #back_button
-        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
+            game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         #level_button
         for lvl in player_game_levels:
@@ -334,7 +236,7 @@ def your_levels_menu():
 
                 if lvl.hover(mouse[0], mouse[1]):
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
+                    game_utils.button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
         
         pygame.display.flip()
 
@@ -356,7 +258,7 @@ def level_builder():
     path_select = False
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -408,15 +310,15 @@ def level_builder():
                         player_levels["last_level"] += 1
                         if player_levels["last_level"] > 0:
                             for p in player_levels["level_p"]:
-                                player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4]))
+                                player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
                         with open(PATH / "levels" / "player_levels.json", 'w') as file:
                             json.dump(player_levels, file, indent=4)
                     if fx_on:
                         click_sound.play()
                     level_menu()
                     
-        background()
-        bg_overlay()
+        game_utils.background()
+        game_utils.bg_overlay()
 
         pygame.draw.rect(window, (205, 205, 205), (0, 0, 1240, 595))
 
@@ -460,38 +362,38 @@ def level_builder():
             pygame.draw.rect(window, (255, 0, 0), (start[0]*85, start[1]*85, 85, 85), 2)
         
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
-            description("Exit")
-            trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
+            game_utils.description("Exit")
+            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
         
         #back_button
-        button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
+        game_utils.button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
 
         if 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
-            description("Set start position")
-            trans_surface(20, 20, (170, 170, 170, 120), 609, 20)
+            game_utils.description("Set start position")
+            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 609, 20)
 
         #start button
-        button(PATH / "drawable" / "select.png", 28, 28, 605, 15)
+        game_utils.button(PATH / "drawable" / "select.png", 28, 28, 605, 15)
 
         #path select
-        button(PATH / "blocks" / path_block, 28, 28, 605, 60)
+        game_utils.button(PATH / "blocks" / path_block, 28, 28, 605, 60)
         if 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
-            description("Set path block")
-            trans_surface(28, 28, (170, 170, 170, 120), 605, 60)
+            game_utils.description("Set path block")
+            game_utils.trans_surface(28, 28, (170, 170, 170, 120), 605, 60)
 
         if 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
-            description("Save level")
-            trans_surface(22, 21, (170, 170, 170, 120), 609, 104)
+            game_utils.description("Save level")
+            game_utils.trans_surface(22, 21, (170, 170, 170, 120), 609, 104)
 
         #save button
-        button(PATH / "drawable" / "accept.png", 29, 29, 605, 100)
+        game_utils.button(PATH / "drawable" / "accept.png", 29, 29, 605, 100)
 
         pygame.display.flip()
 
 def tutorial():
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -503,14 +405,14 @@ def tutorial():
                         click_sound.play()
                     menu()
                     
-        background()
-        bg_overlay()
+        game_utils.background()
+        game_utils.bg_overlay()
 
         #back_button
-        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
+            game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         pygame.display.flip()
 
@@ -518,7 +420,7 @@ def options_win():
     global music_on, fx_on
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -564,31 +466,31 @@ def options_win():
                         json.dump(data, file, indent=4)
                     exit()
                     
-        background()
-        bg_overlay()
+        game_utils.background()
+        game_utils.bg_overlay()
 
-        menu_button(420, 80, 587, "Skins", 400, 40, mouse)
+        game_utils.menu_button(420, 80, 587, "Skins", 400, 40, mouse)
 
         music_state = "On" if music_on else "Off"
-        menu_button(420, 130, 420+(400-minecraft_font_small.size(f"Audio: {music_state}")[0])//2, f"Audio: {music_state}", 400, 40, mouse)
+        game_utils.menu_button(420, 130, 420+(400-minecraft_font_small.size(f"Audio: {music_state}")[0])//2, f"Audio: {music_state}", 400, 40, mouse)
 
         fx_state = "On" if fx_on else "Off"
-        menu_button(420, 180, 444+(356-minecraft_font_small.size(f"FX: {fx_state}")[0])//2, f"FX: {fx_state}", 400, 40, mouse)
+        game_utils.menu_button(420, 180, 444+(356-minecraft_font_small.size(f"FX: {fx_state}")[0])//2, f"FX: {fx_state}", 400, 40, mouse)
 
-        menu_button(420, 230, 452, "Clear Progress (Exit's app)", 400, 40, mouse)
+        game_utils.menu_button(420, 230, 452, "Clear Progress (Exit's app)", 400, 40, mouse)
 
         #back_button
-        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
+            game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         pygame.display.flip()
 
 def skins():
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -616,8 +518,8 @@ def skins():
                                 with open(PATH / "data.json", 'w') as file:
                                     json.dump(data, file, indent=4)
                     
-        background()
-        bg_overlay()
+        game_utils.background()
+        game_utils.bg_overlay()
 
         for skin in game_skins:
             pygame.draw.rect(window, (130, 130, 130), (skin.x, skin.y, skin.size, skin.size))
@@ -628,7 +530,7 @@ def skins():
             window.blit(skin_image, (skin.x, skin.y))
 
             if not skin.unlocked:
-                trans_surface(skin.size, skin.size, (0, 0, 0, 50), skin.x, skin.y)
+                game_utils.trans_surface(skin.size, skin.size, (0, 0, 0, 50), skin.x, skin.y)
                 emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
                 text_width = minecraft_font_small.size(str(skin.price))[0]
                 window.blit(emerald, (skin.x + (skin.size-text_width)//2-17, skin.y+24))
@@ -640,13 +542,13 @@ def skins():
             if skin.hover(mouse[0], mouse[1]):
                 pygame.draw.rect(window, (255, 255, 255), (skin.x, skin.y, skin.size, skin.size), 3)
                 if skin.unlocked:
-                    button(PATH / "drawable" / "select.png", skin.size, skin.size, skin.x, skin.y)
+                    game_utils.button(PATH / "drawable" / "select.png", skin.size, skin.size, skin.x, skin.y)
 
         #back_button
-        button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
-            trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
+            game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
         pygame.display.flip()
 
@@ -669,7 +571,7 @@ def game(level, player_l = False):
         stevexy[1] = (6-xy[1])*85
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
-            play_next_track()
+            game_utils.play_next_track()
         window.fill((30, 30, 30))
 
         mouse = pygame.mouse.get_pos()
@@ -789,76 +691,76 @@ def game(level, player_l = False):
         window.blit(minecraft_font_smaller.render(languages[code_lang], True, (255, 255, 255)), (lang_text_x, 600))
 
         if lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
-            description("Change language")
-            trans_surface(lang_text_length, 15, (170, 170, 170, 120), lang_text_x, 600)
+            game_utils.description("Change language")
+            game_utils.trans_surface(lang_text_length, 15, (170, 170, 170, 120), lang_text_x, 600)
 
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
-            description("Exit")
-            trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
+            game_utils.description("Exit")
+            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
         
         #back_button
-        button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
+        game_utils.button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
 
         if 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
-            description("Run")
-            trans_surface(20, 20, (170, 170, 170, 120), 34, 598)
+            game_utils.description("Run")
+            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 34, 598)
 
         #run_button
-        button(PATH / "drawable" / "select.png", 28, 28, 30, 593)
+        game_utils.button(PATH / "drawable" / "select.png", 28, 28, 30, 593)
 
         if 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
-            description("Restart")
-            trans_surface(20, 20, (170, 170, 170, 120), 599, 598)
+            game_utils.description("Restart")
+            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 599, 598)
 
         #restart_button
-        button(PATH / "drawable" / "reject.png", 26, 26, 595, 595)
+        game_utils.button(PATH / "drawable" / "reject.png", 26, 26, 595, 595)
 
         if not player_l:
             #hint1_button
             hint_x = 56
-            button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
+            game_utils.button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
             
             if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
-                description("Hint 1. (5 emeralds)")
-                trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
+                game_utils.description("Hint 1. (5 emeralds)")
+                game_utils.trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
             
             #hint2_button
-            button(PATH / "drawable" / "torch2.png", 31, 31, hint_x+4, 586)
+            game_utils.button(PATH / "drawable" / "torch2.png", 31, 31, hint_x+4, 586)
 
             if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
-                description("Hint 2. (15 emeralds)")
-                trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
+                game_utils.description("Hint 2. (15 emeralds)")
+                game_utils.trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
 
         #next_button
         if not player_l and level_finished and level < 24:
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
-                description("Next level")
-                trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
-            button(PATH / "drawable" / "accept.png", 29, 29, 562, 592)
+                game_utils.description("Next level")
+                game_utils.trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
+            game_utils.button(PATH / "drawable" / "accept.png", 29, 29, 562, 592)
 
         #1v1 button
         if level >= 10 or player_l:
             if not one_v_one:
                 window.blit(minecraft_font_smaller.render("1v1", True, (255, 255, 255)), (630, 600))
                 if 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615:
-                    description("1 vs 1 with a friend")
-                    trans_surface(24, 15, (170, 170, 170, 120), 630, 600)
+                    game_utils.description("1 vs 1 with a friend")
+                    game_utils.trans_surface(24, 15, (170, 170, 170, 120), 630, 600)
             else:
                 window.blit(minecraft_font_smaller.render("1.", True, (255, 255, 255)), (630, 600))
                 if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615:
-                    description("1st player")
-                    trans_surface(10, 15, (170, 170, 170, 120), 630, 600)
+                    game_utils.description("1st player")
+                    game_utils.trans_surface(10, 15, (170, 170, 170, 120), 630, 600)
                 window.blit(minecraft_font_smaller.render("2.", True, (255, 255, 255)), (650, 600))
                 if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615:
-                    description("2nd player")
-                    trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
+                    game_utils.description("2nd player")
+                    game_utils.trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
 
                 if 668 <= mouse[0] <= 684 and 598 <= mouse[1] <= 614:
-                    description("Exit 1v1")
-                    trans_surface(16, 16, (170, 170, 170, 120), 668, 598)
+                    game_utils.description("Exit 1v1")
+                    game_utils.trans_surface(16, 16, (170, 170, 170, 120), 668, 598)
 
                 #exit_1v1_button
-                button(PATH / "drawable" / "close.png", 16, 16, 668, 598)
+                game_utils.button(PATH / "drawable" / "close.png", 16, 16, 668, 598)
 
         #blocks
         i = 0
@@ -882,19 +784,19 @@ def game(level, player_l = False):
 
             window.blit(book, (6, 12))
 
-            render_text(165, 122, levels[f"level{level}"][0]["text"][game_levels[level].text_page], 28.8)
+            game_utils.render_text(165, 122, levels[f"level{level}"][0]["text"][game_levels[level].text_page], 28.8)
 
             if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
-                button(PATH / "drawable" / "page_forward.png", 42, 24, 375, 455)
+                game_utils.button(PATH / "drawable" / "page_forward.png", 42, 24, 375, 455)
 
                 if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479:
-                    trans_surface(36, 19, (170, 170, 170, 120), 380, 459)
+                    game_utils.trans_surface(36, 19, (170, 170, 170, 120), 380, 459)
             
             if game_levels[level].text_page > 0:
-                button(PATH / "drawable" / "page_backward.png", 42, 24, 165, 455)
+                game_utils.button(PATH / "drawable" / "page_backward.png", 42, 24, 165, 455)
 
                 if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479:
-                    trans_surface(36, 19, (170, 170, 170, 120), 170, 459)
+                    game_utils.trans_surface(36, 19, (170, 170, 170, 120), 170, 459)
 
         if level >= 10 or player_l:
             steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
@@ -1051,22 +953,22 @@ def game(level, player_l = False):
                     if com[0] == "right":
                         for _ in range(int(com[1])):
                             stevexy[0] += 85
-                            move(-85, 0, level, player_l)
+                            game_utils.move(-85, 0, level, player_l)
                             check()
                     elif com[0] == "left":
                         for _ in range(int(com[1])):
                             stevexy[0] -= 85
-                            move(85, 0, level, player_l)
+                            game_utils.move(85, 0, level, player_l)
                             check()
                     elif com[0] == "up":
                         for _ in range(int(com[1])):
                             stevexy[1] -= 85
-                            move(0, 85, level, player_l)
+                            game_utils.move(0, 85, level, player_l)
                             check()
                     elif com[0] == "down":
                         for _ in range(int(com[1])):
                             stevexy[1] += 85
-                            move(0, -85, level, player_l)
+                            game_utils.move(0, -85, level, player_l)
                             check()
 
                 if check():
@@ -1121,7 +1023,7 @@ def game(level, player_l = False):
 
             code_runned = False
 
-        minecraft_cmd(messages)
+        game_utils.minecraft_cmd(messages)
 
         cursor_pos = minecraft_font_smaller.render(f"Ln {code_input.i + 1}, Col {code_input.cursor_pos + 1}", True, (255, 255, 255))
         window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 600))
@@ -1130,8 +1032,3 @@ def game(level, player_l = False):
         clock.tick(60)
 
 menu()
-
-json_levels.close()
-json_options.close()
-json_data.close()
-json_player_levels.close()
