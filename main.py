@@ -1,10 +1,10 @@
 import pygame, random, json, time
-from pygametextboxinput import *
-from code_runner import *
+from classes.pygametextboxinput import *
+from classes.code_runner import *
 from pathlib import Path
-from def_codes import *
-from classes import *
-from utils import *
+from classes.def_codes import *
+from classes.classes_ import *
+from classes.utils import *
 
 PATH = Path.cwd()
 
@@ -641,9 +641,9 @@ def game(level, player_l = False):
                 elif not player_l and 70 <= mouse[0] <= 84 and 597 <= mouse[1] <= 617:
                     print("hint 2")
                 elif not game_levels[level].text_closed:
-                    if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
+                    if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
                         game_levels[level].text_page += 1
-                    if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479 and game_levels[level].text_page > 0:
+                    if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539 and game_levels[level].text_page > 0:
                         game_levels[level].text_page -= 1
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
@@ -779,24 +779,24 @@ def game(level, player_l = False):
 
         #book
         if not player_l and not game_levels[level].text_closed:
-            book = pygame.image.load(PATH / "drawable" / "book.png")
+            book = pygame.image.load(PATH / "drawable" / "book2.png")
             book = pygame.transform.scale(book, (800, 800))
 
             window.blit(book, (6, 12))
 
-            game_utils.render_text(165, 122, levels[f"level{level}"][0]["text"][game_levels[level].text_page], 28.8)
+            game_utils.render_text(115, 63, levels[f"level{level}"][0][f"text_{languages[code_lang]}"][game_levels[level].text_page], 28.8)
 
             if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
-                game_utils.button(PATH / "drawable" / "page_forward.png", 42, 24, 375, 455)
+                game_utils.button(PATH / "drawable" / "page_forward.png", 42, 24, 410, 515)
 
-                if 375 <= mouse[0] <= 417 and 455 <= mouse[1] <= 479:
-                    game_utils.trans_surface(36, 19, (170, 170, 170, 120), 380, 459)
+                if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539:
+                    game_utils.trans_surface(36, 19, (170, 170, 170, 120), 415, 519)
             
             if game_levels[level].text_page > 0:
-                game_utils.button(PATH / "drawable" / "page_backward.png", 42, 24, 165, 455)
+                game_utils.button(PATH / "drawable" / "page_backward.png", 42, 24, 120, 515)
 
-                if 165 <= mouse[0] <= 207 and 455 <= mouse[1] <= 479:
-                    game_utils.trans_surface(36, 19, (170, 170, 170, 120), 170, 459)
+                if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539:
+                    game_utils.trans_surface(36, 19, (170, 170, 170, 120), 125, 519)
 
         if level >= 10 or player_l:
             steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")

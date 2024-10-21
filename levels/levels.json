@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 24,
+    "last_finished_level": 2,
     "level_p": [
         [
             30,
@@ -266,32 +266,53 @@
                     ]
                 ]
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Welcome to Code_Craft",
                     "",
-                    "This game is developed",
-                    "by Antonio - NEX",
                     "",
-                    "In this game you can learn",
-                    "basics of programing ",
-                    "in a Minecraft-like",
+                    "This game is developed by Antonio -",
+                    "NEX",
+                    "",
+                    "",
+                    "In this game you can learn basics of",
+                    "programing in a Minecraft-like",
                     "enviroment",
+                    "",
                     "",
                     "Let's start!"
                 ],
                 [
                     "Level 1.",
                     "",
-                    "Let's learn how to",
-                    "output something on screen",
+                    "First, let's learn something about",
+                    "Python.",
+                    "Python was created by Gudio van",
+                    "Rossum, and released in 1991. Python",
+                    "is now used almost everywhere.",
+                    "Python uses new lines to complete a",
+                    "command.",
+                    "Scopes of loops, functions and",
+                    "classes are defined by whitespaces.",
+                    "Python is an interpreted language",
+                    "which means that it is executed line",
+                    "by line by a program called",
+                    "interpreter."
+                ],
+                [
+                    "Let's learn how to output something",
+                    "on screen.",
                     "",
-                    "In Python we use: \"print()\"",
-                    "function for that:",
+                    "In Python we use: \"print()\" function",
+                    "for that. We just need to type in the",
+                    "function and pass it a text surrounded",
+                    "with quotes (in Python it doesn't matter",
+                    "if they are single or double but in this",
+                    "game we will stick with double quotes)",
                     "",
                     "print(\"Code_Craft\")",
-                    "Code above will output",
-                    "Code_Craft on screen"
+                    "Code above will output Code_Craft on",
+                    "screen"
                 ],
                 [
                     "Try to output:",
@@ -300,14 +321,140 @@
                     "",
                     "To close/open this book use:",
                     "Ctrl+E",
-                    "Run your code with:",
-                    "Ctrl+R or button at the",
+                    "Run your code with button at the",
                     "bottom of the screen",
                     "Delete output log with:",
                     "Ctrl+K"
                 ]
             ],
-            "pages": 3,
+            "text_C": [
+                [
+                    "Welcome to Code_Craft",
+                    "",
+                    "",
+                    "This game is developed by Antonio -",
+                    "NEX",
+                    "",
+                    "",
+                    "In this game, you can learn basics of",
+                    "programming in a Minecraft-like",
+                    "environment",
+                    "",
+                    "",
+                    "Let's start!"
+                ],
+                [
+                    "Level 1.",
+                    "",
+                    "First, let's learn something about",
+                    "C.",
+                    "C was created by Dennis Ritchie in",
+                    "1972 at Bell Labs. It is a powerful",
+                    "language, widely used for system",
+                    "programming, embedded systems, etc.",
+                    "C uses semicolons to end statements.",
+                    "Braces {} are used to define the scope",
+                    "of functions, loops, and conditionals.",
+                    "C is a compiled language, meaning it is",
+                    "converted to machine code and",
+                    "executed by the system directly."
+                ],
+                [
+                    "Let's learn how to output something",
+                    "on screen.",
+                    "",
+                    "In C, we use: \"printf()\" function",
+                    "for that. We need to include the",
+                    "\"stdio.h\" library to use it. Then type",
+                    "the function and pass it a text",
+                    "surrounded with double quotes.",
+                    "",
+                    "#include <stdio.h>",
+                    "int main() {",
+                    "    printf(\"Code_Craft\");",
+                    "    return 0;",
+                    "}",
+                    "Code above will output Code_Craft on",
+                    "screen"
+                ],
+                [
+                    "Try to output:",
+                    "",
+                    "Hello, World!",
+                    "",
+                    "To close/open this book use:",
+                    "Ctrl+E",
+                    "Run your code with button at the",
+                    "bottom of the screen",
+                    "Delete output log with:",
+                    "Ctrl+K"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Welcome to Code_Craft",
+                    "",
+                    "",
+                    "This game is developed by Antonio -",
+                    "NEX",
+                    "",
+                    "",
+                    "In this game, you can learn basics of",
+                    "programming in a Minecraft-like",
+                    "environment",
+                    "",
+                    "",
+                    "Let's start!"
+                ],
+                [
+                    "Level 1.",
+                    "",
+                    "First, let's learn something about",
+                    "C++.",
+                    "C++ was created by Bjarne Stroustrup",
+                    "in 1983 as an extension of C. C++ is",
+                    "widely used for game development,",
+                    "high-performance applications, and",
+                    "system software.",
+                    "C++ uses semicolons to end statements.",
+                    "Braces {} are used to define the scope",
+                    "of functions, loops, and conditionals.",
+                    "C++ is a compiled language, converted",
+                    "to machine code and executed directly",
+                    "by the system."
+                ],
+                [
+                    "Let's learn how to output something",
+                    "on screen.",
+                    "",
+                    "In C++, we use: \"cout\" for that. We",
+                    "need to include the \"iostream\" library",
+                    "to use it. Then type the object and pass",
+                    "it text using the insertion operator `<<`",
+                    "",
+                    "#include <iostream>",
+                    "using namespace std;",
+                    "int main() {",
+                    "    cout << \"Code_Craft\";",
+                    "    return 0;",
+                    "}",
+                    "Code above will output Code_Craft on",
+                    "screen"
+                ],
+                [
+                    "Try to output:",
+                    "",
+                    "Hello, World!",
+                    "",
+                    "To close/open this book use:",
+                    "Ctrl+E",
+                    "Run your code with button at the",
+                    "bottom of the screen",
+                    "Delete output log with:",
+                    "Ctrl+K"
+                ]
+            ],
+            "pages": 4,
             "blocks": [
                 [
                     "grass_top.png",
@@ -469,31 +616,80 @@
                     ]
                 ]
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Level 2.",
                     "",
-                    "In this level we will talk",
-                    "about comments in code",
+                    "In this level we will talk about",
+                    "comments in code",
                     "",
-                    "We use comments to explain",
-                    "the code and sometimes to",
-                    "prevent the code from",
-                    "running",
-                    "",
-                    "Comment is a block of code",
-                    "that doesn't get executed"
+                    "Comments are used to explain code,",
+                    "make it more readable or prevent",
+                    "the code from executing.",
+                    "   #this is a comment",
+                    "   print(\"Hello, World!\"",
+                    "Comments can also be placed at the",
+                    "end of a line.",
+                    "   print(\"Hello, World!\") #comment",
+                    "Or they can be used to prevent the",
+                    "code from executing.",
+                    "   #print(\"Hello, World!\")"
                 ],
                 [
-                    "Here is a example of a",
-                    "comment in Python:",
+                    "Try to prevent print(\"Steve\") from",
+                    "executing by making it a comment"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 2.",
                     "",
-                    "#this is a comment",
+                    "In this level, we will talk about",
+                    "comments in code",
                     "",
-                    "Try to prevent",
-                    "print(\"Steve\") from",
-                    "executing by making it",
-                    "a comment"
+                    "Comments are used to explain code,",
+                    "make it more readable, or prevent",
+                    "the code from executing.",
+                    "   // This is a single-line comment",
+                    "   printf(\"Hello, World!\");",
+                    "Comments can also be placed at the",
+                    "end of a line.",
+                    "   printf(\"Hello, World!\"); // comment",
+                    "Or you can use block comments to",
+                    "comment out multiple lines of code.",
+                    "   /* This is a block comment",
+                    "      printf(\"Hello, World!\"); */"
+                ],
+                [
+                    "Try to prevent printf(\"Steve\"); from",
+                    "executing by making it a",
+                    "single-line comment."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 2.",
+                    "",
+                    "In this level, we will talk about",
+                    "comments in code",
+                    "",
+                    "Comments are used to explain code,",
+                    "make it more readable, or prevent",
+                    "the code from executing.",
+                    "   // This is a single-line comment",
+                    "   cout << \"Hello, World!\";",
+                    "Comments can also be placed at the",
+                    "end of a line.",
+                    "   cout << \"Hello, World!\"; // comment",
+                    "Or you can use block comments to",
+                    "comment out multiple lines of code.",
+                    "   /* This is a block comment",
+                    "      cout << \"Hello, World!\"; */"
+                ],
+                [
+                    "Try to prevent cout << \"Steve\";",
+                    "from executing by making it a",
+                    "single-line comment."
                 ]
             ],
             "pages": 2,
