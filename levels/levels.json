@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 2,
+    "last_finished_level": 5,
     "level_p": [
         [
             30,
@@ -988,7 +988,7 @@
                     "double and char",
                     "int a = 5;",
                     "float b = 5.5;",
-                    "boule c = 5.5;",
+                    "double c = 5.5;",
                     "char d = 'N';",
                     "",
                     "Above are examples of variables of",
@@ -1140,24 +1140,22 @@
             "solution_C++": [
                 []
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Level 4.",
                     "",
-                    "In last level we explained",
-                    "what are the variables and",
-                    "said that they can be of",
-                    "various data types",
+                    "In last level we explained what are",
+                    "variables and said that they can be",
+                    "of various data types",
                     "",
-                    "In these level we will explain",
-                    "those data types"
+                    "In these level we will explain those data",
+                    "types"
                 ],
                 [
                     "Integer - int",
-                    "Integer is a positivie or",
-                    "negative whole number",
-                    "In Python there is no limit",
-                    "for how long int value can be",
+                    "Integer is a positivie or negative whole",
+                    "number. In Python there is no limit for",
+                    "how long int value can be",
                     "a = 550",
                     "",
                     "Float - float",
@@ -1167,35 +1165,132 @@
                 ],
                 [
                     "String - str",
-                    "String is a textual data type,",
-                    "it can store one or more",
-                    "characters, letters",
-                    "and numbers",
+                    "String is a textual data type, it can",
+                    "store one or more characters, letters",
+                    "or numbers. It is made by putting text",
+                    "inside of quotes.",
                     "a = \"Code_Craft 123\"",
-                    "Instead of \" \", in Python we",
-                    "can also use ' ' to create a",
-                    "string",
-                    "Accessing characters:",
-                    "a[0] -> C, a[4] -> _"
-                ],
-                [
-                    "Boolean - bool",
-                    "Boolean is a value that",
-                    "represents logical 0 or 1 /",
-                    "True or False",
-                    "a = True, b = False",
+                    "Instead of \" \", in Python we can also",
+                    "use ' ' to create a string. In this game,",
+                    "we will always use double quotes for",
+                    "strings!",
                     "",
-                    "There are more data types",
-                    "in Python but these are the",
-                    "most important ones"
+                    "Boolean - bool",
+                    "Boolean is a value that represents",
+                    "logical 0 or 1 / True or False",
+                    "a = True, b = False"
                 ],
                 [
-                    "Try to make a variable",
-                    "from each data type we",
-                    "covered"
+                    "Try to make a variable from each",
+                    "data type we have covered."
                 ]
             ],
-            "pages": 5,
+            "text_C": [
+                [
+                    "Level 4.",
+                    "",
+                    "In the last level, we explained what",
+                    "variables are and mentioned that they",
+                    "can be of various data types.",
+                    "",
+                    "In this level, we will explain those",
+                    "data types."
+                ],
+                [
+                    "Integer - int",
+                    "An integer is a positive or negative",
+                    "whole number. In C, integers have",
+                    "a limit based on memory size, typically",
+                    "32-bits for int.",
+                    "int a = 550;",
+                    "",
+                    "Float - float",
+                    "A float is a real number with",
+                    "floating-point representation, with",
+                    "lower precision than double.",
+                    "float b = 4.598;"
+                ],
+                [
+                    "Double - double",
+                    "A double is a real number with more",
+                    "precision than float, often 64-bits.",
+                    "double c = 3.14159;",
+                    "",
+                    "Character - char",
+                    "A character stores a single letter or",
+                    "symbol, enclosed in single quotes.",
+                    "char d = 'C';",
+                    "",
+                    "String - char[]",
+                    "A string in C is an array of characters",
+                    "and is enclosed in double quotes.",
+                    "Each character array ends with a",
+                    "null terminator '\\0' to mark the end.",
+                    "char str[] = \"Code_Craft 123\";"
+                ],
+                [
+                    "Try to make a variable of each",
+                    "data type we have covered and",
+                    "print their values."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 4.",
+                    "",
+                    "In the last level, we explained what",
+                    "variables are and mentioned that they",
+                    "can be of various data types.",
+                    "",
+                    "In this level, we will explain those",
+                    "data types."
+                ],
+                [
+                    "Integer - int",
+                    "An integer is a positive or negative",
+                    "whole number. In C++, integers have",
+                    "a limit based on memory size, typically",
+                    "32-bits for int.",
+                    "int a = 550;",
+                    "",
+                    "Float - float",
+                    "A float is a real number with",
+                    "floating-point representation, with",
+                    "lower precision than double.",
+                    "float b = 4.598;"
+                ],
+                [
+                    "Double - double",
+                    "A double is a real number with more",
+                    "precision than float, often 64-bits.",
+                    "double c = 3.14159;",
+                    "",
+                    "String - string",
+                    "A string is a collection of characters,",
+                    "created using double quotes.",
+                    "To use strings in C++, you need to",
+                    "include the <string> header file.",
+                    "In this game, this will already be",
+                    "set up for you.",
+                    "string d = \"Code_Craft 123\";"
+                ],
+                [
+                    "Character - char",
+                    "A character stores a single letter or",
+                    "symbol, enclosed in single quotes.",
+                    "char d = 'C';",
+                    "",
+                    "Boolean - bool",
+                    "A boolean represents a logical value",
+                    "of true or false.",
+                    "bool e = true;",
+                    "",
+                    "Try to make a variable of each",
+                    "data type we have covered and",
+                    "print their values."
+                ]
+            ],
+            "pages": 4,
             "blocks": [
                 [
                     "grass_top.png",
@@ -1267,22 +1362,24 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
-                        "a",
+                        "name",
                         "=",
-                        "5",
-                        ".",
-                        "65"
+                        "\"Steve\""
                     ],
                     [
-                        "b",
+                        "age",
                         "=",
-                        "int",
+                        "25"
+                    ],
+                    [
+                        "print",
                         "(",
-                        "a",
+                        "name",
+                        "age",
                         ")"
                     ]
                 ]
@@ -1306,22 +1403,28 @@
                         "{"
                     ],
                     [
-                        "float",
-                        "a",
+                        "char",
+                        "name",
+                        "[",
+                        "]",
                         "=",
-                        "5",
-                        ".",
-                        "65",
+                        "\"Steve\"",
                         ";"
                     ],
                     [
                         "int",
-                        "b",
+                        "age",
                         "=",
+                        "25",
+                        ";"
+                    ],
+                    [
+                        "printf",
                         "(",
-                        "int",
+                        "\"%s %d\\n\"",
+                        "name",
+                        "age",
                         ")",
-                        "a",
                         ";"
                     ],
                     [
@@ -1344,6 +1447,13 @@
                         ">"
                     ],
                     [
+                        "#",
+                        "include",
+                        "<",
+                        "string",
+                        ">"
+                    ],
+                    [
                         "using",
                         "namespace",
                         "std",
@@ -1357,22 +1467,33 @@
                         "{"
                     ],
                     [
-                        "float",
-                        "a",
+                        "string",
+                        "name",
                         "=",
-                        "5",
-                        ".",
-                        "65",
+                        "\"Steve\"",
                         ";"
                     ],
                     [
                         "int",
-                        "b",
+                        "age",
                         "=",
-                        "(",
-                        "int",
-                        ")",
-                        "a",
+                        "25",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "name",
+                        "<",
+                        "<",
+                        "\" \"",
+                        "<",
+                        "<",
+                        "age",
+                        "<",
+                        "<",
+                        "endl",
                         ";"
                     ],
                     [
@@ -1385,35 +1506,115 @@
                     ]
                 ]
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Level 5.",
                     "",
-                    "We have learned about",
-                    "variable data types and",
-                    "now we will learn how",
-                    "to change data from one",
-                    "type to another",
-                    "",
-                    "a = int(2) -> 2",
-                    "b = int(2.5) -> 2",
-                    "c = int(\"4\") -> 4"
+                    "We have learned about variable data",
+                    "types and now we will learn more",
+                    "about how to output variables"
                 ],
                 [
-                    "a = float(2) -> 2.0",
-                    "b = float(2.5) -> 2.5",
-                    "c = float(4) -> 4.0",
-                    "d = float(4.6) -> 4.6",
+                    "To output variables we use print()",
+                    "function.",
                     "",
-                    "a = str(\"s\") -> \"s\"",
-                    "b = str(5) -> \"5\"",
-                    "b = str(4.5) -> \"4.5\""
+                    "x = \"Code_Craft\"",
+                    "print(x)"
                 ],
                 [
-                    "Assign the value 5.65 to",
-                    "the variable a and its int",
-                    "representation to the",
-                    "variable b using int()"
+                    "If we want to output more variables",
+                    "we can separate them by comma.",
+                    "",
+                    "x = \"We\"",
+                    "y = \"love\"",
+                    "z = \"Code_Craft\"",
+                    "print(x, y, z)",
+                    "",
+                    "output: We love Code_Craft",
+                    "",
+                    "Make two variables name and age,",
+                    "assign \"John\" to name and 25 to",
+                    "age and print both of them with one",
+                    "print() function with a space between",
+                    "them."
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 5.",
+                    "",
+                    "We have learned about variable data",
+                    "types, and now we will learn more",
+                    "about how to output variables."
+                ],
+                [
+                    "In C, we use the printf() function to",
+                    "output variables.",
+                    "",
+                    "char x[] = \"Code_Craft\";",
+                    "printf(\"%s\\n\", x);",
+                    "",
+                    "The % symbol is a format specifier",
+                    "that tells printf() what type of",
+                    "data to expect.",
+                    "",
+                    "%d -> int",
+                    "%f -> float",
+                    "%c -> char",
+                    "%s -> string"
+                ],
+                [
+                    "To output more variables, we can use",
+                    "the printf() function with format",
+                    "specifiers.",
+                    "",
+                    "char a[] = \"We\";",
+                    "char b[] = \"love\";",
+                    "char c[] = \"Code_Craft\";",
+                    "printf(\"%s %s %s\\n\", a, b, c);",
+                    "",
+                    "Output: We love Code_Craft",
+                    "",
+                    "Make two variables name and age,",
+                    "assign \"John\" to name and 25 to",
+                    "age and print both of them with one",
+                    "printf() function with a space between",
+                    "them and new line after them."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 5.",
+                    "",
+                    "We have learned about variable data",
+                    "types, and now we will learn more",
+                    "about how to output variables."
+                ],
+                [
+                    "In C++, we use the cout object",
+                    "from the iostream library to output",
+                    "variables.",
+                    "",
+                    "string x = \"Code_Craft\";",
+                    "cout << x << endl;"
+                ],
+                [
+                    "If we want to output more variables,",
+                    "we can use the cout object with the",
+                    "insertion operator (<<).",
+                    "",
+                    "string a = \"We\";",
+                    "string b = \"love\";",
+                    "string c = \"Code_Craft\";",
+                    "cout << a << ' ' << b << ' ' << c << endl;",
+                    "",
+                    "Output: We love Code_Craft",
+                    "",
+                    "Make two variables name and age,",
+                    "assign \"John\" to name and 25 to",
+                    "age and print both of them with one",
+                    "cout object with a space between",
+                    "them and new line after them."
                 ]
             ],
             "pages": 3,

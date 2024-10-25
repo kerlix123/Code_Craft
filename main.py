@@ -882,9 +882,13 @@ def game(level, player_l = False):
                             c += 1
                         elif el[0] == "float" and el[2] == "=" and el[4] == ".":
                             c += 1
+                        elif el[0] == "double" and el[2] == "=" and el[4] == ".":
+                            c += 1
                         elif el[0] == "char" and el[2] == "[" and el[3] == "]" and el[4] == "=":
                             c += 1
-                    solution = c == 3
+                        elif el[0] == "char" and el[2] == "=":
+                            c += 1
+                    solution = c == 5
                     pass
                 elif code_lang == 2:
                     c = 0
@@ -893,11 +897,15 @@ def game(level, player_l = False):
                             c += 1
                         elif el[0] == "float" and el[2] == "=" and el[4] == ".":
                             c += 1
+                        elif el[0] == "double" and el[2] == "=" and el[4] == ".":
+                            c += 1
                         elif el[0] == "string" and el[2] == "=":
                             c += 1
                         elif el[0] == "bool" and el[2] == "=":
                             c += 1
-                    solution = c == 4
+                        elif el[0] == "char" and el[2] == "=":
+                            c += 1
+                    solution = c == 6
                     pass
 
             if player_l or level >= 10:
