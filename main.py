@@ -863,6 +863,8 @@ def game(level, player_l = False):
 
             #correct solution
             solution = False
+            if not player_l and level == 9:
+                solution = True
             if not player_l and level < 10 and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
                 solution = True
             

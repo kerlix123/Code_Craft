@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 5,
+    "last_finished_level": 25,
     "level_p": [
         [
             30,
@@ -1689,43 +1689,30 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
-                        "a",
+                        "b",
                         "=",
-                        "10",
-                        ".",
-                        "5"
-                    ],
-                    [
-                        "a",
-                        "+",
-                        "=",
-                        "4",
-                        ".",
-                        "5"
+                        "\"Code\""
                     ],
                     [
                         "print",
                         "(",
-                        "a",
+                        "b",
+                        "[",
+                        "1",
+                        "]",
                         ")"
                     ],
                     [
-                        "b",
-                        "=",
-                        "a",
-                        ">",
-                        "4",
-                        ".",
-                        "5"
-                    ],
-                    [
                         "print",
                         "(",
                         "b",
+                        "[",
+                        "2",
+                        "]",
                         ")"
                     ]
                 ]
@@ -1749,47 +1736,33 @@
                         "{"
                     ],
                     [
-                        "float",
-                        "a",
+                        "char",
+                        "b",
+                        "[",
+                        "]",
                         "=",
-                        "10",
-                        ".",
-                        "5",
-                        ";"
-                    ],
-                    [
-                        "a",
-                        "+",
-                        "=",
-                        "4",
-                        ".",
-                        "5",
+                        "\"Code\"",
                         ";"
                     ],
                     [
                         "printf",
                         "(",
-                        "\"%f\"",
-                        "a",
+                        "\"%c\\n\"",
+                        "b",
+                        "[",
+                        "1",
+                        "]",
                         ")",
                         ";"
                     ],
                     [
-                        "int",
-                        "b",
-                        "=",
-                        "a",
-                        ">",
-                        "4",
-                        ".",
-                        "5",
-                        ";"
-                    ],
-                    [
                         "printf",
                         "(",
-                        "\"\\n%d\"",
+                        "\"%c\\n\"",
                         "b",
+                        "[",
+                        "2",
+                        "]",
                         ")",
                         ";"
                     ],
@@ -1813,6 +1786,13 @@
                         ">"
                     ],
                     [
+                        "#",
+                        "include",
+                        "<",
+                        "string",
+                        ">"
+                    ],
+                    [
                         "using",
                         "namespace",
                         "std",
@@ -1826,49 +1806,36 @@
                         "{"
                     ],
                     [
-                        "float",
-                        "a",
-                        "=",
-                        "10",
-                        ".",
-                        "5",
-                        ";"
-                    ],
-                    [
-                        "a",
-                        "+",
-                        "=",
-                        "4",
-                        ".",
-                        "5",
-                        ";"
-                    ],
-                    [
-                        "cout",
-                        "<",
-                        "<",
-                        "a",
-                        ";"
-                    ],
-                    [
-                        "bool",
+                        "string",
                         "b",
                         "=",
-                        "a",
-                        ">",
-                        "4",
-                        ".",
-                        "5",
+                        "\"Code\"",
                         ";"
                     ],
                     [
                         "cout",
+                        "<",
+                        "<",
+                        "b",
+                        "[",
+                        "1",
+                        "]",
                         "<",
                         "<",
                         "endl",
+                        ";"
+                    ],
+                    [
+                        "cout",
                         "<",
                         "<",
                         "b",
+                        "[",
+                        "2",
+                        "]",
+                        "<",
+                        "<",
+                        "endl",
                         ";"
                     ],
                     [
@@ -1881,79 +1848,131 @@
                     ]
                 ]
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Level 6.",
                     "",
-                    "In this level we will",
-                    "cover operators in Python",
+                    "In this level we will talk more about,",
+                    "strings.",
                     "",
-                    "Operators are used to",
-                    "perform operations on",
-                    "variables and values"
-                ],
-                [
-                    "Arithmetic operators",
-                    "+ -> Addition",
-                    "- -> Subtraction",
-                    "* -> Multiplication",
-                    "/ -> Division",
-                    "% -> Modulus",
-                    "** -> Exponentiation",
-                    "// -> Floor division"
-                ],
-                [
-                    "Assignment operators",
-                    "They are used to assign",
-                    "values to variables and",
-                    "they always have = in them",
+                    "Strings are actually arrays so we can",
+                    "access thier characters by index.",
+                    "First index is 0 and last index is",
+                    "length of the string minus one",
                     "",
-                    "With them you can replace",
-                    "a = a + 5 with a += 5",
-                    "same goes with all other",
-                    "operators",
-                    "a = a // 2 -> a //= 2",
-                    "a = a ** 3 -> a **= 3",
-                    "..."
+                    "   a = \"Hello\"",
+                    "   #a[0] = \"H\"",
+                    "   #a[4] = \"o\""
                 ],
                 [
-                    "Comparison operators",
-                    "== -> Equal",
-                    "!= -> Not equal",
-                    "> -> Greater than",
-                    "< -> Less than",
-                    ">= -> Greater or equal to",
-                    "<= -> Less or equal to",
+                    "We can also loop through them with a",
                     "",
-                    "They return a boolean:",
-                    "3 == 5 -> False",
-                    "4 <= 5 -> True"
-                ],
-                [
-                    "Logical operators",
-                    "and -> returns True if both",
-                    "  values are True",
-                    "or -> returns True if any of",
-                    "  values is True",
-                    "not -> reverses Bool value",
-                    "  True -> False, False -> True",
+                    "for loop.",
+                    "   for character in \"Code\"",
+                    "       print(character)",
                     "",
-                    "1 < 2 and 3 <= 3 -> True",
-                    "1 > 2 and 4 > 5 -> False",
-                    "not 1 == 1 -> False"
+                    "output:",
+                    "C",
+                    "o",
+                    "d",
+                    "e"
                 ],
                 [
-                    "Make a variable a and",
-                    "assign 10.5 to it, using",
-                    "assignment operators add",
-                    "4.5 to it and print it, make",
-                    "a variable b and inside",
-                    "of it check if a is bigger",
-                    "than 4.5 and print it on",
-                    "new line"
+                    "To get length (number of characters)",
+                    "of a string we use len() function.",
+                    "   print(len(\"Hello\"))",
+                    "   #output: 5",
+                    "",
+                    "Make a string b and assign \"Code\"",
+                    "to it. Output it's second and third",
+                    "character each in new line."
                 ]
             ],
-            "pages": 6,
+            "text_C": [
+                [
+                    "Level 6.",
+                    "",
+                    "In this level, we will talk more about",
+                    "strings.",
+                    "",
+                    "Strings are arrays of characters,",
+                    "so we can access their characters by",
+                    "index. The first index is 0, and the",
+                    "last index is the length of the string",
+                    "minus one.",
+                    "",
+                    "   char a[] = \"Hello\";",
+                    "   //a[0] = 'H'",
+                    "   //a[4] = 'o'"
+                ],
+                [
+                    "We can also loop through strings using",
+                    "a for loop:",
+                    "",
+                    "   char str[] = \"Code\";",
+                    "   for (int i = 0; i < 4; i++) {",
+                    "       printf(\"%c\\n\", str[i]);",
+                    "   }",
+                    "",
+                    "4 is the length of the string.",
+                    "",
+                    "Output:",
+                    "C",
+                    "o",
+                    "d",
+                    "e"
+                ],
+                [
+                    "Make a string b and assign \"Code\" to it.",
+                    "Output its second and third character",
+                    "each on a new line."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 6.",
+                    "",
+                    "In this level, we will talk more about",
+                    "strings.",
+                    "",
+                    "In C++, strings are part of the <string>",
+                    "library, and we can access individual",
+                    "characters by index. The first index is",
+                    "0, and the last index is the length of",
+                    "the string minus one.",
+                    "",
+                    "   string a = \"Hello\";",
+                    "   //a[0] = 'H'",
+                    "   //a[4] = 'o'"
+                ],
+                [
+                    "We can also loop through strings using",
+                    "a for loop:",
+                    "",
+                    "   string str = \"Code\";",
+                    "   for (int i = 0; i < str.length(); i++) {",
+                    "       cout << str[i] << endl;",
+                    "   }",
+                    "",
+                    "Output:",
+                    "C",
+                    "o",
+                    "d",
+                    "e"
+                ],
+                [
+                    "To get the length (number of characters)",
+                    "of a string, we use the length() method.",
+                    "",
+                    "   cout << a.length() << endl;",
+                    "   //Output: 5",
+                    "",
+                    "Make a string variable b and assign",
+                    "\"Code\" to it. Output its second and",
+                    "third character each on a new line."
+                ]
+            ],
+            "pages": 3,
             "blocks": [
                 [
                     "grass_top.png",
@@ -2029,28 +2048,39 @@
             "solution_Python": [
                 [
                     [
-                        "def",
-                        "mult",
-                        "(",
                         "a",
-                        "b",
-                        ")",
-                        ":"
+                        "=",
+                        "10",
+                        ".",
+                        "5"
                     ],
                     [
-                        "return",
                         "a",
-                        "*",
-                        "b"
+                        "+",
+                        "=",
+                        "4",
+                        ".",
+                        "5"
                     ],
                     [
                         "print",
                         "(",
-                        "mult",
+                        "a",
+                        ")"
+                    ],
+                    [
+                        "b",
+                        "=",
+                        "a",
+                        ">",
+                        "4",
+                        ".",
+                        "5"
+                    ],
+                    [
+                        "print",
                         "(",
-                        "5",
-                        "3",
-                        ")",
+                        "b",
                         ")"
                     ]
                 ]
@@ -2068,41 +2098,53 @@
                     ],
                     [
                         "int",
-                        "mult",
-                        "(",
-                        "int",
-                        "a",
-                        "int",
-                        "b",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "return",
-                        "a",
-                        "*",
-                        "b",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "int",
                         "main",
                         "(",
                         ")",
                         "{"
                     ],
                     [
+                        "float",
+                        "a",
+                        "=",
+                        "10",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "a",
+                        "+",
+                        "=",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"%f\\n\"",
+                        "a",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "a",
+                        ">",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
                         "printf",
                         "(",
                         "\"%d\"",
-                        "mult",
-                        "(",
-                        "5",
-                        "3",
-                        ")",
+                        "b",
                         ")",
                         ";"
                     ],
@@ -2133,41 +2175,55 @@
                     ],
                     [
                         "int",
-                        "mult",
-                        "(",
-                        "int",
-                        "a",
-                        "int",
-                        "b",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "return",
-                        "a",
-                        "*",
-                        "b",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "int",
                         "main",
                         "(",
                         ")",
                         "{"
                     ],
                     [
+                        "float",
+                        "a",
+                        "=",
+                        "10",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "a",
+                        "+",
+                        "=",
+                        "4",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
                         "cout",
                         "<",
                         "<",
-                        "mult",
-                        "(",
+                        "a",
+                        "<",
+                        "<",
+                        "endl",
+                        ";"
+                    ],
+                    [
+                        "bool",
+                        "b",
+                        "=",
+                        "a",
+                        ">",
+                        "4",
+                        ".",
                         "5",
-                        "3",
-                        ")",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "b",
                         ";"
                     ],
                     [
@@ -2180,53 +2236,206 @@
                     ]
                 ]
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Level 7.",
                     "",
-                    "In this level we will explain",
-                    "what is a function",
+                    "In this level we will cover operators",
+                    "in Python",
                     "",
-                    "Function is a block of code",
-                    "that can be reused and it's",
-                    "only executed when called",
+                    "Operators are used to perform",
+                    "operations on variables and values",
                     "",
-                    "You can pass data into",
-                    "function and that data is",
-                    "called parameters"
+                    "Arithmetic operators",
+                    "+ -> Addition",
+                    "- -> Subtraction",
+                    "* -> Multiplication",
+                    "/ -> Division",
+                    "% -> Modulus",
+                    "** -> Exponentiation",
+                    "// -> Floor division"
                 ],
                 [
-                    "Functions can return data",
-                    "as a result",
+                    "Assignment operators",
+                    "They are used to assign values to",
+                    "variables and they always have =",
+                    "in them",
                     "",
-                    "In Python functions are",
-                    "defined with \"def\" keyword",
-                    "",
-                    "def hello():",
-                    "   print(\"Hello\")",
-                    "",
-                    "def add(a, b):",
-                    "   return a+b"
+                    "With them you can replace",
+                    "a = a + 5 with a += 5",
+                    "same goes with all other arithmetic",
+                    "operators",
+                    "a = a // 2 -> a //= 2",
+                    "a = a ** 3 -> a **= 3",
+                    "..."
                 ],
                 [
-                    "To call a function, we use",
-                    "function name followed by",
-                    "parenthesis:",
+                    "Comparison operators",
+                    "== -> Equal",
+                    "!= -> Not equal",
+                    "> -> Greater than",
+                    "< -> Less than",
+                    ">= -> Greater or equal to",
+                    "<= -> Less or equal to",
                     "",
-                    "hello() -> prints Hello",
-                    "add(1, 2) -> returns 3",
-                    "",
-                    "a = add(3, 2) -> a = 5"
+                    "They return a boolean:",
+                    "3 == 5 -> False",
+                    "4 <= 5 -> True"
                 ],
                 [
-                    "Make a function named mult",
-                    "which takes two integers a",
-                    "and b and returns thier product",
-                    "call the function from print()",
-                    "a = 5, b = 3"
+                    "Logical operators",
+                    "and -> returns True if both values",
+                    "are True",
+                    "or -> returns True if any of values",
+                    "is True",
+                    "not -> reverses boolean value",
+                    "  True -> False, False -> True",
+                    "",
+                    "1 < 2 and 3 <= 3 -> True",
+                    "1 > 2 and 4 > 5 -> False",
+                    "not 1 == 1 -> False"
+                ],
+                [
+                    "Make a variable a and assign 10.5",
+                    "to it, using assignment operators add",
+                    "4.5 to it and print it. Make variable b",
+                    "and inside of it check if a is bigger",
+                    "than 4.5 and print it on new line"
                 ]
             ],
-            "pages": 4,
+            "text_C": [
+                [
+                    "Level 7.",
+                    "",
+                    "In this level, we will cover operators",
+                    "in C.",
+                    "",
+                    "Operators are used to perform",
+                    "operations on variables and values.",
+                    "",
+                    "Arithmetic operators:",
+                    "+ -> Addition",
+                    "- -> Subtraction",
+                    "* -> Multiplication",
+                    "/ -> Division",
+                    "% -> Modulus (remainder)"
+                ],
+                [
+                    "Assignment operators:",
+                    "These are used to assign values to",
+                    "variables and always include '='.",
+                    "",
+                    "Example:",
+                    "a = a + 5 can be shortened to a += 5.",
+                    "This applies to other arithmetic",
+                    "operators too.",
+                    "",
+                    "a = a * 2 -> a *= 2",
+                    "a = a / 3 -> a /= 3"
+                ],
+                [
+                    "Comparison operators:",
+                    "== -> Equal to",
+                    "!= -> Not equal to",
+                    "> -> Greater than",
+                    "< -> Less than",
+                    ">= -> Greater than or equal to",
+                    "<= -> Less than or equal to",
+                    "",
+                    "They return 1 (true) or 0 (false):",
+                    "3 == 5 -> 0",
+                    "4 <= 5 -> 1"
+                ],
+                [
+                    "Logical operators:",
+                    "&& -> returns true if both conditions",
+                    "are true",
+                    "|| -> returns true if either condition",
+                    "is true",
+                    "! -> reverses the boolean value",
+                    "",
+                    "Examples:",
+                    "1 < 2 && 3 <= 3 -> 1 (true)",
+                    "1 > 2 && 4 > 5 -> 0 (false)",
+                    "! (1 == 1) -> 0 (false)"
+                ],
+                [
+                    "Exercise:",
+                    "Make a float variable a and assign",
+                    "10.5 to it. Use assignment operators",
+                    "to add 4.5 to it and print it.",
+                    "Create an integer variable b and",
+                    "store the result of checking if a is",
+                    "greater than 4.5. Print b on a new line."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 7.",
+                    "",
+                    "In this level, we will cover operators",
+                    "in C++.",
+                    "",
+                    "Operators are used to perform",
+                    "operations on variables and values.",
+                    "",
+                    "Arithmetic operators:",
+                    "+ -> Addition",
+                    "- -> Subtraction",
+                    "* -> Multiplication",
+                    "/ -> Division",
+                    "% -> Modulus (remainder)"
+                ],
+                [
+                    "Assignment operators:",
+                    "These are used to assign values to",
+                    "variables and always include '='.",
+                    "",
+                    "Example:",
+                    "a = a + 5 can be shortened to a += 5.",
+                    "This applies to other arithmetic",
+                    "operators as well.",
+                    "",
+                    "a = a * 2 -> a *= 2",
+                    "a = a / 3 -> a /= 3"
+                ],
+                [
+                    "Comparison operators:",
+                    "== -> Equal to",
+                    "!= -> Not equal to",
+                    "> -> Greater than",
+                    "< -> Less than",
+                    ">= -> Greater than or equal to",
+                    "<= -> Less than or equal to",
+                    "",
+                    "They return true or false:",
+                    "3 == 5 -> false",
+                    "4 <= 5 -> true"
+                ],
+                [
+                    "Logical operators:",
+                    "&& -> returns true if both conditions",
+                    "are true",
+                    "|| -> returns true if either condition",
+                    "is true",
+                    "! -> reverses the boolean value",
+                    "",
+                    "Examples:",
+                    "1 < 2 && 3 <= 3 -> true",
+                    "1 > 2 && 4 > 5 -> false",
+                    "! (1 == 1) -> false"
+                ],
+                [
+                    "Exercise:",
+                    "Make a float variable a and assign",
+                    "10.5 to it. Use assignment operators",
+                    "to add 4.5 to it and print it.",
+                    "Create a bool variable b and assign",
+                    "the result of checking if a is greater",
+                    "than 4.5. Print b on a new line."
+                ]
+            ],
+            "pages": 5,
             "blocks": [
                 [
                     "grass_top.png",
@@ -2298,76 +2507,20 @@
         {
             "input_text_Python": "",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
-                        "class",
-                        "Dog",
-                        ":"
-                    ],
-                    [
-                        "def",
-                        "_",
-                        "_",
-                        "init",
-                        "_",
-                        "_",
-                        "(",
-                        "self",
-                        "name",
-                        "age",
-                        ")",
-                        ":"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "name",
-                        "=",
-                        "name"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "age",
-                        "=",
-                        "age"
-                    ],
-                    [
-                        "def",
-                        "dog",
-                        "_",
-                        "age",
-                        "(",
-                        "self",
-                        ")",
+                        "if",
+                        "5",
+                        ">",
+                        "3",
                         ":"
                     ],
                     [
                         "print",
                         "(",
-                        "self",
-                        ".",
-                        "age",
-                        ")"
-                    ],
-                    [
-                        "dog1",
-                        "=",
-                        "Dog",
-                        "(",
-                        "\"Buddy\"",
-                        "3",
-                        ")"
-                    ],
-                    [
-                        "dog1",
-                        ".",
-                        "dog",
-                        "_",
-                        "age",
-                        "(",
+                        "\"Hello, World!\"",
                         ")"
                     ]
                 ]
@@ -2384,55 +2537,6 @@
                         ">"
                     ],
                     [
-                        "struct",
-                        "Dog",
-                        "{"
-                    ],
-                    [
-                        "char",
-                        "name",
-                        "[",
-                        "50",
-                        "]",
-                        ";"
-                    ],
-                    [
-                        "int",
-                        "age",
-                        ";"
-                    ],
-                    [
-                        "}",
-                        ";"
-                    ],
-                    [
-                        "void",
-                        "dog",
-                        "_",
-                        "age",
-                        "(",
-                        "struct",
-                        "Dog",
-                        "*",
-                        "dog",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "printf",
-                        "(",
-                        "\"%d\"",
-                        "dog",
-                        "-",
-                        ">",
-                        "age",
-                        ")",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
                         "int",
                         "main",
                         "(",
@@ -2440,25 +2544,23 @@
                         "{"
                     ],
                     [
-                        "struct",
-                        "Dog",
-                        "dog1",
-                        "=",
-                        "{",
-                        "\"Buddy\"",
+                        "if",
+                        "(",
+                        "5",
+                        ">",
                         "3",
-                        "}",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"Hello, World!\"",
+                        ")",
                         ";"
                     ],
                     [
-                        "dog",
-                        "_",
-                        "age",
-                        "(",
-                        "&",
-                        "dog1",
-                        ")",
-                        ";"
+                        "}"
                     ],
                     [
                         "return",
@@ -2480,83 +2582,9 @@
                         ">"
                     ],
                     [
-                        "#",
-                        "include",
-                        "<",
-                        "string",
-                        ">"
-                    ],
-                    [
                         "using",
                         "namespace",
                         "std",
-                        ";"
-                    ],
-                    [
-                        "class",
-                        "Dog",
-                        "{"
-                    ],
-                    [
-                        "public",
-                        ":"
-                    ],
-                    [
-                        "string",
-                        "name",
-                        ";"
-                    ],
-                    [
-                        "int",
-                        "age",
-                        ";"
-                    ],
-                    [
-                        "Dog",
-                        "(",
-                        "string",
-                        "a",
-                        "int",
-                        "b",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "name",
-                        "=",
-                        "a",
-                        ";"
-                    ],
-                    [
-                        "age",
-                        "=",
-                        "b",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "dog",
-                        "_",
-                        "age",
-                        "(",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "cout",
-                        "<",
-                        "<",
-                        "age",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "}",
                         ";"
                     ],
                     [
@@ -2567,23 +2595,23 @@
                         "{"
                     ],
                     [
-                        "Dog",
-                        "dog1",
+                        "if",
                         "(",
-                        "\"Buddy\"",
+                        "5",
+                        ">",
                         "3",
                         ")",
+                        "{"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "\"Hello, World!\"",
                         ";"
                     ],
                     [
-                        "dog1",
-                        ".",
-                        "dog",
-                        "_",
-                        "age",
-                        "(",
-                        ")",
-                        ";"
+                        "}"
                     ],
                     [
                         "return",
@@ -2595,70 +2623,206 @@
                     ]
                 ]
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Level 8.",
                     "",
-                    "In this level we will talk",
-                    "about classes, they are",
-                    "\"blueprints\" for creating",
-                    "objects",
-                    "class Class:",
-                    "   x = 8",
-                    "This is a class",
-                    "object = Class()",
-                    "and this is a object"
+                    "In this level we will explain if, elif and",
+                    "else statements.",
+                    "With this statements we can check if",
+                    "given condition is true.",
+                    "Condition, for example (b > a), returns",
+                    "a boolean value. If that value is True",
+                    "code inside the if statement is executed.",
+                    "",
+                    "   a = 3",
+                    "   b = 5",
+                    "   if b > a:",
+                    "       print(\"b is greater than a\")",
+                    "!Indentation is critical in Python.",
+                    "It defines the scope of the if block."
                 ],
                 [
-                    "We can access it's properties",
-                    "like this:",
-                    "print(object.x) -> 8",
+                    "elif is used to check multiple conditions",
+                    "else is used if none of the conditions",
+                    "before were true",
                     "",
-                    "For now we can't do much",
-                    "with classes but using",
-                    "__init__ function we can",
-                    "assign our own parameter",
-                    "values"
+                    "   a = 3",
+                    "   b = 5",
+                    "   if b > a:",
+                    "       print(\"b is greater\")",
+                    "   elif a == b:",
+                    "       print(\"a and b are equal\")",
+                    "   else:",
+                    "       print(\"a is greater\")",
+                    "output:",
+                    "b is greater"
                 ],
                 [
-                    "class Cat:",
-                    "   def __init__(self, name):",
-                    "       self.name = name",
+                    "Logical operators",
+                    "and - both conditions must be true",
+                    "or - at least one condition must be true",
+                    "not - reverses the output of condition",
                     "",
-                    "cat1 = Cat(\"Dudek\")",
-                    "",
-                    "self parameter is a",
-                    "reference to the current",
-                    "instance of the class, you",
-                    "can rename it but it always",
-                    "needs to be the first",
-                    "paramater of class function"
+                    "   a = 5",
+                    "   b = 3",
+                    "   c = 8",
+                    "   if a > b and c > a:",
+                    "       print(\"Both conditions are True\")",
+                    "output:",
+                    "Both conditions are True"
                 ],
                 [
-                    "Methods are functions that",
-                    "belong to the object",
+                    "You can nest if statements inside each",
+                    "other",
                     "",
-                    "class Cat:",
-                    "   def __init__(self, name):",
-                    "       self.name = name",
-                    "   def meow(self)",
-                    "       print(\"Meow\" + self.name)",
+                    "   if x > 10:",
+                    "       if x > 20",
+                    "           print(\"Above 20\")",
                     "",
-                    "cat1 = Cat(\"Dudek\")",
-                    "cat1.meow() -> Meow Dudek"
-                ],
-                [
-                    "Make a class named Dog with",
-                    "name and age parameters, ",
-                    "make a method named dog_age",
-                    "which prints dog's age and",
-                    "make object called dog1 with",
-                    "name \"Buddy\" and age 3,",
-                    "use method you made to print",
-                    "dog's age"
+                    "If you need an empty if statement use",
+                    "pass",
+                    "",
+                    "   if b > a",
+                    "       pass",
+                    "",
+                    "Make a program that outputs",
+                    "\"Hello, World!\" if 5 > 3."
                 ]
             ],
-            "pages": 5,
+            "text_C": [
+                [
+                    "Level 8.",
+                    "",
+                    "In this level, we will explain if, else if,",
+                    "and else statements in C.",
+                    "With these statements, we can check if",
+                    "a given condition is true.",
+                    "A condition, like (b > a), returns a",
+                    "boolean result. If it's true, code inside",
+                    "the if statement is executed.",
+                    "",
+                    "   int a = 3;",
+                    "   int b = 5;",
+                    "   if (b > a) {",
+                    "       printf(\"b is greater than a\");",
+                    "   }"
+                ],
+                [
+                    "else if is used to check multiple",
+                    "conditions, and else is used if none",
+                    "of the previous conditions were true.",
+                    "",
+                    "   int a = 3;",
+                    "   int b = 5;",
+                    "   if (b > a) {",
+                    "       printf(\"b is greater\");",
+                    "   } else if (a == b) {",
+                    "       printf(\"a and b are equal\");",
+                    "   } else {",
+                    "       printf(\"a is greater\");",
+                    "   }",
+                    "Output:",
+                    "b is greater"
+                ],
+                [
+                    "Logical operators:",
+                    "&& - both conditions must be true",
+                    "|| - at least one condition must be true",
+                    "! - reverses the output of condition",
+                    "",
+                    "   int a = 5, b = 3, c = 8;",
+                    "   if (a > b && c > a) {",
+                    "       printf(\"Both conditions are true\");",
+                    "   }",
+                    "Output:",
+                    "Both conditions are true"
+                ],
+                [
+                    "You can nest if statements inside each",
+                    "other:",
+                    "",
+                    "   if (x > 10) {",
+                    "       if (x > 20) {",
+                    "           printf(\"Above 20\");",
+                    "       }",
+                    "   }",
+                    "",
+                    "If you need an empty if statement, you",
+                    "can use an empty block:",
+                    "   if (b > a) { }",
+                    "",
+                    "Make a program that outputs",
+                    "\"Hello, World!\" if 5 > 3."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 8.",
+                    "",
+                    "In this level, we will explain if, else if,",
+                    "and else statements in C++.",
+                    "With these statements, we can check if",
+                    "a given condition is true.",
+                    "A condition, like (b > a), returns a",
+                    "boolean result. If it's true, code inside",
+                    "the if statement is executed.",
+                    "",
+                    "   int a = 3;",
+                    "   int b = 5;",
+                    "   if (b > a) {",
+                    "       cout << \"b is greater than a\";",
+                    "   }"
+                ],
+                [
+                    "else if is used to check multiple",
+                    "conditions, and else is used if none",
+                    "of the previous conditions were true.",
+                    "",
+                    "   int a = 3;",
+                    "   int b = 5;",
+                    "   if (b > a) {",
+                    "       cout << \"b is greater\";",
+                    "   } else if (a == b) {",
+                    "       cout << \"a and b are equal\";",
+                    "   } else {",
+                    "       cout << \"a is greater\";",
+                    "   }",
+                    "Output:",
+                    "b is greater"
+                ],
+                [
+                    "Logical operators:",
+                    "&& - both conditions must be true",
+                    "|| - at least one condition must be true",
+                    "! - reverses the output of condition",
+                    "",
+                    "   int a = 5, b = 3, c = 8;",
+                    "   if (a > b && c > a) {",
+                    "       cout << \"Both conditions are true\";",
+                    "   }",
+                    "Output:",
+                    "Both conditions are true"
+                ],
+                [
+                    "You can nest if statements inside each",
+                    "other:",
+                    "",
+                    "   if (x > 10) {",
+                    "       if (x > 20) {",
+                    "           cout << \"Above 20\";",
+                    "       }",
+                    "   }",
+                    "",
+                    "If you need an empty if statement, you",
+                    "can use an empty block:",
+                    "   if (b > a) { }",
+                    "",
+                    "Make a program that outputs",
+                    "\"Hello, World!\" if 5 > 3."
+                ]
+            ],
+            "pages": 4,
             "blocks": [
                 [
                     "grass_top.png",
@@ -2728,514 +2892,243 @@
     ],
     "level9": [
         {
-            "input_text_Python": "",
-            "input_text_C": "#include <stdio.h>\n",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n",
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "solution_Python": [
                 [
-                    [
-                        "class",
-                        "Mob",
-                        ":"
-                    ],
-                    [
-                        "def",
-                        "_",
-                        "_",
-                        "init",
-                        "_",
-                        "_",
-                        "(",
-                        "self",
-                        "x",
-                        "y",
-                        ")",
-                        ":"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "x",
-                        "=",
-                        "x"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "y",
-                        "=",
-                        "y"
-                    ],
-                    [
-                        "def",
-                        "go",
-                        "_",
-                        "up",
-                        "(",
-                        "self",
-                        "n",
-                        ")",
-                        ":"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "y",
-                        "+",
-                        "=",
-                        "n"
-                    ],
-                    [
-                        "def",
-                        "go",
-                        "_",
-                        "down",
-                        "(",
-                        "self",
-                        "n",
-                        ")",
-                        ":"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "y",
-                        "-",
-                        "=",
-                        "n"
-                    ],
-                    [
-                        "def",
-                        "go",
-                        "_",
-                        "right",
-                        "(",
-                        "self",
-                        "n",
-                        ")",
-                        ":"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "x",
-                        "+",
-                        "=",
-                        "n"
-                    ],
-                    [
-                        "def",
-                        "go",
-                        "_",
-                        "left",
-                        "(",
-                        "self",
-                        "n",
-                        ")",
-                        ":"
-                    ],
-                    [
-                        "self",
-                        ".",
-                        "x",
-                        "-",
-                        "=",
-                        "n"
-                    ]
+                    []
                 ]
             ],
             "solution_C": [
                 [
-                    [
-                        "#",
-                        "include",
-                        "<",
-                        "stdio",
-                        ".",
-                        "h",
-                        ">"
-                    ],
-                    [
-                        "struct",
-                        "Mob",
-                        "{"
-                    ],
-                    [
-                        "int",
-                        "x",
-                        ";"
-                    ],
-                    [
-                        "int",
-                        "y",
-                        ";"
-                    ],
-                    [
-                        "}",
-                        ";"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "up",
-                        "(",
-                        "struct",
-                        "Mob",
-                        "*",
-                        "mob",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "mob",
-                        "-",
-                        ">",
-                        "y",
-                        "+",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "down",
-                        "(",
-                        "struct",
-                        "Mob",
-                        "*",
-                        "mob",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "mob",
-                        "-",
-                        ">",
-                        "y",
-                        "-",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "right",
-                        "(",
-                        "struct",
-                        "Mob",
-                        "*",
-                        "mob",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "mob",
-                        "-",
-                        ">",
-                        "x",
-                        "+",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "left",
-                        "(",
-                        "struct",
-                        "Mob",
-                        "*",
-                        "mob",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "mob",
-                        "-",
-                        ">",
-                        "x",
-                        "-",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ]
+                    []
                 ]
             ],
             "solution_C++": [
                 [
-                    [
-                        "#",
-                        "include",
-                        "<",
-                        "iostream",
-                        ">"
-                    ],
-                    [
-                        "#",
-                        "include",
-                        "<",
-                        "string",
-                        ">"
-                    ],
-                    [
-                        "using",
-                        "namespace",
-                        "std",
-                        ";"
-                    ],
-                    [
-                        "class",
-                        "Mob",
-                        "{"
-                    ],
-                    [
-                        "public",
-                        ":"
-                    ],
-                    [
-                        "int",
-                        "x",
-                        ";"
-                    ],
-                    [
-                        "int",
-                        "y",
-                        ";"
-                    ],
-                    [
-                        "Mob",
-                        "(",
-                        "int",
-                        "a",
-                        "int",
-                        "b",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "x",
-                        "=",
-                        "a",
-                        ";"
-                    ],
-                    [
-                        "y",
-                        "=",
-                        "b",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "up",
-                        "(",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "y",
-                        "+",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "down",
-                        "(",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "y",
-                        "-",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "right",
-                        "(",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "x",
-                        "+",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "void",
-                        "go",
-                        "_",
-                        "left",
-                        "(",
-                        "int",
-                        "n",
-                        ")",
-                        "{"
-                    ],
-                    [
-                        "x",
-                        "-",
-                        "=",
-                        "n",
-                        ";"
-                    ],
-                    [
-                        "}"
-                    ],
-                    [
-                        "}",
-                        ";"
-                    ]
+                    []
                 ]
             ],
-            "text": [
+            "text_Python": [
                 [
                     "Level 9.",
                     "",
-                    "From this level on we will do",
-                    "something a little bit different",
-                    "We will use code to move",
-                    "Mobs across the map behind",
-                    "the book until they are on the",
-                    "trapdoor, that is the finish"
+                    "In this level, we will explore the concept",
+                    "of classes and methods that help us",
+                    "move an object around on a 2D grid.",
+                    "",
+                    "You will see some code that has already",
+                    "been written for you. Don't worry about",
+                    "trying to understand every detail just",
+                    "yet. Just follow along; you might learn",
+                    "something new! If it seems confusing,",
+                    "that's perfectly fine, this code will be",
+                    "already written for you in later levels."
                 ],
                 [
-                    "First of all we need a class",
-                    "for Mob which will have two",
-                    "parameters x and y and four",
-                    "methods: go_up, go_down,",
-                    "go_right, go_left, each of",
-                    "those methods take number",
-                    "(call that number n)",
-                    "of blocks you want to go in",
-                    "that direction and increments",
-                    "or decrements Mob's x and",
-                    "y as needed"
+                    "We will create a class named Mob, which",
+                    "represents an object on the grid. This",
+                    "class will have properties for its",
+                    "position (x and y coordinates) and",
+                    "methods to move it in different",
+                    "directions."
                 ],
                 [
-                    "Make that class."
+                    "The __init__ method is a constructor.",
+                    "It's called automatically when you",
+                    "create a new Mob object. It sets the",
+                    "starting position using the x and y",
+                    "parameters.",
+                    "",
+                    "For example:",
+                    "   class Mob:",
+                    "       def __init__(self, x, y):",
+                    "           self.x = x",
+                    "           self.y = y"
+                ],
+                [
+                    "Movement methods are defined within",
+                    "the class:",
+                    "   - go_up increases the y coordinate.",
+                    "   - go_down decreases the y coordinate.",
+                    "   - go_right increases the x coordinate.",
+                    "   - go_left decreases the x coordinate.",
+                    "",
+                    "These methods allow us to change the",
+                    "Mob's position after it is created.",
+                    "",
+                    "mob = Mob(0, 0) creates instance of",
+                    "Mob on which we can use it's methods.",
+                    "For example:",
+                    "   mob.go_up(1)"
                 ]
             ],
-            "pages": 3,
+            "text_C": [
+                [
+                    "Level 9.",
+                    "",
+                    "In this level, we will explore the concept",
+                    "of classes and methods that help us",
+                    "move an object around on a 2D grid.",
+                    "",
+                    "You will see some code that has already",
+                    "been written for you. Don't worry about",
+                    "trying to understand every detail just",
+                    "yet. Just follow along; you might learn",
+                    "something new! If it seems confusing,",
+                    "that's perfectly fine, this code will be",
+                    "already written for you in later levels."
+                ],
+                [
+                    "In C, we use structs to group related",
+                    "data. Here, we define a Mob struct that",
+                    "contains x and y coordinates to",
+                    "represent its position."
+                ],
+                [
+                    "Struct Definition:",
+                    "We create the Mob struct with the",
+                    "following:",
+                    "   struct Mob {",
+                    "       int x;",
+                    "       int y;",
+                    "   };"
+                ],
+                [
+                    "Movement Functions:",
+                    "Four functions handle the movement:",
+                    "   - go_up adds to the y coordinate.",
+                    "   - go_down subtracts from y.",
+                    "   - go_right adds to the x coordinate.",
+                    "   - go_left subtracts from x.",
+                    "",
+                    "These functions modify the Mob's",
+                    "position based on its current",
+                    "coordinates.",
+                    "",
+                    "struct Mob mob = {0, 0} creates",
+                    "instance of Mob on which we can",
+                    "call movement functions, like this:",
+                    "   go_up(&mob, 1);",
+                    "!Don't forget & before mob"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 9.",
+                    "",
+                    "In this level, we will explore the concept",
+                    "of classes and methods that help us",
+                    "move an object around on a 2D grid.",
+                    "",
+                    "You will see some code that has already",
+                    "been written for you. Don't worry about",
+                    "trying to understand every detail just",
+                    "yet. Just follow along; you might learn",
+                    "something new! If it seems confusing,",
+                    "that's perfectly fine, this code will be",
+                    "already written for you in later levels."
+                ],
+                [
+                    "In C++, classes allow us to define our",
+                    "own data types. We'll define a class",
+                    "called Mob with attributes for its",
+                    "position, x and y."
+                ],
+                [
+                    "Class Definition:",
+                    "Here's how we define the Mob class:",
+                    "   class Mob {",
+                    "       public:",
+                    "           int x, y;",
+                    "           Mob(int a, int b) {",
+                    "               x = a; y = b;",
+                    "           }",
+                    "   };"
+                ],
+                [
+                    "Movement Methods:",
+                    "The Mob class has methods for",
+                    "movement:",
+                    "   - go_up adds to y.",
+                    "   - go_down subtracts from y.",
+                    "   - go_right adds to x.",
+                    "   - go_left subtracts from x.",
+                    "",
+                    "These methods allow us to change",
+                    "the Mob's position on the grid.",
+                    "",
+                    "Mob mob(0, 0); creates",
+                    "instance of Mob on which we can",
+                    "call movement functions, like this:",
+                    "   mob.go_up(1);"
+                ]
+            ],
+            "pages": 4,
             "blocks": [
                 [
-                    "crafting_table_top.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "oak_trapdoor.png"
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "sand.png",
+                    "sand.png"
                 ],
                 [
-                    "dirt.png",
-                    "azalea_leaves.png",
-                    "azalea_leaves.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cactus_top.png",
+                    "cactus_top.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "sand.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
                     "grass_top.png"
                 ],
                 [
-                    "dirt.png",
-                    "azalea_leaves.png",
-                    "azalea_leaves.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
                     "grass_top.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
                     "grass_top.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
-                ],
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
-                ],
-                [
+                    "oak_trapdoor.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "gold_ore.png"
                 ]
             ]
         }
@@ -3249,7 +3142,7 @@
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text": [
+            "text_Python": [
                 [
                     "Level 10.",
                     "",
@@ -3941,38 +3834,38 @@
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text": [
+            "text_Python": [
                 [
                     "Level 17.",
                     "",
-                    "In this level you will learn",
-                    "about loops and implement",
-                    "them in your code",
+                    "In this level, you will learn about loops",
+                    "and how to implement them in your",
+                    "code.",
                     "",
-                    "For loops in Python are",
-                    "written like this:",
+                    "In Python, a for loop is structured like",
+                    "this:",
                     "for i in range(5):",
                     "   #code"
                 ],
                 [
-                    "i - variable which will",
-                    "be changed for every",
-                    "iteration of the loop",
+                    "Here, 'i' is the variable that changes",
+                    "with each iteration of the loop.",
                     "",
-                    "range(5) - generates a",
-                    "sequence of numbers from",
-                    "0 up to 5 (5 is not included)",
-                    "[0, 1, 2, 3, 4]",
+                    "The function range(5) generates a",
+                    "sequence of numbers starting from 0",
+                    "up to (but not including) 5. This results",
+                    "in the list: [0, 1, 2, 3, 4].",
                     "",
-                    "The code inside the loop",
-                    "for each value of i in",
-                    "that range"
+                    "The code inside the loop will be",
+                    "executed for each value of 'i' within",
+                    "that range."
                 ],
                 [
+                    "For example:",
                     "for i in range(5):",
                     "   print(i)",
                     "",
-                    "output:",
+                    "This will output:",
                     "0",
                     "1",
                     "2",
@@ -3980,16 +3873,105 @@
                     "4"
                 ],
                 [
-                    "Move Mob to the finish",
-                    "which is the trapdoor but",
-                    "only using: mob.go_up(1)",
+                    "Your task is to move the Mob to the",
+                    "finish, which is the trapdoor, but you",
+                    "can only use: mob.go_up(1)",
                     "",
-                    "Do this by repeating",
-                    "that function with for loop",
-                    "6 times",
+                    "Do this by repeating that function with",
+                    "for loop 6 times",
                     "",
-                    "To close this book use",
-                    "Ctrl+E"
+                    "To close this book, press Ctrl + E."
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 17.",
+                    "",
+                    "In this level, you'll learn about loops",
+                    "and how to implement them in your",
+                    "code.",
+                    "",
+                    "In C, a for loop is structured like this:",
+                    "for (int i = 0; i < 5; i++) {",
+                    "   // code",
+                    "}"
+                ],
+                [
+                    "'i' is the loop variable that increments",
+                    "with each iteration.",
+                    "",
+                    "The loop starts at 0 and continues until",
+                    "it reaches 5 (5 is not included).",
+                    "",
+                    "This means the loop will run for values:",
+                    "0, 1, 2, 3, 4."
+                ],
+                [
+                    "For example:",
+                    "for (int i = 0; i < 5; i++) {",
+                    "   printf(\"%d\\n\", i);",
+                    "}",
+                    "",
+                    "This will produce the following output:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                [
+                    "Your task is to move the Mob to the",
+                    "finish, which is the trapdoor, but you",
+                    "can only use: go_up(&mob, 1);",
+                    "",
+                    "Do this by repeating that function with",
+                    "for loop 6 times",
+                    "",
+                    "To close this book, use Ctrl + E."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 17.",
+                    "",
+                    "In this level, you will learn about loops",
+                    "and how to apply them in your code.",
+                    "",
+                    "In C++, a for loop is structured like this:",
+                    "for (int i = 0; i < 5; i++) {",
+                    "   // code",
+                    "}"
+                ],
+                [
+                    "'i' is the loop variable that will be",
+                    "updated during each iteration.",
+                    "",
+                    "The loop starts at 0 and runs until it",
+                    "reaches 5 (5 is not included),",
+                    "producing the values: 0, 1, 2, 3, 4."
+                ],
+                [
+                    "For example:",
+                    "for (int i = 0; i < 5; i++) {",
+                    "   cout << i << endl;",
+                    "}",
+                    "",
+                    "This will output:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                [
+                    "Your task is to move the Mob to the",
+                    "finish, which is the trapdoor, but you",
+                    "can only use: mob.go_up(1);",
+                    "",
+                    "Do this by repeating that function with",
+                    "for loop 6 times",
+                    "",
+                    "To close this book, press Ctrl + E."
                 ]
             ],
             "pages": 4,
@@ -4369,54 +4351,139 @@
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text": [
+            "text_Python": [
                 [
                     "Level 21.",
                     "",
-                    "In this level you will learn",
-                    "about while loops and",
-                    "implement them in your code",
+                    "In this level, you will learn about while",
+                    "loops and how to implement them in",
+                    "your code.",
                     "",
-                    "While loops are another",
-                    "type of loops in Python",
-                    "With the while loop we",
-                    "can execute code inside of",
-                    "as long as a condition is",
-                    "true"
+                    "While loops are another type of loop in",
+                    "Python. With a while loop, we can",
+                    "execute code as long as a specified",
+                    "condition remains true."
                 ],
                 [
+                    "For example:",
                     "i = 0",
                     "while i < 6:",
                     "   print(i)",
                     "   i += 1",
                     "",
-                    "output:",
+                    "This will produce the output:",
                     "0",
                     "1",
                     "2",
                     "3",
-                    "4"
+                    "4",
+                    "5"
                 ],
                 [
-                    "When using while loops",
-                    "we need to make a",
-                    "variable which will be",
-                    "changed in the loop",
-                    "before the loop as you",
-                    "could see in the example",
-                    "on previous page"
+                    "When using while loops, it's essential to",
+                    "initialize a variable that will change",
+                    "during the loop. This was demonstrated",
+                    "in the previous example."
                 ],
                 [
-                    "Move Mob to the finish",
-                    "which is the trapdoor but",
-                    "only using: mob.go_up(1)",
+                    "Your task is to move the Mob to the",
+                    "finish, which is the trapdoor, but you",
+                    "can only use: mob.go_up(1)",
                     "",
-                    "Do this by repeating",
-                    "that function with while loop",
-                    "6 times",
+                    "Do this by repeating that function with",
+                    "while loop 6 times",
                     "",
-                    "To close this book use",
-                    "Ctrl+E"
+                    "To close this book, press Ctrl + E."
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 21.",
+                    "",
+                    "In this level, you will learn about while",
+                    "loops and how to implement them in",
+                    "your code.",
+                    "",
+                    "A while loop in C allows you to execute",
+                    "code as long as a given condition is",
+                    "true."
+                ],
+                [
+                    "For example:",
+                    "int i = 0;",
+                    "while (i < 6) {",
+                    "   printf(\"%d\\n\", i);",
+                    "   i++;",
+                    "}",
+                    "",
+                    "This will produce the output:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                [
+                    "When using while loops, it's essential to",
+                    "initialize a variable that will change",
+                    "during the loop. This was demonstrated",
+                    "in the previous example."
+                ],
+                [
+                    "Your task is to move the Mob to the",
+                    "finish, which is the trapdoor, but you",
+                    "can only use: mob.go_up(1)",
+                    "",
+                    "Do this by repeating that function with",
+                    "while loop 6 times",
+                    "",
+                    "To close this book, press Ctrl + E."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 21.",
+                    "",
+                    "In this level, you will learn about while",
+                    "loops and how to implement them in",
+                    "your code.",
+                    "",
+                    "A while loop in C++ allows you to",
+                    "execute code as long as a given",
+                    "condition is true."
+                ],
+                [
+                    "For example:",
+                    "int i = 0;",
+                    "while (i < 6) {",
+                    "   cout << i << endl;",
+                    "   i++;",
+                    "}",
+                    "",
+                    "This will produce the output:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                [
+                    "When using while loops, it's essential to",
+                    "initialize a variable that will change",
+                    "during the loop. This was demonstrated",
+                    "in the previous example."
+                ],
+                [
+                    "Your task is to move the Mob to the",
+                    "finish, which is the trapdoor, but you",
+                    "can only use: mob.go_up(1)",
+                    "",
+                    "Do this by repeating that function with",
+                    "while loop 6 times",
+                    "",
+                    "To close this book, press Ctrl + E."
                 ]
             ],
             "pages": 4,
