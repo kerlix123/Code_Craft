@@ -56,19 +56,20 @@ def exec_c_code(code, l):
 def cbd_maker(code):
     cbd = []
     j = 0
-    while j < len(code):
+    code_length = len(code)
+    while j < code_length:
         if code[j] in [' ', '\t', '\n', ',']:
             j += 1
         elif code[j].isalnum():
             sb = ""
-            while j < len(code) and code[j].isalnum():
+            while j < code_length and code[j].isalnum():
                 sb += code[j]
                 j += 1
             cbd.append(sb)
         elif code[j] == '"':
             j += 1
             sb = '"'
-            while code[j] != '"':
+            while j < code_length and code[j] != '"':
                 sb += code[j]
                 j += 1
             j += 1

@@ -767,7 +767,8 @@ def game(level, player_l = False):
         j = 0
         while i < 595:
             while j < 595:
-                block_path = PATH / "blocks" / f"{levels[f"level{level}"][0]["blocks"][j//85][i//85]}" if not player_l else PATH / "blocks" / f"{player_levels[f"level{level}"][0]["blocks"][j//85][i//85]}"
+                level_key = f"level{level}"
+                block_path = PATH / "blocks" / f"{levels[level_key][0]["blocks"][j//85][i//85]}" if not player_l else PATH / "blocks" / f"{player_levels[level_key][0]["blocks"][j//85][i//85]}"
                 block = pygame.image.load(block_path)
                 block = pygame.transform.scale(block, (85, 85))
          
@@ -799,7 +800,7 @@ def game(level, player_l = False):
                     game_utils.trans_surface(36, 19, (170, 170, 170, 120), 125, 519)
 
         if level >= 10 or player_l:
-            steve = pygame.image.load(PATH / "skins" / f"{data["skin"]}.png")
+            steve = pygame.image.load(PATH / "skins" / f"{data['skin']}.png")
             steve = pygame.transform.scale(steve, (85, 85))
         
             window.blit(steve, (stevexy[0], stevexy[1]))
@@ -829,8 +830,11 @@ def game(level, player_l = False):
                     executed_code = exec_c_code(code_input.get_text(), "C++")
                 if executed_code["error"] != None:
                     err = executed_code["error"]
-                    if "error:" in err:
-                        err = executed_code["error"].rsplit("\n")[0].rsplit("error:")[1].strip()
+                    if code_lang != 0:
+                        try:
+                            err = err.split("\n")[0].split(":", 1)[1].split(" ", 1)[1]
+                        except Exception:
+                            err = "?"
                     messages.append("Error: " + err)
             else:
                 input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
