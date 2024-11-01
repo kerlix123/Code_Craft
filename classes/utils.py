@@ -85,7 +85,7 @@ class GameUtils:
         self.pygame.draw.rect(self.window, (0, 0, 0), (x, 598, length, 19), 1)
 
     def move(self, grass_x, grass_y, level, player_l=False):
-        steve = self.pygame.image.load(PATH / "skins" / f"{self.data["skin"]}.png")
+        steve = self.pygame.image.load(PATH / "skins" / f"{self.data['skin']}.png")
         steve = self.pygame.transform.scale(steve, (85, 85))
 
         self.window.blit(steve, (self.stevexy[0], self.stevexy[1]))

@@ -73,7 +73,7 @@ code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 pygame.key.set_repeat(200, 25)
 
 languages = ["Python", "C", "C++"]
-code_lang = 0
+code_lang = options["code_lang"]
 
 code_runned = False
 level_finished = False
@@ -417,7 +417,7 @@ def tutorial():
         pygame.display.flip()
 
 def options_win():
-    global music_on, fx_on
+    global music_on, fx_on, code_lang
     while True:
         if not pygame.mixer.music.get_busy() and music_on:
             game_utils.play_next_track()
@@ -450,6 +450,11 @@ def options_win():
                     with open(PATH / "options.json", 'w') as file:
                         json.dump(options, file, indent=4)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
+                    code_lang = (code_lang + 1) % 3
+                    options["code_lang"] = code_lang
+                    with open(PATH / "options.json", 'w') as file:
+                        json.dump(options, file, indent=4)
+                if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
                     if fx_on:
                         click_sound.play()
                     levels["last_finished_level"] = 0
@@ -477,7 +482,9 @@ def options_win():
         fx_state = "On" if fx_on else "Off"
         game_utils.menu_button(420, 180, 444+(356-minecraft_font_small.size(f"FX: {fx_state}")[0])//2, f"FX: {fx_state}", 400, 40, mouse)
 
-        game_utils.menu_button(420, 230, 452, "Clear Progress (Exit's app)", 400, 40, mouse)
+        game_utils.menu_button(420, 230, 432+(380-minecraft_font_small.size(f"Programming language: {languages[options["code_lang"]]}")[0])//2, f"Programming language: {languages[options["code_lang"]]}", 400, 40, mouse)
+        
+        game_utils.menu_button(420, 280, 452, "Clear Progress (Exit's app)", 400, 40, mouse)
 
         #back_button
         game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
@@ -555,6 +562,7 @@ def skins():
 def game(level, player_l = False):
     global code_lang, code_runned, level_finished, grades
     global def_code_python, def_code_c, def_code_cpp
+    code_lang = options["code_lang"]
     messages = []
     restart_code = False
     one_v_one = False
@@ -593,6 +601,8 @@ def game(level, player_l = False):
                     else:
                         level_menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
+                    if level >= 10:
+                        game_levels[level].text_closed = True
                     code_runned = True
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
                     restart_code = True
@@ -635,7 +645,7 @@ def game(level, player_l = False):
                     player = 1
                     one_v_one = False
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
-                    code_lang = (code_lang + 1) % len(languages)
+                    code_lang = (code_lang + 1) % 3
                     restart()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
                     print("hint 1")
@@ -1011,10 +1021,10 @@ def game(level, player_l = False):
                     grades = grade_code(code_input.get_text(), code_input_2.get_text(), one_v_one_time, fun_calls)
                     messages.append(f"Player 1. scored: {grades[0]}/4")
                     messages.append(f"Player 2. scored: {grades[1]}/4")
-                    won = 0
                     if grades[0] == grades[1]:
                         messages.append("It's a draw!")
                     else:
+                        won = 0
                         if grades[0] > grades[1]:
                             won = 1
                         elif grades[1] > grades[0]:
