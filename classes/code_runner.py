@@ -81,26 +81,86 @@ def cbd_maker(code):
             j += 1
     return cbd
 
-def grade_code(p1_code, p2_code, times):
+def code_length(code):
+    return sum(1 for el in code if el not in {'\n', '\t', ' '})
+
+def time_diff(times):
+    return (200*abs(times[0]-times[1]))/(times[0]+times[1])
+
+def differences(code_1, code_2):
+    diff = 0
+    c1pt, c2pt = 0, 0
+    len_1, len_2 = len(code_1), len(code_2)
+    while c1pt < len_1 and c2pt < len_2:
+        if code_1[c1pt] == " ":
+            c1pt += 1
+            continue
+        elif code_2[c2pt] == " ":
+            c2pt += 1
+            continue
+        elif code_1[c1pt] == "\n" and c1pt < len_1 and code_2[c2pt] != "\n":
+            while code_2[c2pt] != "\n":
+                diff += 1
+                c2pt += 1
+        elif code_2[c2pt] == "\n" and c2pt < len_2 and code_1[c1pt] != "\n":
+            while code_1[c1pt] != "\n":
+                diff += 1
+                c1pt += 1
+        elif code_1[c1pt] != code_2[c2pt]:
+            diff += 1
+        c1pt += 1
+        c2pt += 1
+    if c2pt < len_2:
+        c2pt += 1
+        while c2pt < len_2:
+            if code_2[c2pt] == "\n":
+                c2pt += 1
+            else:
+                diff += 1
+                c2pt += 1
+    elif c1pt < len_1:
+        c1pt += 1
+        while c1pt < len_1:
+            if code_1[c1pt] == "\n":
+                c1pt += 1
+            else:
+                diff += 1
+                c1pt += 1
+
+    return diff
+
+def grade_code(p1_code, p2_code, times, calls):
+    max_time_diff = 10
+    max_diffs = 20
     grades = [0, 0]
-    p1_s = [el for el in p1_code.split("\n") if el != ""]
-    p2_s = [el for el in p2_code.split("\n") if el != ""]
-    
-    l = [len(''.join(p1_s)), len(p1_s), len(''.join(p2_s)), len(p2_s)]
-
-    if l[0] < l[2]:
+    if time_diff(times) < max_time_diff:
         grades[0] += 1
-    elif l[0] > l[2]:
+        grades[1] += 1
+    elif times[0] > times[1]:
+        grades[1] += 1
+    elif times[1] > times[0]:
+        grades[0] += 1
+
+    if differences(p1_code, p2_code) < max_diffs:
+        grades[0] += 1
         grades[1] += 1
 
-    if l[1] < l[3]:
+    len_1 = code_length(p1_code)
+    len_2 = code_length(p2_code)
+    if len_1 == len_2:
         grades[0] += 1
-    elif l[1] > l[3]:
         grades[1] += 1
-
-    if times[0] < times[1]:
+    elif len_1 < len_2:
         grades[0] += 1
     else:
         grades[1] += 1
 
+    if calls[0] == calls[1]:
+        grades[0] += 1
+        grades[1] += 1
+    elif calls[0] < calls[1]:
+        grades[0] += 1
+    else:
+        grades[1] += 1
+    
     return grades

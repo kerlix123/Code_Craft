@@ -560,6 +560,7 @@ def game(level, player_l = False):
     one_v_one = False
     one_v_one_code = [False, False]
     one_v_one_time = [0, 0]
+    fun_calls = [0, 0]
     player = 1
     code_input.i = 0
     code_input.cursor_pos = 0
@@ -987,6 +988,7 @@ def game(level, player_l = False):
 
                 if check():
                     if one_v_one:
+                        fun_calls[player-1] = len(coms)
                         one_v_one_code[player-1] = True
                         messages.append(f"Player {player}. finished the level!")
                         if not (one_v_one_code[0] and one_v_one_code[1]):
@@ -1006,15 +1008,18 @@ def game(level, player_l = False):
             
             if one_v_one:
                 if one_v_one_code[0] and one_v_one_code[1]:
-                    grades = grade_code(code_input.get_text(), code_input_2.get_text(), one_v_one_time)
-                    messages.append(f"Player 1. scored: {grades[0]}/3")
-                    messages.append(f"Player 2. scored: {grades[1]}/3")
+                    grades = grade_code(code_input.get_text(), code_input_2.get_text(), one_v_one_time, fun_calls)
+                    messages.append(f"Player 1. scored: {grades[0]}/4")
+                    messages.append(f"Player 2. scored: {grades[1]}/4")
                     won = 0
-                    if grades[0] > grades[1]:
-                        won = 1
-                    elif grades[1] > grades[0]:
-                        won = 2
-                    messages.append(f"Player {won}. won.")
+                    if grades[0] == grades[1]:
+                        messages.append("It's a draw!")
+                    else:
+                        if grades[0] > grades[1]:
+                            won = 1
+                        elif grades[1] > grades[0]:
+                            won = 2
+                        messages.append(f"Player {won}. won.")
 
             if solution:
                 if level >= 10:
