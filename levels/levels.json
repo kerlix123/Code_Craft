@@ -454,6 +454,10 @@
                     "Ctrl+K"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": false,
+            "hint1_Python": "Use print() function",
+            "hint2_Python": "Inside of print() type \"Hello, World!\"",
             "pages": 4,
             "blocks": [
                 [

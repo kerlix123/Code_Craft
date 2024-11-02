@@ -34,6 +34,10 @@ playlist = [PATH / "music" / "DryHands.mp3",
 def load_json_file(file):
     with open(file) as json_file:
         return json.load(json_file)
+    
+def write_to_json(file, input_dict):
+    with open(file, 'w') as json_file:
+        json.dump(input_dict, json_file, indent=4)
 
 levels = load_json_file(PATH / "levels" / "levels.json")
 
@@ -293,8 +297,7 @@ def level_builder():
                         curr["blocks"] = blocks
                         curr["path_block"] = path_block
                         player_levels[f"level{curr_level}"] = [curr]
-                        with open(PATH / "levels" / "player_levels.json", 'w') as file:
-                            json.dump(player_levels, file, indent=4)
+                        write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                         saved = True
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     if saved:
@@ -311,8 +314,7 @@ def level_builder():
                         if player_levels["last_level"] > 0:
                             for p in player_levels["level_p"]:
                                 player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
-                        with open(PATH / "levels" / "player_levels.json", 'w') as file:
-                            json.dump(player_levels, file, indent=4)
+                        write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                     if fx_on:
                         click_sound.play()
                     level_menu()
@@ -442,18 +444,15 @@ def options_win():
                         pygame.mixer.music.unpause()
                     music_on = not music_on
                     options["music_on"] = music_on
-                    with open(PATH / "options.json", 'w') as file:
-                        json.dump(options, file, indent=4)
+                    write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 180 <= mouse[1] <= 220:
                     fx_on = not fx_on
                     options["fx_on"] = fx_on
-                    with open(PATH / "options.json", 'w') as file:
-                        json.dump(options, file, indent=4)
+                    write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
                     code_lang = (code_lang + 1) % 3
                     options["code_lang"] = code_lang
-                    with open(PATH / "options.json", 'w') as file:
-                        json.dump(options, file, indent=4)
+                    write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
                     if fx_on:
                         click_sound.play()
@@ -465,10 +464,8 @@ def options_win():
                         game_skins[i].unlocked = False
                     data["emeralds"] = 0
                     data["skin"] = "steve"
-                    with open(PATH / "levels" / "levels.json", 'w') as file:
-                        json.dump(levels, file, indent=4)
-                    with open(PATH / "data.json", 'w') as file:
-                        json.dump(data, file, indent=4)
+                    write_to_json(PATH / "levels" / "levels.json", levels)
+                    write_to_json(PATH / "data.json", data)
                     exit()
                     
         game_utils.background()
@@ -514,16 +511,14 @@ def skins():
                             click_sound.play()
                         if skin.unlocked:
                             data["skin"] = skin.name
-                            with open(PATH / "data.json", 'w') as file:
-                                json.dump(data, file, indent=4)
+                            write_to_json(PATH / "data.json", data)
                         else:
                             if data["emeralds"] >= skin.price:
                                 skin.unlocked = True
                                 data["skins"][skin.name][3] = True
                                 data["skin"] = skin.name
                                 data["emeralds"] -= skin.price
-                                with open(PATH / "data.json", 'w') as file:
-                                    json.dump(data, file, indent=4)
+                                write_to_json(PATH / "data.json", data)
                     
         game_utils.background()
         game_utils.bg_overlay()
@@ -616,8 +611,7 @@ def game(level, player_l = False):
                             levels["last_finished_level"] = level
                         level += 1
                         game_levels[level-1].unlocked = True
-                        with open(PATH / "levels" / "levels.json", 'w') as file:
-                            json.dump(levels, file, indent=4)
+                        write_to_json(PATH / "levels" / "levels.json", levels)
                         code_input.clear_text()
                         code_input.clear_text()
                         code_input.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
@@ -648,9 +642,29 @@ def game(level, player_l = False):
                     code_lang = (code_lang + 1) % 3
                     restart()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
-                    print("hint 1")
+                    if levels[f"level{level}"][0][f"hint1_unlocked"]:
+                        messages.append((levels[f"level{level}"][0][f"hint1_{languages[code_lang]}"]))
+                    else:
+                        if data["emeralds"] >= 5:
+                            data["emeralds"] -= 5
+                            messages.append((levels[f"level{level}"][0][f"hint1_{languages[code_lang]}"]))
+                            levels[f"level{level}"][0][f"hint1_unlocked"] = True
+                            write_to_json(PATH / "levels" / "levels.json", levels)
+                            write_to_json(PATH / "data.json", data) 
+                        else:
+                            messages.append("Not enough emeralds.")
                 elif not player_l and 70 <= mouse[0] <= 84 and 597 <= mouse[1] <= 617:
-                    print("hint 2")
+                    if levels[f"level{level}"][0][f"hint2_unlocked"]:
+                        messages.append(levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"])
+                    else:
+                        if data["emeralds"] >= 15:
+                            data["emeralds"] -= 15
+                            messages.append((levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"]))
+                            levels[f"level{level}"][0][f"hint2_unlocked"] = True
+                            write_to_json(PATH / "levels" / "levels.json", levels)
+                            write_to_json(PATH / "data.json", data)
+                        else:
+                            messages.append("Not enough emeralds.")
                 elif not game_levels[level].text_closed:
                     if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
                         game_levels[level].text_page += 1
@@ -732,14 +746,20 @@ def game(level, player_l = False):
             game_utils.button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
             
             if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
-                game_utils.description("Hint 1. (5 emeralds)")
+                if levels[f"level{level}"][0][f"hint1_unlocked"]:
+                    game_utils.description("Hint 1.")
+                else:
+                    game_utils.description("Hint 1. (5 emeralds)")
                 game_utils.trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
             
             #hint2_button
             game_utils.button(PATH / "drawable" / "torch2.png", 31, 31, hint_x+4, 586)
 
             if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
-                game_utils.description("Hint 2. (15 emeralds)")
+                if levels[f"level{level}"][0][f"hint2_unlocked"]:
+                    game_utils.description("Hint 2.")
+                else:
+                    game_utils.description("Hint 2. (15 emeralds)")
                 game_utils.trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
 
         #next_button
@@ -1047,8 +1067,7 @@ def game(level, player_l = False):
                     messages.append(f"+{emeralds} Emeralds")
                     data["emeralds"] += emeralds
                 level_finished = True   
-                with open(PATH / "data.json", 'w') as file:
-                    json.dump(data, file, indent=4)
+                write_to_json(PATH / "data.json", data)
 
             code_runned = False
 
