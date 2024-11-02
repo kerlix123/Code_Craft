@@ -97,23 +97,28 @@ def menu():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 420 <= mouse[0] <= 820 and 250 <= mouse[1] <= 290:
+                    #Opens current level if Play button is clicked
                     if fx_on:
                         click_sound.play()
                     if levels["last_finished_level"] < 24:
                         game(levels["last_finished_level"]+1)
                 elif 420 <= mouse[0] <= 820 and 300 <= mouse[1] <= 340:
+                    #Opens level menu if Levels button is clicked
                     if fx_on:
                         click_sound.play()
                     level_menu()
                 elif 420 <= mouse[0] <= 820 and 350 <= mouse[1] <= 390:
+                    #Opens tutorial window if Tutorial button is clicked
                     if fx_on:
                         click_sound.play()
                     tutorial()
                 elif 420 <= mouse[0] <= 615 and 420 <= mouse[1] <= 460:
+                    #Opens options window if Options... button is clicked
                     if fx_on:
                         click_sound.play()
                     options_win()
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
+                    #Exits the game if Quit Game button is clicked
                     exit()
         
         game_utils.background()
@@ -121,6 +126,7 @@ def menu():
         big_title = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "Code_Craft.png"), (491, 127))
         window.blit(big_title, (374, 60))
 
+        #Emerald count
         emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
         window.blit(emerald, (1210, 0))
         window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 8.8))
@@ -150,19 +156,23 @@ def level_menu():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 830 <= mouse[0] <= 1030 and 550 <= mouse[1] <= 590:
+                    #Opens level builder if Level Builder button is clicked
                     if fx_on:
                         click_sound.play()
                     level_builder()
                 if 1050 <= mouse[0] <= 1210 and 550 <= mouse[1] <= 590:
+                    #Opens players level menu if Your levels button is clicked
                     if fx_on:
                         click_sound.play()
                     your_levels_menu()
                 for lvl in game_levels:
+                    #Opens level on which player clicked
                     if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                         if fx_on:
                             click_sound.play()
                         game(lvl.level)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    #Retuns to main menu if Back button is clicked
                     if fx_on:
                         click_sound.play()
                     menu()
@@ -210,11 +220,13 @@ def your_levels_menu():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for lvl in player_game_levels:
+                    #Opens level on which player clicked
                     if lvl.hover(mouse[0], mouse[1]) and lvl.level != -1:
                         if fx_on:
                             click_sound.play()
                         game(lvl.level, True)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    #Retuns to Level menu if Back button is clicked
                     if fx_on:
                         click_sound.play()
                     level_menu()
@@ -403,6 +415,7 @@ def tutorial():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    #Retuns to main menu if Back button is clicked
                     if fx_on:
                         click_sound.play()
                     menu()
@@ -430,14 +443,17 @@ def options_win():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    #Retuns to main menu if Back button is clicked
                     if fx_on:
                         click_sound.play()
                     menu()
                 if 420 <= mouse[0] <= 820 and 80 <= mouse[1] <= 120:
+                    #Opens Skins menu if Skins button is clicked
                     if fx_on:
                         click_sound.play()
                     skins()
                 if 420 <= mouse[0] <= 820 and 130 <= mouse[1] <= 170:
+                    #Turns music on/off and writes it to options if Audio: button is clicked
                     if music_on:
                         pygame.mixer.music.pause()
                     else:
@@ -446,14 +462,17 @@ def options_win():
                     options["music_on"] = music_on
                     write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 180 <= mouse[1] <= 220:
+                    #Turns fx on/off and writes it to options if FX: button is clicked
                     fx_on = not fx_on
                     options["fx_on"] = fx_on
                     write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
+                    #Changes main programming language and writes it to options if Programming language: button is clicked
                     code_lang = (code_lang + 1) % 3
                     options["code_lang"] = code_lang
                     write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
+                    #Clears game progress if Clear Progress button is clicked
                     if fx_on:
                         click_sound.play()
                     levels["last_finished_level"] = 0
@@ -502,10 +521,12 @@ def skins():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
+                    #Retuns to Options menu if Back button is clicked
                     if fx_on:
                         click_sound.play()
                     options_win()
                 for skin in game_skins:
+                    #Makes the clicked skin default if skin is clicked
                     if skin.hover(mouse[0], mouse[1]):
                         if fx_on:
                             click_sound.play()
