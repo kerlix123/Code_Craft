@@ -282,8 +282,10 @@ def level_builder():
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if mouse[0] <= 595 and mouse[1] <= 595:
+                    #Changes the block that is going to be edited if user clicked on it
                     plus_x_y = [mouse[0]//85, mouse[1]//85]
                 elif 675 <= mouse[0] <= 1184 and 30 <= mouse[1] <= 540:
+                    #Sets the block at plus_x_y to block from right side that is clicked
                     if (mouse[1]-32)//85 == 5 and (mouse[0]-675)//85 >= 1:
                         pass
                     else:
@@ -292,6 +294,7 @@ def level_builder():
                             a = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] in el
                         if block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] != "oak_trapdoor.png":
                             if path_select:
+                                #Sets the path block if editor is in mode for setting the path
                                 path_block = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
                                 path_select = False
                             else:
@@ -299,10 +302,13 @@ def level_builder():
                         elif not a:
                             blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
                 elif 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
+                    #Sets the start at plus_x_y if Set start position button is clicked
                     start = plus_x_y.copy()
                 elif 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
+                    #Sets the editor in mode for setting the path if Set path block button is clicked
                     path_select = True
                 elif 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
+                    #Saves the level if Save level button is clicked
                     if start:
                         curr = new_level_curr
                         curr["steve_xy"] = [start[0], 6-start[1]]
@@ -312,6 +318,7 @@ def level_builder():
                         write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                         saved = True
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+                    #Exits and updates the player_levels.json to fully save level if Exit button is clicked
                     if saved:
                         if curr_level > 1:
                             curr_level_p = [0] * 5
@@ -610,6 +617,7 @@ def game(level, player_l = False):
                 exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
+                    #Returns to Main menu or Player levels menu if Back button is clicked
                     if fx_on:
                         click_sound.play()
                     if player_l:
@@ -617,52 +625,48 @@ def game(level, player_l = False):
                     else:
                         level_menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
+                    #Runs code if Run button is clicked
                     if level >= 10:
                         game_levels[level].text_closed = True
                     code_runned = True
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
+                    #Restarts code if Restart button is clicked
                     restart_code = True
                 elif 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
+                    #Goes to the next level if current level is finished
                     if not player_l and level_finished and level < 24:
                         one_v_one = False
                         player = 1
-                        code_input.i = 0
-                        code_input.cursor_pos = 0
                         if level > levels["last_finished_level"]:
                             levels["last_finished_level"] = level
                         level += 1
                         game_levels[level-1].unlocked = True
                         write_to_json(PATH / "levels" / "levels.json", levels)
-                        code_input.clear_text()
-                        code_input.clear_text()
-                        code_input.set_text(levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"])
-                        time.sleep(0.25)
                         messages = []
-                        code_input.clear_text()
-                        if level >= 10:
-                            xy = levels[f"level{level}"][0]["steve_xy"]
-                            stevexy[0] = xy[0]*85
-                            stevexy[1] = (6-xy[1])*85
                         level_finished = False
                         restart()
-                        time.sleep(0.01)
-                        restart()
                 elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and (level >= 10 or player_l):
+                    #Eneters the 1v1 mode if 1v1 button is clicked
                     one_v_one = True
                     code_input_2 = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
                     text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
                     code_input_2.set_text(text_path)
                 elif one_v_one and 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
+                    #Opens first player's code ecitor if 1. button is clicked in 1v1 mode
                     player = 1
                 elif one_v_one and 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
+                    #Opens second player's code ecitor if 2. button is clicked in 1v1 mode
                     player = 2
                 elif one_v_one and 668 <= mouse[0] <= 684 and 598 <= mouse[1] <= 614:
+                    #Exits 1v1 mode if Exit 1v1 button is clicked in 1v1 mode
                     player = 1
                     one_v_one = False
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
+                    #Changes the current programming language if Programming language is pressed
                     code_lang = (code_lang + 1) % 3
                     restart()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
+                    #Buys and displays or just displays first hint when first Hint button is clicked
                     if levels[f"level{level}"][0][f"hint1_unlocked"]:
                         messages.append((levels[f"level{level}"][0][f"hint1_{languages[code_lang]}"]))
                     else:
@@ -675,6 +679,7 @@ def game(level, player_l = False):
                         else:
                             messages.append("Not enough emeralds.")
                 elif not player_l and 70 <= mouse[0] <= 84 and 597 <= mouse[1] <= 617:
+                    #Buys and displays or just displays second hint when second Hint button is clicked
                     if levels[f"level{level}"][0][f"hint2_unlocked"]:
                         messages.append(levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"])
                     else:
@@ -687,17 +692,23 @@ def game(level, player_l = False):
                         else:
                             messages.append("Not enough emeralds.")
                 elif not game_levels[level].text_closed:
+                    #Changes showed page if Book is not closed
                     if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
+                        #Goes to next page of the book if it exists
                         game_levels[level].text_page += 1
                     if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539 and game_levels[level].text_page > 0:
+                        #Goes to previous page of the book if it exists
                         game_levels[level].text_page -= 1
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
+                    #Closes or opens the book if Ctrl+E/Cmd+E is clicked
                     if not player_l:
                         game_levels[level].text_closed = not game_levels[level].text_closed
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
+                    #Clears the output if Ctrl+K/Cmd+K is clicked
                     messages = []
 
+            #Feeds the events to current Textbox object
             if player == 1 and not one_v_one_code[0]:
                 code_input.handle_events(event) 
             elif player == 2 and not one_v_one_code[1]:
