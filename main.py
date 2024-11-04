@@ -490,6 +490,7 @@ def options_win():
                         game_skins[i].unlocked = False
                     data["emeralds"] = 0
                     data["skin"] = "steve"
+                    data["first_play"] = True
                     write_to_json(PATH / "levels" / "levels.json", levels)
                     write_to_json(PATH / "data.json", data)
                     exit()
@@ -1111,4 +1112,9 @@ def game(level, player_l = False):
         pygame.display.update()
         clock.tick(60)
 
+game_utils.loading_screen()
+if data["first_play"]:
+    data["first_play"] = False
+    write_to_json(PATH / "data.json", data)
+    game_utils.display_intro_text()
 menu()

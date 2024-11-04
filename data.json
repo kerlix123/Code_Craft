@@ -1,4 +1,5 @@
 {
+    "first_play": false,
     "skin": "steve",
     "skins": {
         "steve": [
@@ -98,5 +99,5 @@
             false
         ]
     },
-    "emeralds": 50
+    "emeralds": 0
 }
