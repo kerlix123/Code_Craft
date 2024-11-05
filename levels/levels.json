@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 0,
+    "last_finished_level": 9,
     "level_p": [
         [
             30,
@@ -455,9 +455,13 @@
                 ]
             ],
             "hint1_unlocked": true,
-            "hint2_unlocked": false,
+            "hint2_unlocked": true,
             "hint1_Python": "Use print() function",
             "hint2_Python": "Inside of print() type \"Hello, World!\"",
+            "hint1_C": "Use printf() function",
+            "hint2_C": "Inside of printf() type \"Hello, World!\"",
+            "hint1_C++": "Use cout function",
+            "hint2_C++": "After it type << and \"Hello, World!\"",
             "pages": 4,
             "blocks": [
                 [
@@ -696,6 +700,14 @@
                     "single-line comment."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "#",
+            "hint2_Python": "Type # before print(\"Steve\")",
+            "hint1_C": "//",
+            "hint2_C": "Type // before printf(\"Steve\");",
+            "hint1_C++": "//",
+            "hint2_C++": "Type // before cout << \"Steve\";",
             "pages": 2,
             "blocks": [
                 [
@@ -1062,6 +1074,14 @@
                     "with value 4.5 and print it in new line."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "variable = value",
+            "hint2_Python": "print(variable)",
+            "hint1_C": "b is int and a is float - data_type var = value;",
+            "hint2_C": "Use \\n in printf() to go to new line",
+            "hint1_C++": "b is int and a is float - data_type var = value;",
+            "hint2_C++": "Use << endl in cout to go to new line",
             "pages": 3,
             "blocks": [
                 [
@@ -1294,6 +1314,14 @@
                     "print their values."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "bool, int, str, float",
+            "hint2_Python": "variable = value",
+            "hint1_C": "int, float, double, char, char[]",
+            "hint2_C": "data_type variable = value;",
+            "hint1_C++": "int, float, double, string, char, bool",
+            "hint2_C++": "data_type variable = value;",
             "pages": 4,
             "blocks": [
                 [
@@ -1537,7 +1565,7 @@
                     "output: We love Code_Craft",
                     "",
                     "Make two variables name and age,",
-                    "assign \"John\" to name and 25 to",
+                    "assign \"Steve\" to name and 25 to",
                     "age and print both of them with one",
                     "print() function with a space between",
                     "them."
@@ -1580,7 +1608,7 @@
                     "Output: We love Code_Craft",
                     "",
                     "Make two variables name and age,",
-                    "assign \"John\" to name and 25 to",
+                    "assign \"Steve\" to name and 25 to",
                     "age and print both of them with one",
                     "printf() function with a space between",
                     "them and new line after them."
@@ -1615,12 +1643,20 @@
                     "Output: We love Code_Craft",
                     "",
                     "Make two variables name and age,",
-                    "assign \"John\" to name and 25 to",
+                    "assign \"Steve\" to name and 25 to",
                     "age and print both of them with one",
                     "cout object with a space between",
                     "them and new line after them."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Separate name and age with ,",
+            "hint2_Python": "Type name, age in print()",
+            "hint1_C": "name - char[], age - int",
+            "hint2_C": "In printf use %s for name and %d for age",
+            "hint1_C++": "name - string, age - int",
+            "hint2_C++": "Use << to separate space and variables in cout",
             "pages": 3,
             "blocks": [
                 [
@@ -1976,6 +2012,14 @@
                     "third character each on a new line."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Use two print() functions",
+            "hint2_Python": "Indexes are 1 and 2",
+            "hint1_C": "Use two printf() functions with \\n",
+            "hint2_C": "Indexes are 1 and 2",
+            "hint1_C++": "name - string, age - int",
+            "hint2_C++": "Use two cout functions with endl",
             "pages": 3,
             "blocks": [
                 [
@@ -2439,6 +2483,14 @@
                     "than 4.5. Print b on a new line."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Use += in 1st task and > in 2nd task",
+            "hint2_Python": "x = y > z",
+            "hint1_C": "Use += in 1st task and > in 2nd task",
+            "hint2_C": "bool x = y > z;",
+            "hint1_C++": "Use += in 1st task and > in 2nd task",
+            "hint2_C++": "bool x = y > z;",
             "pages": 5,
             "blocks": [
                 [
@@ -2826,6 +2878,14 @@
                     "\"Hello, World!\" if 5 > 3."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "You need to have print() inside of if",
+            "hint2_Python": "if x > y: ...",
+            "hint1_C": "You need to have printf() inside of if",
+            "hint2_C": "if (x > y) { ... }",
+            "hint1_C++": "You need to have cout inside of if",
+            "hint2_C++": "if (x > y) { ... }",
             "pages": 4,
             "blocks": [
                 [
@@ -3069,6 +3129,14 @@
                     "   mob.go_up(1);"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "...",
+            "hint2_Python": "Why?",
+            "hint1_C": "...",
+            "hint2_C": "Why?",
+            "hint1_C++": "...",
+            "hint2_C++": "Why?",
             "pages": 4,
             "blocks": [
                 [
