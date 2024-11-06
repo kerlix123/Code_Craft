@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 9,
+    "last_finished_level": 15,
     "level_p": [
         [
             30,
@@ -3131,12 +3131,12 @@
             ],
             "hint1_unlocked": true,
             "hint2_unlocked": true,
-            "hint1_Python": "...",
-            "hint2_Python": "Why?",
-            "hint1_C": "...",
-            "hint2_C": "Why?",
-            "hint1_C++": "...",
-            "hint2_C++": "Why?",
+            "hint1_Python": "Just press run",
+            "hint2_Python": "...",
+            "hint1_C": "Just press run",
+            "hint2_C": "...",
+            "hint1_C++": "Just press run",
+            "hint2_C++": "...",
             "pages": 4,
             "blocks": [
                 [
@@ -3268,6 +3268,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "mob.go_right(x) and mob.go_up(y)",
+            "hint2_Python": "x and y are number of blocks to move",
+            "hint1_C": "go_right(&mob, x) and go_up(&mob, y)",
+            "hint2_C": "x and y are number of blocks to move",
+            "hint1_C++": "mob.go_right(x) and mob.go_up(y)",
+            "hint2_C++": "x and y are number of blocks to move",
             "pages": 2,
             "blocks": [
                 [
@@ -3399,6 +3407,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "2x mob.go_right(x) and mob.go_up(y)",
+            "hint2_Python": "right -> up -> right",
+            "hint1_C": "2x go_right(&mob, x) and go_up(&mob, y)",
+            "hint2_C": "right -> up -> right",
+            "hint1_C++": "2x mob.go_right(x) and mob.go_up(y)",
+            "hint2_C++": "right -> up -> right",
             "pages": 2,
             "blocks": [
                 [
@@ -3530,6 +3546,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
+            "hint2_Python": "right -> up -> left -> up -> left",
+            "hint1_C": "go_right(&mob, x), 2x go_up(&mob, y) and 2x go_left(&mob, z)",
+            "hint2_C": "right -> up -> left -> up -> left",
+            "hint1_C++": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
+            "hint2_C++": "right -> up -> left -> up -> left",
             "pages": 2,
             "blocks": [
                 [
@@ -3661,6 +3685,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
+            "hint2_Python": "right -> down -> left -> down -> left",
+            "hint1_C": "go_right(&mob, x), 2x go_down(&mob, y) and 2x go_left(&mob, z)",
+            "hint2_C": "right -> down -> left -> down -> left",
+            "hint1_C++": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
+            "hint2_C++": "right -> down -> left -> down -> left",
             "pages": 2,
             "blocks": [
                 [
@@ -3801,6 +3833,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "mob.go_up(x)",
+            "hint2_Python": "up",
+            "hint1_C": "go_up(&mob, x)",
+            "hint2_C": "up",
+            "hint1_C++": "mob.go_up(x)",
+            "hint2_C++": "up",
             "pages": 2,
             "blocks": [
                 [
@@ -3941,6 +3981,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
+            "hint2_Python": "right -> up -> left -> up -> right -> up",
+            "hint1_C": "2x go_right(&mob, x), 3x go_up(&mob, y) and go_left(&mob, z)",
+            "hint2_C": "right -> up -> left -> up -> right -> up",
+            "hint1_C++": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
+            "hint2_C++": "right -> up -> left -> up -> right -> up",
             "pages": 2,
             "blocks": [
                 [
@@ -4081,6 +4129,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
+            "hint2_Python": "right -> up -> right -> left -> up -> right",
+            "hint1_C": "3x go_right(&mob, x), 2x go_up(&mob, y) and go_left(&mob, z)",
+            "hint2_C": "right -> up -> right -> left -> up -> right",
+            "hint1_C++": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
+            "hint2_C++": "right -> up -> right -> left -> up -> right",
             "pages": 2,
             "blocks": [
                 [
