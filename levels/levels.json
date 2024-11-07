@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 20,
+    "last_finished_level": 23,
     "level_p": [
         [
             30,
@@ -4991,6 +4991,14 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Don't forget i = 0",
+            "hint2_Python": "while i < n:",
+            "hint1_C": "Don't forget int i = 0;",
+            "hint2_C": "while (i < n) {",
+            "hint1_C++": "Don't forget int i = 0;",
+            "hint2_C++": "while (i < n) {",
             "pages": 4,
             "blocks": [
                 [
@@ -5122,6 +5130,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Code in your loop should run twice",
+            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_C": "Code in your loop should run twice",
+            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint1_C++": "Code in your loop should run twice",
+            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -5201,7 +5217,7 @@
             "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
-                    "Level 22.",
+                    "Level 23.",
                     "",
                     "In this level you will use code with while",
                     "loops to move Mob around the map",
@@ -5253,6 +5269,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Code in your loop should run twice",
+            "hint2_Python": "mob.go_right(n) and mob.go_down(n)",
+            "hint1_C": "Code in your loop should run twice",
+            "hint2_C": "go_right(&mob, n) and go_down(&mob, n)",
+            "hint1_C++": "Code in your loop should run twice",
+            "hint2_C++": "mob.go_right(n) and mob.go_down(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -5384,6 +5408,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Code in your loop should run 6 times",
+            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_C": "Code in your loop should run 6 times",
+            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint1_C++": "Code in your loop should run 6 times",
+            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
