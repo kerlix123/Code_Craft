@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 15,
+    "last_finished_level": 20,
     "level_p": [
         [
             30,
@@ -4354,6 +4354,14 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "for i in range(n):",
+            "hint2_Python": "Replace n with 6",
+            "hint1_C": "for (int i = 0; i < n; i++) {",
+            "hint2_C": "Replace n with 6",
+            "hint1_C++": "for (int i = 0; i < n; i++) {",
+            "hint2_C++": "Replace n with 6",
             "pages": 4,
             "blocks": [
                 [
@@ -4485,6 +4493,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Code in your loop should run twice",
+            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_C": "Code in your loop should run twice",
+            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint1_C++": "Code in your loop should run twice",
+            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -4616,6 +4632,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Code in your loop should run twice",
+            "hint2_Python": "mob.go_right(n) and mob.go_down(n)",
+            "hint1_C": "Code in your loop should run twice",
+            "hint2_C": "go_right(&mob, n) and go_down(&mob, n)",
+            "hint1_C++": "Code in your loop should run twice",
+            "hint2_C++": "mob.go_right(n) and mob.go_down(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -4747,6 +4771,14 @@
                     "Ctrl+E"
                 ]
             ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "Code in your loop should run 6 times",
+            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_C": "Code in your loop should run 6 times",
+            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint1_C++": "Code in your loop should run 6 times",
+            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
