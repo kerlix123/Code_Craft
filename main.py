@@ -681,7 +681,7 @@ def game(level, player_l = False):
                     #Buys and displays or just displays second hint when second Hint button is clicked
                     if levels[f"level{level}"][0][f"hint2_unlocked"]:
                         messages.append(levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"])
-                    else:
+                    elif levels[f"level{level}"][0][f"hint1_unlocked"]:
                         if data["emeralds"] >= 15:
                             data["emeralds"] -= 15
                             messages.append((levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"]))
@@ -690,6 +690,8 @@ def game(level, player_l = False):
                             write_to_json(PATH / "data.json", data)
                         else:
                             messages.append("Not enough emeralds.")
+                    else:
+                        messages.append("Buy Hint 1 first.")
                 elif not game_levels[level].text_closed:
                     #Changes showed page if Book is not closed
                     if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
@@ -913,11 +915,16 @@ def game(level, player_l = False):
                     executed_code = exec_c_code(def_code_c + input_code, "C")
                 elif code_lang == 2:
                     executed_code = exec_c_code(def_code_cpp + input_code, "C++")
-                if executed_code["error"] != None:
-                    messages.append("Error in code!")
                 end_time = time.time()
                 one_v_one_time[player-1] = end_time - start_time
-
+                if executed_code["error"] != None:
+                    err = executed_code["error"]
+                    if code_lang != 0:
+                        try:
+                            err = err.split("\n")[0].split(":", 1)[1].split(" ", 1)[1]
+                        except Exception:
+                            err = "?"
+                    messages.append("Error: " + err)
             if code_lang == 0:
                 messages += executed_code["out"]
                 variables = executed_code["vars"]

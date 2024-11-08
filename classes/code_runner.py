@@ -1,6 +1,12 @@
 import io
 import sys
-import shutil, os, tempfile, subprocess
+import shutil, os, tempfile, subprocess, signal
+
+class TimeoutException(Exception):
+    pass
+
+def timeout_handler(signum, frame):
+    raise TimeoutException("Code execution exceeded time limit")
 
 def exec_code(code):
     buffer = io.StringIO()
@@ -8,10 +14,19 @@ def exec_code(code):
     variables = {}
     result = {"out": [], "vars": variables, "error": None}
     
+    # Set the alarm for 10 seconds
+    signal.signal(signal.SIGALRM, timeout_handler)
+    signal.alarm(5)
+    
     try:
         exec(code, variables, variables)
+    except TimeoutException as e:
+        result["error"] = str(e)
     except Exception as e:
         result["error"] = str(e)
+    finally:
+        # Turn off the alarm
+        signal.alarm(0)
     
     sys.stdout = sys.__stdout__
     result["out"] = buffer.getvalue().splitlines()
@@ -24,6 +39,9 @@ def exec_c_code(code, l):
         compiler = "gcc"
     elif l == "C++":
         compiler = "g++"
+    else:
+        return {"out": [], "error": "Invalid language specified. Choose 'C' or 'C++'."}
+
     if shutil.which(compiler) is None:
         return {"out": [], "error": f"You need to have {compiler.upper()} installed to use {l}!"}
 
@@ -33,6 +51,7 @@ def exec_c_code(code, l):
         
         with open(c_file, "w") as f:
             f.write(code)
+        
         compile_process = subprocess.run(
             [compiler, c_file, "-o", executable_file],
             stdout=subprocess.PIPE,
@@ -42,16 +61,20 @@ def exec_c_code(code, l):
         if compile_process.returncode != 0:
             return {"out": [], "error": compile_process.stderr.decode()}
         
-        run_process = subprocess.run(
-            [executable_file],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
-        )
-        
-        return {
-            "out": run_process.stdout.decode().splitlines(),
-            "error": run_process.stderr.decode() if run_process.stderr else None
-        }
+        try:
+            # Run the compiled executable with a 10-second timeout
+            run_process = subprocess.run(
+                [executable_file],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                timeout=5
+            )
+            return {
+                "out": run_process.stdout.decode().splitlines(),
+                "error": run_process.stderr.decode() if run_process.stderr else None
+            }
+        except subprocess.TimeoutExpired:
+            return {"out": [], "error": "Error: Code execution exceeded time limit"}
 
 def cbd_maker(code):
     cbd = []
