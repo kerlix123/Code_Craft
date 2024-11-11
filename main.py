@@ -592,6 +592,12 @@ def game(level, player_l = False):
     one_v_one_code = [False, False]
     one_v_one_time = [0, 0]
     fun_calls = [0, 0]
+
+    timed_start = 0
+    timed_time = 0
+    minutes = 0
+    seconds = 0
+
     player = 1
     code_input.i = 0
     code_input.cursor_pos = 0
@@ -624,7 +630,6 @@ def game(level, player_l = False):
                     else:
                         menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
-                    #Runs code if Run button is clicked
                     if level >= 10:
                         game_levels[level].text_closed = True
                     code_runned = True
@@ -692,6 +697,8 @@ def game(level, player_l = False):
                             messages.append("Not enough emeralds.")
                     else:
                         messages.append("Buy Hint 1 first.")
+                elif 680 <= mouse[0] <= 900 and 597 <= mouse[1] <= 617:
+                    timed_start = time.time()
                 elif not game_levels[level].text_closed:
                     #Changes showed page if Book is not closed
                     if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
@@ -826,6 +833,14 @@ def game(level, player_l = False):
                 #exit_1v1_button
                 game_utils.button(PATH / "drawable" / "close.png", 16, 16, 668, 598)
 
+        if 680 <= mouse[0] <= 900 and 597 <= mouse[1] <= 617:
+            game_utils.description("Timed challenge")
+            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 680, 597)
+
+        #clock_button
+        game_utils.button(PATH / "drawable" / "clock.png", 20, 20, 680, 597)
+
+
         #blocks
         i = 0
         j = 0
@@ -873,6 +888,13 @@ def game(level, player_l = False):
         if restart_code:
             restart()
             restart_code = False
+
+        if timed_start != 0:
+            timed_time = time.time() - timed_start
+            minutes = int(timed_time // 60)
+            seconds = int(timed_time % 60)
+
+            window.blit(minecraft_font_small.render(f"{minutes:02}:{seconds:02}", True, (255, 255, 255)), (1170, 10))
 
         #code
         if code_runned:
@@ -1104,6 +1126,8 @@ def game(level, player_l = False):
                 if not player_l:
                     messages.append(f"+{emeralds} Emeralds")
                     data["emeralds"] += emeralds
+                if timed_time:
+                    messages.append(f"Your time: {minutes:02}:{seconds:02}")
                 level_finished = True   
                 write_to_json(PATH / "data.json", data)
 
