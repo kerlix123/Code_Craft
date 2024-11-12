@@ -697,7 +697,7 @@ def game(level, player_l = False):
                             messages.append("Not enough emeralds.")
                     else:
                         messages.append("Buy Hint 1 first.")
-                elif 680 <= mouse[0] <= 900 and 597 <= mouse[1] <= 617:
+                elif 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
                     timed_start = time.time()
                 elif not game_levels[level].text_closed:
                     #Changes showed page if Book is not closed
@@ -833,12 +833,12 @@ def game(level, player_l = False):
                 #exit_1v1_button
                 game_utils.button(PATH / "drawable" / "close.png", 16, 16, 668, 598)
 
-        if 680 <= mouse[0] <= 900 and 597 <= mouse[1] <= 617:
+        if 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
             game_utils.description("Timed challenge")
-            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 680, 597)
+            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 90, 598)
 
         #clock_button
-        game_utils.button(PATH / "drawable" / "clock.png", 20, 20, 680, 597)
+        game_utils.button(PATH / "drawable" / "clock.png", 20, 20, 90, 598)
 
 
         #blocks
@@ -1125,9 +1125,23 @@ def game(level, player_l = False):
                     emeralds = 15
                 if not player_l:
                     messages.append(f"+{emeralds} Emeralds")
-                    data["emeralds"] += emeralds
                 if timed_time:
+                    timed_start = 0
                     messages.append(f"Your time: {minutes:02}:{seconds:02}")
+                    if timed_time < 10:
+                        messages.append(f"< 10 seconds: +20 Emeralds")
+                        emeralds += 20
+                    elif timed_time < 15:
+                        messages.append(f"< 15 seconds: +15 Emeralds")
+                        emeralds += 15
+                    elif timed_time < 20:
+                        messages.append(f"< 20 seconds: +10 Emeralds")
+                        emeralds += 10
+                    elif timed_time < 30:
+                        messages.append(f"< 30 seconds: +5 Emeralds")
+                        emeralds += 5
+
+                data["emeralds"] += emeralds
                 level_finished = True   
                 write_to_json(PATH / "data.json", data)
 
