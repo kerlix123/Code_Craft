@@ -155,12 +155,17 @@ class Textbox:
                 self.string[self.i] = self.string[self.i][:self.cursor_pos-1] + self.string[self.i][self.cursor_pos:]
                 self.cursor_pos -= 1
             elif self.i > 0:
-                self.cursor_pos = len(self.string[self.i-1])
+                self.string[self.i-1] += self.string.pop(self.i)
+                self.cursor_pos = 0
                 self.i -= 1
 
     def handle_return(self):
+        s = ""
+        if self.cursor_pos < len(self.string[self.i]):
+            s = self.string[self.i][self.cursor_pos:]
+            self.string[self.i] = self.string[self.i][:self.cursor_pos]
         self.i += 1
-        self.string.insert(self.i, "")
+        self.string.insert(self.i, s)
         self.cursor_pos = 0
 
     def handle_space(self):

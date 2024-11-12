@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 23,
+    "last_finished_level": 0,
     "level_p": [
         [
             30,
@@ -454,8 +454,8 @@
                     "Ctrl+K"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Use print() function",
             "hint2_Python": "Inside of print() type \"Hello, World!\"",
             "hint1_C": "Use printf() function",
@@ -700,8 +700,8 @@
                     "single-line comment."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "#",
             "hint2_Python": "Type # before print(\"Steve\")",
             "hint1_C": "//",
@@ -1074,8 +1074,8 @@
                     "with value 4.5 and print it in new line."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "variable = value",
             "hint2_Python": "print(variable)",
             "hint1_C": "b is int and a is float - data_type var = value;",
@@ -1314,8 +1314,8 @@
                     "print their values."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "bool, int, str, float",
             "hint2_Python": "variable = value",
             "hint1_C": "int, float, double, char, char[]",
@@ -1649,8 +1649,8 @@
                     "them and new line after them."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Separate name and age with ,",
             "hint2_Python": "Type name, age in print()",
             "hint1_C": "name - char[], age - int",
@@ -2012,8 +2012,8 @@
                     "third character each on a new line."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Use two print() functions",
             "hint2_Python": "Indexes are 1 and 2",
             "hint1_C": "Use two printf() functions with \\n",
@@ -2483,8 +2483,8 @@
                     "than 4.5. Print b on a new line."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Use += in 1st task and > in 2nd task",
             "hint2_Python": "x = y > z",
             "hint1_C": "Use += in 1st task and > in 2nd task",
@@ -2878,8 +2878,8 @@
                     "\"Hello, World!\" if 5 > 3."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "You need to have print() inside of if",
             "hint2_Python": "if x > y: ...",
             "hint1_C": "You need to have printf() inside of if",
@@ -3129,8 +3129,8 @@
                     "   mob.go_up(1);"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Just press run",
             "hint2_Python": "...",
             "hint1_C": "Just press run",
@@ -3268,8 +3268,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "mob.go_right(x) and mob.go_up(y)",
             "hint2_Python": "x and y are number of blocks to move",
             "hint1_C": "go_right(&mob, x) and go_up(&mob, y)",
@@ -3407,8 +3407,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "2x mob.go_right(x) and mob.go_up(y)",
             "hint2_Python": "right -> up -> right",
             "hint1_C": "2x go_right(&mob, x) and go_up(&mob, y)",
@@ -3546,8 +3546,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
             "hint2_Python": "right -> up -> left -> up -> left",
             "hint1_C": "go_right(&mob, x), 2x go_up(&mob, y) and 2x go_left(&mob, z)",
@@ -3685,8 +3685,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
             "hint2_Python": "right -> down -> left -> down -> left",
             "hint1_C": "go_right(&mob, x), 2x go_down(&mob, y) and 2x go_left(&mob, z)",
@@ -3833,8 +3833,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "mob.go_up(x)",
             "hint2_Python": "up",
             "hint1_C": "go_up(&mob, x)",
@@ -3981,8 +3981,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
             "hint2_Python": "right -> up -> left -> up -> right -> up",
             "hint1_C": "2x go_right(&mob, x), 3x go_up(&mob, y) and go_left(&mob, z)",
@@ -4129,8 +4129,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
             "hint2_Python": "right -> up -> right -> left -> up -> right",
             "hint1_C": "3x go_right(&mob, x), 2x go_up(&mob, y) and go_left(&mob, z)",
@@ -4354,8 +4354,8 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "for i in range(n):",
             "hint2_Python": "Replace n with 6",
             "hint1_C": "for (int i = 0; i < n; i++) {",
@@ -4493,8 +4493,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Code in your loop should run twice",
             "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
             "hint1_C": "Code in your loop should run twice",
@@ -4632,8 +4632,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Code in your loop should run twice",
             "hint2_Python": "mob.go_right(n) and mob.go_down(n)",
             "hint1_C": "Code in your loop should run twice",
@@ -4771,8 +4771,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Code in your loop should run 6 times",
             "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
             "hint1_C": "Code in your loop should run 6 times",
@@ -4991,8 +4991,8 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Don't forget i = 0",
             "hint2_Python": "while i < n:",
             "hint1_C": "Don't forget int i = 0;",
@@ -5130,8 +5130,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Code in your loop should run twice",
             "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
             "hint1_C": "Code in your loop should run twice",
@@ -5269,8 +5269,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Code in your loop should run twice",
             "hint2_Python": "mob.go_right(n) and mob.go_down(n)",
             "hint1_C": "Code in your loop should run twice",
@@ -5408,8 +5408,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Code in your loop should run 6 times",
             "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
             "hint1_C": "Code in your loop should run 6 times",

@@ -480,6 +480,9 @@ def options_win():
                             data["skins"][k][3] = False
                     for i in range(1, 16):
                         game_skins[i].unlocked = False
+                    for lvl in range(1, 25):
+                        levels[f"level{lvl}"][0]["hint1_unlocked"] = False
+                        levels[f"level{lvl}"][0]["hint2_unlocked"] = False
                     data["emeralds"] = 0
                     data["skin"] = "steve"
                     data["first_play"] = True
