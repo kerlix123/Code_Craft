@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 0,
+    "last_finished_level": 25,
     "level_p": [
         [
             30,
@@ -166,6 +166,13 @@
             1130,
             140,
             24,
+            80,
+            false
+        ],
+        [
+            30,
+            300,
+            25,
             80,
             false
         ],
@@ -5235,7 +5242,7 @@
             ],
             "text_C": [
                 [
-                    "Level 22.",
+                    "Level 23.",
                     "",
                     "In this level you will use code with while",
                     "loops to move Mob around the map",
@@ -5253,7 +5260,7 @@
             ],
             "text_C++": [
                 [
-                    "Level 22.",
+                    "Level 23.",
                     "",
                     "In this level you will use code with while",
                     "loops to move Mob around the map",
@@ -5416,6 +5423,233 @@
             "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
             "hint1_C++": "Code in your loop should run 6 times",
             "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
+            "pages": 2,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level25": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "prnt(\"Code_Craft\")",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    prntf(\"Code_Craft\");\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cot << \"Code_Craft\";\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "print",
+                        "(",
+                        "\"Code_Craft\"",
+                        ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"Code_Craft\"",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "\"Code_Craft\"",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 25.",
+                    "",
+                    "From this level on, we will learn a little",
+                    "bit about debugging as it is a really",
+                    "important part of programming",
+                    "",
+                    "Debugging is the process of finding and",
+                    "fixing errors, or \"bugs\", in code that", 
+                    "stop it from working as intended.",
+                    "",
+                    "Errors can be simple, like typos, or",
+                    "more challenging to identify, such as",
+                    "logical mistakes that cause unexpected",
+                    "behavior in the code."
+                ],
+                [
+                    "Try to find a typo in the given code",
+                    "and fix it."
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 25.",
+                    "",
+                    "In this level you will use code with while",
+                    "loops to move Mob around the map",
+                    "",
+                    "Finish is the trapdoor and you can",
+                    "only go on grass blocks"
+                ],
+                [
+                    "Use functions from class Mob to move",
+                    "Mob across the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 25.",
+                    "",
+                    "In this level you will use code with while",
+                    "loops to move Mob around the map",
+                    "",
+                    "Finish is the trapdoor and you can",
+                    "only go on grass blocks"
+                ],
+                [
+                    "Use functions from class Mob to move",
+                    "Mob across the map to finish",
+                    "",
+                    "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "",
+            "hint2_Python": "",
+            "hint1_C": "",
+            "hint2_C": "",
+            "hint1_C++": "",
+            "hint2_C++": "",
             "pages": 2,
             "blocks": [
                 [

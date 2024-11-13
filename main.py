@@ -202,6 +202,8 @@ def level_menu():
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
                     game_utils.button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
 
+        window.blit(minecraft_font_small.render("Debug challenges", True, (255, 255, 255)), (30, 250))
+
         game_utils.menu_button(830, 550, 853, "Level builder", 200, 40, mouse)
 
         game_utils.menu_button(1050, 550, 1063, "Your levels", 160, 40, mouse)
@@ -910,7 +912,7 @@ def game(level, player_l = False):
                 if cbdd:           
                     cbd.append(cbdd)
                 i += 1
-            if not player_l and level < 10:
+            if not player_l and (level < 10 or level > 24):
                 if code_lang == 0:
                     executed_code = exec_code(code_input.get_text())
                 elif code_lang == 1:
@@ -963,7 +965,7 @@ def game(level, player_l = False):
             solution = False
             if not player_l and level == 9:
                 solution = True
-            if not player_l and level < 10 and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
+            if not player_l and (level < 10 or level > 24) and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
                 solution = True
             
             if not player_l and level == 4:
@@ -1008,7 +1010,7 @@ def game(level, player_l = False):
                     solution = c == 6
                     pass
 
-            if player_l or level >= 10:
+            if player_l or level >= 10 and level <= 24:
                 xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
                 stevexy[0] = xy[0]*85
                 stevexy[1] = (6-xy[1])*85
