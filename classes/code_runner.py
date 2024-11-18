@@ -2,6 +2,8 @@ import io
 import sys
 import shutil, os, tempfile, subprocess, signal
 
+timeout = 5
+
 class TimeoutException(Exception):
     pass
 
@@ -14,24 +16,23 @@ def exec_code(code):
     variables = {}
     result = {"out": [], "vars": variables, "error": None}
     
-    # Set the alarm for 10 seconds
     signal.signal(signal.SIGALRM, timeout_handler)
-    signal.alarm(5)
+    signal.alarm(timeout)
     
     try:
         exec(code, variables, variables)
     except TimeoutException as e:
+        result["vars"]["coms"].clear()
         result["error"] = str(e)
     except Exception as e:
         result["error"] = str(e)
     finally:
-        # Turn off the alarm
         signal.alarm(0)
     
     sys.stdout = sys.__stdout__
     result["out"] = buffer.getvalue().splitlines()
     buffer.close()
-    
+
     return result
 
 def exec_c_code(code, l):
@@ -67,7 +68,7 @@ def exec_c_code(code, l):
                 [executable_file],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
-                timeout=5
+                timeout=timeout
             )
             return {
                 "out": run_process.stdout.decode().splitlines(),

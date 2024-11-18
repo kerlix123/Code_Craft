@@ -1027,13 +1027,18 @@ def game(level, player_l = False):
                                 coms.append(el.split(" "))
                 except Exception:
                     coms = []
+                if len(coms) > 50:
+                    coms = []
+                    print("...")
                 def check():
                     nonlocal plate_activated, player_l
-                    block = levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] if not player_l else player_levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
                         messages.append("You can only go on grass!")
                         restart()
-                    elif block == "oak_trapdoor.png":
+                        
+                    block = levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] if not player_l else player_levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
+                    
+                    if block == "oak_trapdoor.png":
                         if level >= 14 and level < 17 and not plate_activated:
                             messages.append("Door is not unlocked!")
                             restart()
@@ -1114,7 +1119,7 @@ def game(level, player_l = False):
                             won = 2
                         messages.append(f"Player {won}. won.")
 
-            if solution:
+            if solution and not executed_code["error"]:
                 if level >= 10:
                     if fx_on:
                         sound = pygame.mixer.Sound(PATH / "sounds" / "trapdoor.mp3")
