@@ -105,7 +105,7 @@ def menu():
                 if 420 <= mouse[0] <= 820 and 250 <= mouse[1] <= 290:
                     #Opens current level if Play button is clicked
                     play_click_sound()
-                    if levels["last_finished_level"] < 24:
+                    if levels["last_finished_level"] < 36:
                         game(levels["last_finished_level"]+1)
                 elif 420 <= mouse[0] <= 820 and 300 <= mouse[1] <= 340:
                     #Opens level menu if Levels button is clicked
@@ -643,7 +643,7 @@ def game(level, player_l = False):
                     restart_code = True
                 elif 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                     #Goes to the next level if current level is finished
-                    if not player_l and level_finished and level < 24:
+                    if not player_l and level_finished and level < 36:
                         one_v_one = False
                         player = 1
                         if level > levels["last_finished_level"]:
@@ -808,7 +808,7 @@ def game(level, player_l = False):
                 game_utils.trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
 
         #next_button
-        if not player_l and level_finished and level < 24:
+        if not player_l and level_finished and level < 36:
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                 game_utils.description("Next level")
                 game_utils.trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
@@ -912,7 +912,7 @@ def game(level, player_l = False):
                 if cbdd:           
                     cbd.append(cbdd)
                 i += 1
-            if not player_l and (level < 10 or level > 24):
+            if not player_l and (level < 10 or level > 24 and level < 33):
                 if code_lang == 0:
                     executed_code = exec_code(code_input.get_text())
                 elif code_lang == 1:
@@ -965,7 +965,7 @@ def game(level, player_l = False):
             solution = False
             if not player_l and level == 9:
                 solution = True
-            if not player_l and (level < 10 or level > 24) and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
+            if not player_l and (level < 10 or level > 24 and level < 33) and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
                 solution = True
             
             if not player_l and level == 4:
@@ -1010,7 +1010,7 @@ def game(level, player_l = False):
                     solution = c == 6
                     pass
 
-            if player_l or level >= 10 and level <= 24:
+            if player_l or level >= 10 and level <= 24 or level >= 33 and level <= 36:
                 xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
                 stevexy[0] = xy[0]*85
                 stevexy[1] = (6-xy[1])*85
@@ -1027,7 +1027,6 @@ def game(level, player_l = False):
                                 coms.append(el.split(" "))
                 except Exception:
                     coms = []
-                
                 def check():
                     nonlocal plate_activated, player_l
                     block = levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] if not player_l else player_levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
@@ -1046,19 +1045,18 @@ def game(level, player_l = False):
                             messages.append("You can't go on this block!")
                             restart()
                             return False
-                    elif level < 17 and block != "grass_top.png":
+                    elif (level < 17 or level == 33 or level == 34) and block != "grass_top.png":
                         messages.append("You can only go on grass!")
                         restart()
                         return False
-                    elif level >= 17 and level < 21 and block != "bedrock.png":
+                    elif (level >= 17 and level < 21 or level == 35) and block != "bedrock.png":
                         messages.append("You can only go on bedrock!")
                         restart()
                         return False
-                    elif level >= 21 and block != "purpur_block.png":
+                    elif (level >= 21 and level < 33 or level == 36) and block != "purpur_block.png":
                         messages.append("You can only go on purpur blocks!")
                         restart()
                         return False
-                    return False      
                 for com in coms:
                     if com[0] == "right":
                         for _ in range(int(com[1])):

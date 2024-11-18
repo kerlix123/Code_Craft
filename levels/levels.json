@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 25,
+    "last_finished_level": 35,
     "level_p": [
         [
             30,
@@ -173,6 +173,83 @@
             30,
             300,
             25,
+            80,
+            false
+        ],
+        [
+            130,
+            300,
+            26,
+            80,
+            false
+        ],
+        [
+            230,
+            300,
+            27,
+            80,
+            false
+        ],
+        [
+            330,
+            300,
+            28,
+            80,
+            false
+        ],
+        [
+            430,
+            300,
+            29,
+            80,
+            false
+        ],
+        [
+            530,
+            300,
+            30,
+            80,
+            false
+        ],
+        [
+            630,
+            300,
+            31,
+            80,
+            false
+        ],
+        [
+            730,
+            300,
+            32,
+            80,
+            false
+        ],
+        [
+            830,
+            300,
+            33,
+            80,
+            false
+        ],
+        [
+            930,
+            300,
+            34,
+            80,
+            false
+        ],
+        [
+            1030,
+            300,
+            35,
+            80,
+            false
+        ],
+        [
+            1130,
+            300,
+            36,
             80,
             false
         ],
@@ -5363,7 +5440,7 @@
             "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
-                    "Level 22.",
+                    "Level 24.",
                     "",
                     "In this level you will use code with while",
                     "loops to move Mob around the map",
@@ -5381,7 +5458,7 @@
             ],
             "text_C": [
                 [
-                    "Level 22.",
+                    "Level 24.",
                     "",
                     "In this level you will use code with while",
                     "loops to move Mob around the map",
@@ -5399,7 +5476,7 @@
             ],
             "text_C++": [
                 [
-                    "Level 22.",
+                    "Level 24.",
                     "",
                     "In this level you will use code with while",
                     "loops to move Mob around the map",
@@ -5497,9 +5574,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "prnt(\"Code_Craft\")",
-            "input_text_C": "#include <stdio.h>\n\nint main() {\n    prntf(\"Code_Craft\");\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cot << \"Code_Craft\";\n    return 0;\n}",
+            "input_text_Python": "pritn(\"Code_Craft\")",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    pritnf(\"Code_Craft\");\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    cuot << \"Code_Craft\";\n    return 0;\n}",
             "solution_Python": [
                 [
                     [
@@ -5593,7 +5670,7 @@
                     "important part of programming",
                     "",
                     "Debugging is the process of finding and",
-                    "fixing errors, or \"bugs\", in code that", 
+                    "fixing errors, or \"bugs\", in code that",
                     "stop it from working as intended.",
                     "",
                     "Errors can be simple, like typos, or",
@@ -5610,47 +5687,2107 @@
                 [
                     "Level 25.",
                     "",
-                    "In this level you will use code with while",
-                    "loops to move Mob around the map",
+                    "From this level on, we will learn a little",
+                    "bit about debugging as it is a really",
+                    "important part of programming",
                     "",
-                    "Finish is the trapdoor and you can",
-                    "only go on grass blocks"
+                    "Debugging is the process of finding and",
+                    "fixing errors, or \"bugs\", in code that",
+                    "stop it from working as intended.",
+                    "",
+                    "Errors can be simple, like typos, or",
+                    "more challenging to identify, such as",
+                    "logical mistakes that cause unexpected",
+                    "behavior in the code."
                 ],
                 [
-                    "Use functions from class Mob to move",
-                    "Mob across the map to finish",
-                    "",
-                    "To close this book use",
-                    "Ctrl+E"
+                    "Try to find a typo in the given code",
+                    "and fix it."
                 ]
             ],
             "text_C++": [
                 [
                     "Level 25.",
                     "",
-                    "In this level you will use code with while",
-                    "loops to move Mob around the map",
+                    "From this level on, we will learn a little",
+                    "bit about debugging as it is a really",
+                    "important part of programming",
                     "",
-                    "Finish is the trapdoor and you can",
-                    "only go on grass blocks"
+                    "Debugging is the process of finding and",
+                    "fixing errors, or \"bugs\", in code that",
+                    "stop it from working as intended.",
+                    "",
+                    "Errors can be simple, like typos, or",
+                    "more challenging to identify, such as",
+                    "logical mistakes that cause unexpected",
+                    "behavior in the code."
                 ],
                 [
-                    "Use functions from class Mob to move",
-                    "Mob across the map to finish",
-                    "",
-                    "To close this book use",
-                    "Ctrl+E"
+                    "Try to find a typo in the given code",
+                    "and fix it."
                 ]
             ],
             "hint1_unlocked": false,
             "hint2_unlocked": false,
-            "hint1_Python": "",
-            "hint2_Python": "",
-            "hint1_C": "",
-            "hint2_C": "",
-            "hint1_C++": "",
-            "hint2_C++": "",
+            "hint1_Python": "print()",
+            "hint2_Python": "print() instead of pritn()",
+            "hint1_C": "printf()",
+            "hint2_C": "printf() instead of pritnf()",
+            "hint1_C++": "cout",
+            "hint2_C++": "cout instead of cuot",
             "pages": 2,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level26": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "//This is a comment",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    /This is a comment\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    /This is a comment\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "#",
+                        "This",
+                        "is",
+                        "a",
+                        "comment"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "/",
+                        "/",
+                        "This",
+                        "is",
+                        "a",
+                        "comment"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "/",
+                        "/",
+                        "This",
+                        "is",
+                        "a",
+                        "comment"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 26.",
+                    "",
+                    "There's an issue with the comment",
+                    "in this code. Try to fix it."
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 26.",
+                    "",
+                    "There's an issue with the comment",
+                    "in this code. Try to fix it."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 26.",
+                    "",
+                    "There's an issue with the comment",
+                    "in this code. Try to fix it."
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "#",
+            "hint2_Python": "# instead od //",
+            "hint1_C": "//",
+            "hint2_C": "There is one / missing",
+            "hint1_C++": "//",
+            "hint2_C++": "There is one / missing",
+            "pages": 1,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level27": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "a == 5:5",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    flaot a = 5:5;\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    flaot a = 5:5;\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "a",
+                        "=",
+                        "5",
+                        ".",
+                        "5"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "5",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "float",
+                        "a",
+                        "=",
+                        "5",
+                        ".",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 27.",
+                    "",
+                    "Variable a should be a float of value",
+                    "five and a half, but there's an issue",
+                    "in its declaration."
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 27.",
+                    "",
+                    "Variable a should be a float of value",
+                    "five and a half, but there's an issue",
+                    "in its declaration."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 27.",
+                    "",
+                    "Variable a should be a float of value",
+                    "five and a half, but there's an issue",
+                    "in its declaration."
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "There is one = extra",
+            "hint2_Python": ". instead of :",
+            "hint1_C": "float",
+            "hint2_C": ". instead of :",
+            "hint1_C++": "float",
+            "hint2_C++": ". instead of :",
+            "pages": 1,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level28": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "a = \"Steve",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    char a[] = \"Steve;\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string a = \"Steve;\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "a",
+                        "=",
+                        "\"Steve\""
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "char",
+                        "a",
+                        "[",
+                        "]",
+                        "=",
+                        "\"Steve\"",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "string",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "string",
+                        "a",
+                        "=",
+                        "\"Steve\"",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 28.",
+                    "",
+                    "Variable a should be a string of value",
+                    "\"Steve\", but there's an issue in its",
+                    "declaration."
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 28.",
+                    "",
+                    "Variable a should be a string of value",
+                    "\"Steve\", but there's an issue in its",
+                    "declaration."
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 28.",
+                    "",
+                    "Variable a should be a string of value",
+                    "\"Steve\", but there's an issue in its",
+                    "declaration."
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "\"",
+            "hint2_Python": "One \" is missing",
+            "hint1_C": "\"",
+            "hint2_C": "One \" is missing",
+            "hint1_C++": "\"",
+            "hint2_C++": "One \" is missing",
+            "pages": 1,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level29": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "name = \"Buddy\"\nage = 3\nprint(name; age)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    char name[] = \"Buddy\";\n    int age = 3;\n    printf(\"%d %s\\n\", name, age);\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string name = \"Buddy\";\n    int age = 3;\n    cout << name, \" \", age << endl;\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "name",
+                        "=",
+                        "\"Buddy\""
+                    ],
+                    [
+                        "age",
+                        "=",
+                        "3"
+                    ],
+                    [
+                        "print",
+                        "(",
+                        "name",
+                        "age",
+                        ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "char",
+                        "name",
+                        "[",
+                        "]",
+                        "=",
+                        "\"Buddy\"",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "age",
+                        "=",
+                        "3",
+                        ";"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"%s %d\\n\"",
+                        "name",
+                        "age",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "string",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "string",
+                        "name",
+                        "=",
+                        "\"Buddy\"",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "age",
+                        "=",
+                        "3",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "name",
+                        "<",
+                        "<",
+                        "\" \"",
+                        "<",
+                        "<",
+                        "age",
+                        "<",
+                        "<",
+                        "endl",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 29.",
+                    "",
+                    "This code should output variables:",
+                    "name and age in the same line with a",
+                    "space between them, but there is an",
+                    "error in it"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 29.",
+                    "",
+                    "This code should output variables:",
+                    "name and age in the same line with a",
+                    "space between them, but there is an",
+                    "error in it"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 29.",
+                    "",
+                    "This code should output variables:",
+                    "name and age in the same line with a",
+                    "space between them, but there is an",
+                    "error in it"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": ",",
+            "hint2_Python": ", instead of ;",
+            "hint1_C": "%d <-> %s",
+            "hint2_C": "switch %d and %s",
+            "hint1_C++": "<<",
+            "hint2_C++": "<< instead of ,",
+            "pages": 1,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level30": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "a = \"Code_Craft\"\nprint(a(6))",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    char a[] = \"Code_Craft\";\n    printf(\"%c\\n\", a(6));\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string a = \"Code_Craft\";\n    cout << a(6) << endl;\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "a",
+                        "=",
+                        "\"Code_Craft\""
+                    ],
+                    [
+                        "print",
+                        "(",
+                        "a",
+                        "[",
+                        "5",
+                        "]",
+                        ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "char",
+                        "a",
+                        "[",
+                        "]",
+                        "=",
+                        "\"Code_Craft\"",
+                        ";"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"%c\\n\"",
+                        "a",
+                        "[",
+                        "5",
+                        "]",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "string",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "string",
+                        "a",
+                        "=",
+                        "\"Code_Craft\"",
+                        ";"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "a",
+                        "[",
+                        "5",
+                        "]",
+                        "<",
+                        "<",
+                        "endl",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 30.",
+                    "",
+                    "This code should output second C",
+                    "from variable a, but there are errors",
+                    "in print() function"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 30.",
+                    "",
+                    "This code should output second C",
+                    "from variable a, but there are errors",
+                    "in printf() function"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 30.",
+                    "",
+                    "This code should output second C",
+                    "from variable a but there are errors",
+                    "in cout function"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "[] are used for indexing",
+            "hint2_Python": "Index is too big",
+            "hint1_C": "[] are used for indexing",
+            "hint2_C": "Index is too big",
+            "hint1_C++": "[] are used for indexing",
+            "hint2_C++": "Index is too big",
+            "pages": 1,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level31": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "a = 5\na =+ 10",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    a =+ 10;\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 5;\n    a =+ 10;\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "a",
+                        "=",
+                        "5"
+                    ],
+                    [
+                        "a",
+                        "+",
+                        "=",
+                        "10"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "int",
+                        "a",
+                        "=",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "a",
+                        "+",
+                        "=",
+                        "10",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "int",
+                        "a",
+                        "=",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "a",
+                        "+",
+                        "=",
+                        "10",
+                        ";"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 31.",
+                    "",
+                    "Variable a should have value of 15",
+                    "after executing this code but there is",
+                    "an error in it"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 31.",
+                    "",
+                    "Variable a should have value of 15",
+                    "after executing this code but there is",
+                    "an error in it"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 31.",
+                    "",
+                    "Variable a should have value of 15",
+                    "after executing this code but there is",
+                    "an error in it"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "+=",
+            "hint2_Python": "+= instead of =+",
+            "hint1_C": "+=",
+            "hint2_C": "+= instead of =+",
+            "hint1_C++": "+=",
+            "hint2_C++": "+= instead of =+",
+            "pages": 1,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level32": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "a = 5\nb = 10\nif a > b\n    print(\"a is smaller than b\")",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    int a = 5;\n    int b = 10;\n    if a > b {\n        printf(\"a is smaller than b\\n\");\n    }\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a = 5;\n    int b = 10;\n    if a > b {\n        cout << \"a is smaller than b\" << endl;\n    }\n    return 0;\n}",
+            "solution_Python": [
+                [
+                    [
+                        "a",
+                        "=",
+                        "5"
+                    ],
+                    [
+                        "b",
+                        "=",
+                        "10"
+                    ],
+                    [
+                        "if",
+                        "a",
+                        "<",
+                        "b",
+                        ":"
+                    ],
+                    [
+                        "print",
+                        "(",
+                        "\"a is smaller than b\"",
+                        ")"
+                    ]
+                ]
+            ],
+            "solution_C": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "stdio",
+                        ".",
+                        "h",
+                        ">"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "int",
+                        "a",
+                        "=",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "10",
+                        ";"
+                    ],
+                    [
+                        "if",
+                        "(",
+                        "a",
+                        "<",
+                        "b",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "printf",
+                        "(",
+                        "\"a is smaller than b\\n\"",
+                        ")",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "solution_C++": [
+                [
+                    [
+                        "#",
+                        "include",
+                        "<",
+                        "iostream",
+                        ">"
+                    ],
+                    [
+                        "using",
+                        "namespace",
+                        "std",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "main",
+                        "(",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "int",
+                        "a",
+                        "=",
+                        "5",
+                        ";"
+                    ],
+                    [
+                        "int",
+                        "b",
+                        "=",
+                        "10",
+                        ";"
+                    ],
+                    [
+                        "if",
+                        "(",
+                        "a",
+                        "<",
+                        "b",
+                        ")",
+                        "{"
+                    ],
+                    [
+                        "cout",
+                        "<",
+                        "<",
+                        "\"a is smaller than b\"",
+                        "<",
+                        "<",
+                        "endl",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ],
+                    [
+                        "return",
+                        "0",
+                        ";"
+                    ],
+                    [
+                        "}"
+                    ]
+                ]
+            ],
+            "text_Python": [
+                [
+                    "Level 32.",
+                    "",
+                    "Replace the comparison operator in if",
+                    "and fix the if statement to make it",
+                    "valid, to make this code output:",
+                    "\"a is smaller than b\" "
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 32.",
+                    "",
+                    "Variable a should have value of 15",
+                    "after executing this code but there is",
+                    "an error in it"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 32.",
+                    "",
+                    "Variable a should have value of 15",
+                    "after executing this code but there is",
+                    "an error in it"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "Missing :",
+            "hint2_Python": "< instead of >",
+            "hint1_C": "Missing { and }",
+            "hint2_C": "< instead of >",
+            "hint1_C++": "Missing { and }",
+            "hint2_C++": "< instead of >",
+            "pages": 1,
+            "blocks": [
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level33": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\nmob:go-left[7]\nmob;godown{5}",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    go-left[&mob, 7];\n    go_down{&mob, 5};\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    mob:go-left[7];\n    mob;godown{5};\n    return 0;\n}",
+            "text_Python": [
+                [
+                    "Level 33.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on grass!"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 33.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on grass!"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 33.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on grass!"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "mob.go_direction(n)",
+            "hint2_Python": "right -> up",
+            "hint1_C": "go_direction(&mob, n)",
+            "hint2_C": "right -> up",
+            "hint1_C++": "mob.go_direction(n)",
+            "hint2_C++": "right -> up",
+            "pages": 1,
+            "blocks": [
+                [
+                    "crafting_table_top.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ]
+            ]
+        }
+    ],
+    "level34": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\nmob.goright(6)\nmob:go_up(3)\nmob.go_left(2)\nmob.go_up(3)\nmob.go-lef(4)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    goright(&mob, 6);\n    go_up(&mob, 3);\n    go_left(&mob, 2);\n    go_up(&mob, 3);\n    go-lef(&mob, 4);\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    mob.goright(6);\n    mob:go_up(3);\n    mob.go_left(2);\n    mob.go_up(3);\n    mob.go-lef(4);\n    return 0;\n}",
+            "text_Python": [
+                [
+                    "Level 34.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on grass!"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 34.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on grass!"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 34.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on grass!"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "mob.go_direction(n)",
+            "hint2_Python": "right -> up",
+            "hint1_C": "go_direction(&mob, n)",
+            "hint2_C": "right -> up",
+            "hint1_C++": "mob.go_direction(n)",
+            "hint2_C++": "right -> up",
+            "pages": 1,
+            "blocks": [
+                [
+                    "oak_trapdoor.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "azalea_leaves.png",
+                    "azalea_leaves.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "crafting_table_top.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png"
+                ],
+                [
+                    "melon_top.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ],
+                [
+                    "pumpkin_top.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "farmland.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png"
+                ]
+            ]
+        }
+    ],
+    "level35": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\nn = 4\nfor i in range[2]:\n    mob.go_up(n)\n    mob.go_right(n)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        go_up(&mob, n);\n        go_right(&mob, n);\n    }\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        mob.go_up(n);\n        mob.go_right(n);\n    }\n    return 0;\n}",
+            "text_Python": [
+                [
+                    "Level 35.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on bedrock!"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 35.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on bedrock!"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 35.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on bedrock!"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
+            "hint1_Python": "n is too big",
+            "hint2_Python": "() instead of []",
+            "hint1_C": "n is too big",
+            "hint2_C": "i is too big",
+            "hint1_C++": "n is too big",
+            "hint2_C++": "i is too big",
+            "pages": 1,
+            "blocks": [
+                [
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "bedrock.png",
+                    "bedrock.png",
+                    "bedrock.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "bedrock.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "nether_gold_ore.png",
+                    "netherrack.png",
+                    "bedrock.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png",
+                    "nether_wart_block.png"
+                ],
+                [
+                    "bedrock.png",
+                    "bedrock.png",
+                    "bedrock.png",
+                    "bedrock.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png"
+                ],
+                [
+                    "bedrock.png",
+                    "nether_gold_ore.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "bedrock.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "soul_sand.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "bedrock.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ]
+            ]
+        }
+    ],
+    "level36": [
+        {
+            "steve_xy": [
+                0,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(2)\n    mob.go_right(2)\n",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    int i = 0;\n    while (i < 6) {\n        go_up(&mob, 2);\n        go_right(&mob, 2);\n    }\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    int i = 0;\n    while (i < 6) {\n        mob.go_up(2);\n        mob.go_right(2);\n    }\n    return 0;\n}",
+            "text_Python": [
+                [
+                    "Level 36.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on purpur blocks!"
+                ]
+            ],
+            "text_C": [
+                [
+                    "Level 35.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on purpur blocks!"
+                ]
+            ],
+            "text_C++": [
+                [
+                    "Level 35.",
+                    "",
+                    "This code should make Mob go to",
+                    "trapdoor but there are some errors",
+                    "that prevent it from doing that",
+                    "",
+                    "Mob can only go on purpur blocks!"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python": "i is never updated",
+            "hint2_Python": "Parameters in functions are too big",
+            "hint1_C": "i is never updated",
+            "hint2_C": "Parameters in functions are too big",
+            "hint1_C++": "i is never updated",
+            "hint2_C++": "Parameters in functions are too big",
+            "pages": 1,
             "blocks": [
                 [
                     "end_stone.png",
