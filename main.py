@@ -23,14 +23,8 @@ minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
 
 #music
 current_song_index = 0
-playlist = [PATH / "music" / "DryHands.mp3", 
-            PATH / "music" / "Haggstrom.mp3", 
-            PATH / "music" / "LivingMice.mp3",
-            PATH / "music" / "MiceOnVenus.mp3",
-            PATH / "music" / "Minecraft.mp3",
-            PATH / "music" / "SubwooferLullaby.mp3",
-            PATH / "music" / "Sweden.mp3",
-            PATH / "music" / "WetHands.mp3"]
+playlist = [PATH / "music" / "HelloWorld.mp3",
+            PATH / "music" / "Me.mp3" ]
 
 def load_json_file(file):
     with open(file) as json_file:
@@ -475,6 +469,9 @@ def options_win():
                     write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
                     #Clears game progress if Clear Progress button is clicked
+                    options["music_on"] = True
+                    options["fx_on"] = True
+                    options["code_lang"] = 0
                     play_click_sound()
                     levels["last_finished_level"] = 0
                     for k in data["skins"]:
@@ -490,6 +487,7 @@ def options_win():
                     data["first_play"] = True
                     write_to_json(PATH / "levels" / "levels.json", levels)
                     write_to_json(PATH / "data.json", data)
+                    write_to_json(PATH / "options.json", options)
                     exit()
                     
         game_utils.background()
