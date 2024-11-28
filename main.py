@@ -255,12 +255,10 @@ def level_builder():
     plus_x_y = [0, 0]
     blocks = [["plus.png" for _ in range(7)] for _ in range(7)]
     block_file_names = [
-        ["azalea_leaves.png", "bedrock.png", "cactus_top.png", "chorus_flower.png", "chorus_plant.png", "coal_ore.png"],
-        ["crafting_table_top.png", "diamond_ore.png", "dirt.png", "emerald_ore.png", "end_stone_bricks.png", "end_stone.png"],
-        ["farmland_moist.png", "farmland.png", "gold_ore.png", "grass_top.png", "hay_block_top.png", "melon_top.png"],
-        ["nether_quartz.png", "nether_wart_block.png", "netherrack.png", "oak_log_top.png", "oak_trapdoor.png", "nether_gold_ore.png"],
-        ["pumpkin_top.png", "purpur_block.png", "sand.png", "sandstone_top.png", "soul_sand.png", "soul_soil.png"],
-        ["cobblestone.png"]
+        ["dirt.png", "farmland.png", "farmland_moist.png", "grass_top.png", "sand.png", "sandstone_top.png"],
+        ["oak_log_top.png", "oak_trapdoor.png", "cobblestone.png", "coal_ore.png", "gold_ore.png", "emerald_ore.png"],
+        ["diamond_ore.png", "bedrock.png", "netherrack.png", "nether_quartz.png", "nether_gold_ore.png", "nether_wart_block.png"],
+        ["end_stone.png", "end_stone_bricks.png", "purpur_block.png", "chorus_plant.png", "soul_sand.png", "soul_soil.png"]
     ]
     start = []
     path_block = "plus.png"
@@ -277,23 +275,20 @@ def level_builder():
                 if mouse[0] <= 595 and mouse[1] <= 595:
                     #Changes the block that is going to be edited if user clicked on it
                     plus_x_y = [mouse[0]//85, mouse[1]//85]
-                elif 675 <= mouse[0] <= 1184 and 30 <= mouse[1] <= 540:
+                elif 675 <= mouse[0] <= 1184 and 30 <= mouse[1] <= 380:
                     #Sets the block at plus_x_y to block from right side that is clicked
-                    if (mouse[1]-32)//85 == 5 and (mouse[0]-675)//85 >= 1:
-                        pass
-                    else:
-                        a = False
-                        for el in blocks:
-                            a = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] in el
-                        if block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] != "oak_trapdoor.png":
-                            if path_select:
-                                #Sets the path block if editor is in mode for setting the path
-                                path_block = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
-                                path_select = False
-                            else:
-                                blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
-                        elif not a:
+                    a = False
+                    for el in blocks:
+                        a = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] in el
+                    if block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85] != "oak_trapdoor.png":
+                        if path_select:
+                            #Sets the path block if editor is in mode for setting the path
+                            path_block = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                            path_select = False
+                        else:
                             blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                    elif not a:
+                        blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
                 elif 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
                     #Sets the start at plus_x_y if Set start position button is clicked
                     start = plus_x_y.copy()
@@ -356,7 +351,7 @@ def level_builder():
         j = 30
 
         while i < 1184:
-            while j < 30 + 6 * 85:
+            while j < 30 + 4 * 85:
                 if (i - 645) // 85 < len(block_file_names[j // 85]):
                     block = pygame.image.load(PATH / "blocks" / block_file_names[j // 85][(i - 645) // 85])
                     block = pygame.transform.scale(block, (85, 85))

@@ -795,7 +795,7 @@
             "pages": 2,
             "blocks": [
                 [
-                    "dirt_top.png",
+                    "dirt.png",
                     "dirt.png",
                     "dirt.png",
                     "dirt.png",
@@ -3363,7 +3363,7 @@
             "pages": 2,
             "blocks": [
                 [
-                    "dirt_top.png",
+                    "dirt.png",
                     "dirt.png",
                     "dirt.png",
                     "dirt.png",
@@ -3668,7 +3668,7 @@
                     "farmland_moist.png"
                 ],
                 [
-                    "dirt_top.png",
+                    "dirt.png",
                     "dirt.png",
                     "dirt.png",
                     "dirt.png",
@@ -4076,7 +4076,7 @@
             "pages": 2,
             "blocks": [
                 [
-                    "dirt_top.png",
+                    "dirt.png",
                     "dirt.png",
                     "dirt.png",
                     "farmland.png",
@@ -7436,7 +7436,7 @@
             "pages": 1,
             "blocks": [
                 [
-                    "dirt_top.png",
+                    "dirt.png",
                     "dirt.png",
                     "dirt.png",
                     "dirt.png",
@@ -7581,7 +7581,7 @@
                     "farmland_moist.png"
                 ],
                 [
-                    "dirt_top.png",
+                    "dirt.png",
                     "dirt.png",
                     "dirt.png",
                     "dirt.png",

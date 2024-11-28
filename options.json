@@ -1,5 +1,5 @@
 {
-    "music_on": true,
-    "fx_on": true,
+    "music_on": false,
+    "fx_on": false,
     "code_lang": 0
 }
