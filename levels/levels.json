@@ -3363,21 +3363,48 @@
             "pages": 2,
             "blocks": [
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
                     "oak_trapdoor.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "oak_log_top.png",
+                    "oak_log_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png"
+                ],
+                [
+                    "oak_log_top.png",
+                    "oak_log_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "cobblestone.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
                     "grass_top.png"
                 ],
                 [
@@ -3386,34 +3413,7 @@
                     "dirt.png",
                     "dirt.png",
                     "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
-                ],
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
-                ],
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
-                ],
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "cobblestone.png",
                     "grass_top.png"
                 ],
                 [
@@ -3502,7 +3502,7 @@
             "pages": 2,
             "blocks": [
                 [
-                    "diamond_ore.png",
+                    "cobblestone.png",
                     "cobblestone.png",
                     "cobblestone.png",
                     "grass_top.png",
@@ -3512,57 +3512,57 @@
                 ],
                 [
                     "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "coal_ore.png",
-                    "coal_ore.png",
+                    "diamond_ore.png",
                     "cobblestone.png",
                     "grass_top.png",
                     "sand.png",
-                    "sand.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "gold_ore.png",
-                    "gold_ore.png",
-                    "grass_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "grass_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "sandstone_top.png",
                     "sandstone_top.png",
                     "sandstone_top.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
+                ],
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "emerald_ore.png"
                 ]
             ]
         }
@@ -3646,52 +3646,52 @@
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "sand.png",
+                    "sand.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "sand.png",
+                    "sand.png"
+                ],
+                [
+                    "grass_top.png",
                     "grass_top.png",
                     "farmland_moist.png",
-                    "farmland_moist.png"
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "sandstone_top.png",
+                    "sand.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "oak_log_top.png",
                     "grass_top.png",
                     "farmland_moist.png",
-                    "farmland_moist.png"
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "sandstone_top.png",
+                    "sandstone_top.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "grass_top.png",
                     "grass_top.png",
                     "farmland_moist.png",
-                    "farmland_moist.png"
-                ],
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
+                    "farmland_moist.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png"
                 ],
                 [
                     "dirt.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
+                    "dirt.png",
                     "grass_top.png"
                 ],
                 [
@@ -3789,17 +3789,17 @@
                     "grass_top.png"
                 ],
                 [
-                    "emerald_ore.png",
-                    "emerald_ore.png",
                     "cobblestone.png",
                     "cobblestone.png",
                     "cobblestone.png",
-                    "coal_ore.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
                     "grass_top.png"
                 ],
                 [
                     "gold_ore.png",
-                    "gold_ore.png",
+                    "cobblestone.png",
                     "cobblestone.png",
                     "grass_top.png",
                     "grass_top.png",
@@ -3807,40 +3807,40 @@
                     "grass_top.png"
                 ],
                 [
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
+                ],
+                [
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "coal_ore.png",
+                    "grass_top.png",
                     "emerald_ore.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png",
-                    "grass_top.png",
                     "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png"
+                    "diamond_ore.png"
                 ],
                 [
                     "cobblestone.png",
                     "cobblestone.png",
                     "cobblestone.png",
                     "grass_top.png",
+                    "emerald_ore.png",
                     "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png"
-                ],
-                [
-                    "gold_ore.png",
-                    "gold_ore.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png"
+                    "cobblestone.png"
                 ],
                 [
                     "oak_trapdoor.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png",
-                    "coal_ore.png",
-                    "coal_ore.png",
-                    "coal_ore.png"
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
                 ]
             ]
         }
@@ -3928,67 +3928,67 @@
             "pages": 2,
             "blocks": [
                 [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
+                    "sandstone_top.png",
+                    "sand.png",
+                    "sand.png",
                     "oak_trapdoor.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
                 ],
                 [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "sand.png",
                     "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "diamond_ore.png"
                 ],
                 [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
+                    "coal_ore.png",
+                    "cobblestone.png",
+                    "sand.png",
                     "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "cobblestone.png",
+                    "diamond_ore.png",
+                    "diamond_ore.png"
                 ],
                 [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "sand.png",
                     "pressure_plate.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
                 ],
                 [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
                     "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
                 ],
                 [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
                     "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "gold_ore.png"
                 ],
                 [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "coal_ore.png",
                     "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
                 ]
             ]
         }
@@ -4076,46 +4076,46 @@
             "pages": 2,
             "blocks": [
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "farmland.png",
-                    "oak_log_top.png",
-                    "oak_log_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "sandstone_top.png",
+                    "sand.png",
                     "oak_trapdoor.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "farmland.png",
-                    "oak_log_top.png",
-                    "oak_log_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "sand.png",
+                    "sand.png",
                     "grass_top.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "farmland.png",
+                    "grass_top.png",
+                    "oak_log_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "farmland.png",
-                    "farmland.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
                     "pressure_plate.png",
-                    "dirt.png",
+                    "sand.png",
                     "grass_top.png"
                 ],
                 [
-                    "dirt.png",
-                    "dirt.png",
-                    "farmland.png",
-                    "farmland.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "cobblestone.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png"
@@ -4124,7 +4124,7 @@
                     "dirt.png",
                     "dirt.png",
                     "dirt.png",
-                    "dirt.png",
+                    "cobblestone.png",
                     "dirt.png",
                     "dirt.png",
                     "grass_top.png"
@@ -4224,67 +4224,67 @@
             "pages": 2,
             "blocks": [
                 [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "nether_quartz.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png",
                     "oak_trapdoor.png"
                 ],
                 [
-                    "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
+                    "oak_log_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
                     "grass_top.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
                 ],
                 [
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
                     "grass_top.png",
-                    "soul_soil.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "coal_ore.png",
+                    "coal_ore.png"
                 ],
                 [
-                    "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
+                    "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
                     "grass_top.png",
                     "pressure_plate.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
-                ],
-                [
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_soil.png",
-                    "grass_top.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "netherrack.png"
-                ],
-                [
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "grass_top.png",
-                    "soul_soil.png",
-                    "netherrack.png",
-                    "netherrack.png"
+                    "cobblestone.png",
+                    "coal_ore.png"
                 ],
                 [
                     "grass_top.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
+                ],
+                [
+                    "dirt.png",
+                    "farmland_moist.png",
+                    "farmland_moist.png",
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "emerald_ore.png",
+                    "cobblestone.png"
+                ],
+                [
                     "grass_top.png",
                     "grass_top.png",
                     "grass_top.png",
-                    "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png"
+                    "grass_top.png",
+                    "cobblestone.png",
+                    "cobblestone.png",
+                    "cobblestone.png"
                 ]
             ]
         }
@@ -4450,53 +4450,44 @@
             "blocks": [
                 [
                     "netherrack.png",
-                    "netherrack.png",
                     "nether_quartz.png",
+                    "netherrack.png",
                     "oak_trapdoor.png",
                     "soul_sand.png",
                     "soul_sand.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "soul_sand.png",
                     "soul_sand.png"
                 ],
                 [
+                    "nether_quartz.png",
+                    "nether_quartz.png",
                     "netherrack.png",
+                    "bedrock.png",
+                    "soul_sand.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "nether_quartz.png",
                     "nether_quartz.png",
                     "nether_quartz.png",
                     "bedrock.png",
                     "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
+                    "soul_soil.png",
+                    "soul_soil.png"
                 ],
                 [
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_soil.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png",
                     "bedrock.png",
                     "soul_soil.png",
                     "soul_soil.png",
                     "netherrack.png"
                 ],
                 [
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
                     "bedrock.png",
                     "soul_soil.png",
                     "netherrack.png",
@@ -4504,12 +4495,21 @@
                 ],
                 [
                     "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
+                    "netherrack.png",
+                    "netherrack.png",
                     "bedrock.png",
                     "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png"
+                    "nether_gold_ore.png",
+                    "netherrack.png"
+                ],
+                [
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "bedrock.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png"
                 ]
             ]
         }
@@ -4588,67 +4588,67 @@
             "pages": 2,
             "blocks": [
                 [
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
                     "bedrock.png",
                     "bedrock.png",
                     "bedrock.png",
                     "oak_trapdoor.png"
                 ],
                 [
+                    "soul_sand.png",
                     "soul_soil.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
+                    "soul_soil.png",
                     "bedrock.png",
-                    "nether_wart_block.png",
-                    "nether_wart_block.png",
-                    "nether_wart_block.png"
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png"
                 ],
                 [
+                    "soul_sand.png",
                     "soul_soil.png",
-                    "nether_gold_ore.png",
                     "netherrack.png",
                     "bedrock.png",
-                    "nether_wart_block.png",
-                    "nether_wart_block.png",
-                    "nether_wart_block.png"
+                    "netherrack.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png"
                 ],
                 [
                     "bedrock.png",
                     "bedrock.png",
                     "bedrock.png",
                     "bedrock.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png"
+                    "netherrack.png",
+                    "nether_quartz.png",
+                    "nether_quartz.png"
                 ],
                 [
                     "bedrock.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "bedrock.png",
+                    "netherrack.png",
                     "nether_gold_ore.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png",
+                    "netherrack.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "bedrock.png",
+                    "netherrack.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
                     "soul_sand.png"
-                ],
-                [
-                    "bedrock.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "soul_sand.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
                 ]
             ]
         }
@@ -4732,61 +4732,61 @@
                     "bedrock.png",
                     "bedrock.png",
                     "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
+                    "soul_sand.png",
+                    "netherrack.png"
                 ],
                 [
-                    "soul_soil.png",
                     "soul_sand.png",
-                    "soul_sand.png",
+                    "nether_quartz.png",
+                    "netherrack.png",
                     "bedrock.png",
                     "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "nether_gold_ore.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "bedrock.png",
-                    "soul_sand.png",
                     "soul_sand.png",
                     "soul_sand.png"
                 ],
                 [
-                    "soul_soil.png",
-                    "soul_sand.png",
                     "nether_quartz.png",
+                    "nether_quartz.png",
+                    "netherrack.png",
+                    "bedrock.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "soul_soil.png"
+                ],
+                [
+                    "nether_quartz.png",
+                    "nether_quartz.png",
+                    "netherrack.png",
                     "bedrock.png",
                     "bedrock.png",
                     "bedrock.png",
                     "bedrock.png"
                 ],
                 [
-                    "nether_wart_block.png",
                     "nether_quartz.png",
-                    "nether_quartz.png",
-                    "soul_soil.png",
-                    "nether_quartz.png",
-                    "soul_sand.png",
-                    "bedrock.png"
-                ],
-                [
-                    "nether_wart_block.png",
-                    "nether_wart_block.png",
-                    "nether_quartz.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
                     "bedrock.png"
                 ],
                 [
                     "soul_soil.png",
-                    "nether_quartz.png",
-                    "soul_sand.png",
-                    "nether_wart_block.png",
-                    "nether_quartz.png",
-                    "soul_sand.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "nether_gold_ore.png",
+                    "bedrock.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "netherrack.png",
+                    "nether_gold_ore.png",
+                    "netherrack.png",
+                    "nether_gold_ore.png",
                     "oak_trapdoor.png"
                 ]
             ]
@@ -4869,64 +4869,64 @@
                     "netherrack.png",
                     "netherrack.png",
                     "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
+                    "soul_soil.png",
+                    "soul_soil.png",
                     "bedrock.png",
                     "oak_trapdoor.png"
                 ],
                 [
                     "netherrack.png",
                     "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "nether_gold_ore.png"
-                ],
-                [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png"
-                ],
-                [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png",
-                    "soul_sand.png"
-                ],
-                [
-                    "netherrack.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png",
                     "soul_sand.png",
-                    "soul_sand.png"
-                ],
-                [
+                    "soul_soil.png",
                     "bedrock.png",
                     "bedrock.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
-                ],
-                [
-                    "bedrock.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
                     "netherrack.png"
+                ],
+                [
+                    "netherrack.png",
+                    "soul_sand.png",
+                    "soul_sand.png",
+                    "bedrock.png",
+                    "bedrock.png",
+                    "netherrack.png",
+                    "nether_gold_ore.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "soul_soil.png",
+                    "bedrock.png",
+                    "bedrock.png",
+                    "netherrack.png",
+                    "nether_gold_ore.png",
+                    "nether_gold_ore.png"
+                ],
+                [
+                    "soul_soil.png",
+                    "bedrock.png",
+                    "bedrock.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "bedrock.png",
+                    "bedrock.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
+                ],
+                [
+                    "bedrock.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "netherrack.png",
+                    "soul_sand.png",
+                    "soul_sand.png"
                 ]
             ]
         }
@@ -5096,57 +5096,57 @@
                 ],
                 [
                     "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png",
                     "purpur_block.png",
                     "end_stone.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png"
-                ],
-                [
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone.png",
+                    "end_stone_bricks.png",
                     "end_stone_bricks.png"
                 ],
                 [
                     "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png"
-                ],
-                [
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png"
-                ],
-                [
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "chorus_plant.png",
-                    "chorus_plant.png",
-                    "end_stone_bricks.png"
-                ],
-                [
                     "end_stone_bricks.png",
-                    "chorus_plant.png",
-                    "chorus_plant.png",
+                    "end_stone_bricks.png",
                     "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone_bricks.png",
+                    "chorus_plant.png"
+                ],
+                [
                     "chorus_plant.png",
                     "chorus_plant.png",
-                    "oak_trapdoor.png"
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "chorus_plant.png",
+                    "chorus_plant.png"
+                ],
+                [
+                    "chorus_plant.png",
+                    "chorus_plant.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png"
+                ],
+                [
+                    "chorus_plant.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png"
+                ],
+                [
+                    "end_stone.png",
+                    "end_stone.png",
+                    "end_stone.png",
+                    "purpur_block.png",
+                    "end_stone.png",
+                    "end_stone_bricks.png",
+                    "end_stone_bricks.png"
                 ]
             ]
         }

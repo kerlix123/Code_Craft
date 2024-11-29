@@ -24,7 +24,8 @@ minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
 #music
 current_song_index = 0
 playlist = [PATH / "music" / "HelloWorld.mp3",
-            PATH / "music" / "Me.mp3" ]
+            PATH / "music" / "Me.mp3", 
+            PATH / "music" / "Valley.mp3"]
 
 def load_json_file(file):
     with open(file) as json_file:
@@ -271,6 +272,16 @@ def level_builder():
         for event in events:
             if event.type == pygame.QUIT:
                 exit()
+            if event.type == pygame.KEYDOWN:
+                key = pygame.key.name(event.key)
+                if key == "up":
+                    plus_x_y[1] = (plus_x_y[1] - 1) % 7  
+                elif key == "down":
+                    plus_x_y[1] = (plus_x_y[1] + 1) % 7  
+                elif key == "left":
+                    plus_x_y[0] = (plus_x_y[0] - 1) % 7  
+                elif key == "right":
+                    plus_x_y[0] = (plus_x_y[0] + 1) % 7  
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if mouse[0] <= 595 and mouse[1] <= 595:
                     #Changes the block that is going to be edited if user clicked on it
