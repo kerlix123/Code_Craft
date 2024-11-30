@@ -309,7 +309,7 @@ def level_builder():
                 elif 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
                     #Saves the level if Save level button is clicked
                     if start:
-                        curr = new_level_curr
+                        curr = new_level_curr.copy()
                         curr["steve_xy"] = [start[0], 6-start[1]]
                         curr["blocks"] = blocks
                         curr["path_block"] = path_block
@@ -707,8 +707,9 @@ def game(level, player_l = False):
                     else:
                         messages.append("Buy Hint 1 first.")
                 elif 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
+                    restart()
                     timed_start = time.time()
-                elif not game_levels[level].text_closed:
+                elif not player_l and not game_levels[level].text_closed:
                     #Changes showed page if Book is not closed
                     if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
                         #Goes to next page of the book if it exists
@@ -1033,7 +1034,6 @@ def game(level, player_l = False):
                     coms = []
                 if len(coms) > 50:
                     coms = []
-                    print("...")
                 def check():
                     nonlocal plate_activated, player_l
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:

@@ -59,154 +59,203 @@
         [
             830,
             30,
-            9,
+            31,
             80,
             true
         ],
         [
             930,
             30,
-            10,
+            32,
             80,
             true
         ],
         [
             1030,
             30,
-            11,
+            33,
             80,
             true
         ],
         [
             1130,
             30,
-            12,
+            34,
             80,
             true
         ],
         [
             30,
             140,
-            13,
+            35,
             80,
             true
         ],
         [
             130,
             140,
-            14,
+            36,
             80,
             true
         ],
         [
             230,
             140,
-            15,
+            37,
             80,
             true
         ],
         [
             330,
             140,
-            16,
+            38,
             80,
             true
         ],
         [
             430,
             140,
-            17,
+            39,
             80,
             true
         ],
         [
             530,
             140,
-            18,
+            40,
             80,
             true
         ],
         [
             630,
             140,
-            19,
+            41,
             80,
             true
         ],
         [
             730,
             140,
-            20,
+            42,
             80,
             true
         ],
         [
             830,
             140,
-            21,
+            43,
             80,
             true
         ],
         [
             930,
             140,
-            22,
+            44,
             80,
             true
         ],
         [
             1030,
             140,
-            23,
+            45,
             80,
             true
         ],
         [
             1130,
             140,
-            24,
+            46,
             80,
             true
         ],
         [
             30,
             250,
-            25,
+            47,
             80,
             true
         ],
         [
             130,
             250,
-            26,
+            48,
             80,
             true
         ],
         [
             230,
             250,
-            27,
+            49,
             80,
             true
         ],
         [
             330,
             250,
-            28,
+            50,
             80,
             true
         ],
         [
             430,
             250,
-            29,
+            51,
             80,
             true
         ],
         [
             530,
             250,
+            52,
+            80,
+            true
+        ],
+        [
+            630,
+            250,
+            53,
+            80,
+            true
+        ],
+        [
+            730,
+            250,
+            54,
+            80,
+            true
+        ],
+        [
+            830,
+            250,
+            55,
+            80,
+            true
+        ],
+        [
+            930,
+            250,
+            56,
+            80,
+            true
+        ],
+        [
+            1030,
+            250,
+            58,
+            80,
+            true
+        ],
+        [
+            1130,
+            250,
+            60,
+            80,
+            true
+        ],
+        [
             30,
+            360,
+            61,
             80,
             true
         ],
@@ -218,7 +267,7 @@
             true
         ]
     ],
-    "last_level": 30,
+    "last_level": 61,
     "level1": [
         {
             "steve_xy": [
@@ -835,84 +884,7 @@
             ]
         }
     ],
-    "level9": [
-        {
-            "steve_xy": [
-                0,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "oak_trapdoor.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "sand.png",
-                    "sand.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "sand.png",
-                    "sand.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "sandstone_top.png",
-                    "sand.png"
-                ],
-                [
-                    "oak_log_top.png",
-                    "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ],
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ]
-            ]
-        }
-    ],
-    "level10": [
+    "level31": [
         {
             "steve_xy": [
                 0,
@@ -924,457 +896,72 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "grass_top.png"
-                ],
-                [
-                    "gold_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png",
-                    "grass_top.png",
-                    "emerald_ore.png",
-                    "cobblestone.png",
-                    "diamond_ore.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "emerald_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "oak_trapdoor.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ]
-            ]
-        }
-    ],
-    "level11": [
-        {
-            "steve_xy": [
-                3,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "sandstone_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "oak_trapdoor.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "sand.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png"
-                ],
-                [
-                    "coal_ore.png",
-                    "cobblestone.png",
-                    "sand.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sand.png",
-                    "plus.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "gold_ore.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ]
-            ]
-        }
-    ],
-    "level12": [
-        {
-            "steve_xy": [
-                0,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sandstone_top.png",
-                    "sand.png",
-                    "oak_trapdoor.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "sand.png",
-                    "sand.png",
-                    "grass_top.png"
-                ],
-                [
-                    "grass_top.png",
                     "oak_log_top.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "cobblestone.png",
                     "plus.png",
-                    "sand.png",
-                    "grass_top.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ],
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "cobblestone.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ]
-            ]
-        }
-    ],
-    "level13": [
-        {
-            "steve_xy": [
-                0,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "oak_trapdoor.png"
-                ],
-                [
-                    "oak_log_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png"
-                ],
-                [
-                    "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
                     "plus.png",
-                    "cobblestone.png",
-                    "coal_ore.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "grass_top.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "dirt.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "emerald_ore.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level14": [
-        {
-            "steve_xy": [
-                3,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "netherrack.png",
-                    "nether_quartz.png",
-                    "netherrack.png",
-                    "oak_trapdoor.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
-                ],
-                [
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "soul_sand.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "bedrock.png",
-                    "soul_sand.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "netherrack.png"
-                ],
-                [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "netherrack.png",
-                    "netherrack.png"
-                ],
-                [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "nether_gold_ore.png",
-                    "netherrack.png"
-                ],
-                [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png"
-                ]
-            ]
-        }
-    ],
-    "level15": [
-        {
-            "steve_xy": [
-                0,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "oak_trapdoor.png"
-                ],
-                [
-                    "soul_sand.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png"
-                ],
-                [
-                    "soul_sand.png",
-                    "soul_soil.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png"
-                ],
-                [
-                    "bedrock.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "nether_quartz.png",
-                    "nether_quartz.png"
-                ],
-                [
-                    "bedrock.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "bedrock.png",
-                    "netherrack.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png",
-                    "netherrack.png",
-                    "soul_soil.png"
-                ],
-                [
-                    "bedrock.png",
-                    "netherrack.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_sand.png"
-                ]
-            ]
-        }
-    ],
-    "level16": [
+    "level32": [
         {
             "steve_xy": [
                 0,
@@ -1386,72 +973,72 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "bedrock.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "soul_sand.png",
-                    "netherrack.png"
+                    "oak_log_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "soul_sand.png",
-                    "nether_quartz.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "soul_soil.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "nether_quartz.png",
-                    "nether_quartz.png",
-                    "netherrack.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "bedrock.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "nether_quartz.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "bedrock.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "soul_soil.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "nether_gold_ore.png",
-                    "bedrock.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "netherrack.png",
-                    "nether_gold_ore.png",
-                    "netherrack.png",
-                    "nether_gold_ore.png",
-                    "oak_trapdoor.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level17": [
+    "level33": [
         {
             "steve_xy": [
                 0,
@@ -1463,149 +1050,72 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "bedrock.png",
-                    "oak_trapdoor.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "netherrack.png",
-                    "netherrack.png",
-                    "soul_sand.png",
-                    "soul_soil.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "netherrack.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "netherrack.png",
-                    "soul_sand.png",
-                    "soul_sand.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "nether_gold_ore.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "soul_soil.png",
-                    "soul_soil.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "nether_gold_ore.png",
-                    "nether_gold_ore.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "soul_soil.png",
-                    "bedrock.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "soul_sand.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "bedrock.png",
-                    "bedrock.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "bedrock.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "netherrack.png",
-                    "soul_sand.png",
-                    "soul_sand.png"
+                    "oak_log_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level18": [
-        {
-            "steve_xy": [
-                3,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "oak_trapdoor.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png"
-                ],
-                [
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png"
-                ],
-                [
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "chorus_plant.png"
-                ],
-                [
-                    "chorus_plant.png",
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "chorus_plant.png",
-                    "chorus_plant.png"
-                ],
-                [
-                    "chorus_plant.png",
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png"
-                ],
-                [
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png"
-                ],
-                [
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png"
-                ]
-            ]
-        }
-    ],
-    "level19": [
+    "level34": [
         {
             "steve_xy": [
                 0,
@@ -1617,72 +1127,149 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "oak_trapdoor.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "chorus_plant.png",
-                    "end_stone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "chorus_plant.png",
-                    "end_stone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "chorus_plant.png",
-                    "chorus_plant.png",
-                    "end_stone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "purpur_block.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone.png"
+                    "oak_log_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level20": [
+    "level35": [
+        {
+            "steve_xy": [
+                6,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "oak_log_top.png"
+                ]
+            ]
+        }
+    ],
+    "level36": [
         {
             "steve_xy": [
                 0,
@@ -1694,76 +1281,153 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone.png"
+                    "netherrack.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "purpur_block.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone.png",
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone.png",
-                    "chorus_plant.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "chorus_plant.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "oak_trapdoor.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level21": [
+    "level37": [
+        {
+            "steve_xy": [
+                4,
+                2
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "netherrack.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level38": [
         {
             "steve_xy": [
                 0,
-                0
+                6
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
@@ -1772,74 +1436,613 @@
             "blocks": [
                 [
                     "end_stone.png",
-                    "chorus_plant.png",
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "oak_trapdoor.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "chorus_plant.png",
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "chorus_plant.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "end_stone_bricks.png",
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "chorus_plant.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "purpur_block.png",
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "chorus_plant.png",
-                    "chorus_plant.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "purpur_block.png",
-                    "end_stone_bricks.png",
-                    "end_stone.png",
-                    "end_stone_bricks.png",
-                    "chorus_plant.png",
-                    "chorus_plant.png",
-                    "end_stone_bricks.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level22": [
+    "level39": [
         {
             "steve_xy": [
-                5,
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "end_stone_bricks.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level40": [
+        {
+            "steve_xy": [
+                3,
+                4
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "farmland.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level41": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "oak_log_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level42": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "dirt.png",
+            "blocks": [
+                [
+                    "dirt.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level43": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "dirt.png",
+            "blocks": [
+                [
+                    "dirt.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level44": [
+        {
+            "steve_xy": [
+                6,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "end_stone.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level45": [
+        {
+            "steve_xy": [
+                6,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "end_stone.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "end_stone.png"
+                ]
+            ]
+        }
+    ],
+    "level46": [
+        {
+            "steve_xy": [
+                6,
                 0
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
@@ -1848,72 +2051,611 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sand.png",
-                    "sand.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sand.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "gold_ore.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "gold_ore.png",
-                    "gold_ore.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "oak_log_top.png"
                 ]
             ]
         }
     ],
-    "level23": [
+    "level47": [
+        {
+            "steve_xy": [
+                6,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "oak_log_top.png"
+                ]
+            ]
+        }
+    ],
+    "level48": [
+        {
+            "steve_xy": [
+                6,
+                0
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "oak_log_top.png"
+                ]
+            ]
+        }
+    ],
+    "level49": [
+        {
+            "steve_xy": [
+                6,
+                4
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level50": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level51": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level52": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "dirt.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level53": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "dirt.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level54": [
         {
             "steve_xy": [
                 3,
@@ -1925,76 +2667,76 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
                     "oak_log_top.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level24": [
+    "level55": [
         {
             "steve_xy": [
-                1,
-                6
+                3,
+                3
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
@@ -2002,72 +2744,226 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "dirt.png",
-                    "dirt.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "dirt.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
                     "oak_log_top.png",
-                    "oak_log_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "oak_log_top.png",
-                    "oak_log_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level25": [
+    "level56": [
+        {
+            "steve_xy": [
+                3,
+                3
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "oak_log_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level58": [
+        {
+            "steve_xy": [
+                3,
+                3
+            ],
+            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "plus.png",
+            "blocks": [
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "oak_log_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level60": [
         {
             "steve_xy": [
                 0,
@@ -2079,76 +2975,76 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "emerald_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png"
+                    "dirt.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "sand.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
     ],
-    "level26": [
+    "level61": [
         {
             "steve_xy": [
-                2,
-                2
+                3,
+                3
             ],
             "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
@@ -2156,375 +3052,67 @@
             "path_block": "plus.png",
             "blocks": [
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "oak_log_top.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "gold_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "cobblestone.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ],
                 [
-                    "emerald_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png"
-                ]
-            ]
-        }
-    ],
-    "level27": [
-        {
-            "steve_xy": [
-                2,
-                2
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "gold_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png"
-                ],
-                [
-                    "emerald_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png"
-                ]
-            ]
-        }
-    ],
-    "level28": [
-        {
-            "steve_xy": [
-                2,
-                2
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "diamond_ore.png",
-                    "diamond_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "gold_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "cobblestone.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png"
-                ],
-                [
-                    "emerald_ore.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "coal_ore.png",
-                    "coal_ore.png"
-                ]
-            ]
-        }
-    ],
-    "level29": [
-        {
-            "steve_xy": [
-                4,
-                0
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png",
-                    "dirt.png"
-                ],
-                [
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png",
-                    "farmland.png"
-                ],
-                [
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png",
-                    "farmland_moist.png"
-                ],
-                [
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png",
-                    "grass_top.png"
-                ],
-                [
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png"
-                ],
-                [
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png"
-                ]
-            ]
-        }
-    ],
-    "level30": [
-        {
-            "steve_xy": [
-                4,
-                5
-            ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "path_block": "plus.png",
-            "blocks": [
-                [
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sand.png",
-                    "sand.png",
-                    "sand.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sand.png",
-                    "sand.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png",
-                    "sand.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sandstone_top.png",
-                    "sandstone_top.png"
-                ],
-                [
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "cobblestone.png",
-                    "sandstone_top.png"
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
