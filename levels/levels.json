@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 36,
+    "last_finished_level": 2,
     "level_p": [
         [
             30,
@@ -1158,8 +1158,8 @@
                     "with value 4.5 and print it in new line."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
             "hint1_Python": "variable = value",
             "hint2_Python": "print(variable)",
             "hint1_C": "b is int and a is float - data_type var = value;",

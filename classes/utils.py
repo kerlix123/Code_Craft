@@ -23,15 +23,14 @@ class GameUtils:
         pygame.mixer.music.load(self.playlist[self.current_song_index])
         pygame.mixer.music.play()
     
-    def button(self, path, width, height, x, y):
-        b_button = pygame.transform.scale(pygame.image.load(path), (width, height))
+    def button(self, b_button, x, y):
         self.window.blit(b_button, (x, y))
 
     def menu_button(self, x, y, text_x, text, width, height, mouse):
         pygame.draw.rect(self.window, (130, 130, 130), (x, y, width, height))
         pygame.draw.rect(self.window, (0, 0, 0), (x, y, width, height), 1)
 
-        self.window.blit(self.minecraft_font_small.render(text, True, (255, 255, 255)), (text_x, y+10))
+        self.window.blit(text, (text_x, y+10))
 
         if x <= mouse[0] <= x+width and y <= mouse[1] <= y+height:
             pygame.draw.rect(self.window, (255, 255, 255), (x, y, width, height), 3)

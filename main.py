@@ -21,6 +21,46 @@ minecraft_font_small = pygame.font.Font(PATH / "Minecraft.ttf", 25)
 minecraft_font_smaller = pygame.font.Font(PATH / "Minecraft.ttf", 15)
 minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
 
+back_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "unselect.png"), (40, 40))
+play_level_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "select.png"), (80, 80))
+close_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "close.png"), (22, 22))
+run_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "select.png"), (28, 28))
+accept_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "accept.png"), (29, 29))
+restart_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "reject.png"), (26, 26))
+torch1_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "torch1.png"), (31, 31))
+torch2_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "torch2.png"), (31, 31))
+close_1v1_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "close.png"), (16, 16))
+clock_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "clock.png"), (20, 20))
+book = pygame.image.load(PATH / "drawable" / "book2.png")
+page_forward_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "page_forward.png"), (42, 24))
+page_backward_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "page_backward.png"), (42, 24))
+
+menu_text = {
+    "play": minecraft_font_small.render("Play", True, (255, 255, 255)),
+    "levels": minecraft_font_small.render("Levels", True, (255, 255, 255)),
+    "tutorials": minecraft_font_small.render("Tutorials", True, (255, 255, 255)),
+    "options": minecraft_font_small.render("Options...", True, (255, 255, 255)),
+    "quit": minecraft_font_small.render("Quit Game", True, (255, 255, 255))
+}
+
+level_menu_text = {
+    "lvl_builder": minecraft_font_small.render("Level Builder", True, (255, 255, 255)),
+    "your_levels": minecraft_font_small.render("Your levels", True, (255, 255, 255)),
+    "debug_challenge": minecraft_font_small.render("Debug challenges", True, (255, 255, 255))
+}
+
+options_text = {
+    "skins": minecraft_font_small.render("Skins", True, (255, 255, 255)),
+    "clear_progress": minecraft_font_small.render("Clear Progress (Exit's app)", True, (255, 255, 255)),
+    "audio_on": minecraft_font_small.render("Audio: On", True, (255, 255, 255)),
+    "audio_off": minecraft_font_small.render("Audio: Off", True, (255, 255, 255)),
+    "fx_on": minecraft_font_small.render("FX: On", True, (255, 255, 255)),
+    "fx_off": minecraft_font_small.render("FX: Off", True, (255, 255, 255)),
+    "python": minecraft_font_small.render("Programming language: Python", True, (255, 255, 255)),
+    "c": minecraft_font_small.render("Programming language: C", True, (255, 255, 255)),
+    "c++": minecraft_font_small.render("Programming language: C++", True, (255, 255, 255)),
+}
+
 #music
 current_song_index = 0
 playlist = [PATH / "music" / "HelloWorld.mp3",
@@ -86,10 +126,15 @@ def play_click_sound():
     if fx_on:
         click_sound.play()
 
-def menu():
-    while True:
-        if not pygame.mixer.music.get_busy() and music_on:
+def play_next_track():
+    if not pygame.mixer.music.get_busy() and music_on:
             game_utils.play_next_track()
+
+def menu():
+    big_title = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "Code_Craft.png"), (491, 127))
+    emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
+    while True:
+        play_next_track()
 
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
@@ -120,32 +165,27 @@ def menu():
         
         game_utils.background()
 
-        big_title = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "Code_Craft.png"), (491, 127))
         window.blit(big_title, (374, 60))
 
         #Emerald count
-        emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
         window.blit(emerald, (1210, 0))
         window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 8.8))
 
-        game_utils.menu_button(420, 250, 594, "Play", 400, 40, mouse)
+        game_utils.menu_button(420, 250, 594, menu_text["play"], 400, 40, mouse)
 
-        game_utils.menu_button(420, 300, 580, "Levels", 400, 40, mouse)
+        game_utils.menu_button(420, 300, 580, menu_text["levels"], 400, 40, mouse)
 
-        game_utils.menu_button(420, 350, 573, "Tutorial", 400, 40, mouse)
+        game_utils.menu_button(420, 350, 573, menu_text["tutorials"], 400, 40, mouse)
 
-        game_utils.menu_button(420, 420, 464, "Options...", 195, 40, mouse)
+        game_utils.menu_button(420, 420, 464, menu_text["options"], 195, 40, mouse)
 
-        game_utils.menu_button(625, 420, 659, "Quit Game", 195, 40, mouse)
+        game_utils.menu_button(625, 420, 659, menu_text["quit"], 195, 40, mouse)
 
-        pygame.display.flip()     
+        pygame.display.flip()    
 
 def level_menu():
-    for lvl in game_levels:
-        lvl.unlocked = lvl.level <= levels["last_finished_level"]+1
     while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
+        play_next_track()
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
         for event in events:
@@ -163,8 +203,7 @@ def level_menu():
                 for lvl in game_levels:
                     #Opens level on which player clicked
                     if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
-                        if fx_on:
-                            click_sound.play()
+                        play_click_sound
                         game(lvl.level)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to main menu if Back button is clicked
@@ -175,7 +214,7 @@ def level_menu():
         game_utils.bg_overlay()
 
         #back_button
-        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(back_button, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -195,20 +234,19 @@ def level_menu():
 
                 if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    game_utils.button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
+                    game_utils.button(play_level_button, lvl.x, lvl.y)
 
-        window.blit(minecraft_font_small.render("Debug challenges", True, (255, 255, 255)), (30, 250))
+        window.blit(level_menu_text["debug_challenge"], (30, 250))
 
-        game_utils.menu_button(830, 550, 853, "Level builder", 200, 40, mouse)
+        game_utils.menu_button(830, 550, 853, level_menu_text["lvl_builder"], 200, 40, mouse)
 
-        game_utils.menu_button(1050, 550, 1063, "Your levels", 160, 40, mouse)
+        game_utils.menu_button(1050, 550, 1063, level_menu_text["your_levels"], 160, 40, mouse)
         
         pygame.display.flip()
 
 def your_levels_menu():
     while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
+        play_next_track()
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
         for event in events:
@@ -229,7 +267,7 @@ def your_levels_menu():
         game_utils.bg_overlay()
 
         #back_button
-        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(back_button, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -246,7 +284,7 @@ def your_levels_menu():
 
                 if lvl.hover(mouse[0], mouse[1]):
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    game_utils.button(PATH / "drawable" / "select.png", lvl.size, lvl.size, lvl.x, lvl.y)
+                    game_utils.button(play_level_button, lvl.x, lvl.y)
         
         pygame.display.flip()
 
@@ -265,8 +303,7 @@ def level_builder():
     path_block = "plus.png"
     path_select = False
     while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
+        play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -385,17 +422,18 @@ def level_builder():
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
         
         #back_button
-        game_utils.button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
+        game_utils.button(close_button, 10, 596)
 
         if 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
             game_utils.description("Set start position")
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 609, 20)
 
         #start button
-        game_utils.button(PATH / "drawable" / "select.png", 28, 28, 605, 15)
+        game_utils.button(run_button, 605, 15)
 
         #path select
-        game_utils.button(PATH / "blocks" / path_block, 28, 28, 605, 60)
+        path_button = pygame.transform.scale(pygame.image.load(PATH / "blocks" / path_block), (28, 28))
+        window.blit(path_button, (605, 60))
         if 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
             game_utils.description("Set path block")
             game_utils.trans_surface(28, 28, (170, 170, 170, 120), 605, 60)
@@ -405,14 +443,13 @@ def level_builder():
             game_utils.trans_surface(22, 21, (170, 170, 170, 120), 609, 104)
 
         #save button
-        game_utils.button(PATH / "drawable" / "accept.png", 29, 29, 605, 100)
+        game_utils.button(accept_button, 605, 100)
 
         pygame.display.flip()
 
 def tutorial():
     while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
+        play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -428,7 +465,7 @@ def tutorial():
         game_utils.bg_overlay()
 
         #back_button
-        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(back_button, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -438,8 +475,7 @@ def tutorial():
 def options_win():
     global music_on, fx_on, code_lang
     while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
+        play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -499,20 +535,31 @@ def options_win():
         game_utils.background()
         game_utils.bg_overlay()
 
-        game_utils.menu_button(420, 80, 587, "Skins", 400, 40, mouse)
+        game_utils.menu_button(420, 80, 587, options_text["skins"], 400, 40, mouse)
 
-        music_state = "On" if music_on else "Off"
-        game_utils.menu_button(420, 130, 420+(400-minecraft_font_small.size(f"Audio: {music_state}")[0])//2, f"Audio: {music_state}", 400, 40, mouse)
+        if music_on:
+            game_utils.menu_button(420, 130, 565, options_text["audio_on"], 400, 40, mouse)
+        else:
+            game_utils.menu_button(420, 130, 558, options_text["audio_off"], 400, 40, mouse)
 
-        fx_state = "On" if fx_on else "Off"
-        game_utils.menu_button(420, 180, 444+(356-minecraft_font_small.size(f"FX: {fx_state}")[0])//2, f"FX: {fx_state}", 400, 40, mouse)
+        if fx_on:
+            game_utils.menu_button(420, 180, 580, options_text["fx_on"], 400, 40, mouse)
+        else:
+            game_utils.menu_button(420, 180, 573, options_text["fx_off"], 400, 40, mouse)
 
-        game_utils.menu_button(420, 230, 432+(380-minecraft_font_small.size(f"Programming language: {languages[options["code_lang"]]}")[0])//2, f"Programming language: {languages[options["code_lang"]]}", 400, 40, mouse)
-        
-        game_utils.menu_button(420, 280, 452, "Clear Progress (Exit's app)", 400, 40, mouse)
+        #game_utils.menu_button(420, 230, 432+(380-minecraft_font_small.size(f"Programming language: {languages[options['code_lang']]}")[0])//2, f"Programming language: {languages[options['code_lang']]}", 400, 40, mouse)
+        if code_lang == 0:
+            game_utils.menu_button(420, 230, 430, options_text["python"], 400, 40, mouse)
+        elif code_lang == 1:
+            game_utils.menu_button(420, 230, 462, options_text["c"], 400, 40, mouse)
+        else:
+            game_utils.menu_button(420, 230, 446, options_text["c++"], 400, 40, mouse)
+
+
+        game_utils.menu_button(420, 280, 452, options_text["clear_progress"], 400, 40, mouse)
 
         #back_button
-        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(back_button, 15, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -522,8 +569,7 @@ def options_win():
 def skins():
     messages = []
     while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
+        play_next_track()
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -579,10 +625,10 @@ def skins():
             if skin.hover(mouse[0], mouse[1]):
                 pygame.draw.rect(window, (255, 255, 255), (skin.x, skin.y, skin.size, skin.size), 3)
                 if skin.unlocked:
-                    game_utils.button(PATH / "drawable" / "select.png", skin.size, skin.size, skin.x, skin.y)
+                    game_utils.button(play_level_button, skin.x, skin.y)
 
         #back_button
-        game_utils.button(PATH / "drawable" / "unselect.png", 40, 40, 15, 565)
+        game_utils.button(back_button, 15, 565)
 
         game_utils.minecraft_cmd(messages, 0, 1240, 620)
 
@@ -594,6 +640,7 @@ def skins():
 def game(level, player_l = False):
     global code_lang, code_runned, level_finished, grades
     global def_code_python, def_code_c, def_code_cpp, messages
+    global book
     code_lang = options["code_lang"]
     messages = []
     restart_code = False
@@ -617,8 +664,7 @@ def game(level, player_l = False):
         stevexy[0] = xy[0]*85
         stevexy[1] = (6-xy[1])*85
     while True:
-        if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
+        play_next_track()
         window.fill((30, 30, 30))
 
         mouse = pygame.mouse.get_pos()
@@ -774,26 +820,26 @@ def game(level, player_l = False):
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
         
         #back_button
-        game_utils.button(PATH / "drawable" / "close.png", 22, 22, 10, 596)
+        game_utils.button(close_button, 10, 596)
 
         if 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
             game_utils.description("Run")
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 34, 598)
 
         #run_button
-        game_utils.button(PATH / "drawable" / "select.png", 28, 28, 30, 593)
+        game_utils.button(run_button, 30, 593)
 
         if 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
             game_utils.description("Restart")
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 599, 598)
 
         #restart_button
-        game_utils.button(PATH / "drawable" / "reject.png", 26, 26, 595, 595)
+        game_utils.button(restart_button, 595, 595)
 
         if not player_l:
             #hint1_button
             hint_x = 56
-            game_utils.button(PATH / "drawable" / "torch1.png", 31, 31, hint_x-11, 586)
+            game_utils.button(torch1_button, hint_x-11, 586)
             
             if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
                 if levels[f"level{level}"][0][f"hint1_unlocked"]:
@@ -803,7 +849,7 @@ def game(level, player_l = False):
                 game_utils.trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
             
             #hint2_button
-            game_utils.button(PATH / "drawable" / "torch2.png", 31, 31, hint_x+4, 586)
+            game_utils.button(torch2_button, hint_x+4, 586)
 
             if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
                 if levels[f"level{level}"][0][f"hint2_unlocked"]:
@@ -817,7 +863,7 @@ def game(level, player_l = False):
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                 game_utils.description("Next level")
                 game_utils.trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
-            game_utils.button(PATH / "drawable" / "accept.png", 29, 29, 562, 592)
+            game_utils.button(accept_button, 605, 100)
 
         #1v1 button
         if level >= 10 or player_l:
@@ -841,14 +887,14 @@ def game(level, player_l = False):
                     game_utils.trans_surface(16, 16, (170, 170, 170, 120), 668, 598)
 
                 #exit_1v1_button
-                game_utils.button(PATH / "drawable" / "close.png", 16, 16, 668, 598)
+                game_utils.button(close_1v1_button, 668, 598)
 
         if 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
             game_utils.description("Timed challenge")
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 90, 598)
 
         #clock_button
-        game_utils.button(PATH / "drawable" / "clock.png", 20, 20, 90, 598)
+        game_utils.button(clock_button, 90, 598)
 
 
         #blocks
@@ -857,7 +903,7 @@ def game(level, player_l = False):
         while i < 595:
             while j < 595:
                 level_key = f"level{level}"
-                block_path = PATH / "blocks" / f"{levels[level_key][0]["blocks"][j//85][i//85]}" if not player_l else PATH / "blocks" / f"{player_levels[level_key][0]["blocks"][j//85][i//85]}"
+                block_path = PATH / "blocks" / f"{levels[level_key][0]['blocks'][j//85][i//85]}" if not player_l else PATH / "blocks" / f"{player_levels[level_key][0]['blocks'][j//85][i//85]}"
                 block = pygame.image.load(block_path)
                 block = pygame.transform.scale(block, (85, 85))
          
@@ -869,7 +915,6 @@ def game(level, player_l = False):
 
         #book
         if not player_l and not game_levels[level].text_closed:
-            book = pygame.image.load(PATH / "drawable" / "book2.png")
             book = pygame.transform.scale(book, (800, 800))
 
             window.blit(book, (6, 12))
@@ -877,13 +922,13 @@ def game(level, player_l = False):
             game_utils.render_text(115, 63, levels[f"level{level}"][0][f"text_{languages[code_lang]}"][game_levels[level].text_page], 28.8)
 
             if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
-                game_utils.button(PATH / "drawable" / "page_forward.png", 42, 24, 410, 515)
+                game_utils.button(page_forward_button, 410, 515)
 
                 if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539:
                     game_utils.trans_surface(36, 19, (170, 170, 170, 120), 415, 519)
             
             if game_levels[level].text_page > 0:
-                game_utils.button(PATH / "drawable" / "page_backward.png", 42, 24, 120, 515)
+                game_utils.button(page_backward_button, 120, 515)
 
                 if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539:
                     game_utils.trans_surface(36, 19, (170, 170, 170, 120), 125, 519)
