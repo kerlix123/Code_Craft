@@ -16,49 +16,54 @@ pygame.display.set_caption("Code_Craft")
 pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "crafting_table.png"))
 clock = pygame.time.Clock()
 
-minecraft_font_big = pygame.font.Font(PATH / "Minecraft.ttf", 75)
 minecraft_font_small = pygame.font.Font(PATH / "Minecraft.ttf", 25)
 minecraft_font_smaller = pygame.font.Font(PATH / "Minecraft.ttf", 15)
 minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
 
-back_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "unselect.png"), (40, 40))
-play_level_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "select.png"), (80, 80))
-close_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "close.png"), (22, 22))
-run_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "select.png"), (28, 28))
-accept_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "accept.png"), (29, 29))
-restart_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "reject.png"), (26, 26))
-torch1_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "torch1.png"), (31, 31))
-torch2_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "torch2.png"), (31, 31))
-close_1v1_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "close.png"), (16, 16))
-clock_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "clock.png"), (20, 20))
-book = pygame.image.load(PATH / "drawable" / "book2.png")
-page_forward_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "page_forward.png"), (42, 24))
-page_backward_button = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "page_backward.png"), (42, 24))
+def get_scaled_img(img, size):
+    return pygame.transform.scale(pygame.image.load(img), size)
+
+back_button = get_scaled_img(PATH / "drawable" / "unselect.png", (40, 40))
+play_level_button = get_scaled_img(PATH / "drawable" / "select.png", (80, 80))
+close_button = get_scaled_img(PATH / "drawable" / "close.png", (22, 22))
+run_button = get_scaled_img(PATH / "drawable" / "select.png", (28, 28))
+accept_button = get_scaled_img(PATH / "drawable" / "accept.png", (29, 29))
+restart_button = get_scaled_img(PATH / "drawable" / "reject.png", (26, 26))
+torch1_button = get_scaled_img(PATH / "drawable" / "torch1.png", (31, 31))
+torch2_button = get_scaled_img(PATH / "drawable" / "torch2.png", (31, 31))
+close_1v1_button = get_scaled_img(PATH / "drawable" / "close.png", (16, 16))
+clock_button = get_scaled_img(PATH / "drawable" / "clock.png", (20, 20))
+book = get_scaled_img(PATH / "drawable" / "book2.png", (800, 800))
+page_forward_button = get_scaled_img(PATH / "drawable" / "page_forward.png", (42, 24))
+page_backward_button = get_scaled_img(PATH / "drawable" / "page_backward.png", (42, 24))
+
+def render_small_text(text):
+    return minecraft_font_small.render(text, True, (255, 255, 255))
 
 menu_text = {
-    "play": minecraft_font_small.render("Play", True, (255, 255, 255)),
-    "levels": minecraft_font_small.render("Levels", True, (255, 255, 255)),
-    "tutorials": minecraft_font_small.render("Tutorials", True, (255, 255, 255)),
-    "options": minecraft_font_small.render("Options...", True, (255, 255, 255)),
-    "quit": minecraft_font_small.render("Quit Game", True, (255, 255, 255))
+    "play": render_small_text("Play"),
+    "levels": render_small_text("Levels"),
+    "tutorials": render_small_text("Tutorials"),
+    "options": render_small_text("Options..."),
+    "quit": render_small_text("Quit Game")
 }
 
 level_menu_text = {
-    "lvl_builder": minecraft_font_small.render("Level Builder", True, (255, 255, 255)),
-    "your_levels": minecraft_font_small.render("Your levels", True, (255, 255, 255)),
-    "debug_challenge": minecraft_font_small.render("Debug challenges", True, (255, 255, 255))
+    "lvl_builder": render_small_text("Level Builder"),
+    "your_levels": render_small_text("Your levels"),
+    "debug_challenge": render_small_text("Debug challenges")
 }
 
 options_text = {
-    "skins": minecraft_font_small.render("Skins", True, (255, 255, 255)),
-    "clear_progress": minecraft_font_small.render("Clear Progress (Exit's app)", True, (255, 255, 255)),
-    "audio_on": minecraft_font_small.render("Audio: On", True, (255, 255, 255)),
-    "audio_off": minecraft_font_small.render("Audio: Off", True, (255, 255, 255)),
-    "fx_on": minecraft_font_small.render("FX: On", True, (255, 255, 255)),
-    "fx_off": minecraft_font_small.render("FX: Off", True, (255, 255, 255)),
-    "python": minecraft_font_small.render("Programming language: Python", True, (255, 255, 255)),
-    "c": minecraft_font_small.render("Programming language: C", True, (255, 255, 255)),
-    "c++": minecraft_font_small.render("Programming language: C++", True, (255, 255, 255)),
+    "skins": render_small_text("Skins"),
+    "clear_progress": render_small_text("Clear Progress (Exit's app)"),
+    "audio_on": render_small_text("Audio: On"),
+    "audio_off": render_small_text("Audio: Off"),
+    "fx_on": render_small_text("FX: On"),
+    "fx_off": render_small_text("FX: Off"),
+    "python": render_small_text("Programming language: Python"),
+    "c": render_small_text("Programming language: C"),
+    "c++": render_small_text("Programming language: C++"),
 }
 
 #music
@@ -85,7 +90,10 @@ player_levels = load_json_file(PATH / "levels" / "player_levels.json")
 
 stevexy = [0, 510]
 
-game_utils = GameUtils(window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, PATH)
+languages = ["Python", "C", "C++"]
+code_lang = options["code_lang"]
+
+game_utils = GameUtils(window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, PATH, languages)
 loaders = Loaders(window, minecraft_font_small, clock, time, PATH)
 
 game_levels = []
@@ -113,9 +121,6 @@ if not music_on:
 code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 pygame.key.set_repeat(200, 25)
 
-languages = ["Python", "C", "C++"]
-code_lang = options["code_lang"]
-
 code_runned = False
 level_finished = False
 grades = [0, 0]
@@ -131,8 +136,13 @@ def play_next_track():
             game_utils.play_next_track()
 
 def menu():
-    big_title = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "Code_Craft.png"), (491, 127))
-    emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
+    big_title = get_scaled_img(PATH / "drawable" / "Code_Craft.png", (491, 127))
+    emerald = get_scaled_img(PATH / "drawable" / "emerald.png", (32, 32))
+    
+    game_utils.background()
+    window.blit(big_title, (374, 60))
+    window.blit(emerald, (1210, 0))
+    
     while True:
         play_next_track()
 
@@ -162,13 +172,8 @@ def menu():
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
                     #Exits the game if Quit Game button is clicked
                     exit()
-        
-        game_utils.background()
-
-        window.blit(big_title, (374, 60))
 
         #Emerald count
-        window.blit(emerald, (1210, 0))
         window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 8.8))
 
         game_utils.menu_button(420, 250, 594, menu_text["play"], 400, 40, mouse)
@@ -181,7 +186,8 @@ def menu():
 
         game_utils.menu_button(625, 420, 659, menu_text["quit"], 195, 40, mouse)
 
-        pygame.display.flip()    
+        pygame.display.update()
+        clock.tick(60)    
 
 def level_menu():
     while True:
@@ -227,7 +233,7 @@ def level_menu():
 
                 text_width = minecraft_font_small.size(str(lvl.level))[0]
 
-                window.blit(minecraft_font_small.render(str(lvl.level), True, (255, 255, 255)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
+                window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
 
                 if not lvl.unlocked:
                     game_utils.trans_surface(lvl.size, lvl.size, (0, 0, 0, 50), lvl.x, lvl.y)
@@ -242,7 +248,8 @@ def level_menu():
 
         game_utils.menu_button(1050, 550, 1063, level_menu_text["your_levels"], 160, 40, mouse)
         
-        pygame.display.flip()
+        pygame.display.update()
+        clock.tick(60)
 
 def your_levels_menu():
     while True:
@@ -280,13 +287,14 @@ def your_levels_menu():
 
                 text_width = minecraft_font_small.size(str(lvl.level))[0]
 
-                window.blit(minecraft_font_small.render(str(lvl.level), True, (255, 255, 255)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
+                window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
 
                 if lvl.hover(mouse[0], mouse[1]):
                     pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
                     game_utils.button(play_level_button, lvl.x, lvl.y)
         
-        pygame.display.flip()
+        pygame.display.update()
+        clock.tick(60)
 
 def level_builder():
     saved = False
@@ -432,7 +440,7 @@ def level_builder():
         game_utils.button(run_button, 605, 15)
 
         #path select
-        path_button = pygame.transform.scale(pygame.image.load(PATH / "blocks" / path_block), (28, 28))
+        path_button = get_scaled_img(PATH / "blocks" / path_block, (28, 28))
         window.blit(path_button, (605, 60))
         if 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
             game_utils.description("Set path block")
@@ -445,7 +453,8 @@ def level_builder():
         #save button
         game_utils.button(accept_button, 605, 100)
 
-        pygame.display.flip()
+        pygame.display.update()
+        clock.tick(60)
 
 def tutorial():
     while True:
@@ -470,7 +479,8 @@ def tutorial():
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
-        pygame.display.flip()
+        pygame.display.update()
+        clock.tick(60)
 
 def options_win():
     global music_on, fx_on, code_lang
@@ -547,7 +557,6 @@ def options_win():
         else:
             game_utils.menu_button(420, 180, 573, options_text["fx_off"], 400, 40, mouse)
 
-        #game_utils.menu_button(420, 230, 432+(380-minecraft_font_small.size(f"Programming language: {languages[options['code_lang']]}")[0])//2, f"Programming language: {languages[options['code_lang']]}", 400, 40, mouse)
         if code_lang == 0:
             game_utils.menu_button(420, 230, 430, options_text["python"], 400, 40, mouse)
         elif code_lang == 1:
@@ -564,7 +573,8 @@ def options_win():
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
-        pygame.display.flip()
+        pygame.display.update()
+        clock.tick(60)
 
 def skins():
     messages = []
@@ -608,16 +618,16 @@ def skins():
             pygame.draw.rect(window, (130, 130, 130), (skin.x, skin.y, skin.size, skin.size))
             pygame.draw.rect(window, (0, 0, 0), (skin.x, skin.y, skin.size, skin.size), 1)
 
-            skin_image = pygame.transform.scale(pygame.image.load(PATH / "skins" / f"{skin.name}.png"), (skin.size, skin.size))
+            skin_image = get_scaled_img(PATH / "skins" / f"{skin.name}.png", (skin.size, skin.size))
 
             window.blit(skin_image, (skin.x, skin.y))
 
             if not skin.unlocked:
                 game_utils.trans_surface(skin.size, skin.size, (0, 0, 0, 50), skin.x, skin.y)
-                emerald = pygame.transform.scale(pygame.image.load(PATH / "drawable" / "emerald.png"), (32, 32))
+                emerald = get_scaled_img(PATH / "drawable" / "emerald.png", (32, 32))
                 text_width = minecraft_font_small.size(str(skin.price))[0]
                 window.blit(emerald, (skin.x + (skin.size-text_width)//2-17, skin.y+24))
-                window.blit(minecraft_font_small.render(str(skin.price), True, (255, 255, 255)), (skin.x + (skin.size-text_width)//2 + 11, skin.y+30))
+                window.blit(render_small_text(str(skin.price)), (skin.x + (skin.size-text_width)//2 + 11, skin.y+30))
 
             if skin.name == data["skin"]:
                 pygame.draw.rect(window, (0, 255, 0), (skin.x, skin.y, skin.size, skin.size), 2)
@@ -635,7 +645,8 @@ def skins():
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
 
-        pygame.display.flip()
+        pygame.display.update()
+        clock.tick(60)
 
 def game(level, player_l = False):
     global code_lang, code_runned, level_finished, grades
@@ -659,6 +670,11 @@ def game(level, player_l = False):
     code_input.cursor_pos = 0
     text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
     code_input.set_text(text_path)
+
+    if not player_l:
+        book_text = game_utils.render_book_text(level, code_lang)
+
+    blocks = game_utils.render_blocks(level, player_l)
     if level >= 10:
         xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
         stevexy[0] = xy[0]*85
@@ -685,7 +701,7 @@ def game(level, player_l = False):
                     else:
                         menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
-                    if level >= 10:
+                    if not player_l and level >= 10:
                         game_levels[level].text_closed = True
                     code_runned = True
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
@@ -703,6 +719,9 @@ def game(level, player_l = False):
                         write_to_json(PATH / "levels" / "levels.json", levels)
                         messages = []
                         level_finished = False
+                        blocks = game_utils.render_blocks(level, player_l)
+                        if not player_l:
+                            book_text = game_utils.render_book_text(level, code_lang)
                         restart()
                 elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and (level >= 10 or player_l):
                     #Eneters the 1v1 mode if 1v1 button is clicked
@@ -753,8 +772,9 @@ def game(level, player_l = False):
                     else:
                         messages.append("Buy Hint 1 first.")
                 elif 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
-                    restart()
-                    timed_start = time.time()
+                    if not player_l:
+                        restart()
+                        timed_start = time.time()
                 elif not player_l and not game_levels[level].text_closed:
                     #Changes showed page if Book is not closed
                     if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
@@ -858,12 +878,19 @@ def game(level, player_l = False):
                     game_utils.description("Hint 2. (15 emeralds)")
                 game_utils.trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
 
+            if 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
+                game_utils.description("Timed challenge")
+                game_utils.trans_surface(20, 20, (170, 170, 170, 120), 90, 598)
+
+            #clock_button
+            game_utils.button(clock_button, 90, 598)
+
         #next_button
         if not player_l and level_finished and level < 36:
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
                 game_utils.description("Next level")
                 game_utils.trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
-            game_utils.button(accept_button, 605, 100)
+            game_utils.button(accept_button, 562, 592)
 
         #1v1 button
         if level >= 10 or player_l:
@@ -889,25 +916,13 @@ def game(level, player_l = False):
                 #exit_1v1_button
                 game_utils.button(close_1v1_button, 668, 598)
 
-        if 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
-            game_utils.description("Timed challenge")
-            game_utils.trans_surface(20, 20, (170, 170, 170, 120), 90, 598)
-
-        #clock_button
-        game_utils.button(clock_button, 90, 598)
-
 
         #blocks
         i = 0
         j = 0
         while i < 595:
             while j < 595:
-                level_key = f"level{level}"
-                block_path = PATH / "blocks" / f"{levels[level_key][0]['blocks'][j//85][i//85]}" if not player_l else PATH / "blocks" / f"{player_levels[level_key][0]['blocks'][j//85][i//85]}"
-                block = pygame.image.load(block_path)
-                block = pygame.transform.scale(block, (85, 85))
-         
-                window.blit(block, (i, j))
+                window.blit(blocks[j//85][i//85], (i, j))
                 pygame.draw.rect(window, (0, 0, 0), (i, j, 85, 85), 1)
                 j += 85
             j = 0
@@ -915,11 +930,8 @@ def game(level, player_l = False):
 
         #book
         if not player_l and not game_levels[level].text_closed:
-            book = pygame.transform.scale(book, (800, 800))
-
             window.blit(book, (6, 12))
-
-            game_utils.render_text(115, 63, levels[f"level{level}"][0][f"text_{languages[code_lang]}"][game_levels[level].text_page], 28.8)
+            game_utils.render_text(115, 63, book_text[game_levels[level].text_page], 28.8)
 
             if game_levels[level].text_page < levels[f"level{level}"][0]["pages"]-1:
                 game_utils.button(page_forward_button, 410, 515)
@@ -949,7 +961,7 @@ def game(level, player_l = False):
             minutes = int(timed_time // 60)
             seconds = int(timed_time % 60)
 
-            window.blit(minecraft_font_small.render(f"{minutes:02}:{seconds:02}", True, (255, 255, 255)), (1170, 10))
+            window.blit(render_small_text(f"{minutes:02}:{seconds:02}"), (1170, 10))
 
         #code
         if code_runned:

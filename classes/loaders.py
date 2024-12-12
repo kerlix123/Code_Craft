@@ -1,17 +1,15 @@
 import pygame
-PATH = None
 
 class Loaders:
     def __init__(self, window, minecraft_font_small, clock, time, path):
-        global PATH
         self.window = window
         self.minecraft_font_small = minecraft_font_small
         self.clock = clock
         self.time = time
-        PATH = path
+        self.PATH = path
 
     def loading_screen(self):
-        background = pygame.image.load(PATH / "drawable" / "logo.png")
+        background = pygame.image.load(self.PATH / "drawable" / "logo.png")
         background = pygame.transform.scale(background, (1484, 620))
 
         loading_bar_width = 600
@@ -105,7 +103,7 @@ class Loaders:
         finished_typing = False
         start_fade_out = False
 
-        big_title = pygame.image.load(PATH / "drawable" / "Code_Craft.png")
+        big_title = pygame.image.load(self.PATH / "drawable" / "Code_Craft.png")
         big_title = pygame.transform.scale(big_title, (491, 127))
 
         fade_alpha = 0
@@ -113,7 +111,7 @@ class Loaders:
 
         fade_out_alpha = 255
 
-        background = pygame.image.load(PATH / "drawable" / "background.png")
+        background = pygame.image.load(self.PATH / "drawable" / "background.png")
         background = pygame.transform.scale(background, (1240, 620))
 
         while True:

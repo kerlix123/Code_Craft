@@ -1,6 +1,6 @@
 import pygame
 class GameUtils:
-    def __init__(self, window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, path):
+    def __init__(self, window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, path, languages):
         self.window = window
         self.playlist = playlist
         self.current_song_index = current_song_index
@@ -14,6 +14,7 @@ class GameUtils:
         self.player_levels = player_levels
         self.time = time
         self.PATH = path
+        self.languages = languages
         self.background_photo = pygame.transform.scale(pygame.image.load(self.PATH / "drawable" / "background.png"), (1240, 620))
         self.background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
         self.background_overlay.fill((0, 0, 0, 50))
@@ -48,7 +49,7 @@ class GameUtils:
 
     def render_text(self, x, y, text, inc):
         for el in text:
-            self.window.blit(self.minecraft_font_book.render(el, True, (0, 0, 0)), (x, y))
+            self.window.blit(el, (x, y))
             y += inc
 
     def minecraft_cmd(self, l, x, length, start_y):
@@ -90,3 +91,36 @@ class GameUtils:
         pygame.display.update()
         self.clock.tick(60)
         self.time.sleep(0.1)
+
+    def render_blocks(self, level, player_l):
+        blocks = []
+        level_key = f"level{level}"
+        block_size = 85
+        block_paths = {}
+
+        # Preload all unique block images
+        for row in range(7):
+            blocks.append([])
+            for col in range(7):
+                # Select the correct block based on the level and player context
+                if not player_l:
+                    block_type = self.levels[level_key][0]['blocks'][row][col]
+                else:
+                    block_type = self.player_levels[level_key][0]['blocks'][row][col]
+                
+                block_path = self.PATH / "blocks" / f"{block_type}"
+                
+                # Cache the block images to avoid loading and scaling every time
+                if block_path not in block_paths:
+                    block_image = pygame.image.load(block_path)
+                    block_image = pygame.transform.scale(block_image, (block_size, block_size))
+                    block_paths[block_path] = block_image
+                
+                blocks[row].append(block_paths[block_path])
+        return blocks
+
+    def render_book_text(self, level, code_lang):
+        return [
+            [self.minecraft_font_book.render(row, True, (0, 0, 0)) for row in page]
+            for page in self.levels[f"level{level}"][0][f"text_{self.languages[code_lang]}"]
+        ]
