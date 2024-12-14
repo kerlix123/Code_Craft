@@ -1,4 +1,4 @@
-import pygame, random, json, time
+import pygame, random, json, time, math
 from classes.pygametextboxinput import *
 from classes.code_runner import *
 from pathlib import Path
@@ -36,6 +36,7 @@ clock_button = get_scaled_img(PATH / "drawable" / "clock.png", (20, 20))
 book = get_scaled_img(PATH / "drawable" / "book2.png", (800, 800))
 page_forward_button = get_scaled_img(PATH / "drawable" / "page_forward.png", (42, 24))
 page_backward_button = get_scaled_img(PATH / "drawable" / "page_backward.png", (42, 24))
+not_saved = get_scaled_img(PATH / "drawable" / "not_saved.png", (15, 15)).convert_alpha()
 
 def render_small_text(text):
     return minecraft_font_small.render(text, True, (255, 255, 255))
@@ -297,6 +298,7 @@ def your_levels_menu():
         clock.tick(60)
 
 def level_builder():
+    messages = []
     saved = False
     curr_level = player_levels["last_level"]+1
     plus_x_y = [0, 0]
@@ -310,6 +312,8 @@ def level_builder():
     start = []
     path_block = "plus.png"
     path_select = False
+    end = None
+    time = 0
     while True:
         play_next_track()
         events = pygame.event.get()
@@ -318,6 +322,9 @@ def level_builder():
             if event.type == pygame.QUIT:
                 exit()
             if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
+                    #Clears the messages if Ctrl+K/Cmd+K is clicked
+                    messages = []
                 key = pygame.key.name(event.key)
                 if key == "up":
                     plus_x_y[1] = (plus_x_y[1] - 1) % 7  
@@ -332,6 +339,7 @@ def level_builder():
                     #Changes the block that is going to be edited if user clicked on it
                     plus_x_y = [mouse[0]//85, mouse[1]//85]
                 elif 675 <= mouse[0] <= 1184 and 30 <= mouse[1] <= 380:
+                    saved = False
                     #Sets the block at plus_x_y to block from right side that is clicked
                     a = False
                     for el in blocks:
@@ -342,10 +350,19 @@ def level_builder():
                             path_block = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
                             path_select = False
                         else:
+                            if end and plus_x_y == end[::-1]:
+                                end = None
                             blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
                     elif not a:
-                        blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                        #if block is trapdoor
+                        if end:
+                            blocks[end[0]][end[1]] = "plus.png"
+                            blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                        else:
+                            blocks[plus_x_y[1]][plus_x_y[0]] = block_file_names[(mouse[1]-40)//85][(mouse[0]-675)//85]
+                        end = [plus_x_y[1], plus_x_y[0]]
                 elif 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
+                    saved = False
                     #Sets the start at plus_x_y if Set start position button is clicked
                     start = plus_x_y.copy()
                 elif 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
@@ -353,7 +370,7 @@ def level_builder():
                     path_select = True
                 elif 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
                     #Saves the level if Save level button is clicked
-                    if start:
+                    if start and end:
                         curr = new_level_curr.copy()
                         curr["steve_xy"] = [start[0], 6-start[1]]
                         curr["blocks"] = blocks
@@ -361,6 +378,8 @@ def level_builder():
                         player_levels[f"level{curr_level}"] = [curr]
                         write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                         saved = True
+                    else:
+                        messages.append("Set start and end positions first!")
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     #Exits and updates the player_levels.json to fully save level if Exit button is clicked
                     if saved:
@@ -380,7 +399,6 @@ def level_builder():
                         write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                     play_click_sound()
                     level_menu()
-                    
         game_utils.background()
         game_utils.bg_overlay()
 
@@ -452,6 +470,20 @@ def level_builder():
 
         #save button
         game_utils.button(accept_button, 605, 100)
+
+        #not saved
+        if not saved:
+            time += 0.03
+            alpha = 240 + 127 * math.sin(time)
+
+            # Create a new surface with the image and apply alpha
+            faded_image = not_saved.copy()
+            faded_image.set_alpha(alpha)
+
+            # Draw the faded image
+            window.blit(faded_image, (613, 145))
+
+        game_utils.minecraft_cmd(messages, 0, 595, 590)
 
         pygame.display.update()
         clock.tick(60)
