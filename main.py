@@ -1,116 +1,25 @@
-import pygame, random, json, time, math
+import pygame, time, math
+
+pygame.init()
+window = pygame.display.set_mode((1240, 620))
+
 from classes.pygametextboxinput import *
 from classes.code_runner import *
-from pathlib import Path
 from classes.def_codes import *
 from classes.classes_ import *
 from classes.utils import *
 from classes.loaders import *
+from classes.vars import *
 
-PATH = Path.cwd()
+#!!!
+#!!!Most of the global variables are declared in the vars.py file!
+#!!!
 
-pygame.init()
-
-window = pygame.display.set_mode((1240, 620))
 pygame.display.set_caption("Code_Craft")
 pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "crafting_table.png"))
+pygame.key.set_repeat(200, 25)
 clock = pygame.time.Clock()
 
-minecraft_font_small = pygame.font.Font(PATH / "Minecraft.ttf", 25)
-minecraft_font_smaller = pygame.font.Font(PATH / "Minecraft.ttf", 15)
-minecraft_font_book = pygame.font.Font(PATH / "Minecraft.ttf", 20)
-
-def get_scaled_img(img, size):
-    return pygame.transform.scale(pygame.image.load(img), size)
-
-back_button = get_scaled_img(PATH / "drawable" / "unselect.png", (40, 40))
-play_level_button = get_scaled_img(PATH / "drawable" / "select.png", (80, 80))
-close_button = get_scaled_img(PATH / "drawable" / "close.png", (22, 22))
-run_button = get_scaled_img(PATH / "drawable" / "select.png", (28, 28))
-accept_button = get_scaled_img(PATH / "drawable" / "accept.png", (29, 29))
-restart_button = get_scaled_img(PATH / "drawable" / "reject.png", (26, 26))
-torch1_button = get_scaled_img(PATH / "drawable" / "torch1.png", (31, 31))
-torch2_button = get_scaled_img(PATH / "drawable" / "torch2.png", (31, 31))
-close_1v1_button = get_scaled_img(PATH / "drawable" / "close.png", (16, 16))
-clock_button = get_scaled_img(PATH / "drawable" / "clock.png", (20, 20))
-book = get_scaled_img(PATH / "drawable" / "book2.png", (800, 800))
-page_forward_button = get_scaled_img(PATH / "drawable" / "page_forward.png", (42, 24))
-page_backward_button = get_scaled_img(PATH / "drawable" / "page_backward.png", (42, 24))
-not_saved = get_scaled_img(PATH / "drawable" / "not_saved.png", (15, 15)).convert_alpha()
-
-def render_small_text(text):
-    return minecraft_font_small.render(text, True, (255, 255, 255))
-
-menu_text = {
-    "play": render_small_text("Play"),
-    "levels": render_small_text("Levels"),
-    "tutorials": render_small_text("Tutorials"),
-    "options": render_small_text("Options..."),
-    "quit": render_small_text("Quit Game")
-}
-
-level_menu_text = {
-    "lvl_builder": render_small_text("Level Builder"),
-    "your_levels": render_small_text("Your levels"),
-    "debug_challenge": render_small_text("Debug challenges")
-}
-
-options_text = {
-    "skins": render_small_text("Skins"),
-    "clear_progress": render_small_text("Clear Progress (Exit's app)"),
-    "audio_on": render_small_text("Audio: On"),
-    "audio_off": render_small_text("Audio: Off"),
-    "fx_on": render_small_text("FX: On"),
-    "fx_off": render_small_text("FX: Off"),
-    "python": render_small_text("Programming language: Python"),
-    "c": render_small_text("Programming language: C"),
-    "c++": render_small_text("Programming language: C++"),
-}
-
-#music
-current_song_index = 0
-playlist = [PATH / "music" / "HelloWorld.mp3",
-            PATH / "music" / "Me.mp3", 
-            PATH / "music" / "Valley.mp3"]
-
-def load_json_file(file):
-    with open(file) as json_file:
-        return json.load(json_file)
-    
-def write_to_json(file, input_dict):
-    with open(file, 'w') as json_file:
-        json.dump(input_dict, json_file, indent=4)
-
-levels = load_json_file(PATH / "levels" / "levels.json")
-
-options = load_json_file(PATH / "options.json")
-
-data = load_json_file(PATH / "data.json")
-
-player_levels = load_json_file(PATH / "levels" / "player_levels.json")
-
-stevexy = [0, 510]
-
-languages = ["Python", "C", "C++"]
-code_lang = options["code_lang"]
-
-game_utils = GameUtils(window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, PATH, languages)
-loaders = Loaders(window, minecraft_font_small, clock, time, PATH)
-
-game_levels = []
-for p in levels["level_p"]:
-    game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
-
-player_game_levels = []
-if player_levels["last_level"] > 0:
-    for p in player_levels["level_p"]:
-        player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
-
-game_skins = []
-for k in data["skins"]:
-    game_skins.append(Skin(k, data["skins"][k][0], data["skins"][k][1], data["skins"][k][2], data["skins"][k][3]))
-
-random.shuffle(playlist)
 pygame.mixer.music.load(playlist[current_song_index])
 pygame.mixer.music.play()
 
@@ -119,22 +28,10 @@ fx_on = options["fx_on"]
 if not music_on:
     pygame.mixer.music.pause()
 
+game_utils = GameUtils(window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, PATH, languages)
+loaders = Loaders(window, minecraft_font_small, clock, time, PATH)
+
 code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
-pygame.key.set_repeat(200, 25)
-
-code_runned = False
-level_finished = False
-grades = [0, 0]
-
-click_sound = pygame.mixer.Sound(PATH / "sounds" / "minecraft_click.mp3")
-
-def play_click_sound():
-    if fx_on:
-        click_sound.play()
-
-def play_next_track():
-    if not pygame.mixer.music.get_busy() and music_on:
-            game_utils.play_next_track()
 
 def menu():
     big_title = get_scaled_img(PATH / "drawable" / "Code_Craft.png", (491, 127))
@@ -143,9 +40,9 @@ def menu():
     game_utils.background()
     window.blit(big_title, (374, 60))
     window.blit(emerald, (1210, 0))
-    
+
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
 
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
@@ -155,20 +52,20 @@ def menu():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 420 <= mouse[0] <= 820 and 250 <= mouse[1] <= 290:
                     #Opens current level if Play button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     if levels["last_finished_level"] < 36:
                         game(levels["last_finished_level"]+1)
                 elif 420 <= mouse[0] <= 820 and 300 <= mouse[1] <= 340:
                     #Opens level menu if Levels button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     level_menu()
                 elif 420 <= mouse[0] <= 820 and 350 <= mouse[1] <= 390:
                     #Opens tutorial window if Tutorial button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     tutorial()
                 elif 420 <= mouse[0] <= 615 and 420 <= mouse[1] <= 460:
                     #Opens options window if Options... button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     options_win()
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
                     #Exits the game if Quit Game button is clicked
@@ -192,7 +89,7 @@ def menu():
 
 def level_menu():
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
         for event in events:
@@ -201,20 +98,20 @@ def level_menu():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 830 <= mouse[0] <= 1030 and 550 <= mouse[1] <= 590:
                     #Opens level builder if Level Builder button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     level_builder()
                 if 1050 <= mouse[0] <= 1210 and 550 <= mouse[1] <= 590:
                     #Opens players level menu if Your levels button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     your_levels_menu()
                 for lvl in game_levels:
                     #Opens level on which player clicked
                     if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
-                        play_click_sound
+                        game_utils.play_click_sound(fx_on)
                         game(lvl.level)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to main menu if Back button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     menu()
         
         game_utils.background()
@@ -254,7 +151,7 @@ def level_menu():
 
 def your_levels_menu():
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
         mouse = pygame.mouse.get_pos()
         events = pygame.event.get()
         for event in events:
@@ -264,11 +161,11 @@ def your_levels_menu():
                 for lvl in player_game_levels:
                     #Opens level on which player clicked
                     if lvl.hover(mouse[0], mouse[1]) and lvl.level != -1:
-                        play_click_sound()
+                        game_utils.play_click_sound(fx_on)
                         game(lvl.level, True)
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to Level menu if Back button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     level_menu()
         
         game_utils.background()
@@ -315,7 +212,7 @@ def level_builder():
     end = None
     time = 0
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -376,7 +273,7 @@ def level_builder():
                         curr["blocks"] = blocks
                         curr["path_block"] = path_block
                         player_levels[f"level{curr_level}"] = [curr]
-                        write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+                        game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                         saved = True
                     else:
                         messages.append("Set start and end positions first!")
@@ -396,8 +293,8 @@ def level_builder():
                         if player_levels["last_level"] > 0:
                             for p in player_levels["level_p"]:
                                 player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
-                        write_to_json(PATH / "levels" / "player_levels.json", player_levels)
-                    play_click_sound()
+                        game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+                    game_utils.play_click_sound(fx_on)
                     level_menu()
         game_utils.background()
         game_utils.bg_overlay()
@@ -490,7 +387,7 @@ def level_builder():
 
 def tutorial():
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -499,7 +396,7 @@ def tutorial():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to main menu if Back button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     menu()
                     
         game_utils.background()
@@ -517,7 +414,7 @@ def tutorial():
 def options_win():
     global music_on, fx_on, code_lang
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -526,11 +423,11 @@ def options_win():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to main menu if Back button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     menu()
                 if 420 <= mouse[0] <= 820 and 80 <= mouse[1] <= 120:
                     #Opens Skins menu if Skins button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     skins()
                 if 420 <= mouse[0] <= 820 and 130 <= mouse[1] <= 170:
                     #Turns music on/off and writes it to options if Audio: button is clicked
@@ -540,23 +437,23 @@ def options_win():
                         pygame.mixer.music.unpause()
                     music_on = not music_on
                     options["music_on"] = music_on
-                    write_to_json(PATH / "options.json", options)
+                    game_utils.write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 180 <= mouse[1] <= 220:
                     #Turns fx on/off and writes it to options if FX: button is clicked
                     fx_on = not fx_on
                     options["fx_on"] = fx_on
-                    write_to_json(PATH / "options.json", options)
+                    game_utils.write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
                     #Changes main programming language and writes it to options if Programming language: button is clicked
                     code_lang = (code_lang + 1) % 3
                     options["code_lang"] = code_lang
-                    write_to_json(PATH / "options.json", options)
+                    game_utils.write_to_json(PATH / "options.json", options)
                 if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
                     #Clears game progress if Clear Progress button is clicked
                     options["music_on"] = True
                     options["fx_on"] = True
                     options["code_lang"] = 0
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     levels["last_finished_level"] = 0
                     for k in data["skins"]:
                         if k != "steve":
@@ -569,9 +466,9 @@ def options_win():
                     data["emeralds"] = 0
                     data["skin"] = "steve"
                     data["first_play"] = True
-                    write_to_json(PATH / "levels" / "levels.json", levels)
-                    write_to_json(PATH / "data.json", data)
-                    write_to_json(PATH / "options.json", options)
+                    game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
+                    game_utils.write_to_json(PATH / "data.json", data)
+                    game_utils.write_to_json(PATH / "options.json", options)
                     exit()
                     
         game_utils.background()
@@ -611,7 +508,7 @@ def options_win():
 def skins():
     messages = []
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
         events = pygame.event.get()
         mouse = pygame.mouse.get_pos()
         for event in events:
@@ -620,22 +517,22 @@ def skins():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to Options menu if Back button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     options_win()
                 for skin in game_skins:
                     #Makes the clicked skin default if skin is clicked
                     if skin.hover(mouse[0], mouse[1]):
-                        play_click_sound()
+                        game_utils.play_click_sound(fx_on)
                         if skin.unlocked:
                             data["skin"] = skin.name
-                            write_to_json(PATH / "data.json", data)
+                            game_utils.write_to_json(PATH / "data.json", data)
                         else:
                             if data["emeralds"] >= skin.price:
                                 skin.unlocked = True
                                 data["skins"][skin.name][3] = True
                                 data["skin"] = skin.name
                                 data["emeralds"] -= skin.price
-                                write_to_json(PATH / "data.json", data)
+                                game_utils.write_to_json(PATH / "data.json", data)
                             else:
                                 messages.append("Not enough emeralds!")
             if event.type == pygame.KEYDOWN:
@@ -712,7 +609,7 @@ def game(level, player_l = False):
         stevexy[0] = xy[0]*85
         stevexy[1] = (6-xy[1])*85
     while True:
-        play_next_track()
+        game_utils.play_next_track(music_on)
         window.fill((30, 30, 30))
 
         mouse = pygame.mouse.get_pos()
@@ -727,7 +624,7 @@ def game(level, player_l = False):
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     #Returns to Main menu or Player levels menu if Back button is clicked
-                    play_click_sound()
+                    game_utils.play_click_sound(fx_on)
                     if player_l:
                         your_levels_menu()
                     else:
@@ -748,7 +645,7 @@ def game(level, player_l = False):
                             levels["last_finished_level"] = level
                         level += 1
                         game_levels[level-1].unlocked = True
-                        write_to_json(PATH / "levels" / "levels.json", levels)
+                        game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
                         messages = []
                         level_finished = False
                         blocks = game_utils.render_blocks(level, player_l)
@@ -784,8 +681,8 @@ def game(level, player_l = False):
                             data["emeralds"] -= 5
                             messages.append((levels[f"level{level}"][0][f"hint1_{languages[code_lang]}"]))
                             levels[f"level{level}"][0][f"hint1_unlocked"] = True
-                            write_to_json(PATH / "levels" / "levels.json", levels)
-                            write_to_json(PATH / "data.json", data) 
+                            game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
+                            game_utils.write_to_json(PATH / "data.json", data) 
                         else:
                             messages.append("Not enough emeralds.")
                 elif not player_l and 70 <= mouse[0] <= 84 and 597 <= mouse[1] <= 617:
@@ -797,8 +694,8 @@ def game(level, player_l = False):
                             data["emeralds"] -= 15
                             messages.append((levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"]))
                             levels[f"level{level}"][0][f"hint2_unlocked"] = True
-                            write_to_json(PATH / "levels" / "levels.json", levels)
-                            write_to_json(PATH / "data.json", data)
+                            game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
+                            game_utils.write_to_json(PATH / "data.json", data)
                         else:
                             messages.append("Not enough emeralds.")
                     else:
@@ -861,7 +758,7 @@ def game(level, player_l = False):
         pygame.draw.rect(window, (0, 118, 197), (0, 595, 1240, 25))
 
         #language
-        window.blit(minecraft_font_smaller.render(languages[code_lang], True, (255, 255, 255)), (lang_text_x, 600))
+        window.blit(game_text[code_lang], (lang_text_x, 600))
 
         if lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
             game_utils.description("Change language")
@@ -927,16 +824,16 @@ def game(level, player_l = False):
         #1v1 button
         if level >= 10 or player_l:
             if not one_v_one:
-                window.blit(minecraft_font_smaller.render("1v1", True, (255, 255, 255)), (630, 600))
+                window.blit(game_text["1v1"], (630, 600))
                 if 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615:
                     game_utils.description("1 vs 1 with a friend")
                     game_utils.trans_surface(24, 15, (170, 170, 170, 120), 630, 600)
             else:
-                window.blit(minecraft_font_smaller.render("1.", True, (255, 255, 255)), (630, 600))
+                window.blit(game_text["1."], (630, 600))
                 if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615:
                     game_utils.description("1st player")
                     game_utils.trans_surface(10, 15, (170, 170, 170, 120), 630, 600)
-                window.blit(minecraft_font_smaller.render("2.", True, (255, 255, 255)), (650, 600))
+                window.blit(game_text["2."], (650, 600))
                 if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615:
                     game_utils.description("2nd player")
                     game_utils.trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
@@ -1244,7 +1141,7 @@ def game(level, player_l = False):
 
                 data["emeralds"] += emeralds
                 level_finished = True   
-                write_to_json(PATH / "data.json", data)
+                game_utils.write_to_json(PATH / "data.json", data)
 
             code_runned = False
 
@@ -1259,6 +1156,6 @@ def game(level, player_l = False):
 loaders.loading_screen()
 if data["first_play"]:
     data["first_play"] = False
-    write_to_json(PATH / "data.json", data)
+    game_utils.write_to_json(PATH / "data.json", data)
     loaders.display_intro_text()
 menu()

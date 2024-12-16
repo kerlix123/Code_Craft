@@ -1,4 +1,4 @@
-import pygame
+import pygame, json
 class GameUtils:
     def __init__(self, window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, path, languages):
         self.window = window
@@ -18,11 +18,13 @@ class GameUtils:
         self.background_photo = pygame.transform.scale(pygame.image.load(self.PATH / "drawable" / "background.png"), (1240, 620))
         self.background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
         self.background_overlay.fill((0, 0, 0, 50))
+        self.click_sound = pygame.mixer.Sound(self.PATH / "sounds" / "minecraft_click.mp3")
         
-    def play_next_track(self):
-        self.current_song_index = (self.current_song_index + 1) % len(self.playlist)
-        pygame.mixer.music.load(self.playlist[self.current_song_index])
-        pygame.mixer.music.play()
+    def play_next_track(self, music_on):
+        if not pygame.mixer.music.get_busy() and music_on:
+            self.current_song_index = (self.current_song_index + 1) % len(self.playlist)
+            pygame.mixer.music.load(self.playlist[self.current_song_index])
+            pygame.mixer.music.play()
     
     def button(self, b_button, x, y):
         self.window.blit(b_button, (x, y))
@@ -124,3 +126,11 @@ class GameUtils:
             [self.minecraft_font_book.render(row, True, (0, 0, 0)) for row in page]
             for page in self.levels[f"level{level}"][0][f"text_{self.languages[code_lang]}"]
         ]
+    
+    def play_click_sound(self, fx_on):
+        if fx_on:
+            self.click_sound.play()
+
+    def write_to_json(self, file, input_dict):
+        with open(file, 'w') as json_file:
+            json.dump(input_dict, json_file, indent=4)
