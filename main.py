@@ -920,12 +920,9 @@ def game(level, player_l = False):
                     messages.append("Error: " + err)
             else:
                 input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
-                if code_lang == 0:
-                    input_code = '\n'.join(input_code.split("\n")[14:])
-                elif code_lang == 1:
-                    input_code = '\n'.join(input_code.split("\n")[19:])
-                elif code_lang == 2:
-                    input_code = '\n'.join(input_code.split("\n")[26:])
+
+                input_code = '\n'.join(input_code.split("\n"))
+                
                 start_time = time.time()
                 if code_lang == 0:
                     executed_code = exec_code(def_code_python + input_code)

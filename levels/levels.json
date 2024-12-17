@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 23,
+    "last_finished_level": 36,
     "level_p": [
         [
             30,
@@ -3040,9 +3040,9 @@
     ],
     "level9": [
         {
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "solution_Python": [
                 [
                     []
@@ -3295,9 +3295,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 10.",
@@ -3434,9 +3434,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 11.",
@@ -3573,9 +3573,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 12.",
@@ -3712,9 +3712,9 @@
                 0,
                 6
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 13.",
@@ -3851,9 +3851,9 @@
                 3,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 14.",
@@ -3999,9 +3999,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 15.",
@@ -4147,9 +4147,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 16.",
@@ -4295,9 +4295,9 @@
                 3,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 17.",
@@ -4520,9 +4520,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 18.",
@@ -4659,9 +4659,9 @@
                 0,
                 6
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 19.",
@@ -4798,9 +4798,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 20.",
@@ -4937,9 +4937,9 @@
                 3,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 21.",
@@ -5157,9 +5157,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 22.",
@@ -5296,9 +5296,9 @@
                 0,
                 6
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 23.",
@@ -5435,9 +5435,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 24.",
@@ -7389,9 +7389,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\nmob:go-left[7]\nmob;godown{5}",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    go-left[&mob, 7];\n    go_down{&mob, 5};\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    mob:go-left[7];\n    mob;godown{5};\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)\nmob:go-left[7]\nmob;godown{5}",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    go-left[&mob, 7];\n    go_down{&mob, 5};\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    mob:go-left[7];\n    mob;godown{5};\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 33.",
@@ -7507,9 +7507,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\nmob.goright(6)\nmob:go_up(3)\nmob.go_left(2)\nmob.go_up(3)\nmob.go-lef(4)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    goright(&mob, 6);\n    go_up(&mob, 3);\n    go_left(&mob, 2);\n    go_up(&mob, 3);\n    go-lef(&mob, 4);\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    mob.goright(6);\n    mob:go_up(3);\n    mob.go_left(2);\n    mob.go_up(3);\n    mob.go-lef(4);\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)\nmob.goright(6)\nmob:go_up(3)\nmob.go_left(2)\nmob.go_up(3)\nmob.go-lef(4)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    goright(&mob, 6);\n    go_up(&mob, 3);\n    go_left(&mob, 2);\n    go_up(&mob, 3);\n    go-lef(&mob, 4);\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    mob.goright(6);\n    mob:go_up(3);\n    mob.go_left(2);\n    mob.go_up(3);\n    mob.go-lef(4);\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 34.",
@@ -7625,9 +7625,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\nn = 4\nfor i in range[2]:\n    mob.go_up(n)\n    mob.go_right(n)",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        go_up(&mob, n);\n        go_right(&mob, n);\n    }\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        mob.go_up(n);\n        mob.go_right(n);\n    }\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)\nn = 4\nfor i in range[2]:\n    mob.go_up(n)\n    mob.go_right(n)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        go_up(&mob, n);\n        go_right(&mob, n);\n    }\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        mob.go_up(n);\n        mob.go_right(n);\n    }\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 35.",
@@ -7743,9 +7743,9 @@
                 0,
                 0
             ],
-            "input_text_Python": "class Mob:\n    def __init__(self, x, y):\n        self.x = x\n        self.y = y\n    def go_up(self, n):\n        self.y += n\n    def go_down(self, n):\n        self.y -= n\n    def go_right(self, n):\n        self.x += n\n    def go_left(self, n):\n        self.x -= n\n\nmob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(2)\n    mob.go_right(2)\n",
-            "input_text_C": "#include <stdio.h>\nstruct Mob {\n    int x;\n    int y;\n};\nvoid go_up(struct Mob *mob, int n) {\n    mob->y += n;\n}\nvoid go_down(struct Mob *mob, int n) {\n    mob->y -= n;\n}\nvoid go_right(struct Mob *mob, int n) {\n    mob->x += n;\n}\nvoid go_left(struct Mob *mob, int n) {\n    mob->x -= n;\n}\nint main() {\n    struct Mob mob = {0, 0};\n    int i = 0;\n    while (i < 6) {\n        go_up(&mob, 2);\n        go_right(&mob, 2);\n    }\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\n#include <string>\nusing namespace std;\nclass Mob {\n    public:\n        int x;\n        int y;\n        Mob(int a, int b) {\n            x = a;\n            y = b;\n        }\n        void go_up(int n) {\n            y += n;\n        }\n        void go_down(int n) {\n            y -= n;\n        }\n        void go_right(int n) {\n            x += n;\n        }\n        void go_left(int n) {\n            x -= n;\n        }\n};\nint main() {\n    Mob mob(0, 0);\n    int i = 0;\n    while (i < 6) {\n        mob.go_up(2);\n        mob.go_right(2);\n    }\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(2)\n    mob.go_right(2)\n",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    int i = 0;\n    while (i < 6) {\n        go_up(&mob, 2);\n        go_right(&mob, 2);\n    }\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    int i = 0;\n    while (i < 6) {\n        mob.go_up(2);\n        mob.go_right(2);\n    }\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 36.",
