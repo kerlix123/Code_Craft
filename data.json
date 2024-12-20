@@ -1,6 +1,6 @@
 {
     "first_play": false,
-    "skin": "steve",
+    "skin": "alex",
     "skins": {
         "steve": [
             30,
@@ -12,7 +12,7 @@
             130,
             30,
             10,
-            false
+            true
         ],
         "chicken": [
             230,
@@ -99,5 +99,5 @@
             false
         ]
     },
-    "emeralds": 300
+    "emeralds": 290
 }

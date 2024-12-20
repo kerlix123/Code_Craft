@@ -118,7 +118,7 @@ def level_menu():
         game_utils.bg_overlay()
 
         #back_button
-        game_utils.button(back_button, 15, 565)
+        game_utils.button(back_button, 10, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -172,7 +172,7 @@ def your_levels_menu():
         game_utils.bg_overlay()
 
         #back_button
-        game_utils.button(back_button, 15, 565)
+        game_utils.button(back_button, 10, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -403,7 +403,7 @@ def tutorial():
         game_utils.bg_overlay()
 
         #back_button
-        game_utils.button(back_button, 15, 565)
+        game_utils.button(back_button, 10, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -497,7 +497,7 @@ def options_win():
         game_utils.menu_button(420, 280, 452, options_text["clear_progress"], 400, 40, mouse)
 
         #back_button
-        game_utils.button(back_button, 15, 565)
+        game_utils.button(back_button, 10, 565)
 
         if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
             game_utils.trans_surface(30, 30, (170, 170, 170, 120), 14, 571)
@@ -567,7 +567,7 @@ def skins():
                     game_utils.button(play_level_button, skin.x, skin.y)
 
         #back_button
-        game_utils.button(back_button, 15, 565)
+        game_utils.button(back_button, 10, 565)
 
         game_utils.minecraft_cmd(messages, 0, 1240, 620)
 
