@@ -1,4 +1,4 @@
-import pygame, time, math
+import pygame, time, math, sys
 
 pygame.init()
 window = pygame.display.set_mode((1240, 620))
@@ -48,7 +48,8 @@ def menu():
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 420 <= mouse[0] <= 820 and 250 <= mouse[1] <= 290:
                     #Opens current level if Play button is clicked
@@ -69,7 +70,8 @@ def menu():
                     options_win()
                 elif 625 <= mouse[0] <= 820 and 420 <= mouse[1] <= 460:
                     #Exits the game if Quit Game button is clicked
-                    exit()
+                    pygame.quit()
+                    sys.exit()
 
         #Emerald count
         window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 8.8))
@@ -94,7 +96,8 @@ def level_menu():
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 830 <= mouse[0] <= 1030 and 550 <= mouse[1] <= 590:
                     #Opens level builder if Level Builder button is clicked
@@ -156,7 +159,8 @@ def your_levels_menu():
         events = pygame.event.get()
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for lvl in player_game_levels:
                     #Opens level on which player clicked
@@ -217,7 +221,8 @@ def level_builder():
         mouse = pygame.mouse.get_pos()
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     #Clears the messages if Ctrl+K/Cmd+K is clicked
@@ -392,7 +397,8 @@ def tutorial():
         mouse = pygame.mouse.get_pos()
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to main menu if Back button is clicked
@@ -419,7 +425,8 @@ def options_win():
         mouse = pygame.mouse.get_pos()
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to main menu if Back button is clicked
@@ -469,7 +476,8 @@ def options_win():
                     game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
                     game_utils.write_to_json(PATH / "data.json", data)
                     game_utils.write_to_json(PATH / "options.json", options)
-                    exit()
+                    pygame.quit()
+                    sys.exit()
                     
         game_utils.background()
         game_utils.bg_overlay()
@@ -513,7 +521,8 @@ def skins():
         mouse = pygame.mouse.get_pos()
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 15 <= mouse[0] <= 55 and 565 <= mouse[1] <= 605:
                     #Retuns to Options menu if Back button is clicked
@@ -620,7 +629,8 @@ def game(level, player_l = False):
 
         for event in events:
             if event.type == pygame.QUIT:
-                exit()
+                pygame.quit()
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     #Returns to Main menu or Player levels menu if Back button is clicked

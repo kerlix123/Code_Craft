@@ -1,4 +1,4 @@
-import pygame
+import pygame, sys
 
 class Loaders:
     def __init__(self, window, minecraft_font_small, clock, time, path):
@@ -11,6 +11,7 @@ class Loaders:
     def loading_screen(self):
         background = pygame.image.load(self.PATH / "drawable" / "logo.png")
         background = pygame.transform.scale(background, (1484, 620))
+        self.window.blit(background, (-122, 0))
 
         loading_bar_width = 600
         loading_bar_height = 30
@@ -20,6 +21,8 @@ class Loaders:
 
         padding = 5
 
+        border_surface = pygame.Surface((loading_bar_width + 2 * (padding + 2), loading_bar_height + 2 * (padding + 2)), pygame.SRCALPHA)
+
         fade_out = False
         loading_bar_alpha = 255
 
@@ -28,9 +31,7 @@ class Loaders:
             for event in events:
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    exit()
-
-            self.window.blit(background, (-122, 0))
+                    sys.exit()
 
             if loading_progress < loading_bar_width:
                 loading_progress += 10
@@ -41,7 +42,6 @@ class Loaders:
                 if loading_bar_alpha > 0:
                     loading_bar_alpha -= 5
 
-                border_surface = pygame.Surface((loading_bar_width + 2 * (padding + 2), loading_bar_height + 2 * (padding + 2)), pygame.SRCALPHA)
                 border_surface.fill((0, 0, 0, loading_bar_alpha))
                 self.window.blit(border_surface, (loading_bar_x - padding - 2, loading_bar_y - padding - 2))
 
@@ -71,7 +71,7 @@ class Loaders:
             self.clock.tick(60)
 
     def render_text_with_background(self, text, position, font, color, padding=5, bg_alpha=150):
-        """Render text with a background."""
+        #Render text with a background.
         text_surface = font.render(text, True, color)
         text_rect = text_surface.get_rect(topleft=position)
 
@@ -118,7 +118,8 @@ class Loaders:
             events = pygame.event.get()
             for event in events:
                 if event.type == pygame.QUIT:
-                    exit()
+                    pygame.quit()
+                    sys.exit()                      
                 if finished_typing and (event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN):
                     start_fade_out = True
 
@@ -127,7 +128,7 @@ class Loaders:
             background_overlay.fill((0, 0, 0, 50 if not start_fade_out else fade_out_alpha // 5))
             self.window.blit(background_overlay, (0, 0))
 
-            color = (194, 194, 194)
+            color = (194, 194, 194) 
             if not (start_fade_out and text_index <= 0):
                 self.render_text_with_background(text1[:(counter1 // 3)+1], (540, 20), self.minecraft_font_small, color)
 
