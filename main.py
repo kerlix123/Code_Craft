@@ -681,6 +681,7 @@ def game(level, player_l = False):
                 elif lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
                     #Changes the current programming language if Programming language is pressed
                     code_lang = (code_lang + 1) % 3
+                    book_text = game_utils.render_book_text(level, code_lang)
                     restart()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
                     #Buys and displays or just displays first hint when first Hint button is clicked
