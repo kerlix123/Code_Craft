@@ -3849,9 +3849,9 @@
                 0,
                 6
             ],
-            "input_text_Python": "mob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 6)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 6};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 6);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 13.",
@@ -4011,9 +4011,9 @@
                 3,
                 0
             ],
-            "input_text_Python": "mob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(3, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {3, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(3, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 14.",
@@ -4497,9 +4497,9 @@
                 3,
                 0
             ],
-            "input_text_Python": "mob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(3, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {3, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(3, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 17.",
@@ -4908,9 +4908,9 @@
                 0,
                 6
             ],
-            "input_text_Python": "mob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 6)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 6};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 6);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 19.",
@@ -5234,9 +5234,9 @@
                 3,
                 0
             ],
-            "input_text_Python": "mob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(3, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {3, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(3, 0);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 21.",
@@ -5349,7 +5349,7 @@
                     "   i++;",
                     "}",
                     "",
-                   "This code will output:",
+                    "This code will output:",
                     "0",
                     "1",
                     "2",
@@ -5621,9 +5621,9 @@
                 0,
                 6
             ],
-            "input_text_Python": "mob = Mob(0, 0)",
-            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
-            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "input_text_Python": "mob = Mob(0, 6)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 6};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 6);\n\n    return 0;\n}",
             "text_Python": [
                 [
                     "Level 23.",

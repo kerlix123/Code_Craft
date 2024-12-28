@@ -661,7 +661,8 @@ def game(level, player_l = False):
                         blocks = game_utils.render_blocks(level, player_l)
                         if not player_l:
                             book_text = game_utils.render_book_text(level, code_lang)
-                        restart()
+                        restart_text()
+                        restart_mob()
                 elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and (level >= 10 or player_l):
                     #Eneters the 1v1 mode if 1v1 button is clicked
                     one_v_one = True
@@ -682,7 +683,7 @@ def game(level, player_l = False):
                     #Changes the current programming language if Programming language is pressed
                     code_lang = (code_lang + 1) % 3
                     book_text = game_utils.render_book_text(level, code_lang)
-                    restart()
+                    restart_text()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
                     #Buys and displays or just displays first hint when first Hint button is clicked
                     if levels[f"level{level}"][0][f"hint1_unlocked"]:
@@ -713,7 +714,8 @@ def game(level, player_l = False):
                         messages.append("Buy Hint 1 first.")
                 elif 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
                     if not player_l:
-                        restart()
+                        restart_text()
+                        restart_mob()
                         timed_start = time.time()
                 elif not player_l and not game_levels[level].text_closed:
                     #Changes showed page if Book is not closed
@@ -746,7 +748,13 @@ def game(level, player_l = False):
         else:
             code_input.draw(window)
 
-        def restart():
+        def restart_mob():
+            if player_l or level >= 10:
+                xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
+                stevexy[0] = xy[0]*85
+                stevexy[1] = (6-xy[1])*85
+
+        def restart_text():
             if player == 1:
                 code_input.clear_text()
                 text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
@@ -759,10 +767,6 @@ def game(level, player_l = False):
                 code_input_2.set_text(text_path)
                 code_input_2.i = 0
                 code_input_2.cursor_pos = 0
-            if player_l or level >= 10:
-                xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
-                stevexy[0] = xy[0]*85
-                stevexy[1] = (6-xy[1])*85
 
         pygame.draw.rect(window, (205, 205, 205), (0, 0, 595, 595))
 
@@ -868,6 +872,13 @@ def game(level, player_l = False):
             j = 0
             i += 85
 
+        if 10 <= level <= 24 or level >= 33 or player_l:
+            steve = pygame.image.load(PATH / "skins" / f"{data['skin']}.png")
+            steve = pygame.transform.scale(steve, (85, 85))
+        
+            window.blit(steve, (stevexy[0], stevexy[1]))
+            pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
+
         #book
         if not player_l and not game_levels[level].text_closed:
             window.blit(book, (6, 12))
@@ -885,15 +896,9 @@ def game(level, player_l = False):
                 if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539:
                     game_utils.trans_surface(36, 19, (170, 170, 170, 120), 125, 519)
 
-        if level >= 10 or player_l:
-            steve = pygame.image.load(PATH / "skins" / f"{data['skin']}.png")
-            steve = pygame.transform.scale(steve, (85, 85))
-        
-            window.blit(steve, (stevexy[0], stevexy[1]))
-            pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
-
         if restart_code:
-            restart()
+            restart_text()
+            restart_mob()
             restart_code = False
 
         if timed_start != 0:
@@ -1032,33 +1037,33 @@ def game(level, player_l = False):
                     nonlocal plate_activated, player_l
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
                         messages.append("You can only go on grass!")
-                        restart()
+                        restart_mob()
                         
                     block = levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85] if not player_l else player_levels[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
-                    
+                
                     if block == "oak_trapdoor.png":
                         if level >= 14 and level < 17 and not plate_activated:
                             messages.append("Door is not unlocked!")
-                            restart()
+                            restart_mob()
                         return True
                     elif block == "pressure_plate.png":
                         plate_activated = True
                     elif player_l:
                         if block != player_levels[f"level{level}"][0]["path_block"]:
                             messages.append("You can't go on this block!")
-                            restart()
+                            restart_mob()
                             return False
                     elif (level < 17 or level == 33 or level == 34) and block != "grass_top.png":
                         messages.append("You can only go on grass!")
-                        restart()
+                        restart_mob()
                         return False
                     elif (level >= 17 and level < 21 or level == 35) and block != "bedrock.png":
                         messages.append("You can only go on bedrock!")
-                        restart()
+                        restart_mob()
                         return False
                     elif (level >= 21 and level < 33 or level == 36) and block != "purpur_block.png":
                         messages.append("You can only go on purpur blocks!")
-                        restart()
+                        restart_mob()
                         return False
                 for com in coms:
                     if com[0] == "right":
@@ -1096,11 +1101,23 @@ def game(level, player_l = False):
                             solution = True
                         elif level >= 14 and level < 17 and plate_activated:
                             solution = True
-                        elif level >= 10 and level < 14 or level >= 17:
+                        elif level >= 17 and level < 21:
+                            if "for" in input_code:
+                                solution = True
+                            else:
+                                messages.append("Your code should include a for loop!")
+                                restart_mob()
+                        elif level >= 21 and level <= 24:
+                            if "while" in input_code:
+                                solution = True
+                            else:
+                                messages.append("Your code should include a while loop!")
+                                restart_mob()
+                        elif level >= 10 and level < 14 or level >= 33:
                             solution = True
                 else:
                     messages.append("Wrong solution! Try again.")
-                    restart()
+                    restart_mob()
             
             if one_v_one:
                 if one_v_one_code[0] and one_v_one_code[1]:

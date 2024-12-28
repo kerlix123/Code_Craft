@@ -1,6 +1,6 @@
 {
     "first_play": false,
-    "skin": "steve",
+    "skin": "sheep",
     "skins": {
         "steve": [
             30,
@@ -36,7 +36,7 @@
             530,
             30,
             15,
-            false
+            true
         ],
         "villager": [
             630,
@@ -99,5 +99,5 @@
             false
         ]
     },
-    "emeralds": 70
+    "emeralds": 110
 }

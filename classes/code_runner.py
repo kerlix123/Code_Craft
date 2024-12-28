@@ -22,8 +22,11 @@ def exec_code(code):
     try:
         exec(code, variables, variables)
     except TimeoutException as e:
-        result["vars"]["coms"].clear()
+        if "coms" in result["vars"]:
+            result["vars"]["coms"].clear()
         result["error"] = str(e)
+        buffer.close()
+        return result
     except Exception as e:
         result["error"] = str(e)
     finally:
