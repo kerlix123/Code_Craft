@@ -617,6 +617,25 @@ def game(level, player_l = False):
         xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
         stevexy[0] = xy[0]*85
         stevexy[1] = (6-xy[1])*85
+
+    def buy_hint(hint, price):
+        if levels[f"level{level}"][0][f"hint{hint}_unlocked"]:
+            messages.append((levels[f"level{level}"][0][f"hint{hint}_{languages[code_lang]}"]))
+            return True
+        elif hint == 2 and not levels[f"level{level}"][0]["hint1_unlocked"]:
+            messages.append("Buy Hint 1 first.")
+            return True
+        else:
+            if data["emeralds"] >= price:
+                data["emeralds"] -= price
+                messages.append((levels[f"level{level}"][0][f"hint{hint}_{languages[code_lang]}"]))
+                levels[f"level{level}"][0][f"hint{hint}_unlocked"] = True
+                game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
+                game_utils.write_to_json(PATH / "data.json", data)
+                return True
+            else:
+                return False
+
     while True:
         game_utils.play_next_track(music_on)
         window.fill((30, 30, 30))
@@ -664,16 +683,16 @@ def game(level, player_l = False):
                         restart_text()
                         restart_mob()
                 elif 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615 and not one_v_one and (level >= 10 or player_l):
-                    #Eneters the 1v1 mode if 1v1 button is clicked
+                    #Enters the 1v1 mode if 1v1 button is clicked
                     one_v_one = True
                     code_input_2 = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
                     text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
                     code_input_2.set_text(text_path)
                 elif one_v_one and 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
-                    #Opens first player's code ecitor if 1. button is clicked in 1v1 mode
+                    #Opens first player's code editor if 1. button is clicked in 1v1 mode
                     player = 1
                 elif one_v_one and 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615 and (level >= 10 or player_l):
-                    #Opens second player's code ecitor if 2. button is clicked in 1v1 mode
+                    #Opens second player's code editor if 2. button is clicked in 1v1 mode
                     player = 2
                 elif one_v_one and 668 <= mouse[0] <= 684 and 598 <= mouse[1] <= 614:
                     #Exits 1v1 mode if Exit 1v1 button is clicked in 1v1 mode
@@ -686,32 +705,12 @@ def game(level, player_l = False):
                     restart_text()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
                     #Buys and displays or just displays first hint when first Hint button is clicked
-                    if levels[f"level{level}"][0][f"hint1_unlocked"]:
-                        messages.append((levels[f"level{level}"][0][f"hint1_{languages[code_lang]}"]))
-                    else:
-                        if data["emeralds"] >= 5:
-                            data["emeralds"] -= 5
-                            messages.append((levels[f"level{level}"][0][f"hint1_{languages[code_lang]}"]))
-                            levels[f"level{level}"][0][f"hint1_unlocked"] = True
-                            game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
-                            game_utils.write_to_json(PATH / "data.json", data) 
-                        else:
-                            messages.append("Not enough emeralds.")
+                    if not buy_hint(1, 5):    
+                        messages.append("Not enough emeralds.")
                 elif not player_l and 70 <= mouse[0] <= 84 and 597 <= mouse[1] <= 617:
                     #Buys and displays or just displays second hint when second Hint button is clicked
-                    if levels[f"level{level}"][0][f"hint2_unlocked"]:
-                        messages.append(levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"])
-                    elif levels[f"level{level}"][0][f"hint1_unlocked"]:
-                        if data["emeralds"] >= 15:
-                            data["emeralds"] -= 15
-                            messages.append((levels[f"level{level}"][0][f"hint2_{languages[code_lang]}"]))
-                            levels[f"level{level}"][0][f"hint2_unlocked"] = True
-                            game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
-                            game_utils.write_to_json(PATH / "data.json", data)
-                        else:
-                            messages.append("Not enough emeralds.")
-                    else:
-                        messages.append("Buy Hint 1 first.")
+                    if not buy_hint(2, 15):    
+                        messages.append("Not enough emeralds.")
                 elif 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
                     if not player_l:
                         restart_text()
@@ -734,19 +733,17 @@ def game(level, player_l = False):
                     #Clears the output if Ctrl+K/Cmd+K is clicked
                     messages = []
 
-            #Feeds the events to current Textbox object
+            #Feeds the events to the current Textbox object
             if player == 1 and not one_v_one_code[0]:
                 code_input.handle_events(event) 
             elif player == 2 and not one_v_one_code[1]:
                 code_input_2.handle_events(event)
 
-        if one_v_one:
-            if player == 1:
-                code_input.draw(window)
-            elif player == 2:
-                code_input_2.draw(window)
-        else:
+        if player == 1:
             code_input.draw(window)
+        elif player == 2:
+            code_input_2.draw(window)
+
 
         def restart_mob():
             if player_l or level >= 10:
@@ -755,15 +752,14 @@ def game(level, player_l = False):
                 stevexy[1] = (6-xy[1])*85
 
         def restart_text():
+            text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
             if player == 1:
                 code_input.clear_text()
-                text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
                 code_input.set_text(text_path)
                 code_input.i = 0
                 code_input.cursor_pos = 0
             elif player == 2:
                 code_input_2.clear_text()
-                text_path = levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"] if not player_l else player_levels[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
                 code_input_2.set_text(text_path)
                 code_input_2.i = 0
                 code_input_2.cursor_pos = 0
@@ -806,7 +802,7 @@ def game(level, player_l = False):
             game_utils.button(torch1_button, hint_x-11, 586)
             
             if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
-                if levels[f"level{level}"][0][f"hint1_unlocked"]:
+                if levels[f"level{level}"][0]["hint1_unlocked"]:
                     game_utils.description("Hint 1.")
                 else:
                     game_utils.description("Hint 1. (5 emeralds)")
@@ -816,7 +812,7 @@ def game(level, player_l = False):
             game_utils.button(torch2_button, hint_x+4, 586)
 
             if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
-                if levels[f"level{level}"][0][f"hint2_unlocked"]:
+                if levels[f"level{level}"][0]["hint2_unlocked"]:
                     game_utils.description("Hint 2.")
                 else:
                     game_utils.description("Hint 2. (15 emeralds)")
@@ -908,6 +904,7 @@ def game(level, player_l = False):
 
             window.blit(render_small_text(f"{minutes:02}:{seconds:02}"), (1170, 10))
 
+        #TODO - make this shi* better
         #code
         if code_runned:
             code = code_input.get_text().split("\n")
@@ -919,43 +916,27 @@ def game(level, player_l = False):
                 if cbdd:           
                     cbd.append(cbdd)
                 i += 1
-            if not player_l and (level < 10 or level > 24 and level < 33):
-                if code_lang == 0:
-                    executed_code = exec_code(code_input.get_text())
-                elif code_lang == 1:
-                    executed_code = exec_c_code(code_input.get_text(), "C")
-                elif code_lang == 2:
-                    executed_code = exec_c_code(code_input.get_text(), "C++")
-                if executed_code["error"] != None:
-                    err = executed_code["error"]
-                    if code_lang != 0:
-                        try:
-                            err = err.split("\n")[0].split(":", 1)[1].split(" ", 1)[1]
-                        except Exception:
-                            err = "?"
-                    messages.append("Error: " + err)
-            else:
-                input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
 
-                input_code = '\n'.join(input_code.split("\n"))
-                
-                start_time = time.time()
-                if code_lang == 0:
-                    executed_code = exec_code(def_code_python + input_code)
-                elif code_lang == 1:
-                    executed_code = exec_c_code(def_code_c + input_code, "C")
-                elif code_lang == 2:
-                    executed_code = exec_c_code(def_code_cpp + input_code, "C++")
-                end_time = time.time()
-                one_v_one_time[player-1] = end_time - start_time
-                if executed_code["error"] != None:
-                    err = executed_code["error"]
-                    if code_lang != 0:
-                        try:
-                            err = err.split("\n")[0].split(":", 1)[1].split(" ", 1)[1]
-                        except Exception:
-                            err = "?"
-                    messages.append("Error: " + err)
+            #Get and execute the inputted code
+            input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
+            input_code = '\n'.join(input_code.split("\n"))
+            start_time = time.time()
+            if code_lang == 0:
+                executed_code = exec_code(def_code_python + input_code)
+            else:
+                lang = "C" if code_lang == 1 else "C++"
+                executed_code = exec_c_code(def_code_c + input_code if code_lang == 1 else def_code_cpp + input_code, lang)
+            end_time = time.time()
+            one_v_one_time[player-1] = end_time - start_time
+            if executed_code["error"]:
+                err = executed_code["error"]
+                if code_lang != 0:
+                    try:
+                        err = err.split("\n")[0].split(":", 1)[1].split(" ", 1)[1]
+                    except Exception:
+                        err = "?"
+                messages.append("Error: " + err)
+
             if code_lang == 0:
                 messages += executed_code["out"]
                 variables = executed_code["vars"]
@@ -974,45 +955,25 @@ def game(level, player_l = False):
             
             if not player_l and level == 4:
                 if code_lang == 0:
-                    l = []
-                    ll = ["<class 'bool'>", "<class 'float'>", "<class 'int'>", "<class 'str'>"]
-                    for el in list(variables.keys()):
-                        l.append(str(type(variables[el])))
-                    l.sort()
-                    if l == ll:
-                        solution = True
-                elif code_lang == 1:
+                    s = {int, float, bool, str}
+                    for el in variables.keys():
+                        s.discard(type(variables[el]))
+                    solution = not s
+                elif code_lang in [1, 2]:
                     c = 0
+                    valid_types = {
+                        1: {"int", "float", "double", "char"},
+                        2: {"int", "float", "double", "string", "bool", "char"}
+                    }
                     for el in cbd:
-                        if el[0] == "int" and el[2] == "=":
-                            c += 1
-                        elif el[0] == "float" and el[2] == "=" and el[4] == ".":
-                            c += 1
-                        elif el[0] == "double" and el[2] == "=" and el[4] == ".":
-                            c += 1
-                        elif el[0] == "char" and el[2] == "[" and el[3] == "]" and el[4] == "=":
-                            c += 1
-                        elif el[0] == "char" and el[2] == "=":
-                            c += 1
-                    solution = c == 5
-                    pass
-                elif code_lang == 2:
-                    c = 0
-                    for el in cbd:
-                        if el[0] == "int" and el[2] == "=":
-                            c += 1
-                        elif el[0] == "float" and el[2] == "=" and el[4] == ".":
-                            c += 1
-                        elif el[0] == "double" and el[2] == "=" and el[4] == ".":
-                            c += 1
-                        elif el[0] == "string" and el[2] == "=":
-                            c += 1
-                        elif el[0] == "bool" and el[2] == "=":
-                            c += 1
-                        elif el[0] == "char" and el[2] == "=":
-                            c += 1
-                    solution = c == 6
-                    pass
+                        if el[0] in valid_types[code_lang]:
+                            if el[0] in ["float", "double"] and el[4] != ".":
+                                continue
+                            if el[0] == "char" and el[2] == "[" and el[3] == "]" and el[4] == "=":
+                                c += 1
+                            elif el[2] == "=":
+                                c += 1
+                    solution = c == (5 if code_lang == 1 else 6)
 
             if player_l or level >= 10 and level <= 24 or level >= 33 and level <= 36:
                 xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
@@ -1152,16 +1113,16 @@ def game(level, player_l = False):
                     timed_start = 0
                     messages.append(f"Your time: {minutes:02}:{seconds:02}")
                     if timed_time < 10:
-                        messages.append(f"< 10 seconds: +20 Emeralds")
+                        messages.append("< 10 seconds: +20 Emeralds")
                         emeralds += 20
                     elif timed_time < 15:
-                        messages.append(f"< 15 seconds: +15 Emeralds")
+                        messages.append("< 15 seconds: +15 Emeralds")
                         emeralds += 15
                     elif timed_time < 20:
-                        messages.append(f"< 20 seconds: +10 Emeralds")
+                        messages.append("< 20 seconds: +10 Emeralds")
                         emeralds += 10
                     elif timed_time < 30:
-                        messages.append(f"< 30 seconds: +5 Emeralds")
+                        messages.append("< 30 seconds: +5 Emeralds")
                         emeralds += 5
 
                 data["emeralds"] += emeralds
