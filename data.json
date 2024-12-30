@@ -1,18 +1,18 @@
 {
     "first_play": false,
-    "skin": "sheep",
+    "skin": "zombie",
     "skins": {
-        "steve": [
+        "stevo": [
             30,
             30,
             0,
             true
         ],
-        "alex": [
+        "stoja": [
             130,
             30,
             10,
-            false
+            true
         ],
         "chicken": [
             230,
@@ -66,7 +66,7 @@
             1030,
             30,
             15,
-            false
+            true
         ],
         "cat": [
             1130,
@@ -99,5 +99,5 @@
             false
         ]
     },
-    "emeralds": 115
+    "emeralds": 90
 }

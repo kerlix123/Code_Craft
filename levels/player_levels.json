@@ -3304,12 +3304,12 @@
             "path_block": "plus.png",
             "blocks": [
                 ["plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png"],
-["plus.png", "plus.png", "plus.png", "grass_top.png", "plus.png", "plus.png", "sand.png"],
+["plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png"],
+["plus.png", "plus.png", "plus.png", "plus.png", "grass_top.png", "grass_top.png", "grass_top.png"],
+["oak_trapdoor.png", "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png", "grass_top.png"],
 ["plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png"],
 ["plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png"],
-["plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "grass_top.png", "plus.png"],
-["plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png"],
-["plus.png", "oak_trapdoor.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png"]
+["plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png", "plus.png"]
             ]
         }
     ],
