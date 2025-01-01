@@ -1,6 +1,6 @@
 {
     "first_play": false,
-    "skin": "zombie",
+    "skin": "wither_skeleton",
     "skins": {
         "stevo": [
             30,
@@ -18,7 +18,7 @@
             230,
             30,
             15,
-            false
+            true
         ],
         "cow": [
             330,
@@ -42,7 +42,7 @@
             630,
             30,
             15,
-            false
+            true
         ],
         "spider": [
             730,
@@ -72,32 +72,32 @@
             1130,
             30,
             25,
-            false
+            true
         ],
         "enderman": [
             30,
             140,
             30,
-            false
+            true
         ],
         "wither_skeleton": [
             130,
             140,
             65,
-            false
+            true
         ],
         "wither": [
             230,
             140,
             100,
-            false
+            true
         ],
-        "herobrine": [
+        "herostevo": [
             330,
             140,
             150,
-            false
+            true
         ]
     },
-    "emeralds": 90
+    "emeralds": 4685
 }
