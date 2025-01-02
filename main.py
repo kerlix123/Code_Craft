@@ -685,6 +685,11 @@ def game(level, player_l = False, random_l = False):
 
         for event in events:
             if event.type == pygame.QUIT:
+                player_levels.pop(f"level{level}")
+                player_levels["level_p"].pop(-2)
+                player_levels["last_level"] -= 1
+                player_game_levels.pop(-2)
+                game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
@@ -1038,6 +1043,7 @@ def game(level, player_l = False, random_l = False):
                     coms = []
                 if len(coms) > 50:
                     coms = []
+
                 def check():
                     nonlocal plate_activated, player_l
                     if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
