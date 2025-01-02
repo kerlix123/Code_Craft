@@ -1,6 +1,6 @@
 {
     "first_play": false,
-    "skin": "wither_skeleton",
+    "skin": "stevo",
     "skins": {
         "stevo": [
             30,
@@ -12,92 +12,68 @@
             130,
             30,
             10,
-            true
+            false
         ],
         "chicken": [
             230,
             30,
             15,
-            true
-        ],
-        "cow": [
-            330,
-            30,
-            15,
             false
-        ],
-        "pig": [
-            430,
-            30,
-            15,
-            false
-        ],
-        "sheep": [
-            530,
-            30,
-            15,
-            true
         ],
         "villager": [
-            630,
-            30,
-            15,
-            true
-        ],
-        "spider": [
-            730,
+            330,
             30,
             15,
             false
         ],
         "creeper": [
-            830,
-            30,
-            15,
-            false
-        ],
-        "skeleton": [
-            930,
+            430,
             30,
             15,
             false
         ],
         "zombie": [
-            1030,
+            530,
             30,
             15,
-            true
+            false
+        ],
+        "skeleton": [
+            630,
+            30,
+            15,
+            false
         ],
         "cat": [
-            1130,
+            730,
             30,
             25,
-            true
+            false
         ],
         "enderman": [
+            830,
             30,
-            140,
             30,
-            true
+            false
         ],
         "wither_skeleton": [
-            130,
-            140,
+            930,
+            30,
             65,
-            true
+            false
         ],
         "wither": [
-            230,
-            140,
+            1030,
+            30,
             100,
-            true
+            false
         ],
         "herostevo": [
-            330,
-            140,
+            1130,
+            30,
             150,
-            true
+            false
         ]
     },
-    "emeralds": 4685
+    "emeralds": 0
 }

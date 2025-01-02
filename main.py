@@ -10,6 +10,7 @@ from classes.classes_ import *
 from classes.utils import *
 from classes.loaders import *
 from classes.vars import *
+from classes.ccrpg import *
 
 #!!!
 #!!!Most of the global variables are declared in the vars.py file!
@@ -99,6 +100,40 @@ def level_menu():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
+                if 610 <= mouse[0] <= 810 and 550 <= mouse[1] <= 590:
+                    # Generate and save a new level using GridPathfinder
+                    grid_pathfinder = RandomPathGenerator("grass_top.png")
+                    grid_pathfinder.generate_points()
+                    grid_pathfinder.connect_points()
+
+                    curr_level = player_levels["last_level"] + 1
+                    new_level = new_level_curr.copy()
+                    start = grid_pathfinder.start
+
+                    new_level["steve_xy"] = [start[0], start[1]]
+                    new_level["blocks"] = grid_pathfinder.get_blocks()
+                    new_level["path_block"] = "grass_top.png"
+                    player_levels[f"level{curr_level}"] = [new_level]
+
+                    if curr_level > 1:
+                        prev_level = player_levels["level_p"][-2]
+                        new_level = [
+                            prev_level[0] + 100 if prev_level[0] < 1130 else 30,
+                            prev_level[1] if prev_level[0] < 1130 else prev_level[1] + 110,
+                            curr_level,
+                            80,
+                            True
+                        ]
+                        player_levels["level_p"].insert(-1, new_level)
+
+                    player_levels["last_level"] += 1
+
+                    if player_levels["last_level"] > 0:
+                        for p in player_levels["level_p"]:
+                            player_game_levels.append(Level(p[0], p[1], p[2], p[3], p[4], levels))
+
+                    game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+                    game(curr_level, player_l=True, random_l=True)
                 if 830 <= mouse[0] <= 1030 and 550 <= mouse[1] <= 590:
                     #Opens level builder if Level Builder button is clicked
                     game_utils.play_click_sound(fx_on)
@@ -144,6 +179,8 @@ def level_menu():
                     game_utils.button(play_level_button, lvl.x, lvl.y)
 
         window.blit(level_menu_text["debug_challenge"], (30, 250))
+
+        game_utils.menu_button(610, 550, 627, level_menu_text["random_level"], 200, 40, mouse)
 
         game_utils.menu_button(830, 550, 853, level_menu_text["lvl_builder"], 200, 40, mouse)
 
@@ -465,7 +502,7 @@ def options_win():
                     for k in data["skins"]:
                         if k != "steve":
                             data["skins"][k][3] = False
-                    for i in range(1, 16):
+                    for i in range(1, 12):
                         game_skins[i].unlocked = False
                     for lvl in range(1, 25):
                         levels[f"level{lvl}"][0]["hint1_unlocked"] = False
@@ -586,7 +623,7 @@ def skins():
         pygame.display.update()
         clock.tick(60)
 
-def game(level, player_l = False):
+def game(level, player_l = False, random_l = False):
     global code_lang, code_runned, level_finished, grades
     global def_code_python, def_code_c, def_code_cpp, messages
     global book
@@ -652,9 +689,16 @@ def game(level, player_l = False):
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
-                    #Returns to Main menu or Player levels menu if Back button is clicked
+                    #Returns to Main menu, Level menu or Player levels menu if Back button is clicked
                     game_utils.play_click_sound(fx_on)
-                    if player_l:
+                    if random_l:
+                        player_levels.pop(f"level{level}")
+                        player_levels["level_p"].pop(-2)
+                        player_levels["last_level"] -= 1
+                        player_game_levels.pop(-2)
+                        game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+                        level_menu()
+                    elif player_l:
                         your_levels_menu()
                     else:
                         menu()

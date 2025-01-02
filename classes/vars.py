@@ -43,7 +43,8 @@ menu_text = {
 level_menu_text = {
     "lvl_builder": render_small_text("Level Builder"),
     "your_levels": render_small_text("Your levels"),
-    "debug_challenge": render_small_text("Debug challenges")
+    "debug_challenge": render_small_text("Debug challenges"),
+    "random_level": render_small_text("Random level")
 }
 
 options_text = {
