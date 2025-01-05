@@ -84,8 +84,6 @@ random.shuffle(playlist)
 
 levels = load_json_file(PATH / "levels" / "levels.json")
 
-options = load_json_file(PATH / "options.json")
-
 data = load_json_file(PATH / "data.json")
 
 player_levels = load_json_file(PATH / "levels" / "player_levels.json")
@@ -106,7 +104,7 @@ for k in data["skins"]:
 stevexy = [0, 510]
 
 languages = ["Python", "C", "C++"]
-code_lang = options["code_lang"]
+code_lang = data["code_lang"]
 
 code_runned = False
 level_finished = False

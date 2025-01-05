@@ -24,8 +24,8 @@ clock = pygame.time.Clock()
 pygame.mixer.music.load(playlist[current_song_index])
 pygame.mixer.music.play()
 
-music_on = options["music_on"]
-fx_on = options["fx_on"]
+music_on = data["music_on"]
+fx_on = data["fx_on"]
 if not music_on:
     pygame.mixer.music.pause()
 
@@ -103,8 +103,7 @@ def level_menu():
                 if 610 <= mouse[0] <= 810 and 550 <= mouse[1] <= 590:
                     # Generate and save a new level using GridPathfinder
                     grid_pathfinder = RandomPathGenerator("grass_top.png")
-                    grid_pathfinder.generate_points()
-                    grid_pathfinder.connect_points()
+                    grid_pathfinder.generate_valid_path()
 
                     curr_level = player_levels["last_level"] + 1
                     new_level = new_level_curr.copy()
@@ -115,16 +114,14 @@ def level_menu():
                     new_level["path_block"] = "grass_top.png"
                     player_levels[f"level{curr_level}"] = [new_level]
 
-                    if curr_level > 1:
-                        prev_level = player_levels["level_p"][-2]
-                        new_level = [
-                            prev_level[0] + 100 if prev_level[0] < 1130 else 30,
-                            prev_level[1] if prev_level[0] < 1130 else prev_level[1] + 110,
-                            curr_level,
-                            80,
-                            True
-                        ]
-                        player_levels["level_p"].insert(-1, new_level)
+                    curr_level_p = [0] * 5
+                    curr = player_levels["level_p"][-1] if player_levels["level_p"] else [-70, 30, None, None, None]
+                    curr_level_p[0] = curr[0]+100 if curr[0] < 1130 else 30
+                    curr_level_p[1] = curr[1] if curr[0] < 1130 else curr[1]+110
+                    curr_level_p[2] = curr_level
+                    curr_level_p[3] = 80
+                    curr_level_p[4] = True
+                    player_levels["level_p"].append(curr_level_p)
 
                     player_levels["last_level"] += 1
 
@@ -163,20 +160,19 @@ def level_menu():
 
         #level_button
         for lvl in game_levels:
-            if lvl.x != -1 and lvl.y != -1:
-                pygame.draw.rect(window, (130, 130, 130), (lvl.x, lvl.y, lvl.size, lvl.size))
-                pygame.draw.rect(window, (0, 0, 0), (lvl.x, lvl.y, lvl.size, lvl.size), 1)
+            pygame.draw.rect(window, (130, 130, 130), (lvl.x, lvl.y, lvl.size, lvl.size))
+            pygame.draw.rect(window, (0, 0, 0), (lvl.x, lvl.y, lvl.size, lvl.size), 1)
 
-                text_width = minecraft_font_small.size(str(lvl.level))[0]
+            text_width = minecraft_font_small.size(str(lvl.level))[0]
 
-                window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
+            window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
 
-                if not lvl.unlocked:
-                    game_utils.trans_surface(lvl.size, lvl.size, (0, 0, 0, 50), lvl.x, lvl.y)
+            if not lvl.unlocked:
+                game_utils.trans_surface(lvl.size, lvl.size, (0, 0, 0, 50), lvl.x, lvl.y)
 
-                if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
-                    pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    game_utils.button(play_level_button, lvl.x, lvl.y)
+            if lvl.hover(mouse[0], mouse[1]) and lvl.unlocked:
+                pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
+                game_utils.button(play_level_button, lvl.x, lvl.y)
 
         window.blit(level_menu_text["debug_challenge"], (30, 250))
 
@@ -220,17 +216,16 @@ def your_levels_menu():
 
         #level_button
         for lvl in player_game_levels:
-            if lvl.x != -1 and lvl.y != -1:
-                pygame.draw.rect(window, (130, 130, 130), (lvl.x, lvl.y, lvl.size, lvl.size))
-                pygame.draw.rect(window, (0, 0, 0), (lvl.x, lvl.y, lvl.size, lvl.size), 1)
+            pygame.draw.rect(window, (130, 130, 130), (lvl.x, lvl.y, lvl.size, lvl.size))
+            pygame.draw.rect(window, (0, 0, 0), (lvl.x, lvl.y, lvl.size, lvl.size), 1)
 
-                text_width = minecraft_font_small.size(str(lvl.level))[0]
+            text_width = minecraft_font_small.size(str(lvl.level))[0]
 
-                window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
+            window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
 
-                if lvl.hover(mouse[0], mouse[1]):
-                    pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
-                    game_utils.button(play_level_button, lvl.x, lvl.y)
+            if lvl.hover(mouse[0], mouse[1]):
+                pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
+                game_utils.button(play_level_button, lvl.x, lvl.y)
         
         pygame.display.update()
         clock.tick(60)
@@ -322,15 +317,14 @@ def level_builder():
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     #Exits and updates the player_levels.json to fully save level if Exit button is clicked
                     if saved:
-                        if curr_level > 1:
-                            curr_level_p = [0] * 5
-                            curr = player_levels["level_p"][-2]
-                            curr_level_p[0] = curr[0]+100 if curr[0] < 1130 else 30
-                            curr_level_p[1] = curr[1] if curr[0] < 1130 else curr[1]+110
-                            curr_level_p[2] = curr_level
-                            curr_level_p[3] = 80
-                            curr_level_p[4] = True
-                            player_levels["level_p"].insert(-1, curr_level_p)
+                        curr_level_p = [0] * 5
+                        curr = player_levels["level_p"][-1] if player_levels["level_p"] else [-70, 30, None, None, None]
+                        curr_level_p[0] = curr[0]+100 if curr[0] < 1130 else 30
+                        curr_level_p[1] = curr[1] if curr[0] < 1130 else curr[1]+110
+                        curr_level_p[2] = curr_level
+                        curr_level_p[3] = 80
+                        curr_level_p[4] = True
+                        player_levels["level_p"].append(curr_level_p)
                         player_levels["last_level"] += 1
                         if player_levels["last_level"] > 0:
                             for p in player_levels["level_p"]:
@@ -480,39 +474,44 @@ def options_win():
                     else:
                         pygame.mixer.music.unpause()
                     music_on = not music_on
-                    options["music_on"] = music_on
-                    game_utils.write_to_json(PATH / "options.json", options)
+                    data["music_on"] = music_on
+                    game_utils.write_to_json(PATH / "data.json", data)
                 if 420 <= mouse[0] <= 820 and 180 <= mouse[1] <= 220:
                     #Turns fx on/off and writes it to options if FX: button is clicked
                     fx_on = not fx_on
-                    options["fx_on"] = fx_on
-                    game_utils.write_to_json(PATH / "options.json", options)
+                    data["fx_on"] = fx_on
+                    game_utils.write_to_json(PATH / "data.json", data)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
                     #Changes main programming language and writes it to options if Programming language: button is clicked
                     code_lang = (code_lang + 1) % 3
-                    options["code_lang"] = code_lang
-                    game_utils.write_to_json(PATH / "options.json", options)
+                    data["code_lang"] = code_lang
+                    game_utils.write_to_json(PATH / "data.json", data)
                 if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
                     #Clears game progress if Clear Progress button is clicked
-                    options["music_on"] = True
-                    options["fx_on"] = True
-                    options["code_lang"] = 0
                     game_utils.play_click_sound(fx_on)
+                    data["music_on"] = True
+                    data["fx_on"] = True
+                    data["code_lang"] = 0
                     levels["last_finished_level"] = 0
                     for k in data["skins"]:
-                        if k != "steve":
+                        if k != "stevo":
                             data["skins"][k][3] = False
                     for i in range(1, 12):
                         game_skins[i].unlocked = False
-                    for lvl in range(1, 25):
+                    for lvl in range(1, 37):
                         levels[f"level{lvl}"][0]["hint1_unlocked"] = False
                         levels[f"level{lvl}"][0]["hint2_unlocked"] = False
-                    data["emeralds"] = 0
-                    data["skin"] = "steve"
+                    data["emeralds"] = 20
+                    data["skin"] = "stevo"
                     data["first_play"] = True
+                    player_levels["level_p"].clear()
+                    player_levels["last_level"] = 0
+                    keys_to_remove = [key for key in player_levels if key.startswith("level") and key[5:].isdigit()]
+                    for key in keys_to_remove:
+                        del player_levels[key]
                     game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
+                    game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                     game_utils.write_to_json(PATH / "data.json", data)
-                    game_utils.write_to_json(PATH / "options.json", options)
                     pygame.quit()
                     sys.exit()
                     
@@ -627,7 +626,7 @@ def game(level, player_l = False, random_l = False):
     global code_lang, code_runned, level_finished, grades
     global def_code_python, def_code_c, def_code_cpp, messages
     global book
-    code_lang = options["code_lang"]
+    code_lang = data["code_lang"]
     messages = []
     restart_code = False
     one_v_one = False
@@ -650,7 +649,7 @@ def game(level, player_l = False, random_l = False):
         book_text = game_utils.render_book_text(level, code_lang)
 
     blocks = game_utils.render_blocks(level, player_l)
-    if level >= 10:
+    if player_l or level >= 10:
         xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
         stevexy[0] = xy[0]*85
         stevexy[1] = (6-xy[1])*85
@@ -685,11 +684,12 @@ def game(level, player_l = False, random_l = False):
 
         for event in events:
             if event.type == pygame.QUIT:
-                player_levels.pop(f"level{level}")
-                player_levels["level_p"].pop(-2)
-                player_levels["last_level"] -= 1
-                player_game_levels.pop(-2)
-                game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+                if random_l:
+                    player_levels.pop(f"level{level}")
+                    player_levels["level_p"].pop()
+                    player_levels["last_level"] -= 1
+                    player_game_levels.pop()
+                    game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
@@ -698,9 +698,9 @@ def game(level, player_l = False, random_l = False):
                     game_utils.play_click_sound(fx_on)
                     if random_l:
                         player_levels.pop(f"level{level}")
-                        player_levels["level_p"].pop(-2)
+                        player_levels["level_p"].pop()
                         player_levels["last_level"] -= 1
-                        player_game_levels.pop(-2)
+                        player_game_levels.pop()
                         game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                         level_menu()
                     elif player_l:
@@ -1023,7 +1023,6 @@ def game(level, player_l = False, random_l = False):
                             elif el[2] == "=":
                                 c += 1
                     solution = c == (5 if code_lang == 1 else 6)
-
             if player_l or level >= 10 and level <= 24 or level >= 33 and level <= 36:
                 xy = levels[f"level{level}"][0]["steve_xy"] if not player_l else player_levels[f"level{level}"][0]["steve_xy"]
                 stevexy[0] = xy[0]*85
@@ -1193,5 +1192,5 @@ loaders.loading_screen()
 if data["first_play"]:
     data["first_play"] = False
     game_utils.write_to_json(PATH / "data.json", data)
-    loaders.display_intro_text()
+    #loaders.display_intro_text()
 menu()

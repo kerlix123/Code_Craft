@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 30,
+    "last_finished_level": 0,
     "level_p": [
         [
             30,
@@ -250,13 +250,6 @@
             1130,
             300,
             36,
-            80,
-            false
-        ],
-        [
-            -1,
-            -1,
-            -1,
             80,
             false
         ]
@@ -588,7 +581,7 @@
                     "grass_top.png",
                     "dirt.png",
                     "dirt.png",
-                    "steve_front.png",
+                    "stevo.png",
                     "dirt.png",
                     "dirt.png",
                     "grass_top.png"
@@ -6104,7 +6097,7 @@
                 ]
             ],
             "hint1_unlocked": false,
-            "hint2_unlocked": true,
+            "hint2_unlocked": false,
             "hint1_Python": "print()",
             "hint2_Python": "print() instead of pritn()",
             "hint1_C": "printf()",
@@ -6144,7 +6137,7 @@
                     "grass_top.png",
                     "dirt.png",
                     "dirt.png",
-                    "steve_front.png",
+                    "stevo.png",
                     "dirt.png",
                     "dirt.png",
                     "grass_top.png"
@@ -6299,8 +6292,8 @@
                     "in this code. Try to fix it."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "#",
             "hint2_Python": "# instead od //",
             "hint1_C": "//",
@@ -6500,7 +6493,7 @@
                     "an issue in its declaration."
                 ]
             ],
-            "hint1_unlocked": true,
+            "hint1_unlocked": false,
             "hint2_unlocked": false,
             "hint1_Python": "There is one = extra",
             "hint2_Python": ". instead of :",
@@ -7199,8 +7192,8 @@
                     "in the cout."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "[] are used for indexing",
             "hint2_Python": "Index is too big",
             "hint1_C": "[] are used for indexing",
@@ -7414,7 +7407,7 @@
                     "an error in it."
                 ]
             ],
-            "hint1_unlocked": true,
+            "hint1_unlocked": false,
             "hint2_unlocked": false,
             "hint1_Python": "+=",
             "hint2_Python": "+= instead of =+",
@@ -8157,8 +8150,8 @@
                     "Mob can only go on purpur blocks!"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "i is never updated",
             "hint2_Python": "Parameters in functions are too big",
             "hint1_C": "i is never updated",
