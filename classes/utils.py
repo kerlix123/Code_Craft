@@ -19,6 +19,7 @@ class GameUtils:
         self.background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
         self.background_overlay.fill((0, 0, 0, 50))
         self.click_sound = pygame.mixer.Sound(self.PATH / "sounds" / "minecraft_click.mp3")
+        self.steve = pygame.transform.scale(pygame.image.load(self.PATH / "skins" / f"{self.data['skin']}.png"), (85, 85))
         
     def play_next_track(self, music_on):
         if not pygame.mixer.music.get_busy() and music_on:
@@ -80,10 +81,7 @@ class GameUtils:
         pygame.draw.rect(self.window, (0, 0, 0), (x, 598, length, 19), 1)
 
     def move(self, grass_x, grass_y, level, player_l=False):
-        steve = pygame.image.load(self.PATH / "skins" / f"{self.data['skin']}.png")
-        steve = pygame.transform.scale(steve, (85, 85))
-
-        self.window.blit(steve, (self.stevexy[0], self.stevexy[1]))
+        self.window.blit(self.steve, (self.stevexy[0], self.stevexy[1]))
         pygame.draw.rect(self.window, (0, 0, 0), (self.stevexy[0], self.stevexy[1], 85, 85), 1)
 
         block_path = self.levels[f"level{level}"][0]["blocks"] if not player_l else self.player_levels[f"level{level}"][0]["blocks"]

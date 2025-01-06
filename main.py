@@ -103,7 +103,8 @@ def level_menu():
                 if 610 <= mouse[0] <= 810 and 550 <= mouse[1] <= 590:
                     # Generate and save a new level using GridPathfinder
                     grid_pathfinder = RandomPathGenerator("grass_top.png")
-                    grid_pathfinder.generate_valid_path()
+                    grid_pathfinder.generate_points()
+                    grid_pathfinder.generate_path()
 
                     curr_level = player_levels["last_level"] + 1
                     new_level = new_level_curr.copy()
@@ -672,6 +673,15 @@ def game(level, player_l = False, random_l = False):
             else:
                 return False
 
+    def del_random_l():
+        if random_l:
+            player_levels.pop(f"level{level}")
+            player_levels["level_p"].pop()
+            player_levels["last_level"] -= 1
+            player_game_levels.pop()
+            game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+            return True
+
     while True:
         game_utils.play_next_track(music_on)
         window.fill((30, 30, 30))
@@ -684,24 +694,14 @@ def game(level, player_l = False, random_l = False):
 
         for event in events:
             if event.type == pygame.QUIT:
-                if random_l:
-                    player_levels.pop(f"level{level}")
-                    player_levels["level_p"].pop()
-                    player_levels["last_level"] -= 1
-                    player_game_levels.pop()
-                    game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+                del_random_l()
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     #Returns to Main menu, Level menu or Player levels menu if Back button is clicked
                     game_utils.play_click_sound(fx_on)
-                    if random_l:
-                        player_levels.pop(f"level{level}")
-                        player_levels["level_p"].pop()
-                        player_levels["last_level"] -= 1
-                        player_game_levels.pop()
-                        game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
+                    if del_random_l():
                         level_menu()
                     elif player_l:
                         your_levels_menu()
