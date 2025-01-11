@@ -31,7 +31,7 @@ if not music_on:
 
 game_utils = GameUtils(window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, PATH, languages)
 loaders = Loaders(window, minecraft_font_small, clock, time, PATH)
-
+rpg = RandomPathGenerator(7)
 code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
 
 def menu():
@@ -102,16 +102,13 @@ def level_menu():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if 610 <= mouse[0] <= 810 and 550 <= mouse[1] <= 590:
                     # Generate and save a new level using GridPathfinder
-                    grid_pathfinder = RandomPathGenerator("grass_top.png")
-                    grid_pathfinder.generate_points()
-                    grid_pathfinder.generate_path()
+                    rpg.generate_points()
 
                     curr_level = player_levels["last_level"] + 1
                     new_level = new_level_curr.copy()
-                    start = grid_pathfinder.start
 
-                    new_level["steve_xy"] = [start[0], start[1]]
-                    new_level["blocks"] = grid_pathfinder.get_blocks()
+                    new_level["steve_xy"] = rpg.get_start()
+                    new_level["blocks"] = rpg.random_path(rpg.start, rpg.end)
                     new_level["path_block"] = "grass_top.png"
                     player_levels[f"level{curr_level}"] = [new_level]
 
@@ -416,6 +413,10 @@ def level_builder():
 
             # Draw the faded image
             window.blit(faded_image, (613, 145))
+
+            if 613 <= mouse[0] <= 628 and 145 <= mouse[1] <= 160:
+                game_utils.description("Unsaved")
+                game_utils.trans_surface(17, 17, (170, 170, 170, 120), 612, 144)
 
         game_utils.minecraft_cmd(messages, 0, 595, 590)
 
