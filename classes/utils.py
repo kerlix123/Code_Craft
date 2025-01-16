@@ -20,6 +20,9 @@ class GameUtils:
         self.background_overlay.fill((0, 0, 0, 50))
         self.click_sound = pygame.mixer.Sound(self.PATH / "sounds" / "minecraft_click.mp3")
         self.steve = pygame.transform.scale(pygame.image.load(self.PATH / "skins" / f"{self.data['skin']}.png"), (85, 85))
+
+    def set_skin(self):
+        self.steve = pygame.transform.scale(pygame.image.load(self.PATH / "skins" / f"{self.data['skin']}.png"), (85, 85))
         
     def play_next_track(self, music_on):
         if not pygame.mixer.music.get_busy() and music_on:

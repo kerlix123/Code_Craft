@@ -305,9 +305,8 @@ class Textbox:
     
     def set_text(self, new_text):
         self.string = new_text.split("\n")
-    
-    def clear_text(self):
-        self.string = [""]
+        self.i = 0
+        self.cursor_pos = 0
 
     def update(self, event):
         self.handle_events(event)

@@ -1,6 +1,6 @@
 {
     "music_on": false,
-    "fx_on": true,
+    "fx_on": false,
     "code_lang": 0,
     "first_play": false,
     "skin": "stevo",
@@ -57,7 +57,7 @@
             830,
             30,
             30,
-            true
+            false
         ],
         "wither_skeleton": [
             930,
@@ -78,5 +78,5 @@
             false
         ]
     },
-    "emeralds": 15
+    "emeralds": 30
 }
