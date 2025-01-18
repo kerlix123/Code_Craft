@@ -1120,15 +1120,10 @@ def game(level, player_l = False, random_l = False):
                     if grades[0] == grades[1]:
                         messages.append("It's a draw!")
                     else:
-                        won = 0
-                        if grades[0] > grades[1]:
-                            won = 1
-                        elif grades[1] > grades[0]:
-                            won = 2
-                        messages.append(f"Player {won}. won.")
+                        messages.append(f"Player {1 if grades[0] > grades[1] else 2}. won.")
 
             if solution and not executed_code["error"]:
-                if level >= 10:
+                if player_l or level >= 10 and level <= 24 or level >= 33 and level <= 36:
                     if fx_on:
                         sound = pygame.mixer.Sound(PATH / "sounds" / "trapdoor.mp3")
                         sound.play()
