@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 36,
+    "last_finished_level": 0,
     "level_p": [
         [
             30,
@@ -540,7 +540,7 @@
                     "Ctrl+K"
                 ]
             ],
-            "hint1_unlocked": true,
+            "hint1_unlocked": false,
             "hint2_unlocked": false,
             "hint1_Python": "Use print() function",
             "hint2_Python": "Inside of print() type \"Hello, World!\"",
@@ -786,7 +786,7 @@
                     "single-line comment."
                 ]
             ],
-            "hint1_unlocked": true,
+            "hint1_unlocked": false,
             "hint2_unlocked": false,
             "hint1_Python": "#",
             "hint2_Python": "Type # before print(\"Steve\")",
@@ -3436,8 +3436,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "mob.go_right(x) and mob.go_up(y)",
             "hint2_Python": "x and y are number of blocks to move",
             "hint1_C": "go_right(&mob, x) and go_up(&mob, y)",

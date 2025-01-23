@@ -1,6 +1,7 @@
 import io
 import sys
-import shutil, os, tempfile, subprocess, signal
+import shutil, os, tempfile, subprocess
+from func_timeout import func_timeout, FunctionTimedOut
 
 timeout = 5
 
@@ -10,31 +11,27 @@ class TimeoutException(Exception):
 def timeout_handler(signum, frame):
     raise TimeoutException("Code execution exceeded time limit")
 
-def exec_code(code):
+def exec_code(code, timeout=5):
     buffer = io.StringIO()
     sys.stdout = buffer
     variables = {}
     result = {"out": [], "vars": variables, "error": None}
-    
-    signal.signal(signal.SIGALRM, timeout_handler)
-    signal.alarm(timeout)
-    
-    try:
+
+    def execute():
         exec(code, variables, variables)
-    except TimeoutException as e:
-        if "coms" in result["vars"]:
-            result["vars"]["coms"].clear()
-        result["error"] = str(e)
-        buffer.close()
-        return result
+
+    try:
+        func_timeout(timeout, execute)
+    except FunctionTimedOut:
+        result["error"] = f"Execution timed out after {timeout} seconds"
+        if "coms" in variables:
+            variables["coms"].clear()
     except Exception as e:
         result["error"] = str(e)
     finally:
-        signal.alarm(0)
-    
-    sys.stdout = sys.__stdout__
-    result["out"] = buffer.getvalue().splitlines()
-    buffer.close()
+        sys.stdout = sys.__stdout__
+        result["out"] = buffer.getvalue().splitlines()
+        buffer.close()
 
     return result
 

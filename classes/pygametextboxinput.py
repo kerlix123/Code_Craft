@@ -23,6 +23,8 @@ class Textbox:
         self.cursor_pos = 0
         self.i = 0
 
+        self.symbols = (".", ",", "!", "?", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", "\\", "|", ";", ":", "'", "\"", ",", ".", "/", "<", ">", "`", "~")
+
     def handle_events(self, event):
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
@@ -125,8 +127,8 @@ class Textbox:
             pass
         elif key == "e" and (pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA)):
             pass
-        elif len(key) == 1 and key.isalnum() or key in [".", ",", "!", "?", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", "+", "[", "]", "{", "}", "\\", "|", ";", ":", "'", "\"", ",", ".", "/", "<", ">", "`", "~"]:
-            self.handle_alnum(key)
+        elif key.isalnum() or key in self.symbols:
+            self.handle_char(event)
 
     def scroll_up(self):
         self.scroll_offset = max(0, self.scroll_offset - 1)
@@ -252,26 +254,11 @@ class Textbox:
         self.selection_start = (0, 0)
         self.selection_end = (len(self.string) - 1, len(self.string[-1]))
 
-    def handle_alnum(self, key):
-        shift_pressed = pygame.key.get_mods() & pygame.KMOD_SHIFT
-
-        # Dictionary to map Shift + Key to special characters
-        shift_map = {
-            '1': '!', '2': '@', '3': '#', '4': '$', '5': '%', '6': '^', '7': '&', '8': '*', '9': '(', '0': ')',
-            '-': '_', '=': '+', '[': '{', ']': '}', '\\': '|', ';': ':', "'": '"', ',': '<', '.': '>', '/': '?',
-            '`': '~'
-        }
-
-        # Apply shift modifier or caps lock for alphabetic characters
-        if key.isalpha():
-            if shift_pressed or pygame.key.get_mods() & pygame.KMOD_CAPS:
-                key = key.upper()
-        # Map numbers and special characters to their Shift variants
-        elif shift_pressed and key in shift_map:
-            key = shift_map[key]
-
-        # Add the key to the string
-        self.string[self.i] = self.string[self.i][:self.cursor_pos] + key + self.string[self.i][self.cursor_pos:]
+    def handle_char(self, event):
+        # Use event.unicode to respect keyboard layout
+        char = event.unicode
+        # Add the character to the string
+        self.string[self.i] = (self.string[self.i][:self.cursor_pos] + char + self.string[self.i][self.cursor_pos:])
         self.cursor_pos += 1
 
     def draw_text(self, surface):

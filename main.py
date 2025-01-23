@@ -692,6 +692,39 @@ def game(level, player_l = False, random_l = False):
             player_game_levels.pop()
             game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
             return True
+        
+    def check():
+        nonlocal plate_activated, player_l
+        if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
+            messages.append("Mob got out of bounds!")
+            restart_mob()
+            
+        block = (levels if not player_l else player_levels)[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
+    
+        if block == "oak_trapdoor.png":
+            if level >= 14 and level < 17 and not plate_activated:
+                messages.append("Door is not unlocked!")
+                restart_mob()
+            return True
+        elif block == "pressure_plate.png":
+            plate_activated = True
+        elif player_l:
+            if block != player_levels[f"level{level}"][0]["path_block"]:
+                messages.append("You can't go on this block!")
+                restart_mob()
+                return False
+        elif (level < 17 or level == 33 or level == 34) and block != "grass_top.png":
+            messages.append("You can only go on grass!")
+            restart_mob()
+            return False
+        elif (level >= 17 and level < 21 or level == 35) and block != "bedrock.png":
+            messages.append("You can only go on bedrock!")
+            restart_mob()
+            return False
+        elif (level >= 21 and level < 33 or level == 36) and block != "purpur_block.png":
+            messages.append("You can only go on purpur blocks!")
+            restart_mob()
+            return False
 
     while True:
         game_utils.play_next_track(music_on)
@@ -941,22 +974,17 @@ def game(level, player_l = False, random_l = False):
 
             window.blit(render_small_text(f"{minutes:02}:{seconds:02}"), (1170, 10))
 
-        #TODO - make this shi* better
         #code
         if code_runned:
             code = code_input.get_text().split("\n")
             cbd = []
-            code_len = len(code)
-            i = 0
-            while i < code_len:
-                cbdd = cbd_maker(code[i])     
+            for el in code:
+                cbdd = cbd_maker(el)     
                 if cbdd:           
                     cbd.append(cbdd)
-                i += 1
 
             #Get and execute the inputted code
             input_code = code_input.get_text() if player == 1 else code_input_2.get_text()
-            input_code = '\n'.join(input_code.split("\n"))
             start_time = time.time()
             if code_lang == 0:
                 executed_code = exec_code(def_code_python + input_code)
@@ -978,9 +1006,9 @@ def game(level, player_l = False, random_l = False):
                 messages += executed_code["out"]
                 variables = executed_code["vars"]
                 del variables["__builtins__"]
-            elif code_lang == 1 or code_lang == 2:
+            else:
                 for el in executed_code["out"]:
-                    if el.split(" ")[0] not in ["right", "left", "up", "down"]:
+                    if el.split(" ")[0] not in ("right", "left", "up", "down"):
                         messages += [el]
 
             #correct solution
@@ -997,6 +1025,7 @@ def game(level, player_l = False, random_l = False):
                         s.discard(type(variables[el]))
                     solution = not s
                 elif code_lang in [1, 2]:
+                    #!KRITICHNO
                     c = 0
                     valid_types = {
                         1: {"int", "float", "double", "char"},
@@ -1004,8 +1033,6 @@ def game(level, player_l = False, random_l = False):
                     }
                     for el in cbd:
                         if el[0] in valid_types[code_lang]:
-                            if el[0] in ["float", "double"] and el[4] != ".":
-                                continue
                             if el[0] == "char" and el[2] == "[" and el[3] == "]" and el[4] == "=":
                                 c += 1
                             elif el[2] == "=":
@@ -1017,7 +1044,7 @@ def game(level, player_l = False, random_l = False):
                 try:
                     if code_lang == 0:
                         coms = variables["coms"]
-                    elif code_lang == 1 or code_lang == 2:
+                    else:
                         coms = []
                         for el in executed_code["out"]:
                             el_splited = el.split(" ")
@@ -1028,38 +1055,6 @@ def game(level, player_l = False, random_l = False):
                 if len(coms) > 50:
                     coms = []
 
-                def check():
-                    nonlocal plate_activated, player_l
-                    if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
-                        messages.append("Mob got out of bounds!")
-                        restart_mob()
-                        
-                    block = (levels if not player_l else player_levels)[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
-                
-                    if block == "oak_trapdoor.png":
-                        if level >= 14 and level < 17 and not plate_activated:
-                            messages.append("Door is not unlocked!")
-                            restart_mob()
-                        return True
-                    elif block == "pressure_plate.png":
-                        plate_activated = True
-                    elif player_l:
-                        if block != player_levels[f"level{level}"][0]["path_block"]:
-                            messages.append("You can't go on this block!")
-                            restart_mob()
-                            return False
-                    elif (level < 17 or level == 33 or level == 34) and block != "grass_top.png":
-                        messages.append("You can only go on grass!")
-                        restart_mob()
-                        return False
-                    elif (level >= 17 and level < 21 or level == 35) and block != "bedrock.png":
-                        messages.append("You can only go on bedrock!")
-                        restart_mob()
-                        return False
-                    elif (level >= 21 and level < 33 or level == 36) and block != "purpur_block.png":
-                        messages.append("You can only go on purpur blocks!")
-                        restart_mob()
-                        return False
                 for com in coms:
                     if com[0] == "right":
                         for _ in range(int(com[1])):
@@ -1132,7 +1127,7 @@ def game(level, player_l = False, random_l = False):
                 emeralds = 5
                 if level >= 10:
                     emeralds = 10
-                if level >= 14:
+                elif level >= 14:
                     emeralds = 15
                 if not player_l:
                     messages.append(f"+{emeralds} Emeralds")
