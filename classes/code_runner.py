@@ -35,7 +35,8 @@ def exec_code(code, timeout=5):
 
     return result
 
-def exec_c_code(code, l):
+def exec_c_code(code, l, timeout=10):
+    # Validate language and determine compiler
     if l == "C":
         compiler = "gcc"
     elif l == "C++":
@@ -43,27 +44,33 @@ def exec_c_code(code, l):
     else:
         return {"out": [], "error": "Invalid language specified. Choose 'C' or 'C++'."}
 
+    # Check if compiler is available
     if shutil.which(compiler) is None:
         return {"out": [], "error": f"You need to have {compiler.upper()} installed to use {l}!"}
 
     with tempfile.TemporaryDirectory() as tmpdirname:
-        c_file = os.path.join(tmpdirname, f"temp.{'c' if l == 'C' else 'cpp'}")
+        # Create file paths
+        ext = 'c' if l == "C" else 'cpp'
+        c_file = os.path.join(tmpdirname, f"temp.{ext}")
         executable_file = os.path.join(tmpdirname, "temp_executable")
-        
+
+        # Write code to file
         with open(c_file, "w") as f:
             f.write(code)
-        
+
+        # Compile with optimization flags: -O0, -pipe uses in-memory pipes
+        compile_flags = [compiler, '-O0', "-pipe", c_file, "-o", executable_file]
         compile_process = subprocess.run(
-            [compiler, c_file, "-o", executable_file],
-            stdout=subprocess.PIPE,
+            compile_flags,
+            stdout=subprocess.DEVNULL,  # Discard stdout
             stderr=subprocess.PIPE
         )
-        
+
         if compile_process.returncode != 0:
             return {"out": [], "error": compile_process.stderr.decode()}
-        
+
+        # Execute the compiled binary
         try:
-            # Run the compiled executable with a 10-second timeout
             run_process = subprocess.run(
                 [executable_file],
                 stdout=subprocess.PIPE,
