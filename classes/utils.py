@@ -83,11 +83,9 @@ class GameUtils:
         self.window.blit(self.minecraft_font_smaller.render(string, True, (255, 255, 255)), ((595-self.minecraft_font_smaller.size(string)[0])//2, 601))
         pygame.draw.rect(self.window, (0, 0, 0), (x, 598, length, 19), 1)
 
-    def move(self, grass_x, grass_y, level, player_l=False):
+    def move(self, grass_x, grass_y, block_path):
         self.window.blit(self.steve, (self.stevexy[0], self.stevexy[1]))
         pygame.draw.rect(self.window, (0, 0, 0), (self.stevexy[0], self.stevexy[1], 85, 85), 1)
-
-        block_path = self.levels[f"level{level}"][0]["blocks"] if not player_l else self.player_levels[f"level{level}"][0]["blocks"]
 
         self.window.blit(pygame.transform.scale(pygame.image.load(self.PATH / "blocks" / f"{block_path[(self.stevexy[1]+grass_y)//85][(self.stevexy[0]+grass_x)//85]}"), (85, 85)), (self.stevexy[0]+grass_x, self.stevexy[1]+grass_y))
         pygame.draw.rect(self.window, (0, 0, 0), (self.stevexy[0]+grass_x, self.stevexy[1]+grass_y, 85, 85), 1)
@@ -95,9 +93,8 @@ class GameUtils:
         self.clock.tick(60)
         self.time.sleep(0.1)
 
-    def render_blocks(self, level, player_l):
+    def render_blocks(self, level_blocks):
         blocks = []
-        level_key = f"level{level}"
         block_size = 85
         block_paths = {}
 
@@ -106,10 +103,7 @@ class GameUtils:
             blocks.append([])
             for col in range(7):
                 # Select the correct block based on the level and player context
-                if not player_l:
-                    block_type = self.levels[level_key][0]['blocks'][row][col]
-                else:
-                    block_type = self.player_levels[level_key][0]['blocks'][row][col]
+                block_type = level_blocks[row][col]
                 
                 block_path = self.PATH / "blocks" / f"{block_type}"
                 
@@ -122,10 +116,10 @@ class GameUtils:
                 blocks[row].append(block_paths[block_path])
         return blocks
 
-    def render_book_text(self, level, code_lang):
+    def render_book_text(self, text):
         return [
             [self.minecraft_font_book.render(row, True, (0, 0, 0)) for row in page]
-            for page in self.levels[f"level{level}"][0][f"text_{self.languages[code_lang]}"]
+            for page in text
         ]
     
     def play_click_sound(self, fx_on):

@@ -41,8 +41,6 @@ def exec_c_code(code, l, timeout=10):
         compiler = "gcc"
     elif l == "C++":
         compiler = "g++"
-    else:
-        return {"out": [], "error": "Invalid language specified. Choose 'C' or 'C++'."}
 
     # Check if compiler is available
     if shutil.which(compiler) is None:

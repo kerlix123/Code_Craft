@@ -321,7 +321,7 @@ def level_builder():
                         curr_level_p[1] = curr[1] if curr[0] < 1130 else curr[1]+110
                         curr_level_p[2] = curr_level
                         curr_level_p[3] = 80
-                        curr_level_p[4] = True
+                        curr_level_p[4] = False
                         player_levels["level_p"].append(curr_level_p)
                         player_levels["last_level"] += 1
                         if player_levels["last_level"] > 0:
@@ -553,6 +553,12 @@ def options_win():
 
 def skins():
     messages = []
+
+    skins_imgs = {
+        skin.name: get_scaled_img(PATH / "skins" / f"{skin.name}.png", (skin.size, skin.size))
+        for skin in game_skins
+    }
+
     while True:
         game_utils.play_next_track(music_on)
         events = pygame.event.get()
@@ -593,10 +599,9 @@ def skins():
         game_utils.bg_overlay()
 
         for skin in game_skins:
-            pygame.draw.rect(window, (130, 130, 130), (skin.x, skin.y, skin.size, skin.size))
             pygame.draw.rect(window, (0, 0, 0), (skin.x, skin.y, skin.size, skin.size), 1)
 
-            skin_image = get_scaled_img(PATH / "skins" / f"{skin.name}.png", (skin.size, skin.size))
+            skin_image = skins_imgs[skin.name]
 
             window.blit(skin_image, (skin.x, skin.y))
 
@@ -646,19 +651,21 @@ def game(level, player_l = False, random_l = False):
     lang_text_x = (645-minecraft_font_smaller.size(languages[code_lang])[0])//2+595
     lang_text_length = minecraft_font_smaller.size(languages[code_lang])[0]
 
+    level_object = (game_levels if not player_l else player_game_levels)[level-1]
+    level_data = (levels if not player_l else player_levels)[f"level{level}"][0]
+
     player = 1
     def get_text_path():
-        return (levels if not player_l else player_levels)[f"level{level}"][0][f"input_text_{languages[code_lang]}"]
+        return level_data[f"input_text_{languages[code_lang]}"]
     code_input.set_text(get_text_path())
 
-    if not player_l:
-        book_text = game_utils.render_book_text(level, code_lang)
+    book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}"])
 
-    blocks = game_utils.render_blocks(level, player_l)
+    blocks = game_utils.render_blocks(level_data["blocks"])
 
     def restart_mob():
         if player_l or level >= 10:
-            xy = (levels if not player_l else player_levels)[f"level{level}"][0]["steve_xy"]
+            xy = level_data["steve_xy"]
             stevexy[0] = xy[0]*85
             stevexy[1] = (6-xy[1])*85
 
@@ -670,15 +677,15 @@ def game(level, player_l = False, random_l = False):
         code_input_object.set_text(text_path)
 
     def buy_hint(hint, price):
-        if levels[f"level{level}"][0][f"hint{hint}_unlocked"]:
-            messages.append((levels[f"level{level}"][0][f"hint{hint}_{languages[code_lang]}"]))
-        elif hint == 2 and not levels[f"level{level}"][0]["hint1_unlocked"]:
+        if level_data[f"hint{hint}_unlocked"]:
+            messages.append((level_data[f"hint{hint}_{languages[code_lang]}"]))
+        elif hint == 2 and not level_data["hint1_unlocked"]:
             messages.append("Buy Hint 1 first.")
         else:
             if data["emeralds"] >= price:
                 data["emeralds"] -= price
-                messages.append((levels[f"level{level}"][0][f"hint{hint}_{languages[code_lang]}"]))
-                levels[f"level{level}"][0][f"hint{hint}_unlocked"] = True
+                messages.append((level_data[f"hint{hint}_{languages[code_lang]}"]))
+                level_data[f"hint{hint}_unlocked"] = True
                 game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
                 game_utils.write_to_json(PATH / "data.json", data)
             else:
@@ -699,7 +706,7 @@ def game(level, player_l = False, random_l = False):
             messages.append("Mob got out of bounds!")
             restart_mob()
             
-        block = (levels if not player_l else player_levels)[f"level{level}"][0]["blocks"][stevexy[1]//85][stevexy[0]//85]
+        block = level_data["blocks"][stevexy[1]//85][stevexy[0]//85]
     
         if block == "oak_trapdoor.png":
             if level >= 14 and level < 17 and not plate_activated:
@@ -709,7 +716,7 @@ def game(level, player_l = False, random_l = False):
         elif block == "pressure_plate.png":
             plate_activated = True
         elif player_l:
-            if block != player_levels[f"level{level}"][0]["path_block"]:
+            if block != level_data["path_block"]:
                 messages.append("You can't go on this block!")
                 restart_mob()
                 return False
@@ -749,7 +756,7 @@ def game(level, player_l = False, random_l = False):
                     else:
                         menu()
                 elif 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
-                    if not player_l and level >= 10:
+                    if player_l or level >= 10:
                         game_levels[level-1].text_closed = True
                     code_runned = True
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
@@ -763,13 +770,15 @@ def game(level, player_l = False, random_l = False):
                         if level > levels["last_finished_level"]:
                             levels["last_finished_level"] = level
                         level += 1
-                        game_levels[level-1].unlocked = True
+                        level_object = game_levels[level-1]
+                        level_data = levels[f"level{level}"][0]
+                        level_object.unlocked = True
                         game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
                         messages = []
                         level_finished = False
-                        blocks = game_utils.render_blocks(level, player_l)
+                        blocks = game_utils.render_blocks(level_data["blocks"])
                         if not player_l:
-                            book_text = game_utils.render_book_text(level, code_lang)
+                            book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}"])
                         text_path = get_text_path()
                         restart_text()
                         restart_mob()
@@ -794,7 +803,7 @@ def game(level, player_l = False, random_l = False):
                     code_lang = (code_lang + 1) % 3
                     lang_text_x = (645-minecraft_font_smaller.size(languages[code_lang])[0])//2+595
                     lang_text_length = minecraft_font_smaller.size(languages[code_lang])[0]
-                    book_text = game_utils.render_book_text(level, code_lang)
+                    book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}"])
                     restart_text()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
                     #Buys and displays or just displays first hint when first Hint button is clicked
@@ -807,19 +816,18 @@ def game(level, player_l = False, random_l = False):
                         restart_text()
                         restart_mob()
                         timed_start = time.time()
-                elif not player_l and not game_levels[level-1].text_closed:
+                elif not level_object.text_closed:
                     #Changes showed page if Book is not closed
-                    if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and game_levels[level-1].text_page < levels[f"level{level}"][0]["pages"]-1:
+                    if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539 and level_object.text_page < level_data["pages"]-1:
                         #Goes to next page of the book if it exists
-                        game_levels[level-1].text_page += 1
-                    if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539 and game_levels[level-1].text_page > 0:
+                        level_object.text_page += 1
+                    if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539 and level_object.text_page > 0:
                         #Goes to previous page of the book if it exists
-                        game_levels[level-1].text_page -= 1
+                        level_object.text_page -= 1
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_e and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     #Closes or opens the book if Ctrl+E/Cmd+E is clicked
-                    if not player_l:
-                        game_levels[level-1].text_closed = not game_levels[level-1].text_closed
+                    level_object.text_closed = not level_object.text_closed
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     #Clears the output if Ctrl+K/Cmd+K is clicked
                     messages = []
@@ -873,7 +881,7 @@ def game(level, player_l = False, random_l = False):
             game_utils.button(torch1_button, hint_x-11, 586)
             
             if hint_x <= mouse[0] <= hint_x+11 and 597 <= mouse[1] <= 617:
-                if levels[f"level{level}"][0]["hint1_unlocked"]:
+                if level_data["hint1_unlocked"]:
                     game_utils.description("Hint 1.")
                 else:
                     game_utils.description("Hint 1. (5 emeralds)")
@@ -883,7 +891,7 @@ def game(level, player_l = False, random_l = False):
             game_utils.button(torch2_button, hint_x+4, 586)
 
             if hint_x+14 <= mouse[0] <= hint_x+28 and 597 <= mouse[1] <= 617:
-                if levels[f"level{level}"][0]["hint2_unlocked"]:
+                if level_data["hint2_unlocked"]:
                     game_utils.description("Hint 2.")
                 else:
                     game_utils.description("Hint 2. (15 emeralds)")
@@ -946,17 +954,17 @@ def game(level, player_l = False, random_l = False):
             window.blit(steve, (stevexy[0], stevexy[1]))
             pygame.draw.rect(window, (0, 0, 0), (stevexy[0], stevexy[1], 85, 85), 1)
         #book
-        if not player_l and not game_levels[level-1].text_closed:
+        if not level_object.text_closed:
             window.blit(book, (6, 12))
-            game_utils.render_text(115, 63, book_text[game_levels[level-1].text_page], 28.8)
+            game_utils.render_text(115, 63, book_text[level_object.text_page], 28.8)
 
-            if game_levels[level-1].text_page < levels[f"level{level}"][0]["pages"]-1:
+            if level_object.text_page < level_data["pages"]-1:
                 game_utils.button(page_forward_button, 410, 515)
 
                 if 410 <= mouse[0] <= 452 and 515 <= mouse[1] <= 539:
                     game_utils.trans_surface(36, 19, (170, 170, 170, 120), 415, 519)
             
-            if game_levels[level-1].text_page > 0:
+            if level_object.text_page > 0:
                 game_utils.button(page_backward_button, 120, 515)
 
                 if 120 <= mouse[0] <= 162 and 515 <= mouse[1] <= 539:
@@ -1015,7 +1023,7 @@ def game(level, player_l = False, random_l = False):
             solution = False
             if not player_l and level == 9:
                 solution = True
-            if not player_l and (level < 10 or level > 24 and level < 33) and levels[f"level{level}"][0][f"solution_{languages[code_lang]}"][0] == cbd:
+            if not player_l and (level < 10 or level > 24 and level < 33) and level_data[f"solution_{languages[code_lang]}"][0] == cbd:
                 solution = True
             
             if not player_l and level == 4:
@@ -1059,22 +1067,22 @@ def game(level, player_l = False, random_l = False):
                     if com[0] == "right":
                         for _ in range(int(com[1])):
                             stevexy[0] += 85
-                            game_utils.move(-85, 0, level, player_l)
+                            game_utils.move(-85, 0, level_data["blocks"])
                             check()
                     elif com[0] == "left":
                         for _ in range(int(com[1])):
                             stevexy[0] -= 85
-                            game_utils.move(85, 0, level, player_l)
+                            game_utils.move(85, 0, level_data["blocks"])
                             check()
                     elif com[0] == "up":
                         for _ in range(int(com[1])):
                             stevexy[1] -= 85
-                            game_utils.move(0, 85, level, player_l)
+                            game_utils.move(0, 85, level_data["blocks"])
                             check()
                     elif com[0] == "down":
                         for _ in range(int(com[1])):
                             stevexy[1] += 85
-                            game_utils.move(0, -85, level, player_l)
+                            game_utils.move(0, -85, level_data["blocks"])
                             check()
 
                 if check():
