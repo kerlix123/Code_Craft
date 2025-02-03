@@ -10,8 +10,8 @@ class Loaders:
 
     def loading_screen(self):
         background = pygame.image.load(self.PATH / "drawable" / "logo.png")
-        background = pygame.transform.scale(background, (1484, 620))
-        self.window.blit(background, (-122, 0))
+        background = pygame.transform.scale(background, (1240, 620))
+        self.window.blit(background, (0, 0))
 
         loading_bar_width = 600
         loading_bar_height = 30
@@ -45,7 +45,7 @@ class Loaders:
                 border_surface.fill((0, 0, 0, loading_bar_alpha))
                 self.window.blit(border_surface, (loading_bar_x - padding - 2, loading_bar_y - padding - 2))
 
-                pygame.draw.rect(self.window, (255, 255, 255), 
+                pygame.draw.rect(self.window, (42, 202, 185), 
                                     (loading_bar_x - padding, loading_bar_y - padding, 
                                     loading_bar_width + 2 * padding, loading_bar_height + 2 * padding))
 
@@ -58,7 +58,7 @@ class Loaders:
                                     (loading_bar_x - padding - 2, loading_bar_y - padding - 2,
                                     loading_bar_width + 2 * (padding + 2), loading_bar_height + 2 * (padding + 2)))
 
-                pygame.draw.rect(self.window, (255, 255, 255), 
+                pygame.draw.rect(self.window, (42, 202, 185), 
                                     (loading_bar_x - padding, loading_bar_y - padding, 
                                     loading_bar_width + 2 * padding, loading_bar_height + 2 * padding))
 
@@ -114,6 +114,11 @@ class Loaders:
         background = pygame.image.load(self.PATH / "drawable" / "background.png")
         background = pygame.transform.scale(background, (1240, 620))
 
+        self.window.blit(background, (0, 0))
+        background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
+        background_overlay.fill((0, 0, 0, 50 if not start_fade_out else fade_out_alpha // 5))
+        self.window.blit(background_overlay, (0, 0))
+
         while True:
             events = pygame.event.get()
             for event in events:
@@ -123,10 +128,11 @@ class Loaders:
                 if finished_typing and (event.type == pygame.KEYDOWN or event.type == pygame.MOUSEBUTTONDOWN):
                     start_fade_out = True
 
-            self.window.blit(background, (0, 0))
-            background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
-            background_overlay.fill((0, 0, 0, 50 if not start_fade_out else fade_out_alpha // 5))
-            self.window.blit(background_overlay, (0, 0))
+            if start_fade_out:
+                self.window.blit(background, (0, 0))
+                background_overlay = pygame.Surface((1240, 620), pygame.SRCALPHA)
+                background_overlay.fill((0, 0, 0, 50 if not start_fade_out else fade_out_alpha // 5))
+                self.window.blit(background_overlay, (0, 0))
 
             color = (194, 194, 194) 
             if not (start_fade_out and text_index <= 0):

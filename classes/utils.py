@@ -42,6 +42,9 @@ class GameUtils:
         if x <= mouse[0] <= x+width and y <= mouse[1] <= y+height:
             pygame.draw.rect(self.window, (255, 255, 255), (x, y, width, height), 3)
 
+    def get_scaled_img(self, img, size):
+        return pygame.transform.scale(pygame.image.load(img), size)
+
     def trans_surface(self, width, height, color, x, y):
         transparent_surface = pygame.Surface((width, height), pygame.SRCALPHA)
         transparent_surface.fill(color)

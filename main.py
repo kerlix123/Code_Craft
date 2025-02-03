@@ -1033,7 +1033,6 @@ def game(level, player_l = False, random_l = False):
                         s.discard(type(variables[el]))
                     solution = not s
                 elif code_lang in [1, 2]:
-                    #!KRITICHNO
                     c = 0
                     valid_types = {
                         1: {"int", "float", "double", "char"},
