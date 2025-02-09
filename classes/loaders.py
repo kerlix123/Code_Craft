@@ -76,7 +76,7 @@ class Loaders:
         text_rect = text_surface.get_rect(topleft=position)
 
         bg_surface = pygame.Surface((text_rect.width + padding * 2, text_rect.height + padding * 2))
-        bg_surface.fill((0, 0, 0))
+        bg_surface.fill((47, 47, 47))
         bg_surface.set_alpha(bg_alpha)
         self.window.blit(bg_surface, (text_rect.x - padding, text_rect.y - padding))
 
@@ -87,15 +87,13 @@ class Loaders:
         counter1 = 0
 
         texts = [
-            "Game made by Antonio - NEX in which you can learn basics of programming.",
-            "I hope you will enjoy playing it as much as I enjoyed making it.",
-            "You can learn Python, C, or C++.",
-            "And if you ever find yourself stuck or unsure how to do something, just ask Google.",
-            "I lost count of how many times I did that while making this game! ;)",
-            "Remember, programming is all about experimenting and learning from mistakes.",
-            "So don't worry if you don't get it right the first time-just keep trying!",
-            "And who knows? Maybe one day you'll be building your own games and applications!",
-            "So, let's dive in and see what you can do. Good luck, and most importantly-have fun!"
+            "Game created by VILLAGERi in which you can learn the basics of programming.",
+            "In this game you can learn Python, C, or C++.",
+            "If you ever get stuck or don't know what to do, just ask Google.",
+            "Trust us, we lost count of how many times we did that while making this game! ;)",
+            "Programming is all about experimenting and learning from mistakes.",
+            "Don't worry if you don't get it right the first time, just keep going.",
+            "Enough talk, let's jump in and see what you can do!"
         ]
 
         text_index = 0

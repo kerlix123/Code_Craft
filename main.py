@@ -424,6 +424,8 @@ def level_builder():
         clock.tick(60)
 
 def tutorial():
+    text = "Coming soon!"
+    text_index = 0
     while True:
         game_utils.play_next_track(music_on)
         events = pygame.event.get()
@@ -440,6 +442,12 @@ def tutorial():
                     
         game_utils.background()
         game_utils.bg_overlay()
+
+        if text_index < len(text):
+            text_index += 1
+            time.sleep(0.05)
+
+        window.blit(render_small_text(text[:text_index]), (540, 300))
 
         #back_button
         game_utils.button(back_button, 10, 565)

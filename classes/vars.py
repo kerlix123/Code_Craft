@@ -76,7 +76,6 @@ def load_json_file(file):
 #music
 current_song_index = 0
 playlist = [PATH / "music" / "HelloWorld.mp3",
-            PATH / "music" / "Me.mp3", 
             PATH / "music" / "Valley.mp3",
             PATH / "music" / "Croatia.mp3",
             PATH / "music" / "Peace.mp3"]

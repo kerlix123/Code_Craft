@@ -1,5 +1,5 @@
 {
-    "music_on": false,
+    "music_on": true,
     "fx_on": true,
     "code_lang": 0,
     "first_play": false,
@@ -21,7 +21,7 @@
             230,
             30,
             15,
-            true
+            false
         ],
         "villager": [
             330,
@@ -78,5 +78,5 @@
             false
         ]
     },
-    "emeralds": 50
+    "emeralds": 20
 }
