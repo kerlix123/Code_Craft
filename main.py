@@ -767,6 +767,7 @@ def game(level, player_l = False, random_l = False):
                     if player_l or level >= 10:
                         game_levels[level-1].text_closed = True
                     code_runned = True
+                    restart_mob()
                 elif 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
                     #Restarts code if Restart button is clicked
                     restart_code = True

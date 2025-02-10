@@ -2,7 +2,7 @@
     "music_on": true,
     "fx_on": true,
     "code_lang": 0,
-    "first_play": false,
+    "first_play": true,
     "skin": "stevo",
     "skins": {
         "stevo": [

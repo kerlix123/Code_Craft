@@ -114,10 +114,10 @@ new_level_curr = {
             "   n blocks",
             "   - go_down(&mob, n) - moves mob",
             "   down by n blocks",
-            "   - mob.go_right(&mob, n) - moves mob",
-            "   right by n blocks",
-            "   - mob.go_left(&mob, n) - moves mob left",
-            "   by n blocks"
+            "   - mob.go_right(&mob, n) - moves",
+            "   mob right by n blocks",
+            "   - mob.go_left(&mob, n) - moves mob",
+            "   left by n blocks"
         ],
         [
             "Finish is the trapdoor and you can only",
