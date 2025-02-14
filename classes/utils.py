@@ -33,11 +33,11 @@ class GameUtils:
     def button(self, b_button, x, y):
         self.window.blit(b_button, (x, y))
 
-    def menu_button(self, x, y, text_x, text, width, height, mouse):
+    def menu_button(self, x, y, text_set, width, height, mouse):
         pygame.draw.rect(self.window, (130, 130, 130), (x, y, width, height))
         pygame.draw.rect(self.window, (0, 0, 0), (x, y, width, height), 1)
 
-        self.window.blit(text, (text_x, y+10))
+        self.window.blit(text_set[0], (text_set[1], y))
 
         if x <= mouse[0] <= x+width and y <= mouse[1] <= y+height:
             pygame.draw.rect(self.window, (255, 255, 255), (x, y, width, height), 3)
@@ -72,7 +72,7 @@ class GameUtils:
                 color = (255, 85, 85)
             if l[index] == "Player 1. won." or l[index] == "Player 2. won.":
                 color = (0, 255, 0)
-            self.window.blit(self.minecraft_font_small.render(l[index], True, color), (x+10, y+4))
+            self.window.blit(self.minecraft_font_small.render(l[index], True, color), (x+10, y-4))
             index += 1
             y += 30
 
@@ -83,7 +83,7 @@ class GameUtils:
             length = 300
             x = 147
         pygame.draw.rect(self.window, (194, 194, 194), (x, 598, length, 19))
-        self.window.blit(self.minecraft_font_smaller.render(string, True, (255, 255, 255)), ((595-self.minecraft_font_smaller.size(string)[0])//2, 601))
+        self.window.blit(self.minecraft_font_smaller.render(string, True, (255, 255, 255)), ((595-self.minecraft_font_smaller.size(string)[0])//2, 596))
         pygame.draw.rect(self.window, (0, 0, 0), (x, 598, length, 19), 1)
 
     def move(self, grass_x, grass_y, block_path):

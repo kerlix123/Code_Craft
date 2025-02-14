@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 0,
+    "last_finished_level": 36,
     "level_p": [
         [
             30,
@@ -537,8 +537,8 @@
                     "Ctrl+K"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
             "hint1_Python": "Use print() function",
             "hint2_Python": "Inside of print() type \"Hello, World!\"",
             "hint1_C": "Use printf() function",
@@ -783,7 +783,7 @@
                     "single-line comment."
                 ]
             ],
-            "hint1_unlocked": false,
+            "hint1_unlocked": true,
             "hint2_unlocked": false,
             "hint1_Python": "#",
             "hint2_Python": "Type # before print(\"Steve\")",

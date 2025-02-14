@@ -26,6 +26,7 @@ pygame.mixer.music.play()
 
 music_on = data["music_on"]
 fx_on = data["fx_on"]
+lang = data["lang"]
 if not music_on:
     pygame.mixer.music.pause()
 
@@ -75,17 +76,17 @@ def menu():
                     sys.exit()
 
         #Emerald count
-        window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 8.8))
+        window.blit(minecraft_font_book.render(str(data["emeralds"]), True, (255, 255, 255)), (1213-minecraft_font_book.size(str(data["emeralds"]))[0], 2.6))
 
-        game_utils.menu_button(420, 250, 594, menu_text["play"], 400, 40, mouse)
+        game_utils.menu_button(420, 250, menu_text["play"][lang], 400, 40, mouse)
 
-        game_utils.menu_button(420, 300, 580, menu_text["levels"], 400, 40, mouse)
+        game_utils.menu_button(420, 300, menu_text["levels"][lang], 400, 40, mouse)
 
-        game_utils.menu_button(420, 350, 573, menu_text["tutorials"], 400, 40, mouse)
+        game_utils.menu_button(420, 350, menu_text["tutorials"][lang], 400, 40, mouse)
 
-        game_utils.menu_button(420, 420, 464, menu_text["options"], 195, 40, mouse)
+        game_utils.menu_button(420, 420, menu_text["options"][lang], 195, 40, mouse)
 
-        game_utils.menu_button(625, 420, 659, menu_text["quit"], 195, 40, mouse)
+        game_utils.menu_button(625, 420, menu_text["quit"][lang], 195, 40, mouse)
 
         pygame.display.update()
         clock.tick(60)    
@@ -100,7 +101,7 @@ def level_menu():
                 pygame.quit()
                 sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
-                if 610 <= mouse[0] <= 810 and 550 <= mouse[1] <= 590:
+                if 550 <= mouse[0] <= 785 and 550 <= mouse[1] <= 590:
                     # Generate and save a new level using GridPathfinder
                     rpg.generate_points()
 
@@ -129,11 +130,11 @@ def level_menu():
 
                     game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                     game(curr_level, player_l=True, random_l=True)
-                if 830 <= mouse[0] <= 1030 and 550 <= mouse[1] <= 590:
+                if 810 <= mouse[0] <= 1015 and 550 <= mouse[1] <= 590:
                     #Opens level builder if Level Builder button is clicked
                     game_utils.play_click_sound(fx_on)
                     level_builder()
-                if 1050 <= mouse[0] <= 1210 and 550 <= mouse[1] <= 590:
+                if 1035 <= mouse[0] <= 1210 and 550 <= mouse[1] <= 590:
                     #Opens players level menu if Your levels button is clicked
                     game_utils.play_click_sound(fx_on)
                     your_levels_menu()
@@ -163,7 +164,7 @@ def level_menu():
 
             text_width = minecraft_font_small.size(str(lvl.level))[0]
 
-            window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
+            window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+20))
 
             if not lvl.unlocked:
                 game_utils.trans_surface(lvl.size, lvl.size, (0, 0, 0, 50), lvl.x, lvl.y)
@@ -172,13 +173,13 @@ def level_menu():
                 pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
                 game_utils.button(play_level_button, lvl.x, lvl.y)
 
-        window.blit(level_menu_text["debug_challenge"], (30, 250))
+        window.blit(level_menu_text["debug_challenge"][lang][0], (level_menu_text["debug_challenge"][lang][1], 240))
 
-        game_utils.menu_button(610, 550, 627, level_menu_text["random_level"], 200, 40, mouse)
+        game_utils.menu_button(550, 550, level_menu_text["random_level"][lang], 235, 40, mouse)
 
-        game_utils.menu_button(830, 550, 853, level_menu_text["lvl_builder"], 200, 40, mouse)
+        game_utils.menu_button(805, 550, level_menu_text["lvl_builder"][lang], 210, 40, mouse)
 
-        game_utils.menu_button(1050, 550, 1063, level_menu_text["your_levels"], 160, 40, mouse)
+        game_utils.menu_button(1035, 550, level_menu_text["your_levels"][lang], 175, 40, mouse)
         
         pygame.display.update()
         clock.tick(60)
@@ -311,7 +312,7 @@ def level_builder():
                         game_utils.write_to_json(PATH / "levels" / "player_levels.json", player_levels)
                         saved = True
                     else:
-                        messages.append("Set start and end positions first!")
+                        messages.append(texts["Set start and end positions first!"][lang])
                 elif 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
                     #Exits and updates the player_levels.json to fully save level if Exit button is clicked
                     if saved:
@@ -375,14 +376,14 @@ def level_builder():
             pygame.draw.rect(window, (255, 0, 0), (start[0]*85, start[1]*85, 85, 85), 2)
         
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
-            game_utils.description("Exit")
+            game_utils.description(texts["Exit"][lang])
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
         
         #back_button
         game_utils.button(close_button, 10, 596)
 
         if 605 <= mouse[0] <= 625 and 20 <= mouse[1] <= 40:
-            game_utils.description("Set start position")
+            game_utils.description(texts["Set start position"][lang])
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 609, 20)
 
         #start button
@@ -392,11 +393,11 @@ def level_builder():
         path_button = get_scaled_img(PATH / "blocks" / path_block, (28, 28))
         window.blit(path_button, (605, 60))
         if 605 <= mouse[0] <= 633 and 60 <= mouse[1] <= 88:
-            game_utils.description("Set path block")
+            game_utils.description(texts["Set path block"][lang])
             game_utils.trans_surface(28, 28, (170, 170, 170, 120), 605, 60)
 
         if 609 <= mouse[0] <= 633 and 104 <= mouse[1] <= 129:
-            game_utils.description("Save level")
+            game_utils.description(texts["Save level"][lang])
             game_utils.trans_surface(22, 21, (170, 170, 170, 120), 609, 104)
 
         #save button
@@ -415,7 +416,7 @@ def level_builder():
             window.blit(faded_image, (613, 145))
 
             if 613 <= mouse[0] <= 628 and 145 <= mouse[1] <= 160:
-                game_utils.description("Unsaved")
+                game_utils.description(texts["Unsaved"][lang])
                 game_utils.trans_surface(17, 17, (170, 170, 170, 120), 612, 144)
 
         game_utils.minecraft_cmd(messages, 0, 595, 590)
@@ -424,7 +425,7 @@ def level_builder():
         clock.tick(60)
 
 def tutorial():
-    text = "Coming soon!"
+    text = texts["Coming soon!"][lang]
     text_index = 0
     while True:
         game_utils.play_next_track(music_on)
@@ -459,7 +460,7 @@ def tutorial():
         clock.tick(60)
 
 def options_win():
-    global music_on, fx_on, code_lang
+    global music_on, fx_on, code_lang, lang
     while True:
         game_utils.play_next_track(music_on)
         events = pygame.event.get()
@@ -497,6 +498,11 @@ def options_win():
                     data["code_lang"] = code_lang
                     game_utils.write_to_json(PATH / "data.json", data)
                 if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
+                    #Changes game language eng/hrv
+                    lang = "hrv" if lang == "eng" else "eng"
+                    data["lang"] = lang
+                    game_utils.write_to_json(PATH / "data.json", data)
+                if 420 <= mouse[0] <= 820 and 330 <= mouse[1] <= 370:
                     #Clears game progress if Clear Progress button is clicked
                     game_utils.play_click_sound(fx_on)
                     data["music_on"] = True
@@ -528,27 +534,28 @@ def options_win():
         game_utils.background()
         game_utils.bg_overlay()
 
-        game_utils.menu_button(420, 80, 587, options_text["skins"], 400, 40, mouse)
+        game_utils.menu_button(420, 80, options_text["skins"][lang], 400, 40, mouse)
 
         if music_on:
-            game_utils.menu_button(420, 130, 565, options_text["audio_on"], 400, 40, mouse)
+            game_utils.menu_button(420, 130, options_text["audio_on"][lang], 400, 40, mouse)
         else:
-            game_utils.menu_button(420, 130, 558, options_text["audio_off"], 400, 40, mouse)
+            game_utils.menu_button(420, 130, options_text["audio_off"][lang], 400, 40, mouse)
 
         if fx_on:
-            game_utils.menu_button(420, 180, 580, options_text["fx_on"], 400, 40, mouse)
+            game_utils.menu_button(420, 180, options_text["fx_on"][lang], 400, 40, mouse)
         else:
-            game_utils.menu_button(420, 180, 573, options_text["fx_off"], 400, 40, mouse)
+            game_utils.menu_button(420, 180, options_text["fx_off"][lang], 400, 40, mouse)
 
         if code_lang == 0:
-            game_utils.menu_button(420, 230, 430, options_text["python"], 400, 40, mouse)
+            game_utils.menu_button(420, 230, options_text["python"][lang], 400, 40, mouse)
         elif code_lang == 1:
-            game_utils.menu_button(420, 230, 462, options_text["c"], 400, 40, mouse)
+            game_utils.menu_button(420, 230, options_text["c"][lang], 400, 40, mouse)
         else:
-            game_utils.menu_button(420, 230, 446, options_text["c++"], 400, 40, mouse)
+            game_utils.menu_button(420, 230, options_text["c++"][lang], 400, 40, mouse)
 
+        game_utils.menu_button(420, 280, options_text["lang"][lang], 400, 40, mouse)
 
-        game_utils.menu_button(420, 280, 452, options_text["clear_progress"], 400, 40, mouse)
+        game_utils.menu_button(420, 330, options_text["clear_progress"][lang], 400, 40, mouse)
 
         #back_button
         game_utils.button(back_button, 10, 565)
@@ -642,7 +649,7 @@ def skins():
 def game(level, player_l = False, random_l = False):
     global code_lang, code_runned, level_finished, grades
     global def_code_python, def_code_c, def_code_cpp, messages
-    global book
+    global book, lang
     code_lang = data["code_lang"]
     messages = []
     restart_code = False
@@ -688,7 +695,7 @@ def game(level, player_l = False, random_l = False):
         if level_data[f"hint{hint}_unlocked"]:
             messages.append((level_data[f"hint{hint}_{languages[code_lang]}"]))
         elif hint == 2 and not level_data["hint1_unlocked"]:
-            messages.append("Buy Hint 1 first.")
+            messages.append(texts["Buy Hint 1 first."][lang])
         else:
             if data["emeralds"] >= price:
                 data["emeralds"] -= price
@@ -697,7 +704,7 @@ def game(level, player_l = False, random_l = False):
                 game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
                 game_utils.write_to_json(PATH / "data.json", data)
             else:
-                messages.append("Not enough emeralds.")
+                messages.append(texts["You don't have enough emeralds!"][lang])
 
     def del_random_l():
         if random_l:
@@ -711,33 +718,33 @@ def game(level, player_l = False, random_l = False):
     def check():
         nonlocal plate_activated, player_l
         if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
-            messages.append("Mob got out of bounds!")
+            messages.append(texts["Mob got out of bounds!"][lang])
             restart_mob()
             
         block = level_data["blocks"][stevexy[1]//85][stevexy[0]//85]
     
         if block == "oak_trapdoor.png":
             if level >= 14 and level < 17 and not plate_activated:
-                messages.append("Door is not unlocked!")
+                messages.append(texts["Door is not unlocked!"][lang])
                 restart_mob()
             return True
         elif block == "pressure_plate.png":
             plate_activated = True
         elif player_l:
             if block != level_data["path_block"]:
-                messages.append("You can't go on this block!")
+                messages.append(texts["You can't go on this block!"][lang])
                 restart_mob()
                 return False
         elif (level < 17 or level == 33 or level == 34) and block != "grass_top.png":
-            messages.append("You can only go on grass!")
+            messages.append(texts["You can only go on grass!"][lang])
             restart_mob()
             return False
         elif (level >= 17 and level < 21 or level == 35) and block != "bedrock.png":
-            messages.append("You can only go on bedrock!")
+            messages.append(texts["You can only go on bedrock!"][lang])
             restart_mob()
             return False
         elif (level >= 21 and level < 33 or level == 36) and block != "purpur_block.png":
-            messages.append("You can only go on purpur blocks!")
+            messages.append(texts["You can only go on purpur blocks!"][lang])
             restart_mob()
             return False
 
@@ -857,7 +864,7 @@ def game(level, player_l = False, random_l = False):
         pygame.draw.rect(window, (0, 118, 197), (0, 595, 1240, 25))
 
         #language
-        window.blit(game_text[code_lang], (lang_text_x, 600))
+        window.blit(game_text[code_lang], (lang_text_x, 596))
 
         if lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
             game_utils.description("Change language")
@@ -923,16 +930,16 @@ def game(level, player_l = False, random_l = False):
         #1v1 button
         if 10 <= level <= 24 or player_l:
             if not one_v_one:
-                window.blit(game_text["1v1"], (630, 600))
+                window.blit(game_text["1v1"], (630, 596))
                 if 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615:
                     game_utils.description("1 vs 1 with a friend")
                     game_utils.trans_surface(24, 15, (170, 170, 170, 120), 630, 600)
             else:
-                window.blit(game_text["1."], (630, 600))
+                window.blit(game_text["1."], (630, 596))
                 if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615:
                     game_utils.description("1st player")
                     game_utils.trans_surface(10, 15, (170, 170, 170, 120), 630, 600)
-                window.blit(game_text["2."], (650, 600))
+                window.blit(game_text["2."], (650, 596))
                 if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615:
                     game_utils.description("2nd player")
                     game_utils.trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
@@ -1172,7 +1179,7 @@ def game(level, player_l = False, random_l = False):
         game_utils.minecraft_cmd(messages, 0, 595, 590)
 
         cursor_pos = minecraft_font_smaller.render(f"Ln {code_input.i + 1}, Col {code_input.cursor_pos + 1}", True, (255, 255, 255))
-        window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 600))
+        window.blit(cursor_pos, (1240 - cursor_pos.get_width() - 15, 596))
         
         pygame.display.update()
         clock.tick(60)
