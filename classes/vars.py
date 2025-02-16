@@ -34,31 +34,31 @@ def render_smaller_text(text):
     return minecraft_font_smaller.render(text, True, (255, 255, 255))
 
 menu_text = {
-    "play": {"eng": (render_small_text("Play"), 594), "hrv": ((render_small_text("Igraj"), 580))},
-    "levels": {"eng": (render_small_text("Levels"), 580), "hrv": (render_small_text("Razine"), 580)},
-    "tutorials": {"eng": (render_small_text("Tutorials"), 573), "hrv": (render_small_text("Vodiči"), 575)},
-    "options": {"eng": (render_small_text("Options..."), 464), "hrv": (render_small_text("Opcije..."), 470)},
-    "quit": {"eng": (render_small_text("Quit Game"), 659), "hrv": (render_small_text("Izađi iz igre"), 650)}
+    "play": {"eng": (render_small_text("Play"), 594), "hrv": ((render_small_text("Igraj"), 591))},
+    "levels": {"eng": (render_small_text("Levels"), 582), "hrv": (render_small_text("Razine"), 580)},
+    "tutorials": {"eng": (render_small_text("Tutorials"), 563), "hrv": (render_small_text("Vodiči"), 583)},
+    "options": {"eng": (render_small_text("Options..."), 460), "hrv": (render_small_text("Opcije..."), 468)},
+    "quit": {"eng": (render_small_text("Quit Game"), 659), "hrv": (render_small_text("Izađi iz igre"), 648)}
 }
 
 level_menu_text = {
-    "lvl_builder": {"eng": (render_small_text("Level Builder"), 853), "hrv": (render_small_text("Graditelj Razina"), 810)},
-    "your_levels": {"eng": (render_small_text("Your Levels"), 1063), "hrv": (render_small_text("Tvoje Razine"), 1040)},
-    "debug_challenge": {"eng": (render_small_text("Debug Challenges"), 30), "hrv": (render_small_text("Izazovi za Debug"), 30)},
-    "random_level": {"eng": (render_small_text("Random Level"), 627), "hrv": (render_small_text("Nasumična Razina"), 555)}
+    "lvl_builder": {"eng": (render_small_text("Level Builder"), 830), "hrv": (render_small_text("Graditelj Razina"), 811)},
+    "your_levels": {"eng": (render_small_text("Your Levels"), 1050), "hrv": (render_small_text("Tvoje Razine"), 1041)},
+    "debug_challenge": {"eng": (render_small_text("Debug Challenges"), 30), "hrv": (render_small_text("Debug Izazovi"), 30)},
+    "random_level": {"eng": (render_small_text("Random Level"), 583), "hrv": (render_small_text("Nasumična Razina"), 555)}
 }
 
 options_text = {
-    "skins": {"eng": (render_small_text("Skins"), 587), "hrv": (render_small_text("Likovi"), 580)},
-    "clear_progress": {"eng": (render_small_text("Clear Progress (Exits game)"), 452), "hrv": (render_small_text("Izbriši napredak (Zatvara igru)"), 427)},
-    "audio_on": {"eng": (render_small_text("Audio: On"), 565), "hrv": (render_small_text("Zvuk: Uključeno"), 530)},
-    "audio_off": {"eng": (render_small_text("Audio: Off"), 558), "hrv": (render_small_text("Zvuk: Isključeno"), 530)},
-    "fx_on": {"eng": (render_small_text("FX: On"), 580), "hrv": (render_small_text("Efekti: Uključeno"), 530)},
-    "fx_off": {"eng": (render_small_text("FX: Off"), 573), "hrv": (render_small_text("Efekti: Isključeno"), 530)},
+    "skins": {"eng": (render_small_text("Skins"), 590), "hrv": (render_small_text("Likovi"), 580)},
+    "clear_progress": {"eng": (render_small_text("Clear Progress (Exits game)"), 445), "hrv": (render_small_text("Izbriši napredak (Zatvara igru)"), 427)},
+    "audio_on": {"eng": (render_small_text("Audio: On"), 563), "hrv": (render_small_text("Zvuk: Uključen"), 530)},
+    "audio_off": {"eng": (render_small_text("Audio: Off"), 560), "hrv": (render_small_text("Zvuk: Isključen"), 530)},
+    "fx_on": {"eng": (render_small_text("Effects: On"), 553), "hrv": (render_small_text("Efekti: Uključeni"), 530)},
+    "fx_off": {"eng": (render_small_text("Effects: Off"), 551), "hrv": (render_small_text("Efekti: Isključeni"), 530)},
     "python": {"eng": (render_small_text("Programming language: Python"), 425), "hrv": (render_small_text("Programski jezik: Python"), 480)},
-    "c": {"eng": (render_small_text("Programming language: C"), 462), "hrv": (render_small_text("Programski jezik: C"), 520)},
+    "c": {"eng": (render_small_text("Programming language: C"), 460), "hrv": (render_small_text("Programski jezik: C"), 520)},
     "c++": {"eng": (render_small_text("Programming language: C++"), 446), "hrv": (render_small_text("Programski jezik: C++"), 500)},
-    "lang": {"eng": (render_small_text("Language: English"), 452), "hrv": (render_small_text("Jezik: Hrvatski"), 525)},
+    "lang": {"eng": (render_small_text("Language: English"), 510), "hrv": (render_small_text("Jezik: Hrvatski"), 525)},
 }
 
 game_text = {
@@ -86,6 +86,29 @@ texts = {
     "You can only go on grass!": {"eng": "You can only go on grass!", "hrv": "Možeš ići jedino po travi!"},
     "You can only go on bedrock!": {"eng": "You can only go on bedrock!", "hrv": "Možeš ići jedino po temelju!"},
     "You can only go on purpur blocks!": {"eng": "You can only go on purpur blocks!", "hrv": "Možeš ići jedino po blokovima purpura!"},
+    "Change language": {"eng": "Change language", "hrv": "Promijeni jezik"},
+    "Run": {"eng": "Run", "hrv": "Pokreni"},
+    "Restart": {"eng": "Restart", "hrv": "Resetiraj kod"},
+    "Timed challenge": {"eng": "Timed challenge", "hrv": "Vremenski izazov"},
+    "emeralds": {"eng": "emeralds", "hrv": "smaragda"},
+    "Next level": {"eng": "Next level", "hrv": "Sljedeća razina"},
+    "1 vs 1 with a friend": {"eng": "1 vs 1 with a friend", "hrv": "1 na 1 s prijateljem"},
+    "1st player": {"eng": "1st player", "hrv": "1. igrač"},
+    "2nd player": {"eng": "2nd player", "hrv": "2. igrač"},
+    "Exit 1v1": {"eng": "Exit 1v1", "hrv": "Izlaz iz 1v1"},
+    "Player": {"eng": "Player", "hrv": "Igrač"},
+    "finished the level": {"eng": "finished the level", "hrv": "je završio razinu"},
+    "Your code should include a": {"eng": "Your code should include a", "hrv": "Tvoj kod bi trebao sadržavati"},
+    "loop": {"eng": "loop", "hrv": "petlju"},
+    "Wrong solution! Try again.": {"eng": "Wrong solution! Try again.", "hrv": "Krivo rješenje! Pokušaj ponovno."},
+    "scored": {"eng": "scored", "hrv": "postigao je"},
+    "It's a draw!": {"eng": "It's a draw!", "hrv": "Neriješeno je!"},
+    "won": {"eng": "won", "hrv": "je pobijedio"},
+    "Emeralds": {"eng": "Emeralds", "hrv": "Smaragda"},
+    "seconds": {"eng": "seconds", "hrv": "sekundi"},
+    "Your time": {"eng": "Your time", "hrv": "Tvoje vrijeme"},
+    "Great job!": {"eng": "Great job!", "hrv": "Odličan posao!"},
+    "Not enough emeralds!": {"eng": "Not enough emeralds!", "hrv": "Nedovoljno smaragda!"}
 }
 
 def load_json_file(file):

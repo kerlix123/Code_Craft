@@ -220,7 +220,7 @@ def your_levels_menu():
 
             text_width = minecraft_font_small.size(str(lvl.level))[0]
 
-            window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+30))
+            window.blit(render_small_text(str(lvl.level)), (lvl.x + (lvl.size-text_width)//2 + 1, lvl.y+20))
 
             if lvl.hover(mouse[0], mouse[1]):
                 pygame.draw.rect(window, (255, 255, 255), (lvl.x, lvl.y, lvl.size, lvl.size), 3)
@@ -604,7 +604,7 @@ def skins():
                                 game_utils.write_to_json(PATH / "data.json", data)
                                 game_utils.set_skin()
                             else:
-                                messages.append("Not enough emeralds!")
+                                messages.append(texts["Not enough emeralds!"][lang])
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     #Clears the output if Ctrl+K/Cmd+K is clicked
@@ -625,7 +625,7 @@ def skins():
                 emerald = get_scaled_img(PATH / "drawable" / "emerald.png", (32, 32))
                 text_width = minecraft_font_small.size(str(skin.price))[0]
                 window.blit(emerald, (skin.x + (skin.size-text_width)//2-17, skin.y+24))
-                window.blit(render_small_text(str(skin.price)), (skin.x + (skin.size-text_width)//2 + 11, skin.y+30))
+                window.blit(render_small_text(str(skin.price)), (skin.x + (skin.size-text_width)//2 + 11, skin.y+20))
 
             if skin.name == data["skin"]:
                 pygame.draw.rect(window, (0, 255, 0), (skin.x, skin.y, skin.size, skin.size), 2)
@@ -674,7 +674,7 @@ def game(level, player_l = False, random_l = False):
         return level_data[f"input_text_{languages[code_lang]}"]
     code_input.set_text(get_text_path())
 
-    book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}"])
+    book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}_{lang}"])
 
     blocks = game_utils.render_blocks(level_data["blocks"])
 
@@ -794,7 +794,7 @@ def game(level, player_l = False, random_l = False):
                         level_finished = False
                         blocks = game_utils.render_blocks(level_data["blocks"])
                         if not player_l:
-                            book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}"])
+                            book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}_{lang}"])
                         text_path = get_text_path()
                         restart_text()
                         restart_mob()
@@ -819,7 +819,7 @@ def game(level, player_l = False, random_l = False):
                     code_lang = (code_lang + 1) % 3
                     lang_text_x = (645-minecraft_font_smaller.size(languages[code_lang])[0])//2+595
                     lang_text_length = minecraft_font_smaller.size(languages[code_lang])[0]
-                    book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}"])
+                    book_text = game_utils.render_book_text(level_data[f"text_{languages[code_lang]}_{lang}"])
                     restart_text()
                 elif not player_l and 56 <= mouse[0] <= 67 and 597 <= mouse[1] <= 617:
                     #Buys and displays or just displays first hint when first Hint button is clicked
@@ -867,25 +867,25 @@ def game(level, player_l = False, random_l = False):
         window.blit(game_text[code_lang], (lang_text_x, 596))
 
         if lang_text_x <= mouse[0] <= lang_text_x+lang_text_length and 600 <= mouse[1] <= 615:
-            game_utils.description("Change language")
+            game_utils.description(texts["Change language"][lang])
             game_utils.trans_surface(lang_text_length, 15, (170, 170, 170, 120), lang_text_x, 600)
 
         if 10 <= mouse[0] <= 30 and 597 <= mouse[1] <= 617:
-            game_utils.description("Exit")
+            game_utils.description(texts["Exit"][lang])
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 12, 597)
         
         #back_button
         game_utils.button(close_button, 10, 596)
 
         if 30 <= mouse[0] <= 50 and 598 <= mouse[1] <= 618:
-            game_utils.description("Run")
+            game_utils.description(texts["Run"][lang])
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 34, 598)
 
         #run_button
         game_utils.button(run_button, 30, 593)
 
         if 595 <= mouse[0] <= 615 and 598 <= mouse[1] <= 618:
-            game_utils.description("Restart")
+            game_utils.description(texts["Restart"][lang])
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 599, 598)
 
         #restart_button
@@ -900,7 +900,7 @@ def game(level, player_l = False, random_l = False):
                 if level_data["hint1_unlocked"]:
                     game_utils.description("Hint 1.")
                 else:
-                    game_utils.description("Hint 1. (5 emeralds)")
+                    game_utils.description(f"Hint 1. (5 {texts["emeralds"][lang]})")
                 game_utils.trans_surface(11, 20, (170, 170, 170, 120), hint_x, 597)
             
             #hint2_button
@@ -910,11 +910,11 @@ def game(level, player_l = False, random_l = False):
                 if level_data["hint2_unlocked"]:
                     game_utils.description("Hint 2.")
                 else:
-                    game_utils.description("Hint 2. (15 emeralds)")
+                    game_utils.description(f"Hint 2. (15 {texts["emeralds"][lang]})")
                 game_utils.trans_surface(14, 20, (170, 170, 170, 120), hint_x+14, 597)
 
             if 90 <= mouse[0] <= 110 and 598 <= mouse[1] <= 618:
-                game_utils.description("Timed challenge")
+                game_utils.description(texts["Timed challenge"][lang])
                 game_utils.trans_surface(20, 20, (170, 170, 170, 120), 90, 598)
 
             #clock_button
@@ -923,7 +923,7 @@ def game(level, player_l = False, random_l = False):
         #next_button
         if not player_l and level_finished and level < 36:
             if 566 <= mouse[0] <= 582 and 598 <= mouse[1] <= 618:
-                game_utils.description("Next level")
+                game_utils.description(texts["Next level"][lang])
                 game_utils.trans_surface(22, 20, (170, 170, 170, 120), 566, 598)
             game_utils.button(accept_button, 562, 592)
 
@@ -932,20 +932,20 @@ def game(level, player_l = False, random_l = False):
             if not one_v_one:
                 window.blit(game_text["1v1"], (630, 596))
                 if 630 <= mouse[0] <= 654 and 600 <= mouse[1] <= 615:
-                    game_utils.description("1 vs 1 with a friend")
+                    game_utils.description(texts["1 vs 1 with a friend"][lang])
                     game_utils.trans_surface(24, 15, (170, 170, 170, 120), 630, 600)
             else:
                 window.blit(game_text["1."], (630, 596))
                 if 630 <= mouse[0] <= 640 and 600 <= mouse[1] <= 615:
-                    game_utils.description("1st player")
+                    game_utils.description(texts["1st player"][lang])
                     game_utils.trans_surface(10, 15, (170, 170, 170, 120), 630, 600)
                 window.blit(game_text["2."], (650, 596))
                 if 650 <= mouse[0] <= 660 and 600 <= mouse[1] <= 615:
-                    game_utils.description("2nd player")
+                    game_utils.description(texts["2nd player"][lang])
                     game_utils.trans_surface(10, 15, (170, 170, 170, 120), 650, 600)
 
                 if 668 <= mouse[0] <= 684 and 598 <= mouse[1] <= 614:
-                    game_utils.description("Exit 1v1")
+                    game_utils.description(texts["Exit 1v1"][lang])
                     game_utils.trans_surface(16, 16, (170, 170, 170, 120), 668, 598)
 
                 #exit_1v1_button
@@ -996,7 +996,7 @@ def game(level, player_l = False, random_l = False):
             minutes = int(timed_time // 60)
             seconds = int(timed_time % 60)
 
-            window.blit(render_small_text(f"{minutes:02}:{seconds:02}"), (1170, 10))
+            window.blit(render_small_text(f"{minutes:02}:{seconds:02}"), (1165, 0))
 
         #code
         if code_runned:
@@ -1013,8 +1013,8 @@ def game(level, player_l = False, random_l = False):
             if code_lang == 0:
                 executed_code = exec_code(def_code_python + input_code)
             else:
-                lang = "C" if code_lang == 1 else "C++"
-                executed_code = exec_c_code(def_code_c + input_code if code_lang == 1 else def_code_cpp + input_code, lang)
+                c_lang = "C" if code_lang == 1 else "C++"
+                executed_code = exec_c_code(def_code_c + input_code if code_lang == 1 else def_code_cpp + input_code, c_lang)
             end_time = time.time()
             one_v_one_time[player-1] = end_time - start_time
             if executed_code["error"]:
@@ -1104,7 +1104,7 @@ def game(level, player_l = False, random_l = False):
                     if one_v_one:
                         fun_calls[player-1] = len(coms)
                         one_v_one_code[player-1] = True
-                        messages.append(f"Player {player}. finished the level!")
+                        messages.append(f"{texts["Player"][lang]} {player}. {texts["finished the level"][lang]}!")
                         if not (one_v_one_code[0] and one_v_one_code[1]):
                             restart_mob()
                     else:
@@ -1116,29 +1116,29 @@ def game(level, player_l = False, random_l = False):
                             if "for" in input_code:
                                 solution = True
                             else:
-                                messages.append("Your code should include a for loop!")
+                                messages.append(f"{texts["Your code should include a"][lang]} for {texts["loop"][lang]}!")
                                 restart_mob()
                         elif level >= 21 and level <= 24:
                             if "while" in input_code:
                                 solution = True
                             else:
-                                messages.append("Your code should include a while loop!")
+                                messages.append(f"{texts["Your code should include a"][lang]} while {texts["loop"][lang]}!")
                                 restart_mob()
                         elif level >= 10 and level < 14 or level >= 33:
                             solution = True
                 else:
-                    messages.append("Wrong solution! Try again.")
+                    messages.append(texts["Wrong solution! Try again."][lang])
                     restart_mob()
             
             if one_v_one:
                 if one_v_one_code[0] and one_v_one_code[1]:
                     grades = grade_code(code_input.get_text(), code_input_2.get_text(), one_v_one_time, fun_calls)
-                    messages.append(f"Player 1. scored: {grades[0]}/4")
-                    messages.append(f"Player 2. scored: {grades[1]}/4")
+                    messages.append(f"{texts["1st player"][lang]} {texts["scored"][lang]}: {grades[0]}/4")
+                    messages.append(f"{texts["2nd player"][lang]} {texts["scored"][lang]}: {grades[1]}/4")
                     if grades[0] == grades[1]:
-                        messages.append("It's a draw!")
+                        messages.append(texts["It's a draw!"][lang])
                     else:
-                        messages.append(f"Player {1 if grades[0] > grades[1] else 2}. won.")
+                        messages.append(f"{texts["Player"][lang]} {1 if grades[0] > grades[1] else 2}. {texts["won"][lang]}.")
 
             if solution and not executed_code["error"]:
                 if player_l or level >= 10 and level <= 24 or level >= 33 and level <= 36:
@@ -1146,28 +1146,28 @@ def game(level, player_l = False, random_l = False):
                         sound = pygame.mixer.Sound(PATH / "sounds" / "trapdoor.mp3")
                         sound.play()
                                         
-                messages.append("Great job!")
+                messages.append(texts["Great job!"][lang])
                 emeralds = 5
                 if level >= 10:
                     emeralds = 10
                 elif level >= 14:
                     emeralds = 15
                 if not player_l:
-                    messages.append(f"+{emeralds} Emeralds")
+                    messages.append(f"+{emeralds} {texts["Emeralds"][lang]}")
                 if timed_time:
                     timed_start = 0
-                    messages.append(f"Your time: {minutes:02}:{seconds:02}")
+                    messages.append(f"{texts["Your time"][lang]}: {minutes:02}:{seconds:02}")
                     if timed_time < 10:
-                        messages.append("< 10 seconds: +20 Emeralds")
+                        messages.append(f"< 10 {texts["seconds"][lang]}: +20 {texts["Emeralds"][lang]}")
                         emeralds += 20
                     elif timed_time < 15:
-                        messages.append("< 15 seconds: +15 Emeralds")
+                        messages.append(f"< 15 {texts["seconds"][lang]}: +15 {texts["Emeralds"][lang]}")
                         emeralds += 15
                     elif timed_time < 20:
-                        messages.append("< 20 seconds: +10 Emeralds")
+                        messages.append(f"< 20 {texts["seconds"][lang]}: +10 {texts["Emeralds"][lang]}")
                         emeralds += 10
                     elif timed_time < 30:
-                        messages.append("< 30 seconds: +5 Emeralds")
+                        messages.append(f"< 30 {texts["seconds"][lang]}: +5 {texts["Emeralds"][lang]}")
                         emeralds += 5
 
                 data["emeralds"] += emeralds
@@ -1184,7 +1184,7 @@ def game(level, player_l = False, random_l = False):
         pygame.display.update()
         clock.tick(60)
 
-loaders.loading_screen()
+#loaders.loading_screen()
 if data["first_play"]:
     data["first_play"] = False
     game_utils.write_to_json(PATH / "data.json", data)

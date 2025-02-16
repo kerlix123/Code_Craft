@@ -70,7 +70,7 @@ class GameUtils:
             self.trans_surface(length, 30, (0, 0, 0, 100), x, y)
             if l[index][0:7] == "Error: ":
                 color = (255, 85, 85)
-            if l[index] == "Player 1. won." or l[index] == "Player 2. won.":
+            if l[index] in ("Player 1. won.", "Player 2. won.", "Igrač 1. je pobijedio.", "Igrač 2. je pobijedio."):
                 color = (0, 255, 0)
             self.window.blit(self.minecraft_font_small.render(l[index], True, color), (x+10, y-4))
             index += 1

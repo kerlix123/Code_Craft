@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 36,
+    "last_finished_level": 0,
     "level_p": [
         [
             30,
@@ -343,7 +343,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Welcome to Code_Craft",
                     "",
@@ -381,7 +381,7 @@
                     "",
                     "In Python we use the \"print()\" function",
                     "for this. Simply type the function and",
-                    " pass it text surrounded by quotes.",
+                    "pass it text surrounded by quotes.",
                     "(In Python, it doesn't matter whether",
                     "the quotes are single or double, but in",
                     "this game, we will stick with double",
@@ -407,7 +407,67 @@
                     "Ctrl+K"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Dobro do\u0161li u Code_Craft!",
+                    "",
+                    "Ovu igru razvili su VILLAGERi.",
+                    "",
+                    "U ovoj igri mo\u017ee\u0161 nau\u010diti osnove",
+                    "programiranja u okru\u017eenju sli\u010dnom",
+                    "Minecraftu.",
+                    "",
+                    "Krenimo!"
+                ],
+                [
+                    "Razina 1",
+                    "",
+                    "Prvo, nau\u010dimo ne\u0161to o Pythonu.",
+                    "Python je stvoren od strane Guida van",
+                    "Rossuma i objavljen je 1991. godine.",
+                    "Sada se koristi gotovo svugdje.",
+                    "Python koristi nove linije za zavr\u0161etak",
+                    "naredbe.",
+                    "Prostori petlji, funkcija i klasa definiraju",
+                    "se razmacima.",
+                    "Python je interpretirani jezik, \u0161to zna\u010di",
+                    "da se izvr\u0161ava liniju po liniju pomo\u0107u",
+                    "programa zvanog interpreter."
+                ],
+                [
+                    "Nau\u010dimo kako ne\u0161to ispisati na zaslonu.",
+                    "",
+                    "U Pythonu za to koristimo funkciju",
+                    "\"print()\".",
+                    "Jednostavno napi\u0161ite funkciju i ubacite",
+                    "joj tekst okru\u017een navodnicima",
+                    "(U Pythonu nije va\u017eno jesu li navodnici",
+                    "jednostruki ili dvostruki, ali u igri",
+                    "\u0107emo se pridr\u017eavati dvostrukih",
+                    "navodnika).",
+                    "",
+                    "print(\"Code_Craft\")",
+                    "",
+                    "Gornji kod \u0107e ispisati Code_Craft",
+                    "na zaslonu."
+                ],
+                [
+                    "Poku\u0161ajte ispisati:",
+                    "",
+                    "Hello, World!",
+                    "",
+                    "Za zatvaranje ili otvaranje ove knjige,",
+                    "koristite:",
+                    "Ctrl+E",
+                    "",
+                    "Pokrenite svoj kod pomo\u0107u gumba",
+                    "na dnu zaslona.",
+                    "",
+                    "Izbri\u0161ite zapisnik izlaza pomo\u0107u:",
+                    "Ctrl+K"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Welcome to Code_Craft",
                     "",
@@ -472,7 +532,71 @@
                     "Ctrl+K"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Dobro do\u0161li u Code_Craft!",
+                    "",
+                    "Ovu igru razvili su VILLAGERi.",
+                    "",
+                    "U ovoj igri mo\u017ee\u0161 nau\u010diti osnove",
+                    "programiranja u okru\u017eenju sli\u010dnom",
+                    "Minecraftu.",
+                    "",
+                    "Krenimo!"
+                ],
+                [
+                    "Razina 1.",
+                    "",
+                    "Prvo, nau\u010dimo ne\u0161to o C-u. C je stvoren",
+                    "od strane Dennisa Ritchiea 1972. godine",
+                    "u Bell Labs. To je sna\u017ean jezik, \u0161iroko",
+                    "kori\u0161ten za sistemsko programiranje,",
+                    "ugradbene sustave i vi\u0161e.",
+                    "",
+                    "C koristi to\u010dke-zareze na kraju",
+                    "naredbi.",
+                    "Zagrade {} koriste se za definiranje",
+                    "opsega funkcija, petlji i uvjeta.",
+                    "",
+                    "C je kompilirani jezik, \u0161to zna\u010di",
+                    "da se pretvara u strojni kod i",
+                    "izravno izvr\u0161ava sustavom."
+                ],
+                [
+                    "Nau\u010dimo kako ne\u0161to ispisati na zaslonu.",
+                    "",
+                    "U C-u za to koristimo funkciju \"printf()\".",
+                    "Morate uklju\u010diti biblioteku \"stdio.h\" da",
+                    "biste je koristili. Zatim napi\u0161ite funkciju",
+                    "i ubacite joj tekst okru\u017een dvostrukim",
+                    "navodnicima.",
+                    "",
+                    "#include <stdio.h>",
+                    "int main() {",
+                    "    printf(\"Code_Craft\");",
+                    "    return 0;",
+                    "}",
+                    "",
+                    "Gornji kod \u0107e ispisati Code_Craft",
+                    "na zaslonu."
+                ],
+                [
+                    "Poku\u0161ajte ispisati:",
+                    "",
+                    "Hello, World!",
+                    "",
+                    "Za zatvaranje ili otvaranje ove knjige,",
+                    "koristite:",
+                    "Ctrl+E",
+                    "",
+                    "Pokrenite svoj kod pomo\u0107u gumba",
+                    "na dnu zaslona.",
+                    "",
+                    "Izbri\u0161ite zapisnik izlaza pomo\u0107u:",
+                    "Ctrl+K"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Welcome to Code_Craft",
                     "",
@@ -537,8 +661,71 @@
                     "Ctrl+K"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "text_C++_hrv": [
+                [
+                    "Dobro do\u0161li u Code_Craft!",
+                    "",
+                    "Ovu igru razvili su VILLAGERi.",
+                    "",
+                    "U ovoj igri mo\u017ee\u0161 nau\u010diti osnove",
+                    "programiranja u okru\u017eenju sli\u010dnom",
+                    "Minecraftu.",
+                    "",
+                    "Krenimo!"
+                ],
+                [
+                    "Razina 1.",
+                    "",
+                    "Prvo, nau\u010dimo ne\u0161to o C++-u. C++ je",
+                    "stvoren od strane Bjarnea Stroustrupa",
+                    "1983. godine kao pro\u0161irenje C-a.",
+                    "C++ je \u0161iroko kori\u0161ten za razvoj",
+                    "igara, aplikacija visokih performansi",
+                    "i sistemskog softvera.",
+                    "C++ koristi to\u010dke-zareze na kraju",
+                    "naredbi.",
+                    "Zagrade {} koriste se za definiranje",
+                    "opsega funkcija, petlji i uvjeta.",
+                    "C++ je kompilirani jezik, pretvoren",
+                    "u strojni kod i izravno izvr\u0161avan",
+                    "sustavom."
+                ],
+                [
+                    "Nau\u010dimo kako ne\u0161to ispisati na zaslonu.",
+                    "",
+                    "U C++-u za to koristimo \"cout\". Moramo",
+                    "uklju\u010diti biblioteku \"iostream\" da bismo",
+                    "je koristili. Zatim napi\u0161ite \"cout\" i ubacite",
+                    "joj tekst koriste\u0107i operator umetanja `<<`.",
+                    "",
+                    "#include <iostream>",
+                    "using namespace std;",
+                    "int main() {",
+                    "    cout << \"Code_Craft\";",
+                    "    return 0;",
+                    "}",
+                    "",
+                    "Gornji kod \u0107e ispisati Code_Craft",
+                    "na zaslonu."
+                ],
+                [
+                    "Poku\u0161ajte ispisati:",
+                    "",
+                    "Hello, World!",
+                    "",
+                    "Za zatvaranje ili otvaranje ove knjige,",
+                    "koristite:",
+                    "Ctrl+E",
+                    "",
+                    "Pokrenite svoj kod pomo\u0107u gumba",
+                    "na dnu zaslona.",
+                    "",
+                    "Izbri\u0161ite zapisnik izlaza pomo\u0107u:",
+                    "Ctrl+K"
+                ]
+            ],
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python": "Use print() function",
             "hint2_Python": "Inside of print() type \"Hello, World!\"",
             "hint1_C": "Use printf() function",
@@ -718,7 +905,7 @@
                     "make it more readable, or prevent",
                     "the code from executing.",
                     "   #this is a comment",
-                    "   print(\"Hello, World!\"",
+                    "   print(\"Hello, World!\")",
                     "Comments can also be placed at the",
                     "end of a line.",
                     "   print(\"Hello, World!\") #comment",
@@ -783,7 +970,7 @@
                     "single-line comment."
                 ]
             ],
-            "hint1_unlocked": true,
+            "hint1_unlocked": false,
             "hint2_unlocked": false,
             "hint1_Python": "#",
             "hint2_Python": "Type # before print(\"Steve\")",
@@ -3356,7 +3543,7 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 10.",
                     "",
@@ -3382,7 +3569,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 10.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 10.",
                     "",
@@ -3407,7 +3619,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 10.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije za",
+                    "pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 10.",
                     "",
@@ -3430,6 +3667,31 @@
                     "go on grass blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 10.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -3518,7 +3780,7 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 11.",
                     "",
@@ -3544,7 +3806,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 11.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 11.",
                     "",
@@ -3569,7 +3856,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 11.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije za",
+                    "pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 11.",
                     "",
@@ -3592,6 +3904,31 @@
                     "go on grass blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 11.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -3680,7 +4017,7 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 12.",
                     "",
@@ -3706,7 +4043,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 12.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 12.",
                     "",
@@ -3731,7 +4093,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 12.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije za",
+                    "pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 12.",
                     "",
@@ -3754,6 +4141,31 @@
                     "go on grass blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 12.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -3842,7 +4254,7 @@
             "input_text_Python": "mob = Mob(0, 6)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 6};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 6);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 13.",
                     "",
@@ -3868,7 +4280,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 13.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 13.",
                     "",
@@ -3893,7 +4330,32 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 13.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije za",
+                    "pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 13.",
                     "",
@@ -3916,6 +4378,31 @@
                     "go on grass blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 13.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -4004,13 +4491,14 @@
             "input_text_Python": "mob = Mob(3, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {3, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(3, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 14.",
                     "",
                     "In this level you will use functions from",
                     "the Mob class to move mob around the",
-                    "map.",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - mob.go_up(n) - moves mob up by",
@@ -4030,12 +4518,41 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 14.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 14.",
                     "",
-                    "In this level you will use functions",
-                    "to move mob around the map.",
+                    "In this level you will use functions from",
+                    "the Mob class to move mob around the",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -4044,8 +4561,8 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
@@ -4055,13 +4572,41 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 14.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 14.",
                     "",
                     "In this level you will use functions from",
                     "the Mob class to move mob around the",
-                    "map.",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - mob.go_up(n) - moves mob up by",
@@ -4078,6 +4623,33 @@
                     "go on grass blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 14.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -4166,13 +4738,14 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 15.",
                     "",
                     "In this level you will use functions from",
                     "the Mob class to move mob around the",
-                    "map.",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - mob.go_up(n) - moves mob up by",
@@ -4192,12 +4765,41 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 15.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 15.",
                     "",
-                    "In this level you will use functions",
-                    "to move mob around the map.",
+                    "In this level you will use functions from",
+                    "the Mob class to move mob around the",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -4206,8 +4808,8 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
@@ -4217,13 +4819,41 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 15.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 15.",
                     "",
                     "In this level you will use functions from",
                     "the Mob class to move mob around the",
-                    "map.",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - mob.go_up(n) - moves mob up by",
@@ -4240,6 +4870,33 @@
                     "go on grass blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 15.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -4328,13 +4985,14 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 16.",
                     "",
                     "In this level you will use functions from",
                     "the Mob class to move mob around the",
-                    "map.",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - mob.go_up(n) - moves mob up by",
@@ -4354,12 +5012,41 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 16.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 16.",
                     "",
-                    "In this level you will use functions",
-                    "to move mob around the map.",
+                    "In this level you will use functions from",
+                    "the Mob class to move mob around the",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -4368,8 +5055,8 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
@@ -4379,13 +5066,41 @@
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 16.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 16.",
                     "",
                     "In this level you will use functions from",
                     "the Mob class to move mob around the",
-                    "map.",
+                    "map. To open the trapdoor you need",
+                    "to step on the pressure plate.",
                     "",
                     "The functions you can use are:",
                     "   - mob.go_up(n) - moves mob up by",
@@ -4402,6 +5117,33 @@
                     "go on grass blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 16.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi. Za",
+                    "otvaranje vrata potrebno je stati na",
+                    "nagaznu plo\u010du.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima trave.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -4738,7 +5480,7 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 18.",
                     "",
@@ -4758,19 +5500,45 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 18.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz for petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 18.",
                     "",
-                    "In this level you will use functions from",
-                    "the Mob class along with for loops to",
-                    "move mob around the map.",
+                    "In this level you will use functions along",
+                    "with for loops to move mob around the",
+                    "map.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -4779,18 +5547,43 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 18.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije uz",
+                    "for petlje za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 18.",
                     "",
@@ -4810,9 +5603,35 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 18.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz for petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -4901,7 +5720,7 @@
             "input_text_Python": "mob = Mob(0, 6)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 6};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 6);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 19.",
                     "",
@@ -4921,19 +5740,45 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 19.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz for petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 19.",
                     "",
-                    "In this level you will use functions from",
-                    "the Mob class along with for loops to",
-                    "move mob around the map.",
+                    "In this level you will use functions along",
+                    "with for loops to move mob around the",
+                    "map.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -4942,18 +5787,43 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 19.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije uz",
+                    "for petlje za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 19.",
                     "",
@@ -4973,9 +5843,35 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 19.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz for petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -5064,7 +5960,7 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 20.",
                     "",
@@ -5084,19 +5980,45 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 20.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz for petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 20.",
                     "",
-                    "In this level you will use functions from",
-                    "the Mob class along with for loops to",
-                    "move mob around the map.",
+                    "In this level you will use functions along",
+                    "with for loops to move mob around the",
+                    "map.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -5105,18 +6027,43 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 20.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije uz",
+                    "for petlje za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 20.",
                     "",
@@ -5136,9 +6083,35 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on bedrock blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 20.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz for petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima temelja.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -5451,7 +6424,7 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 22.",
                     "",
@@ -5471,19 +6444,45 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 22.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz while petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 22.",
                     "",
-                    "In this level you will use functions from",
-                    "the Mob class along with while loops to",
-                    "move mob around the map.",
+                    "In this level you will use functions along",
+                    "with while loops to move mob around the",
+                    "map.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -5492,18 +6491,43 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 22.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije uz",
+                    "while petlje za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 22.",
                     "",
@@ -5523,9 +6547,35 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 22.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz while petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -5614,7 +6664,7 @@
             "input_text_Python": "mob = Mob(0, 6)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 6};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 6);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 23.",
                     "",
@@ -5634,19 +6684,45 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 23.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz while petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 23.",
                     "",
-                    "In this level you will use functions from",
-                    "the Mob class along with while loops to",
-                    "move mob around the map.",
+                    "In this level you will use functions along",
+                    "with while loops to move mob around the",
+                    "map.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -5655,18 +6731,43 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 23.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije uz",
+                    "while petlje za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 23.",
                     "",
@@ -5686,9 +6787,35 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 23.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz while petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],
@@ -5777,7 +6904,7 @@
             "input_text_Python": "mob = Mob(0, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 24.",
                     "",
@@ -5797,19 +6924,45 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 24.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz while petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 24.",
                     "",
-                    "In this level you will use functions from",
-                    "the Mob class along with while loops to",
-                    "move mob around the map.",
+                    "In this level you will use functions along",
+                    "with while loops to move mob around the",
+                    "map.",
                     "",
                     "The functions you can use are:",
                     "   - go_up(&mob, n) - moves mob up by",
@@ -5818,18 +6971,43 @@
                     "   down by n blocks",
                     "   - mob.go_right(&mob, n) - moves mob",
                     "   right by n blocks",
-                    "   - mob.go_left(&mob, n) - moves mob left",
-                    "   by n blocks"
+                    "   - mob.go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
                     "Ctrl+E"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 24.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije uz",
+                    "while petlje za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 24.",
                     "",
@@ -5849,9 +7027,35 @@
                 ],
                 [
                     "Finish is the trapdoor and you can only",
-                    "go on grass blocks",
+                    "go on purpur blocks",
                     "",
                     "To close this book use",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "Razina 24.",
+                    "",
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob uz while petlje za pokretanje",
+                    "lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata i smije\u0161 i\u0107i jedino po",
+                    "blokovima purpura.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
                     "Ctrl+E"
                 ]
             ],

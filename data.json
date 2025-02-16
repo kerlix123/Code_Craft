@@ -2,9 +2,9 @@
     "music_on": false,
     "fx_on": false,
     "code_lang": 0,
-    "lang": "hrv",
+    "lang": "eng",
     "first_play": false,
-    "skin": "zombie",
+    "skin": "stevo",
     "skins": {
         "stevo": [
             30,
@@ -40,7 +40,7 @@
             530,
             30,
             15,
-            true
+            false
         ],
         "skeleton": [
             630,
@@ -79,5 +79,5 @@
             false
         ]
     },
-    "emeralds": 0
+    "emeralds": 20
 }

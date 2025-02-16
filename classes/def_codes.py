@@ -80,7 +80,7 @@ new_level_curr = {
     "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
     "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}","path_block": "oak_log_top.png",
     "path_block": "",
-    "text_Python": [
+    "text_Python_eng": [
         [
             "In this level you will use functions from",
             "the Mob class to move mob around the",
@@ -97,14 +97,35 @@ new_level_curr = {
             "   by n blocks"
         ],
         [
-            "Finish is the trapdoor and you can only",
-            "go on grass blocks",
+            "Finish is the trapdoor.",
             "",
-            "To close this book use",
+            "To close this book use:",
             "Ctrl+E"
         ]
     ],
-    "text_C": [
+    "text_Python_hrv": [
+        [
+            "U ovoj razini koristiti ćeš funkcije iz",
+            "klase Mob za pokretanje lika po mapi.",
+            "",
+            "Funkcije koje možeš koristiti su:",
+            "   - mob.go_up(n) - pomiče lika prema",
+            "   gore za n blokova",
+            "   - mob.go_down(n) - pomiče lika prema",
+            "   dolje za n blokova",
+            "   - mob.go_right(n) - pomiče lika u",
+            "   desno za n blokova",
+            "   - mob.go_left(n) - pomiče lika u",
+            "   lijevo za n blokova"
+        ],
+        [
+            "Kraj su vrata.",
+            "",
+            "Da zatvoriš ovu knjigu pritisni:",
+            "Ctrl+E"
+        ]
+    ],
+    "text_C_eng": [
         [
             "In this level you will use functions",
             "to move mob around the map.",
@@ -114,20 +135,41 @@ new_level_curr = {
             "   n blocks",
             "   - go_down(&mob, n) - moves mob",
             "   down by n blocks",
-            "   - mob.go_right(&mob, n) - moves",
+            "   - go_right(&mob, n) - moves",
             "   mob right by n blocks",
-            "   - mob.go_left(&mob, n) - moves mob",
+            "   - go_left(&mob, n) - moves mob",
             "   left by n blocks"
         ],
         [
-            "Finish is the trapdoor and you can only",
-            "go on grass blocks",
+            "Finish is the trapdoor.",
             "",
-            "To close this book use",
+            "To close this book use:",
             "Ctrl+E"
         ]
     ],
-    "text_C++": [
+    "text_C_hrv": [
+        [
+            "U ovoj razini koristiti ćeš funkcije za",
+            "pokretanje lika po mapi.",
+            "",
+            "Funkcije koje možeš koristiti su:",
+            "   - go_up(&mob, n) - pomiče lika prema",
+            "   gore za n blokova",
+            "   - go_down(&mob, n) - pomiče lika",
+            "   prema dolje za n blokova",
+            "   - go_right(&mob, n) - pomiče lika u",
+            "   desno za n blokova",
+            "   - go_left(&mob, n) - pomiče lika u",
+            "   lijevo za n blokova"
+        ],
+        [
+            "Kraj su vrata.",
+            "",
+            "Da zatvoriš ovu knjigu pritisni:",
+            "Ctrl+E"
+        ]
+    ],
+    "text_C++_eng": [
         [
             "In this level you will use functions from",
             "the Mob class to move mob around the",
@@ -144,10 +186,31 @@ new_level_curr = {
             "   by n blocks"
         ],
         [
-            "Finish is the trapdoor and you can only",
-            "go on grass blocks",
+            "Finish is the trapdoor.",
             "",
-            "To close this book use",
+            "To close this book use:",
+            "Ctrl+E"
+        ]
+    ],
+    "text_C++_hrv": [
+        [
+            "U ovoj razini koristiti ćeš funkcije iz",
+            "klase Mob za pokretanje lika po mapi.",
+            "",
+            "Funkcije koje možeš koristiti su:",
+            "   - mob.go_up(n) - pomiče lika prema",
+            "   gore za n blokova",
+            "   - mob.go_down(n) - pomiče lika prema",
+            "   dolje za n blokova",
+            "   - mob.go_right(n) - pomiče lika u",
+            "   desno za n blokova",
+            "   - mob.go_left(n) - pomiče lika u",
+            "   lijevo za n blokova"
+        ],
+        [
+            "Kraj su vrata.",
+            "",
+            "Da zatvoriš ovu knjigu pritisni:",
             "Ctrl+E"
         ]
     ],
