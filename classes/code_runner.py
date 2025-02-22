@@ -3,14 +3,6 @@ import sys
 import shutil, os, tempfile, subprocess
 from func_timeout import func_timeout, FunctionTimedOut
 
-timeout = 5
-
-class TimeoutException(Exception):
-    pass
-
-def timeout_handler(signum, frame):
-    raise TimeoutException("Code execution exceeded time limit")
-
 def exec_code(code, timeout=5):
     buffer = io.StringIO()
     sys.stdout = buffer
@@ -37,27 +29,25 @@ def exec_code(code, timeout=5):
 
 def exec_c_code(code, l, timeout=10):
     # Validate language and determine compiler
-    if l == "C":
-        compiler = "gcc"
-    elif l == "C++":
-        compiler = "g++"
+    compiler = "g++" if l == "C++" else "gcc"
 
     # Check if compiler is available
     if shutil.which(compiler) is None:
         return {"out": [], "error": f"You need to have {compiler.upper()} installed to use {l}!"}
 
-    with tempfile.TemporaryDirectory() as tmpdirname:
-        # Create file paths
+    with tempfile.TemporaryDirectory() as tmpdir:
+        #Create file paths
         ext = 'c' if l == "C" else 'cpp'
-        c_file = os.path.join(tmpdirname, f"temp.{ext}")
-        executable_file = os.path.join(tmpdirname, "temp_executable")
+        c_file = os.path.join(tmpdir, f"temp.{ext}")
+        print(c_file)
+        exe_file = os.path.join(tmpdir, "temp_executable")
 
-        # Write code to file
+        #Write code to file
         with open(c_file, "w") as f:
             f.write(code)
 
-        # Compile with optimization flags: -O0, -pipe uses in-memory pipes
-        compile_flags = [compiler, '-O0', "-pipe", c_file, "-o", executable_file]
+        #Compile with optimization flags: -O0, -pipe uses in-memory pipes
+        compile_flags = [compiler, '-O0', "-pipe", c_file, "-o", exe_file]
         compile_process = subprocess.run(
             compile_flags,
             stdout=subprocess.DEVNULL,  # Discard stdout
@@ -67,10 +57,10 @@ def exec_c_code(code, l, timeout=10):
         if compile_process.returncode != 0:
             return {"out": [], "error": compile_process.stderr.decode()}
 
-        # Execute the compiled binary
+        #Execute the compiled code
         try:
             run_process = subprocess.run(
-                [executable_file],
+                [exe_file],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.PIPE,
                 timeout=timeout

@@ -1,4 +1,4 @@
-def_code_python = f"""coms = []
+def_code_python = """coms = []
 class Mob:
     global coms
     def __init__(self, x, y):
@@ -18,57 +18,57 @@ class Mob:
         coms.append(("left", n))
 """ 
 
-def_code_c = f"""#include <stdio.h>
-struct Mob {{
+def_code_c = """#include <stdio.h>
+struct Mob {
     int x;
     int y;
-}};
-void go_up(struct Mob *mob, int n) {{
+};
+void go_up(struct Mob *mob, int n) {
     mob->y += n;
     printf("up %d\\n", n);
-}}
-void go_down(struct Mob *mob, int n) {{
+}
+void go_down(struct Mob *mob, int n) {
     mob->y -= n;
     printf("down %d\\n", n);
-}}
-void go_right(struct Mob *mob, int n) {{
+}
+void go_right(struct Mob *mob, int n) {
     mob->x += n;
     printf("right %d\\n", n);
-}}
-void go_left(struct Mob *mob, int n) {{
+}
+void go_left(struct Mob *mob, int n) {
     mob->x -= n;
     printf("left %d\\n", n);
-}}
+}
 """
 
-def_code_cpp = f"""#include <iostream>
+def_code_cpp = """#include <iostream>
 #include <string>
 using namespace std;
-class Mob {{
+class Mob {
     public:
         int x;
         int y;
-        Mob(int a, int b) {{
+        Mob(int a, int b) {
             x = a;
             y = b;
-        }}
-        void go_up(int n) {{
+        }
+        void go_up(int n) {
             y += n;
             cout << "up " << n << endl;
-        }}
-        void go_down(int n) {{
+        }
+        void go_down(int n) {
             y -= n;
             cout << "down " << n << endl;
-        }}
-        void go_right(int n) {{
+        }
+        void go_right(int n) {
             x += n;
             cout << "right " << n << endl;
-        }}
-        void go_left(int n) {{
+        }
+        void go_left(int n) {
             cout << "left " << n << endl;
             x -= n;
-        }}
-}};
+        }
+};
 """
 
 new_level_curr = {

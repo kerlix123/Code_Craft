@@ -51,8 +51,8 @@ level_menu_text = {
 options_text = {
     "skins": {"eng": (render_small_text("Skins"), 590), "hrv": (render_small_text("Likovi"), 580)},
     "clear_progress": {"eng": (render_small_text("Clear Progress (Exits game)"), 445), "hrv": (render_small_text("Izbriši napredak (Zatvara igru)"), 427)},
-    "audio_on": {"eng": (render_small_text("Audio: On"), 563), "hrv": (render_small_text("Zvuk: Uključen"), 530)},
-    "audio_off": {"eng": (render_small_text("Audio: Off"), 560), "hrv": (render_small_text("Zvuk: Isključen"), 530)},
+    "audio_on": {"eng": (render_small_text("Audio: On"), 563), "hrv": (render_small_text("Glazba: Uključena"), 530)},
+    "audio_off": {"eng": (render_small_text("Audio: Off"), 560), "hrv": (render_small_text("Glazba: Isključena"), 530)},
     "fx_on": {"eng": (render_small_text("Effects: On"), 553), "hrv": (render_small_text("Efekti: Uključeni"), 530)},
     "fx_off": {"eng": (render_small_text("Effects: Off"), 551), "hrv": (render_small_text("Efekti: Isključeni"), 530)},
     "python": {"eng": (render_small_text("Programming language: Python"), 425), "hrv": (render_small_text("Programski jezik: Python"), 480)},
@@ -150,3 +150,10 @@ code_lang = data["code_lang"]
 code_runned = False
 level_finished = False
 grades = [0, 0]
+
+moves = {
+    "right": (85, 0),
+    "left": (-85, 0),
+    "up": (0, -85),
+    "down": (0, 85)
+}

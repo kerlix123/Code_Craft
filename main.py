@@ -657,6 +657,7 @@ def game(level, player_l = False, random_l = False):
     one_v_one_code = [False, False]
     one_v_one_time = [0, 0]
     fun_calls = [0, 0]
+    stop_moving = False
 
     timed_start = 0
     timed_time = 0
@@ -693,13 +694,13 @@ def game(level, player_l = False, random_l = False):
 
     def buy_hint(hint, price):
         if level_data[f"hint{hint}_unlocked"]:
-            messages.append((level_data[f"hint{hint}_{languages[code_lang]}"]))
+            messages.append((level_data[f"hint{hint}_{languages[code_lang]}_{lang}"]))
         elif hint == 2 and not level_data["hint1_unlocked"]:
             messages.append(texts["Buy Hint 1 first."][lang])
         else:
             if data["emeralds"] >= price:
                 data["emeralds"] -= price
-                messages.append((level_data[f"hint{hint}_{languages[code_lang]}"]))
+                messages.append((level_data[f"hint{hint}_{languages[code_lang]}_{lang}"]))
                 level_data[f"hint{hint}_unlocked"] = True
                 game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
                 game_utils.write_to_json(PATH / "data.json", data)
@@ -720,6 +721,7 @@ def game(level, player_l = False, random_l = False):
         if stevexy[1]//85 < 0 or stevexy[0]//85 < 0 or stevexy[1]//85 > 6 or stevexy[0]//85 > 6:
             messages.append(texts["Mob got out of bounds!"][lang])
             restart_mob()
+            return False
             
         block = level_data["blocks"][stevexy[1]//85][stevexy[0]//85]
     
@@ -1062,6 +1064,7 @@ def game(level, player_l = False, random_l = False):
                                 c += 1
                     solution = c == (5 if code_lang == 1 else 6)
             if player_l or level >= 10 and level <= 24 or level >= 33 and level <= 36:
+                stop_moving = False
                 if not player_l and level >= 14 and level < 17:
                     plate_activated = False
                 try:
@@ -1079,26 +1082,17 @@ def game(level, player_l = False, random_l = False):
                     coms = []
 
                 for com in coms:
-                    if com[0] == "right":
-                        for _ in range(int(com[1])):
-                            stevexy[0] += 85
-                            game_utils.move(-85, 0, level_data["blocks"])
-                            check()
-                    elif com[0] == "left":
-                        for _ in range(int(com[1])):
-                            stevexy[0] -= 85
-                            game_utils.move(85, 0, level_data["blocks"])
-                            check()
-                    elif com[0] == "up":
-                        for _ in range(int(com[1])):
-                            stevexy[1] -= 85
-                            game_utils.move(0, 85, level_data["blocks"])
-                            check()
-                    elif com[0] == "down":
-                        for _ in range(int(com[1])):
-                            stevexy[1] += 85
-                            game_utils.move(0, -85, level_data["blocks"])
-                            check()
+                    if stop_moving:
+                        break
+                    direction, steps = com[0], int(com[1])
+                    dx, dy = moves[direction]
+                    for _ in range(steps):
+                        stevexy[0] += dx
+                        stevexy[1] += dy
+                        game_utils.move(-dx, -dy, level_data["blocks"])
+                        if check() == False:
+                            stop_moving = True
+                            break
 
                 if check():
                     if one_v_one:

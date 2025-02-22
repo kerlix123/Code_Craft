@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 0,
+    "last_finished_level": 36,
     "level_p": [
         [
             30,
@@ -724,14 +724,20 @@
                     "Ctrl+K"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Use print() function",
-            "hint2_Python": "Inside of print() type \"Hello, World!\"",
-            "hint1_C": "Use printf() function",
-            "hint2_C": "Inside of printf() type \"Hello, World!\"",
-            "hint1_C++": "Use cout function",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Use print() function",
+            "hint1_Python_hrv": "Iskoristi print() funkciju",
+            "hint2_Python_eng": "Inside of print() type \"Hello, World!\"",
+            "hint2_Python_hrv": "Unutar print() napi\u0161i \"Hello, World!\"",
+            "hint1_C_eng": "Use printf() function",
+            "hint1_C_hrv": "Iskoristi printf() funkciju",
+            "hint2_C_eng": "Inside of printf() type \"Hello, World!\"",
+            "hint2_C_hrv": "Unutar printf() napi\u0161i \"Hello, World!\"",
+            "hint1_C++_eng": "Use cout",
+            "hint1_C++_hrv": "Iskoristi cout",
             "hint2_C++": "After it type << and \"Hello, World!\"",
+            "hint2_C++_hrv": "Nakon toga napi\u0161i << pa \"Hello, World!\"",
             "pages": 4,
             "blocks": [
                 [
@@ -894,7 +900,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 2.",
                     "",
@@ -918,7 +924,32 @@
                     "executing by making it a comment"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 2.",
+                    "",
+                    "U ovoj razini, govorit \u0107emo o",
+                    "komentarima. Komentari se koriste kako",
+                    "bi pojasnili kod, napravili ga \u010ditljivijim,",
+                    "ili kako bi ga sprije\u010dili od izvr\u0161avanja.",
+                    "   #ovo je komentar",
+                    "   print(\"Hello, World!\")",
+                    "",
+                    "Komentari mogu biti smje\u0161teni",
+                    "i na kraju linije.",
+                    "   print(\"Hello, World!\") #komentar",
+                    "",
+                    "Ili se mogu koristiti za",
+                    "spre\u010davanje koda od izvr\u0161avanja.",
+                    "   #print(\"Hello, World!\")"
+                ],
+                [
+                    "Poku\u0161aj sprije\u010diti izvr\u0161avanje",
+                    "print(\"Steve\") tako \u0161to \u0107e\u0161 naredbu",
+                    "pretvoriti u komentar."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 2.",
                     "",
@@ -944,7 +975,33 @@
                     "single-line comment."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 2.",
+                    "",
+                    "U ovoj razini, govorit \u0107emo o",
+                    "komentarima. Komentari se koriste kako",
+                    "bi pojasnili kod, napravili ga \u010ditljivijim,",
+                    "ili kako bi ga sprije\u010dili od izvr\u0161avanja.",
+                    "   //Ovo je jednoredni komentar",
+                    "   printf(\"Hello, World!\");",
+                    "",
+                    "Komentari mogu biti smje\u0161teni i na kraju",
+                    "linije.",
+                    "   printf(\"Hello, World!\"); //komentar",
+                    "",
+                    "Ili mo\u017ee\u0161 koristiti blok komentare kako",
+                    "bi komentirao vi\u0161e linija koda.",
+                    "   /*Ovo je blok komentar",
+                    "   printf(\"Hello, World!\");*/"
+                ],
+                [
+                    "Poku\u0161aj sprije\u010diti izvr\u0161avanje",
+                    "printf(\"Steve\"); tako \u0161to \u0107e\u0161 naredbu",
+                    "pretvoriti u komentar."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 2.",
                     "",
@@ -970,14 +1027,46 @@
                     "single-line comment."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "#",
-            "hint2_Python": "Type # before print(\"Steve\")",
-            "hint1_C": "//",
-            "hint2_C": "Type // before printf(\"Steve\");",
+            "text_C++_hrv": [
+                [
+                    "Razina 2.",
+                    "",
+                    "U ovoj razini, govorit \u0107emo o",
+                    "komentarima. Komentari se koriste kako",
+                    "bi pojasnili kod, napravili ga \u010ditljivijim,",
+                    "ili kako bi ga sprije\u010dili od izvr\u0161avanja.",
+                    "   //Ovo je jednoredni komentar",
+                    "   cout << \"Hello, World!\";",
+                    "",
+                    "Komentari mogu biti smje\u0161teni i na kraju",
+                    "linije.",
+                    "   cout << \"Hello, World!\"; //komentar",
+                    "",
+                    "Ili mo\u017ee\u0161 koristiti blok komentare kako",
+                    "bi komentirao vi\u0161e linija koda.",
+                    "   /*Ovo je blok komentar",
+                    "   cout << \"Hello, World!\";*/"
+                ],
+                [
+                    "Poku\u0161aj sprije\u010diti izvr\u0161avanje",
+                    "cout << \"Steve\"; tako \u0161to \u0107e\u0161 naredbu",
+                    "pretvoriti u komentar."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "#",
+            "hint1_Python_hrv": "#",
+            "hint2_Python_eng": "Type # before print(\"Steve\")",
+            "hint2_Python_hrv": "Napi\u0161i # ispred print(\"Steve\")",
+            "hint1_C_eng": "//",
+            "hint1_C_hrv": "//",
+            "hint2_C_eng": "Type // before printf(\"Steve\");",
+            "hint2_C_hrv": "Napi\u0161i // ispred printf(\"Steve\");",
             "hint1_C++": "//",
-            "hint2_C++": "Type // before cout << \"Steve\";",
+            "hint1_C++_hrv": "//",
+            "hint2_C++_eng": "Type // before cout << \"Steve\";",
+            "hint2_C++_hrv": "Napi\u0161i // ispred cout << \"Steve\";",
             "pages": 2,
             "blocks": [
                 [
@@ -1204,7 +1293,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 3.",
                     "",
@@ -1251,6 +1340,57 @@
                     "variable a with the value 4.5 and print",
                     "it on new line."
                 ]
+            ],
+            "text_Python_hrv": [
+                [
+                    "Razina 3.",
+                    "",
+                    "U ovom nivou ćemo naučiti nešto o",
+                    "varijablama.",
+                    "",
+                    "Varijable se koriste za spremanje",
+                    "različitih vrsta podataka. One su kao",
+                    "vrčevi vode, ali umjesto vode sadrže ",
+                    "podatke.",
+                    "",
+                    "U Pythonu, varijabla je stvorena",
+                    "kada joj se dodijeli vrijednost.",
+                    "",
+                    "Ime varijable mora počinjati sa slovom",
+                    "ili donjom crtom, ne može započeti",
+                    "sa brojem, može sadržavati samo"
+                ],
+                [
+                    "alfanumeričke znakove i donje crte.",
+                    "Imena varijabli su osjetljiva na velika i",
+                    "mala slova i ne smiju biti ista kao neka",
+                    "Pythonova ključna riječ. Glavni tipovi",
+                    "podataka u Pythonu su int, float, str i",
+                    "bool.",
+                    "a = 5",
+                    "b = 5.5",
+                    "c = \"Nether\"",
+                    "d = True",
+                    "",
+                    "Iznad su primjeri varijabli različitih",
+                    "tipova podataka.",
+                    "",
+                    "Kako bismo ispisali varijablu koristimo",
+                    "print()."
+                ],
+                [
+                    "print(a) će ispisati broj 5 na zaslonu.",
+                    "",
+                    "a = 6.25 će promijeniti vrijednost",
+                    "varijable a s 5 na 6.25.",
+                    "",
+                    "Pokušaj napraviti varijablu b, dodijeli",
+                    "joj vrijednost 3, i ispiši ju.",
+                    "",
+                    "Nakon toga, napravi varijablu a s",
+                    "vrijednosti 4.5 i ispiši ju u novom redu."
+                ]
+                
             ],
             "text_C": [
                 [
@@ -3697,7 +3837,8 @@
             ],
             "hint1_unlocked": false,
             "hint2_unlocked": false,
-            "hint1_Python": "mob.go_right(x) and mob.go_up(y)",
+            "hint1_Python_eng": "mob.go_right(x) and mob.go_up(y)",
+            "hint1_Python_hrv": "mob.go_right(x) i mob.go_up(y)",
             "hint2_Python": "x and y are number of blocks to move",
             "hint1_C": "go_right(&mob, x) and go_up(&mob, y)",
             "hint2_C": "x and y are number of blocks to move",
