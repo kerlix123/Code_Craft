@@ -1345,26 +1345,26 @@
                 [
                     "Razina 3.",
                     "",
-                    "U ovom nivou ćemo naučiti nešto o",
+                    "U ovom nivou \u0107emo nau\u010diti ne\u0161to o",
                     "varijablama.",
                     "",
                     "Varijable se koriste za spremanje",
-                    "različitih vrsta podataka. One su kao",
-                    "vrčevi vode, ali umjesto vode sadrže ",
+                    "razli\u010ditih vrsta podataka. One su kao",
+                    "vr\u010devi vode, ali umjesto vode sadr\u017ee ",
                     "podatke.",
                     "",
                     "U Pythonu, varijabla je stvorena",
                     "kada joj se dodijeli vrijednost.",
                     "",
-                    "Ime varijable mora počinjati sa slovom",
-                    "ili donjom crtom, ne može započeti",
-                    "sa brojem, može sadržavati samo"
+                    "Ime varijable mora po\u010dinjati sa slovom",
+                    "ili donjom crtom, ne mo\u017ee zapo\u010deti",
+                    "sa brojem, mo\u017ee sadr\u017eavati samo"
                 ],
                 [
-                    "alfanumeričke znakove i donje crte.",
+                    "alfanumeri\u010dke znakove i donje crte.",
                     "Imena varijabli su osjetljiva na velika i",
                     "mala slova i ne smiju biti ista kao neka",
-                    "Pythonova ključna riječ. Glavni tipovi",
+                    "Pythonova klju\u010dna rije\u010d. Glavni tipovi",
                     "podataka u Pythonu su int, float, str i",
                     "bool.",
                     "a = 5",
@@ -1372,27 +1372,26 @@
                     "c = \"Nether\"",
                     "d = True",
                     "",
-                    "Iznad su primjeri varijabli različitih",
+                    "Iznad su primjeri varijabli razli\u010ditih",
                     "tipova podataka.",
                     "",
                     "Kako bismo ispisali varijablu koristimo",
                     "print()."
                 ],
                 [
-                    "print(a) će ispisati broj 5 na zaslonu.",
+                    "print(a) \u0107e ispisati broj 5 na zaslonu.",
                     "",
-                    "a = 6.25 će promijeniti vrijednost",
+                    "a = 6.25 \u0107e promijeniti vrijednost",
                     "varijable a s 5 na 6.25.",
                     "",
-                    "Pokušaj napraviti varijablu b, dodijeli",
-                    "joj vrijednost 3, i ispiši ju.",
+                    "Poku\u0161aj napraviti varijablu b, dodijeli",
+                    "joj vrijednost 3, i ispi\u0161i ju.",
                     "",
                     "Nakon toga, napravi varijablu a s",
-                    "vrijednosti 4.5 i ispiši ju u novom redu."
+                    "vrijednosti 4.5 i ispi\u0161i ju u novom redu."
                 ]
-                
             ],
-            "text_C": [
+            "text_C_eng": [
                 [
                     "Level 3.",
                     "",
@@ -1447,7 +1446,63 @@
                     "Use \\n in printf() to go to a new line."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 3.",
+                    "",
+                    "U ovom nivou \u0107emo nau\u010diti ne\u0161to o",
+                    "varijablama.",
+                    "",
+                    "Varijable se koriste za spremanje",
+                    "razli\u010ditih vrsta podataka. One su kao",
+                    "vr\u010devi vode, ali umjesto vode sadr\u017ee",
+                    "podatke.",
+                    "",
+                    "U C-u, varijabla se mora deklarirati",
+                    "prije nego ju mo\u017eemo koristiti.",
+                    "",
+                    "Ime varijable mora po\u010dinjati sa slovom",
+                    "ili donjom crtom, ne mo\u017ee zapo\u010deti",
+                    "sa brojem, mo\u017ee sadr\u017eavati samo"
+                ],
+                [
+                    "alfanumeri\u010dke znakove i donje crte.",
+                    "Imena varijabli su osjetljiva na velika i",
+                    "mala slova i ne smiju biti ista kao neka",
+                    "C klju\u010dna rije\u010d. Glavni tipovi podataka",
+                    "u C-u su int, float, double i char.",
+                    "",
+                    "int a = 5;",
+                    "float b = 5.5;",
+                    "double c = 5.5;",
+                    "char d = 'N';",
+                    "",
+                    "Iznad su primjeri varijabli razli\u010ditih",
+                    "tipova podataka.",
+                    "",
+                    "Kako bismo ispisali varijablu koristimo",
+                    "printf()."
+                ],
+                [
+                    "printf(\"%d\", a); \u0107e ispisati broj 5",
+                    "na zaslonu.",
+                    "%d unutar naredbe printf govori kakvog",
+                    "je tipa podatak varijable koju \u017eelimo",
+                    "ispisati (%d - int, %f - float) i gdje u",
+                    "ispisu \u017eelimo da bude, ali o tome \u0107emo",
+                    "govoriti kasnije.",
+                    "",
+                    "a = 6; //Ovo \u0107e promijeniti a u 6",
+                    "",
+                    "Poku\u0161aj napraviti varijablu b, dodijeli",
+                    "joj vrijednost 3, i ispi\u0161i ju. Nakon toga,",
+                    "napravi varijablu a s vrijednosti 4.5",
+                    " i ispi\u0161i ju u novom redu.",
+                    "Koristi \\n unutar printf() kako bi se",
+                    "prebacio u novi red."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 3.",
                     "",
@@ -1496,14 +1551,73 @@
                     "Use << endl in cout to go to a new line."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "variable = value",
-            "hint2_Python": "print(variable)",
-            "hint1_C": "b is int and a is float - data_type var = value;",
-            "hint2_C": "Use \\n in printf() to go to new line",
-            "hint1_C++": "b is int and a is float - data_type var = value;",
-            "hint2_C++": "Use << endl in cout to go to new line",
+            "text_C++_hrv": [
+                [
+                    "Razina 3.",
+                    "",
+                    "U ovom nivou \u0107emo nau\u010diti ne\u0161to o",
+                    "varijablama.",
+                    "",
+                    "Varijable se koriste za spremanje",
+                    "razli\u010ditih vrsta podataka. One su kao",
+                    "vr\u010devi vode, ali umjesto vode sadr\u017ee",
+                    "podatke.",
+                    "",
+                    "U C++-u, varijabla se mora deklarirati",
+                    "prije nego ju mo\u017eemo koristiti.",
+                    "",
+                    "Ime varijable mora po\u010dinjati sa slovom",
+                    "ili donjom crtom, ne mo\u017ee zapo\u010deti",
+                    "sa brojem, mo\u017ee sadr\u017eavati samo"
+                ],
+                [
+                    "alfanumeri\u010dke znakove i donje crte.",
+                    "Imena varijabli su osjetljiva na velika i",
+                    "mala slova i ne smiju biti ista kao neka",
+                    "C++ klju\u010dna rije\u010d. Glavni tipovi podataka",
+                    "u C++-u su int, float, double, string i bool.",
+                    "",
+                    "int a = 5;",
+                    "float b = 5.5;",
+                    "double c = 6.25;",
+                    "string d = \"Nether\";",
+                    "bool e = true;",
+                    "",
+                    "Iznad su primjeri varijabli razli\u010ditih",
+                    "tipova podataka.",
+                    "Kako bismo ispisali varijablu koristimo",
+                    "cout."
+                ],
+                [
+                    "cout << a; \u0107e ispisati broj 5 na zaslonu.",
+                    "",
+                    "a = 6; //\u0107e promijeniti vrijednost",
+                    "varijable a sa 5 na 6.",
+                    "",
+                    "Poku\u0161aj napraviti varijablu b, dodijeli",
+                    "joj vrijednost 3, i ispi\u0161i ju.",
+                    "",
+                    "Nakon toga, napravi varijablu a sa",
+                    "vrijednosti 4.5 i ispi\u0161i ju u novom redu.",
+                    "",
+                    "Koristi << endl unutar cout kako bi se",
+                    "prebacio u novi red."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "variable = value",
+            "hint1_Python_hrv": "varijabla = vrijednost",
+            "hint2_Python_eng": "print(variable)",
+            "hint2_Python_hrv": "print(varijabla)",
+            "hint1_C_eng": "b is int and a is float - data_type var = value;",
+            "hint1_C_hrv": "b-int i a-float - tip_podatka var = vrijednost;",
+            "hint2_C_eng": "Use \\n in printf() to go to new line",
+            "hint2_C_hrv": "Upotrijebi \\n unutar printf() za novi red.",
+            "hint1_C++_eng": "b is int and a is float - data_type var = value;",
+            "hint1_C++_hrv": "b-int i a-float - tip_podatka var = vrijednost;",
+            "hint2_C++_eng": "Use << endl in cout to go to new line",
+            "hint2_C++_hrv": "Upotrijebi << endl unutar cout za novi red.",
             "pages": 3,
             "blocks": [
                 [
@@ -1586,7 +1700,7 @@
             "solution_C++": [
                 []
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 4.",
                     "",
@@ -1635,7 +1749,55 @@
                     "data type we have covered so far."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 4.",
+                    "",
+                    "U prethodnoj razini objasnili smo \u0161to",
+                    "su varijable i spomenuli da mogu imati",
+                    "razli\u010dite tipove podataka.",
+                    "",
+                    "U ovoj razini objasniti \u0107emo te",
+                    "tipove podataka."
+                ],
+                [
+                    "Cijeli broj - int",
+                    "Cijeli broj je pozitivni ili negativni",
+                    "broj bez decimalnih mjesta.",
+                    "U Pythonu ne postoji ograni\u010denje",
+                    "koliko velik broj mo\u017ee biti.",
+                    "",
+                    "a = 550",
+                    "",
+                    "Decimalni broj - float",
+                    "Float je realni broj s pomi\u010dnim zarezom.",
+                    "",
+                    "a = 4.598"
+                ],
+                [
+                    "Niz znakova - str",
+                    "String je tekstualni tip podataka koji",
+                    "mo\u017ee sadr\u017eavati jedan ili vi\u0161e znakova,",
+                    "slova ili brojeva. Stringovi se stvaraju",
+                    "tako da se tekst stavi unutar navodnika.",
+                    "a = \"Code_Craft 123\"",
+                    "",
+                    "Umjesto dvostrukih navodnika \"\", u",
+                    "Pythonu mo\u017eemo koristiti i jednostruke ''.",
+                    "U ovoj igri uvijek \u0107emo koristiti",
+                    "dvostruke navodnike za stringove!",
+                    "",
+                    "Booleova vrijednost - bool",
+                    "Boolean je vrijednost koja predstavlja",
+                    "logi\u010dku 0 ili 1, ekvivalentno True ili False.",
+                    "a = True, b = False"
+                ],
+                [
+                    "Poku\u0161aj stvoriti varijablu za svaki",
+                    "tip podataka koji smo do sada pokrili."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 4.",
                     "",
@@ -1685,7 +1847,54 @@
                     "data type we have covered so far."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 4.",
+                    "",
+                    "U prethodnoj razini objasnili smo \u0161to",
+                    "su varijable i spomenuli da mogu imati",
+                    "razli\u010dite tipove podataka.",
+                    "",
+                    "U ovoj razini objasniti \u0107emo te",
+                    "tipove podataka."
+                ],
+                [
+                    "Cijeli broj - int",
+                    "Cijeli broj je pozitivni ili negativni",
+                    "broj bez decimalnih mjesta.",
+                    "U C-u, cijeli brojevi imaju ograni\u010denje",
+                    "ovisno o veli\u010dini memorije, obi\u010dno 32 bita",
+                    "za int.",
+                    "",
+                    "int a = 550;",
+                    "",
+                    "Decimalni broj - float",
+                    "Float je realni broj s pomi\u010dnim zarezom.",
+                    "Ima manju preciznost u odnosu na double.",
+                    "",
+                    "float b = 4.598;"
+                ],
+                [
+                    "Znak - char",
+                    "Char pohranjuje jedno slovo ili simbol,",
+                    "a pi\u0161e se unutar jednostrukih navodnika.",
+                    "",
+                    "char d = 'C';",
+                    "",
+                    "Niz znakova - char[]",
+                    "String u C-u je niz znakova unutar",
+                    "dvostrukih navodnika. Svaki niz znakova",
+                    "zavr\u0161ava nul-znakom '\\0' kako bi ozna\u010dio",
+                    "kraj.",
+                    "",
+                    "char str[] = \"Code_Craft 123\";"
+                ],
+                [
+                    "Poku\u0161aj stvoriti varijablu za svaki",
+                    "tip podataka koji smo do sada pokrili."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 4.",
                     "",
@@ -1746,14 +1955,79 @@
                     "data type we have covered so far."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "bool, int, str, float",
-            "hint2_Python": "variable = value",
-            "hint1_C": "int, float, double, char, char[]",
-            "hint2_C": "data_type variable = value;",
-            "hint1_C++": "int, float, double, string, char, bool",
-            "hint2_C++": "data_type variable = value;",
+            "text_C++_hrv": [
+                [
+                    "Razina 4.",
+                    "",
+                    "U prethodnoj razini objasnili smo \u0161to",
+                    "su varijable i spomenuli da mogu imati",
+                    "razli\u010dite tipove podataka.",
+                    "",
+                    "U ovoj razini objasniti \u0107emo te",
+                    "tipove podataka."
+                ],
+                [
+                    "Cijeli broj - int",
+                    "Cijeli broj je pozitivni ili negativni broj",
+                    "bez decimalnih mjesta. U C++, cijeli",
+                    "brojevi imaju ograni\u010denje ovisno o",
+                    "veli\u010dini memorije, obi\u010dno 32 bita za int.",
+                    "",
+                    "int a = 550;",
+                    "",
+                    "Decimalni broj - float",
+                    "Float je realni broj s pomi\u010dnim zarezom.",
+                    "Ima manju preciznost u odnosu na double.",
+                    "",
+                    "float b = 4.598;"
+                ],
+                [
+                    "Decimalni broj visoke preciznosti - double",
+                    "Double je realni broj s ve\u0107om precizno\u0161\u0107u",
+                    "od float-a, \u010desto 64 bita.",
+                    "",
+                    "double c = 3.14159;",
+                    "",
+                    "Niz znakova - string",
+                    "String je skup znakova koji se stvara",
+                    "pomo\u0107u dvostrukih navodnika.",
+                    "Za kori\u0161tenje stringova u C++-u, potrebno",
+                    "je uklju\u010diti zaglavlje <string>. U ovoj igri",
+                    "to \u0107e ve\u0107 biti postavljeno za tebe.",
+                    "",
+                    "string d = \"Code_Craft 123\";"
+                ],
+                [
+                    "Znak - char",
+                    "Char pohranjuje jedno slovo ili simbol,",
+                    "a pi\u0161e se unutar jednostrukih navodnika.",
+                    "",
+                    "char d = 'C';",
+                    "",
+                    "Booleova vrijednost - bool",
+                    "Boolean predstavlja logi\u010dku vrijednost",
+                    "true ili false.",
+                    "",
+                    "bool e = true;",
+                    "",
+                    "Poku\u0161aj stvoriti varijablu za svaki tip",
+                    "podataka koji smo do sada pokrili."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "bool, int, str, float",
+            "hint1_Python_hrv": "bool, int, str, float",
+            "hint2_Python_eng": "variable = value",
+            "hint2_Python_hrv": "varijabla = vrijednost",
+            "hint1_C_eng": "int, float, double, char, char[]",
+            "hint1_C_hrv": "int, float, double, char, char[]",
+            "hint2_C_eng": "data_type variable = value;",
+            "hint2_C_hrv": "tip_podatka varijabla = vrijednost;",
+            "hint1_C++_eng": "int, float, double, string, char, bool",
+            "hint1_C++_hrv": "int, float, double, string, char, bool",
+            "hint2_C++_eng": "data_type variable = value;",
+            "hint2_C++_hrv": "tip_podatka varijabla = vrijednost;",
             "pages": 4,
             "blocks": [
                 [
@@ -1970,7 +2244,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 5.",
                     "",
@@ -2007,7 +2281,44 @@
                     "them."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 5.",
+                    "",
+                    "Sada kada znamo o tipovima podataka",
+                    "varijabli, nau\u010dit \u0107emo vi\u0161e o tome",
+                    "kako ih ispisati na zaslon."
+                ],
+                [
+                    "Za ispis varijabli koristimo funkciju",
+                    "print().",
+                    "",
+                    "x = \"Code_Craft\"",
+                    "print(x)",
+                    "",
+                    "Gornji kod \u0107e ispisati Code_Craft na",
+                    "zaslon."
+                ],
+                [
+                    "Ako \u017eelimo prikazati vi\u0161e varijabli,",
+                    "mo\u017eemo ih odvojiti zarezom unutar",
+                    "funkcije print().",
+                    "",
+                    "x = \"Mi\"",
+                    "y = \"volimo\"",
+                    "z = \"Code_Craft\"",
+                    "print(x, y, z)",
+                    "",
+                    "Izlaz: Mi volimo Code_Craft",
+                    "",
+                    "Kreiraj dvije varijable: name i age.",
+                    "Dodijeli \"Steve\" varijabli name i 25",
+                    "varijabli age. Ispi\u0161i obje varijable",
+                    "pomo\u0107u jedne print() funkcije, s",
+                    "razmakom izme\u0111u njih."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 5.",
                     "",
@@ -2052,7 +2363,51 @@
                     "them."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 5.",
+                    "",
+                    "Sada kada znamo o tipovima podataka",
+                    "varijabli, nau\u010dit \u0107emo vi\u0161e o tome",
+                    "kako ih ispisati na zaslon."
+                ],
+                [
+                    "U C-u koristimo funkciju printf() za",
+                    "prikaz varijabli.",
+                    "",
+                    "char x[] = \"Code_Craft\";",
+                    "printf(\"%s\\n\", x);",
+                    "",
+                    "Gornji kod \u0107e ispisati Code_Craft.",
+                    "",
+                    "Simbol % je formatni specifikator",
+                    "koji govori funkciji printf() kakav tip",
+                    "podataka treba o\u010dekivati.",
+                    "",
+                    "%d -> int",
+                    "%f -> float",
+                    "%c -> char",
+                    "%s -> string"
+                ],
+                [
+                    "Za ispis vi\u0161e varijabli mo\u017eemo koristiti",
+                    "printf() s formatnim specifikatorima.",
+                    "",
+                    "char a[] = \"Mi\";",
+                    "char b[] = \"volimo\";",
+                    "char c[] = \"Code_Craft\";",
+                    "printf(\"%s %s %s\\n\", a, b, c);",
+                    "",
+                    "Izlaz: Mi volimo Code_Craft",
+                    "",
+                    "Kreiraj dvije varijable: name i age.",
+                    "Dodijeli \"Steve\" varijabli name i 25",
+                    "varijabli age. Ispi\u0161i obje varijable",
+                    "pomo\u0107u jedne printf() funkcije, s ",
+                    "razmakom izme\u0111u njih."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 5.",
                     "",
@@ -2089,14 +2444,56 @@
                     "them."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Separate name and age with ,",
-            "hint2_Python": "Type name, age in print()",
-            "hint1_C": "name - char[], age - int",
-            "hint2_C": "In printf use %s for name and %d for age",
-            "hint1_C++": "name - string, age - int",
-            "hint2_C++": "Use << to separate space and variables in cout",
+            "text_C++_hrv": [
+                [
+                    "Razina 5.",
+                    "",
+                    "Sada kada znamo o tipovima podataka",
+                    "varijabli, nau\u010dit \u0107emo vi\u0161e o tome",
+                    "kako ih ispisati na zaslon."
+                ],
+                [
+                    "U C++-u koristimo objekt cout iz",
+                    "biblioteke <iostream> za ispis varijabli.",
+                    "",
+                    "string x = \"Code_Craft\";",
+                    "cout << x << endl;",
+                    "",
+                    "Gornji kod \u0107e ispisati Code_Craft."
+                ],
+                [
+                    "Ako \u017eelimo ispisati vi\u0161e varijabli,",
+                    "koristimo objekt cout s operatorom",
+                    "umetanja (<<).",
+                    "",
+                    "string a = \"Mi\";",
+                    "string b = \"volimo\";",
+                    "string c = \"Code_Craft\";",
+                    "cout << a << \" \" << b << \" \" << c << endl;",
+                    "",
+                    "Izlaz: Mi volimo Code_Craft",
+                    "",
+                    "Kreiraj dvije varijable: name i age.",
+                    "Dodijeli \"Steve\" varijabli name i 25",
+                    "varijabli age. Ispi\u0161i obje varijable",
+                    "pomo\u0107u jedne cout funkcije, s",
+                    "razmakom izme\u0111u njih."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Separate name and age with ,",
+            "hint1_Python_hrv": "Razdvoji name i age s ,",
+            "hint2_Python_eng": "Type name, age in print()",
+            "hint2_Python_hrv": "Napi\u0161i name, age u print()",
+            "hint1_C_eng": "name - char[], age - int",
+            "hint1_C_hrv": "name - char[], age - int",
+            "hint2_C_eng": "In printf use %s for name and %d for age",
+            "hint2_C_hrv": "U printf koristi %s za name i %d za age",
+            "hint1_C++_eng": "name - string, age - int",
+            "hint1_C++_hrv": "name - string, age - int",
+            "hint2_C++_eng": "Use << to separate \" \" and variables in cout",
+            "hint2_C++_hrv": "Koristi << da razdvoji\u0161 \" \" i varijable u cout",
             "pages": 3,
             "blocks": [
                 [
