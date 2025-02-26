@@ -147,10 +147,6 @@ stevexy = [0, 510]
 languages = ["Python", "C", "C++"]
 code_lang = data["code_lang"]
 
-code_runned = False
-level_finished = False
-grades = [0, 0]
-
 moves = {
     "right": (85, 0),
     "left": (-85, 0),

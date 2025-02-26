@@ -257,7 +257,7 @@ def level_builder():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     #Clears the messages if Ctrl+K/Cmd+K is clicked
-                    messages = []
+                    messages.clear()
                 key = pygame.key.name(event.key)
                 if key == "up":
                     plus_x_y[1] = (plus_x_y[1] - 1) % 7  
@@ -494,8 +494,8 @@ def options_win():
                     game_utils.write_to_json(PATH / "data.json", data)
                 if 420 <= mouse[0] <= 820 and 230 <= mouse[1] <= 270:
                     #Changes main programming language and writes it to options if Programming language: button is clicked
-                    code_lang = (code_lang + 1) % 3
-                    data["code_lang"] = code_lang
+                    data["code_lang"] = (data["code_lang"] + 1) % 3
+                    code_lang = data["code_lang"]
                     game_utils.write_to_json(PATH / "data.json", data)
                 if 420 <= mouse[0] <= 820 and 280 <= mouse[1] <= 320:
                     #Changes game language eng/hrv
@@ -546,9 +546,9 @@ def options_win():
         else:
             game_utils.menu_button(420, 180, options_text["fx_off"][lang], 400, 40, mouse)
 
-        if code_lang == 0:
+        if data["code_lang"] == 0:
             game_utils.menu_button(420, 230, options_text["python"][lang], 400, 40, mouse)
-        elif code_lang == 1:
+        elif data["code_lang"] == 1:
             game_utils.menu_button(420, 230, options_text["c"][lang], 400, 40, mouse)
         else:
             game_utils.menu_button(420, 230, options_text["c++"][lang], 400, 40, mouse)
@@ -608,7 +608,7 @@ def skins():
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     #Clears the output if Ctrl+K/Cmd+K is clicked
-                    messages = []
+                    messages.clear()
                     
         game_utils.background()
         game_utils.bg_overlay()
@@ -647,16 +647,19 @@ def skins():
         clock.tick(60)
 
 def game(level, player_l = False, random_l = False):
-    global code_lang, code_runned, level_finished, grades
-    global def_code_python, def_code_c, def_code_cpp, messages
+    global code_lang
+    global def_code_python, def_code_c, def_code_cpp
     global book, lang
     code_lang = data["code_lang"]
     messages = []
     restart_code = False
+    code_runned = False
+    level_finished = False
     one_v_one = False
     one_v_one_code = [False, False]
     one_v_one_time = [0, 0]
     fun_calls = [0, 0]
+    grades = [0, 0]
     stop_moving = False
 
     timed_start = 0
@@ -784,6 +787,7 @@ def game(level, player_l = False, random_l = False):
                     #Goes to the next level if current level is finished
                     if not player_l and level_finished and level < 36:
                         one_v_one = False
+                        timed_start = 0
                         player = 1
                         if level > levels["last_finished_level"]:
                             levels["last_finished_level"] = level
@@ -792,7 +796,7 @@ def game(level, player_l = False, random_l = False):
                         level_data = levels[f"level{level}"][0]
                         level_object.unlocked = True
                         game_utils.write_to_json(PATH / "levels" / "levels.json", levels)
-                        messages = []
+                        messages.clear()
                         level_finished = False
                         blocks = game_utils.render_blocks(level_data["blocks"])
                         if not player_l:
@@ -848,7 +852,7 @@ def game(level, player_l = False, random_l = False):
                     level_object.text_closed = not level_object.text_closed
                 if event.key == pygame.K_k and pygame.key.get_mods() & (pygame.KMOD_CTRL | pygame.KMOD_LMETA):
                     #Clears the output if Ctrl+K/Cmd+K is clicked
-                    messages = []
+                    messages.clear()
 
             #Feeds the events to the current Textbox object
             if player == 1 and not one_v_one_code[0]:

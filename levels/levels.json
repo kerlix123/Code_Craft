@@ -2725,7 +2725,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 6.",
                     "",
@@ -2768,7 +2768,50 @@
                     "character each in a new line."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 6.",
+                    "",
+                    "U ovoj razini govorit \u0107emo vi\u0161e o",
+                    "stringovima.",
+                    "",
+                    "Stringovi su zapravo nizovi, \u0161to",
+                    "zna\u010di da mo\u017eemo pristupiti pojedinim",
+                    "znakovima pomo\u0107u njihovog indeksa.",
+                    "Prvi znak je na indeksu 0, a",
+                    "zadnji znak se nalazi na duljini",
+                    "stringa minus jedan.",
+                    "",
+                    "   a = \"Hello\"",
+                    "   #a[0] = \"H\"",
+                    "   #a[4] = \"o\""
+                ],
+                [
+                    "Tako\u0111er mo\u017eemo prolaziti kroz",
+                    "stringove pomo\u0107u for petlje.",
+                    "",
+                    "   for character in \"Code\":",
+                    "       print(character)",
+                    "",
+                    "Izlaz:",
+                    "C",
+                    "o",
+                    "d",
+                    "e"
+                ],
+                [
+                    "Ako \u017eelimo saznati koliko znakova",
+                    "ima string, koristimo funkciju len().",
+                    "",
+                    "   print(len(\"Hello\"))",
+                    "   #Izlaz: 5",
+                    "",
+                    "Kreiraj string b i dodijeli mu vrijednost",
+                    "\"Code\". Zatim ispi\u0161i njegov drugi i tre\u0107i",
+                    "znak, svaki u novom retku."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 6.",
                     "",
@@ -2810,7 +2853,48 @@
                     "character each in a new line."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 6.",
+                    "",
+                    "Na ovoj razini govorit \u0107emo vi\u0161e o",
+                    "stringovima.",
+                    "",
+                    "Stringovi su zapravo nizovi (\u0161to",
+                    "ozna\u010davamo s [] nakon imena varijable),",
+                    "\u0161to zna\u010di da mo\u017eemo pristupiti pojedinim",
+                    "znakovima pomo\u0107u njihovog indeksa.",
+                    "Prvi znak je na indeksu 0, a zadnji znak",
+                    "se nalazi na duljini stringa minus jedan.",
+                    "",
+                    "   char a[] = \"Hello\";",
+                    "   //a[0] = 'H'",
+                    "   //a[4] = 'o'"
+                ],
+                [
+                    "Tako\u0111er mo\u017eemo prolaziti kroz",
+                    "stringove pomo\u0107u for petlje.",
+                    "",
+                    "   char str[] = \"Code\";",
+                    "   for (int i = 0; i < 4; i++) {",
+                    "       printf(\"%c\\n\", str[i]);",
+                    "   }",
+                    "",
+                    "Napomena: 4 je duljina stringa.",
+                    "",
+                    "Izlaz:",
+                    "C",
+                    "o",
+                    "d",
+                    "e"
+                ],
+                [
+                    "Kreiraj string b i dodijeli mu vrijednost",
+                    "\"Code\". Zatim ispi\u0161i njegov drugi i tre\u0107i",
+                    "znak, svaki u novom retku."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 6.",
                     "",
@@ -2858,14 +2942,66 @@
                     "character each in a new line."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Use two print() functions",
-            "hint2_Python": "Indexes are 1 and 2",
-            "hint1_C": "Use two printf() functions with \\n",
-            "hint2_C": "Indexes are 1 and 2",
-            "hint1_C++": "name - string, age - int",
-            "hint2_C++": "Use two cout functions with endl",
+            "text_C++_hrv": [
+                [
+                    "Razina 6.",
+                    "",
+                    "U ovoj razini govorit \u0107emo vi\u0161e o",
+                    "stringovima.",
+                    "",
+                    "Stringovi su zapravo nizovi, \u0161to zna\u010di",
+                    "da mo\u017eemo pristupiti pojedinim",
+                    "znakovima pomo\u0107u njihovog indeksa.",
+                    "Prvi znak je na indeksu 0, a zadnji znak",
+                    "se nalazi na duljini stringa minus jedan.",
+                    "",
+                    "   string a = \"Hello\";",
+                    "   //a[0] = 'H'",
+                    "   //a[4] = 'o'"
+                ],
+                [
+                    "Da bismo koristili stringove u C++,",
+                    "moramo uklju\u010diti zaglavljem <string>.",
+                    "",
+                    "Tako\u0111er mo\u017eemo prolaziti kroz",
+                    "stringove pomo\u0107u for petlje.",
+                    "",
+                    "   string str = \"Code\";",
+                    "   for (int i = 0; i < str.length(); i++) {",
+                    "       cout << str[i] << endl;",
+                    "   }",
+                    "",
+                    "Izlaz:",
+                    "C",
+                    "o",
+                    "d",
+                    "e"
+                ],
+                [
+                    "Ako \u017eelimo saznati koliko znakova",
+                    "ima string, koristimo metodu length().",
+                    "   cout << a.length() << endl;",
+                    "//Izlaz: 5",
+                    "",
+                    "Kreiraj string b i dodijeli mu vrijednost",
+                    "\"Code\". Zatim ispi\u0161i njegov drugi i tre\u0107i",
+                    "znak, svaki u novom retku."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Use two print() functions",
+            "hint1_Python_hrv": "Upotrijebi dvije print() funkcije",
+            "hint2_Python_eng": "Indexes are 1 and 2",
+            "hint2_Python_hrv": "Indeksi su 1 i 2",
+            "hint1_C_eng": "Use two printf() functions with \\n",
+            "hint1_C_hrv": "Upotrijebi dvije printf() funkcije s \\n",
+            "hint2_C_eng": "Indexes are 1 and 2",
+            "hint2_C_hrv": "Indeksi su 1 i 2",
+            "hint1_C++_eng": "Use two cout with << endl",
+            "hint1_C++_hrv": "Upotrijebi cout dva puta s << endl",
+            "hint2_C++_eng": "Indexes are 1 and 2",
+            "hint2_C++_hrv": "Indeksi su 1 i 2",
             "pages": 3,
             "blocks": [
                 [
@@ -3130,7 +3266,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 7.",
                     "",
@@ -3199,7 +3335,75 @@
                     "print it on a new line."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 7.",
+                    "",
+                    "U ovoj razini obradit \u0107emo operatore u",
+                    "Pythonu.",
+                    "",
+                    "Operatori se koriste za izvo\u0111enje",
+                    "operacija nad varijablama i",
+                    "vrijednostima.",
+                    "",
+                    "Aritmeti\u010dki operatori:",
+                    "+ -> Zbrajanje",
+                    "- -> Oduzimanje",
+                    "* -> Mno\u017eenje",
+                    "/ -> Dijeljenje",
+                    "% -> Modulo",
+                    "** -> Potenciranje",
+                    "// -> Cjelobrojno dijeljenje"
+                ],
+                [
+                    "Operatori dodjele:",
+                    "Koriste se za dodjelu vrijednosti",
+                    "varijablama i uvijek uklju\u010duju znak =.",
+                    "Njima mo\u017eete pojednostaviti izraze, npr.",
+                    "a = a + 5 mo\u017eete zapisati kao a += 5.",
+                    "Isto vrijedi za sve ostale aritmeti\u010dke",
+                    "operatore:",
+                    "a = a // 2 -> a //= 2",
+                    "a = a ** 3 -> a **= 3",
+                    "..."
+                ],
+                [
+                    "Operatori usporedbe:",
+                    "== -> Jednako",
+                    "!= -> Nije jednako",
+                    "> -> Ve\u0107e od",
+                    "< -> Manje od",
+                    ">= -> Ve\u0107e ili jednako",
+                    "<= -> Manje ili jednako",
+                    "",
+                    "Oni vra\u0107aju booleansku vrijednost:",
+                    "3 == 5 -> False",
+                    "4 <= 5 -> True"
+                ],
+                [
+                    "Logi\u010dki operatori:",
+                    "and -> vra\u0107a True ako su obje vrijednosti",
+                    "True",
+                    "or -> vra\u0107a True ako je barem jedna",
+                    "vrijednost True",
+                    "not -> mijenja logi\u010dku vrijednost",
+                    "(True -> False, False -> True)",
+                    "",
+                    "Primjeri:",
+                    "1 < 2 and 3 <= 3 -> True",
+                    "1 > 2 and 4 > 5 -> False",
+                    "not 1 == 1 -> False"
+                ],
+                [
+                    "Kreirajte varijablu a i dodijelite joj",
+                    "vrijednost 10.5. Zatim pomo\u0107u operatora",
+                    "dodjele dodajte 4.5 i ispi\u0161ite rezultat.",
+                    "Kreirajte varijablu b i u nju spremite ",
+                    "provjeru je li a ve\u0107e od 4.5, zatim",
+                    "ispi\u0161ite b u novom retku."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 7.",
                     "",
@@ -3264,7 +3468,68 @@
                     "greater than 4.5. Print b on a new line."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 7.",
+                    "",
+                    "U ovoj razini obradit \u0107emo operatore u",
+                    "C-u. Operatori se koriste za izvo\u0111enje",
+                    "operacija nad varijablama i",
+                    "vrijednostima.",
+                    "",
+                    "Aritmeti\u010dki operatori:",
+                    "+ -> Zbrajanje",
+                    "- -> Oduzimanje",
+                    "* -> Mno\u017eenje",
+                    "/ -> Dijeljenje",
+                    "% -> Modulo (ostatak pri dijeljenju)"
+                ],
+                [
+                    "Operatori dodjele:",
+                    "Koriste se za dodjelu vrijednosti",
+                    "varijablama i uvijek uklju\u010duju znak =.",
+                    "Njima mo\u017eete pojednostaviti izraze, npr.",
+                    "a = a + 5 mo\u017eete zapisati kao a += 5.",
+                    "Isto vrijedi za sve ostale aritmeti\u010dke",
+                    "operatore:",
+                    "a = a * 2 -> a *= 2",
+                    "a = a / 3 -> a /= 3"
+                ],
+                [
+                    "Operatori usporedbe:",
+                    "== -> Jednako",
+                    "!= -> Nije jednako",
+                    "> -> Ve\u0107e od",
+                    "< -> Manje od",
+                    ">= -> Ve\u0107e ili jednako",
+                    "<= -> Manje ili jednako",
+                    "",
+                    "Oni vra\u0107aju 1 (istina) ili 0 (la\u017e):",
+                    "3 == 5 -> 0",
+                    "4 <= 5 -> 1"
+                ],
+                [
+                    "Logi\u010dki operatori:",
+                    "&& -> vra\u0107a true ako su oba uvjeta true",
+                    "|| -> vra\u0107a true ako je barem jedan uvjet",
+                    "true",
+                    "! -> mijenja logi\u010dku vrijednost",
+                    "",
+                    "Primjeri:",
+                    "1 < 2 && 3 <= 3 -> 1 (true)",
+                    "1 > 2 && 4 > 5 -> 0 (false)",
+                    "! (1 == 1) -> 0 (false)"
+                ],
+                [
+                    "Kreirajte float varijablu a i dodijelite joj",
+                    "vrijednost 10.5. Koristite operator",
+                    "dodjele da dodate 4.5 i ispi\u0161ite rezultat.",
+                    "Zatim kreirajte int varijablu b i spremite",
+                    "rezultat provjere je li a ve\u0107e od 4.5.",
+                    "Ispi\u0161ite b u novom retku."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 7.",
                     "",
@@ -3330,14 +3595,80 @@
                     "greater than 4.5. Print b on a new line."
                 ]
             ],
-            "hint1_unlocked": false,
+            "text_C++_hrv": [
+                [
+                    "Razina 7.",
+                    "",
+                    "U ovoj razini obradit \u0107emo operatore u",
+                    "C++-u. Operatori se koriste za izvo\u0111enje",
+                    "operacija nad varijablama i",
+                    "vrijednostima.",
+                    "",
+                    "Aritmeti\u010dki operatori:",
+                    "+ -> Zbrajanje",
+                    "- -> Oduzimanje",
+                    "* -> Mno\u017eenje",
+                    "/ -> Dijeljenje",
+                    "% -> Modulo (ostatak pri dijeljenju)"
+                ],
+                [
+                    "Operatori dodjele:",
+                    "Koriste se za dodjelu vrijednosti",
+                    "varijablama i uvijek uklju\u010duju znak =.",
+                    "Njima mo\u017eete pojednostaviti izraze, npr.",
+                    "a = a + 5 mo\u017eete zapisati kao a += 5.",
+                    "Isto vrijedi za sve ostale aritmeti\u010dke",
+                    "operatore:",
+                    "a = a * 2 -> a *= 2",
+                    "a = a / 3 -> a /= 3"
+                ],
+                [
+                    "Operatori usporedbe:",
+                    "== -> Jednako",
+                    "!= -> Nije jednako",
+                    "> -> Ve\u0107e od",
+                    "< -> Manje od",
+                    ">= -> Ve\u0107e ili jednako",
+                    "<= -> Manje ili jednako",
+                    "",
+                    "Oni vra\u0107aju true (istina) ili false (la\u017e):",
+                    "3 == 5 -> true",
+                    "4 <= 5 -> false"
+                ],
+                [
+                    "Logi\u010dki operatori:",
+                    "&& -> vra\u0107a true ako su oba uvjeta true",
+                    "|| -> vra\u0107a true ako je barem jedan uvjet",
+                    "true",
+                    "! -> mijenja logi\u010dku vrijednost",
+                    "",
+                    "Primjeri:",
+                    "1 < 2 && 3 <= 3 -> true",
+                    "1 > 2 && 4 > 5 -> false",
+                    "! (1 == 1) -> false"
+                ],
+                [
+                    "Kreirajte float varijablu a i dodijelite joj",
+                    "vrijednost 10.5. Koristite operator",
+                    "dodjele da dodate 4.5 i ispi\u0161ite rezultat.",
+                    "Zatim kreirajte int varijablu b i spremite",
+                    "rezultat provjere je li a ve\u0107e od 4.5.",
+                    "Ispi\u0161ite b u novom retku."
+                ]
+            ],
+            "hint1_unlocked": true,
             "hint2_unlocked": false,
-            "hint1_Python": "Use += in 1st task and > in 2nd task",
+            "hint1_Python_eng": "Use += in 1st task and > in 2nd task",
+            "hint1_Python_hrv": "Upotrijebi += u prvom zadatku i > u drugom",
             "hint2_Python": "x = y > z",
-            "hint1_C": "Use += in 1st task and > in 2nd task",
-            "hint2_C": "bool x = y > z;",
-            "hint1_C++": "Use += in 1st task and > in 2nd task",
-            "hint2_C++": "bool x = y > z;",
+            "hint1_C_eng": "Use += in 1st task and > in 2nd task",
+            "hint1_C_hrv": "Upotrijebi += u prvom zadatku i > u drugom",
+            "hint2_C_eng": "int x = y > z;",
+            "hint2_C_hrv": "int x = y > z;",
+            "hint1_C++_eng": "Use += in 1st task and > in 2nd task",
+            "hint1_C++_hrv": "Upotrijebi += u prvom zadatku i > u drugom",
+            "hint2_C++_eng": "bool x = y > z;",
+            "hint2_C++_hrv": "bool x = y > z;",
             "pages": 5,
             "blocks": [
                 [
@@ -3526,7 +3857,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 8.",
                     "",
@@ -3595,7 +3926,73 @@
                     "\"Hello, World!\" if 5 > 3."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 8.",
+                    "",
+                    "U ovoj razini objasnit \u0107emo if, elif i else",
+                    "izraze. Ove naredbe omogu\u0107uju nam",
+                    "provjeru je li neki uvjet True (istinit) ili",
+                    "False (neistinit). Uvjet, poput (b > a),",
+                    "vra\u0107a boolean vrijednost. Ako je ta",
+                    "vrijednost True, tada se izvr\u0161ava kod",
+                    "unutar if naredbe.",
+                    "a = 3",
+                    "b = 5",
+                    "if b > a:",
+                    "    print(\"b je ve\u0107e od a\")",
+                    "",
+                    "!!!Uvlaka (indentacija) je klju\u010dna u",
+                    "Pythonu. Ona odre\u0111uje opseg if bloka."
+                ],
+                [
+                    "elif se koristi za provjeru vi\u0161e uvjeta,",
+                    "dok se else koristi ako nijedan od",
+                    "prethodnih uvjeta nije bio istinit.",
+                    "",
+                    "a = 3",
+                    "b = 5",
+                    "if b > a:",
+                    "    print(\"b je ve\u0107e\")",
+                    "elif a == b:",
+                    "    print(\"a i b su jednaki\")",
+                    "else:",
+                    "    print(\"a je ve\u0107e\")",
+                    "",
+                    "Izlaz:",
+                    "b je ve\u0107e"
+                ],
+                [
+                    "Logi\u010dki operatori:",
+                    " and - oba uvjeta moraju biti istinita",
+                    " or - barem jedan uvjet mora biti istinit",
+                    " not - negira (obr\u0107e) rezultat uvjeta",
+                    "",
+                    "a = 5",
+                    "b = 3",
+                    "c = 8",
+                    "if a > b and c > a:",
+                    "    print(\"Oba uvjeta su istinita\")",
+                    "",
+                    "Izlaz:",
+                    "Oba uvjeta su istinita"
+                ],
+                [
+                    "Mo\u017eete ugnijezditi if izraze kako biste",
+                    "provjerili vi\u0161e uvjeta:",
+                    "if x > 10:",
+                    "    if x > 20:",
+                    "        print(\"Ve\u0107e od 20\")",
+                    "",
+                    "Ako trebate prazan if, koristite pass:",
+                    "if b > a:",
+                    "    pass",
+                    "",
+                    "Napravite program koji ispisuje",
+                    "\"Hello, World!\" ako je 5 > 3."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 8.",
                     "",
@@ -3662,7 +4059,72 @@
                     "\"Hello, World!\" if 5 > 3."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 8",
+                    "",
+                    "U ovoj razini objasnit \u0107emo if, else if i",
+                    "else izraze. Ove naredbe omogu\u0107uju nam",
+                    "provjeru je li neki uvjet true ili false.",
+                    "Uvjet, poput (b > a), vra\u0107a 1 (istina) ili 0",
+                    "(la\u017e). Ako je vrijednost true, tada se",
+                    "izvr\u0161ava kod unutar if naredbe.",
+                    "",
+                    "   int a = 3;",
+                    "   int b = 5;",
+                    "   if (b > a) {",
+                    "       printf(\"b je ve\u0107e od a\");",
+                    "   }"
+                ],
+                [
+                    "else if se koristi za provjeru vi\u0161e uvjeta,",
+                    "dok se else koristi ako nijedan od",
+                    "prethodnih uvjeta nije bio istinit.",
+                    "",
+                    "int a = 3;",
+                    "int b = 5;",
+                    "if (b > a) {",
+                    "    printf(\"b je ve\u0107i\");",
+                    "} else if (a == b) {",
+                    "    printf(\"a i b su jednaki\");",
+                    "} else {",
+                    "    printf(\"a je ve\u0107i\");",
+                    "}",
+                    "Izlaz:",
+                    "b je ve\u0107e"
+                ],
+                [
+                    "Logi\u010dki operatori:",
+                    " && - oba uvjeta moraju biti istinita",
+                    " || - barem jedan uvjet mora biti istinit",
+                    " ! - negira (obr\u0107e) rezultat uvjeta",
+                    "",
+                    "int a = 5, b = 3, c = 8;",
+                    "if (a > b && c > a) {",
+                    "    printf(\"Oba uvjeta su istinita\");",
+                    "}",
+                    "",
+                    "Izlaz:",
+                    "Oba uvjeta su istinita"
+                ],
+                [
+                    "Mo\u017eete ugnijezditi if izraze kako biste",
+                    "provjerili vi\u0161e uvjeta:",
+                    "if (x > 10) {",
+                    "    if (x > 20) {",
+                    "        printf(\"Ve\u0107e od 20\");",
+                    "    }",
+                    "}",
+                    "",
+                    "Ako trebate prazan if, koristite prazan",
+                    "blok {}:",
+                    "if (b > a) { }",
+                    "",
+                    "Napravite program koji ispisuje",
+                    "\"Hello, World!\" ako je 5 > 3."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 8.",
                     "",
@@ -3728,14 +4190,85 @@
                     "\"Hello, World!\" if 5 > 3."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "You need to have print() inside of if",
-            "hint2_Python": "if x > y: ...",
-            "hint1_C": "You need to have printf() inside of if",
-            "hint2_C": "if (x > y) { ... }",
+            "text_C++_hrv": [
+                [
+                    "Razina 8",
+                    "",
+                    "U ovoj razini objasnit \u0107emo if, else if i",
+                    "else izraze. Ove naredbe omogu\u0107uju nam",
+                    "provjeru je li neki uvjet true ili false.",
+                    "Uvjet, poput (b > a), vra\u0107a 1 (istina) ili 0",
+                    "(la\u017e). Ako je vrijednost true, tada se",
+                    "izvr\u0161ava kod unutar if naredbe.",
+                    "",
+                    "   int a = 3;",
+                    "   int b = 5;",
+                    "   if (b > a) {",
+                    "       cout << \"b je ve\u0107e od a\";",
+                    "   }"
+                ],
+                [
+                    "else if se koristi za provjeru vi\u0161e uvjeta,",
+                    "dok se else koristi ako nijedan od",
+                    "prethodnih uvjeta nije bio istinit.",
+                    "",
+                    "int a = 3;",
+                    "int b = 5;",
+                    "if (b > a) {",
+                    "    cout << \"b je ve\u0107e\";",
+                    "} else if (a == b) {",
+                    "    cout << \"a i b su jednaki\";",
+                    "} else {",
+                    "    cout << \"a je ve\u0107e\";",
+                    "}",
+                    "Izlaz:",
+                    "b je ve\u0107e"
+                ],
+                [
+                    "Logi\u010dki operatori:",
+                    " && - oba uvjeta moraju biti istinita",
+                    " || - barem jedan uvjet mora biti istinit",
+                    " ! - negira (obr\u0107e) rezultat uvjeta",
+                    "",
+                    "int a = 5, b = 3, c = 8;",
+                    "if (a > b && c > a) {",
+                    "    cout << \"Oba uvjeta su istinita\";",
+                    "}",
+                    "",
+                    "Izlaz:",
+                    "Oba uvjeta su istinita"
+                ],
+                [
+                    "Mo\u017eete ugnijezditi if izraze kako biste",
+                    "provjerili vi\u0161e uvjeta:",
+                    "if (x > 10) {",
+                    "    if (x > 20) {",
+                    "        cout << \"Ve\u0107e od 20\";",
+                    "    }",
+                    "}",
+                    "",
+                    "Ako trebate prazan if, koristite prazan",
+                    "blok {}:",
+                    "if (b > a) { }",
+                    "",
+                    "Napravite program koji ispisuje",
+                    "\"Hello, World!\" ako je 5 > 3."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "You need to have print() inside of if",
+            "hint1_Python_hrv": "Mora\u0161 imati print() unutar if",
+            "hint2_Python_eng": "if x > y: ...",
+            "hint2_Python_hrv": "if x > y: ...",
+            "hint1_C_eng": "You need to have printf() inside of if",
+            "hint1_C_hrv": "Mora\u0161 imati printf() unutar if",
+            "hint2_C_eng": "if (x > y) { ... }",
+            "hint2_C_hrv": "if (x > y) { ... }",
             "hint1_C++": "You need to have cout inside of if",
-            "hint2_C++": "if (x > y) { ... }",
+            "hint1_C++_hrv": "Mora\u0161 imati cout unutar if",
+            "hint2_C++_eng": "if (x > y) { ... }",
+            "hint2_C++_hrv": "if (x > y) { ... }",
             "pages": 4,
             "blocks": [
                 [
@@ -3824,7 +4357,7 @@
                     []
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 9.",
                     "",
@@ -3881,7 +4414,66 @@
                     "   #moves the mob up by 1"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 9.",
+                    "",
+                    "U ovoj razini istra\u017eit \u0107emo koncept",
+                    "klasa i metoda koje \u0107e nam pomo\u0107i da",
+                    "pomi\u010demo objekt po 2D mre\u017ei iza ove",
+                    "knjige.",
+                    "",
+                    "S desne strane mo\u017eete vidjeti kod koji",
+                    "je ve\u0107 napisan i koji \u0107e biti napisan u",
+                    "kasnijim razinama. Ne brinite ako ga",
+                    "odmah ne razumijete.",
+                    "",
+                    "Samo pratite i mo\u017eda nau\u010dite ne\u0161to novo!",
+                    "Ako vam se \u010dini zbunjuju\u0107e, to je potpuno",
+                    "u redu \u2013 ovaj kod ve\u0107 \u0107e biti napisan za",
+                    "vas u kasnijim razinama."
+                ],
+                [
+                    "Napravili smo klasu Mob, koja predstavlja",
+                    "objekt na mre\u017ei. Ova klasa sadr\u017ei",
+                    "svojstva za njegov polo\u017eaj (x i",
+                    "y koordinate) te metode za pomicanje",
+                    "objekta u razli\u010ditim smjerovima."
+                ],
+                [
+                    "Konstruktor __init__",
+                    "",
+                    "Metoda __init__ je konstruktor.",
+                    "Automatski se poziva kada kreirate novi",
+                    "objekt klase Mob. Postavlja po\u010detni",
+                    "polo\u017eaj koriste\u0107i x i y parametre.",
+                    "",
+                    "class Mob:",
+                    "    def __init__(self, x, y):",
+                    "        self.x = x",
+                    "        self.y = y"
+                ],
+                [
+                    "Metode za kretanje",
+                    "",
+                    "Unutar klase definirane su metode za",
+                    "kretanje:",
+                    " go_up(n) pove\u0107ava y koordinatu.",
+                    " go_down(n) smanjuje y koordinatu.",
+                    " go_right(n) pove\u0107ava x koordinatu.",
+                    " go_left(n) smanjuje x koordinatu.",
+                    "",
+                    "Ove metode omogu\u0107uju promjenu",
+                    "polo\u017eaja Moba nakon \u0161to je kreiran.",
+                    "",
+                    "Primjer kori\u0161tenja:",
+                    "mob = Mob(0, 0)  # Kreira objekt Mob na",
+                    "                          # po\u010detnoj poziciji (0,0)",
+                    "mob.go_up(1) #Pomakni Moba gore za 1",
+                    "                      #blok"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 9.",
                     "",
@@ -3940,7 +4532,65 @@
                     "explain it here to keep things simple."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 9.",
+                    "",
+                    "U ovoj razini istra\u017eit \u0107emo koncept",
+                    "struktura i funkcija koje \u0107e nam pomo\u0107i",
+                    "da pomi\u010demo objekt po 2D mre\u017ei iza ove",
+                    "knjige.",
+                    "",
+                    "S desne strane mo\u017eete vidjeti kod koji",
+                    "je ve\u0107 napisan i koji \u0107e biti napisan u",
+                    "kasnijim razinama. Ne brinite ako ga",
+                    "odmah ne razumijete.",
+                    "",
+                    "Samo pratite i mo\u017eda nau\u010dite ne\u0161to novo!",
+                    "Ako vam se \u010dini zbunjuju\u0107e, to je potpuno",
+                    "u redu - ovaj kod ve\u0107 \u0107e biti napisan za",
+                    "vas u kasnijim razinama."
+                ],
+                [
+                    "U C koristimo struct za grupiranje",
+                    "povezanih podataka. Ovdje smo definirali",
+                    "strukturu Mob koja sadr\u017ei x i y",
+                    "koordinate za predstavljanje polo\u017eaja."
+                ],
+                [
+                    "Definicija strukture",
+                    "",
+                    "struct Mob {",
+                    "    int x;",
+                    "    int y;",
+                    "};",
+                    "Funkcije za pomicanje",
+                    "",
+                    "\u010cetiri funkcije upravljaju kretanjem:",
+                    " go_up pove\u0107ava y koordinatu.",
+                    " go_down smanjuje y koordinatu.",
+                    " go_right pove\u0107ava x koordinatu.",
+                    " go_left smanjuje x koordinatu.",
+                    "",
+                    "Ove funkcije mijenjaju polo\u017eaj Moba",
+                    "prema njegovim trenutnim koordinatama."
+                ],
+                [
+                    "Primjer kori\u0161tenja:",
+                    "",
+                    "struct Mob mob = {0, 0}; // Kreira struct",
+                    "                                   // Mob na po\u010detnoj",
+                    "                                   // poziciji (0,0)",
+                    "go_up(&mob, 1);          // Pomakni Moba",
+                    "                                   // gore za 1 blok",
+                    "",
+                    "Napomena: Ne zaboravite staviti & ispred",
+                    "mob prilikom pozivanja funkcije. To je",
+                    "pravilo jezika C, ali ne\u0107emo ga ovdje",
+                    "detaljno obja\u0161njavati radi jednostavnosti."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 9.",
                     "",
@@ -3995,14 +4645,76 @@
                     "   //moves the mob up by 1"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Just press run",
-            "hint2_Python": "...",
-            "hint1_C": "Just press run",
+            "text_C++_hrv": [
+                [
+                    "Razina 9.",
+                    "",
+                    "U ovoj razini istra\u017eit \u0107emo koncept",
+                    "klasa i metoda koje \u0107e nam pomo\u0107i da",
+                    "pomi\u010demo objekt po 2D mre\u017ei iza ove",
+                    "knjige.",
+                    "",
+                    "S desne strane mo\u017eete vidjeti kod koji",
+                    "je ve\u0107 napisan i koji \u0107e biti napisan u",
+                    "kasnijim razinama. Ne brinite ako ga",
+                    "odmah ne razumijete.",
+                    "",
+                    "Samo pratite i mo\u017eda nau\u010dite ne\u0161to novo!",
+                    "Ako vam se \u010dini zbunjuju\u0107e, to je potpuno",
+                    "u redu - ovaj kod ve\u0107 \u0107e biti napisan za",
+                    "vas u kasnijim razinama."
+                ],
+                [
+                    "U C++ koristimo klase za definiranje",
+                    "vlastitih tipova podataka. Definirat \u0107emo",
+                    "klasu Mob s atributima za polo\u017eaj x i y."
+                ],
+                [
+                    "Definicija klase",
+                    "",
+                    "class Mob {",
+                    "    public:",
+                    "        int x, y;",
+                    "        Mob(int a, int b) {",
+                    "            x = a;",
+                    "            y = b;",
+                    "        }",
+                    "};"
+                ],
+                [
+                    "Metode za kretanje",
+                    "",
+                    "Klasa Mob sadr\u017ei metode za pomicanje:",
+                    " go_up pove\u0107ava y.",
+                    " go_down smanjuje y.",
+                    " go_right pove\u0107ava x.",
+                    " go_left smanjuje x.",
+                    "",
+                    "Ove metode omogu\u0107uju promjenu polo\u017eaja",
+                    "Moba na mre\u017ei.",
+                    "",
+                    "Primjer kori\u0161tenja:",
+                    "",
+                    "Mob mob(0, 0);  // Kreira objekt Mob na",
+                    "                           // po\u010detnoj poziciji (0,0)",
+                    "mob.go_up(1);   // Pomakni Moba gore za 1",
+                    "                           // blok"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Just press run",
+            "hint1_Python_hrv": "Samo stisni Pokreni",
+            "hint2_Python_eng": "...",
+            "hint2_Python_hrv": "...",
+            "hint1_C_eng": "Just press run",
+            "hint1_C_hrv": "Samo stisni Pokreni",
             "hint2_C": "...",
-            "hint1_C++": "Just press run",
-            "hint2_C++": "...",
+            "hint2_C_hrv": "...",
+            "hint1_C++_eng": "Just press run",
+            "hint1_C++_hrv": "Samo stisni Pokreni",
+            "hint2_C++_eng": "...",
+            "hint2_C++_hrv": "...",
             "pages": 4,
             "blocks": [
                 [
@@ -4232,15 +4944,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
             "hint1_Python_eng": "mob.go_right(x) and mob.go_up(y)",
             "hint1_Python_hrv": "mob.go_right(x) i mob.go_up(y)",
-            "hint2_Python": "x and y are number of blocks to move",
-            "hint1_C": "go_right(&mob, x) and go_up(&mob, y)",
-            "hint2_C": "x and y are number of blocks to move",
-            "hint1_C++": "mob.go_right(x) and mob.go_up(y)",
-            "hint2_C++": "x and y are number of blocks to move",
+            "hint2_Python_eng": "x and y are number of blocks to move",
+            "hint2_Python_hrv": "x i y su broj blokova za pomicanje",
+            "hint1_C_eng": "go_right(&mob, x) and go_up(&mob, y)",
+            "hint1_C_hrv": "go_right(&mob, x) i go_up(&mob, y)",
+            "hint2_C_eng": "x and y are number of blocks to move",
+            "hint2_C_hrv": "x i y su broj blokova za pomicanje",
+            "hint1_C++_eng": "mob.go_right(x) and mob.go_up(y)",
+            "hint1_C++_hrv": "mob.go_right(x) i mob.go_up(y)",
+            "hint2_C++_eng": "x and y are number of blocks to move",
+            "hint2_C++_hrv": "x i y su broj blokova za pomicanje",
             "pages": 2,
             "blocks": [
                 [
@@ -4470,14 +5187,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "2x mob.go_right(x) and mob.go_up(y)",
-            "hint2_Python": "right -> up -> right",
-            "hint1_C": "2x go_right(&mob, x) and go_up(&mob, y)",
-            "hint2_C": "right -> up -> right",
-            "hint1_C++": "2x mob.go_right(x) and mob.go_up(y)",
-            "hint2_C++": "right -> up -> right",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "2x mob.go_right(x) and mob.go_up(y)",
+            "hint1_Python_hrv": "2x mob.go_right(x) i mob.go_up(y)",
+            "hint2_Python_eng": "right -> up -> right",
+            "hint2_Python_hrv": "right -> up -> right",
+            "hint1_C_eng": "2x go_right(&mob, x) and go_up(&mob, y)",
+            "hint1_C_hrv": "2x go_right(&mob, x) i go_up(&mob, y)",
+            "hint2_C_eng": "right -> up -> right",
+            "hint2_C_hrv": "right -> up -> right",
+            "hint1_C++_eng": "2x mob.go_right(x) and mob.go_up(y)",
+            "hint1_C++_hrv": "2x mob.go_right(x) i mob.go_up(y)",
+            "hint2_C++_eng": "right -> up -> right",
+            "hint2_C++_hrv": "right -> up -> right",
             "pages": 2,
             "blocks": [
                 [
@@ -4707,14 +5430,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
-            "hint2_Python": "right -> up -> left -> up -> left",
-            "hint1_C": "go_right(&mob, x), 2x go_up(&mob, y) and 2x go_left(&mob, z)",
-            "hint2_C": "right -> up -> left -> up -> left",
-            "hint1_C++": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
-            "hint2_C++": "right -> up -> left -> up -> left",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
+            "hint1_Python_hrv": "mob.go_right(x), 2x mob.go_up(y) i 2x mob.go_left(z)",
+            "hint2_Python_eng": "right -> up -> left -> up -> left",
+            "hint2_Python_hrv": "right -> up -> left -> up -> left",
+            "hint1_C_eng": "go_right(&mob, x), 2x go_up(&mob, y) and 2x go_left(&mob, z)",
+            "hint1_C_hrv": "go_right(&mob, x), 2x go_up(&mob, y) i 2x go_left(&mob, z)",
+            "hint2_C_eng": "right -> up -> left -> up -> left",
+            "hint2_C_hrv": "right -> up -> left -> up -> left",
+            "hint1_C++_eng": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
+            "hint1_C++_hrv": "mob.go_right(x), 2x mob.go_up(y) i 2x mob.go_left(z)",
+            "hint2_C++_eng": "right -> up -> left -> up -> left",
+            "hint2_C++_hrv": "right -> up -> left -> up -> left",
             "pages": 2,
             "blocks": [
                 [
@@ -4944,14 +5673,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
-            "hint2_Python": "right -> down -> left -> down -> left",
-            "hint1_C": "go_right(&mob, x), 2x go_down(&mob, y) and 2x go_left(&mob, z)",
-            "hint2_C": "right -> down -> left -> down -> left",
-            "hint1_C++": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
-            "hint2_C++": "right -> down -> left -> down -> left",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
+            "hint1_Python_hrv": "mob.go_right(x), 2x mob.go_down(y) i 2x mob.go_left(z)",
+            "hint2_Python_eng": "right -> down -> left -> down -> left",
+            "hint2_Python_hrv": "right -> down -> left -> down -> left",
+            "hint1_C_eng": "go_right(&mob, x), 2x go_down(&mob, y) and 2x go_left(&mob, z)",
+            "hint1_C_hrv": "go_right(&mob, x), 2x go_down(&mob, y) i 2x go_left(&mob, z)",
+            "hint2_C_eng": "right -> down -> left -> down -> left",
+            "hint2_C_hrv": "right -> down -> left -> down -> left",
+            "hint1_C++_eng": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
+            "hint1_C++_hrv": "mob.go_right(x), 2x mob.go_down(y) i 2x mob.go_left(z)",
+            "hint2_C++_eng": "right -> down -> left -> down -> left",
+            "hint2_C++_hrv": "right -> down -> left -> down -> left",
             "pages": 2,
             "blocks": [
                 [
@@ -5191,14 +5926,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "mob.go_up(x)",
-            "hint2_Python": "up",
-            "hint1_C": "go_up(&mob, x)",
-            "hint2_C": "up",
-            "hint1_C++": "mob.go_up(x)",
-            "hint2_C++": "up",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "mob.go_up(x)",
+            "hint1_Python_hrv": "mob.go_up(x)",
+            "hint2_Python_eng": "up 6",
+            "hint2_Python_hrv": "up 6",
+            "hint1_C_eng": "go_up(&mob, x)",
+            "hint1_C_hrv": "go_up(&mob, x)",
+            "hint2_C_eng": "up 6",
+            "hint2_C_hrv": "up 6",
+            "hint1_C++_eng": "mob.go_up(x)",
+            "hint1_C++_hrv": "mob.go_up(x)",
+            "hint2_C++_eng": "up 6",
+            "hint2_C++_hrv": "up 6",
             "pages": 2,
             "blocks": [
                 [
@@ -5438,14 +6179,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
-            "hint2_Python": "right -> up -> left -> up -> right -> up",
-            "hint1_C": "2x go_right(&mob, x), 3x go_up(&mob, y) and go_left(&mob, z)",
-            "hint2_C": "right -> up -> left -> up -> right -> up",
-            "hint1_C++": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
-            "hint2_C++": "right -> up -> left -> up -> right -> up",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
+            "hint1_Python_hrv": "2x mob.go_right(x), 3x mob.go_up(y) i mob.go_left(z)",
+            "hint2_Python_eng": "right -> up -> left -> up -> right -> up",
+            "hint2_Python_hrv": "right -> up -> left -> up -> right -> up",
+            "hint1_C_eng": "2x go_right(&mob, x), 3x go_up(&mob, y) and go_left(&mob, z)",
+            "hint1_C_hrv": "2x go_right(&mob, x), 3x go_up(&mob, y) i go_left(&mob, z)",
+            "hint2_C_eng": "right -> up -> left -> up -> right -> up",
+            "hint2_C_hrv": "right -> up -> left -> up -> right -> up",
+            "hint1_C++_eng": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
+            "hint1_C++_hrv": "2x mob.go_right(x), 3x mob.go_up(y) i mob.go_left(z)",
+            "hint2_C++_eng": "right -> up -> left -> up -> right -> up",
+            "hint2_C++_hrv": "right -> up -> left -> up -> right -> up",
             "pages": 2,
             "blocks": [
                 [
@@ -5685,14 +6432,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
-            "hint2_Python": "right -> up -> right -> left -> up -> right",
-            "hint1_C": "3x go_right(&mob, x), 2x go_up(&mob, y) and go_left(&mob, z)",
-            "hint2_C": "right -> up -> right -> left -> up -> right",
-            "hint1_C++": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
-            "hint2_C++": "right -> up -> right -> left -> up -> right",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
+            "hint1_Python_hrv": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
+            "hint2_Python_eng": "right -> up -> right -> left -> up -> right",
+            "hint2_Python_hrv": "right -> up -> right -> left -> up -> right",
+            "hint1_C_eng": "3x go_right(&mob, x), 2x go_up(&mob, y) and go_left(&mob, z)",
+            "hint1_C_hrv": "3x go_right(&mob, x), 2x go_up(&mob, y) and go_left(&mob, z)",
+            "hint2_C_eng": "right -> up -> right -> left -> up -> right",
+            "hint2_C_hrv": "right -> up -> right -> left -> up -> right",
+            "hint1_C++_eng": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
+            "hint1_C++_hrv": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
+            "hint2_C++_eng": "right -> up -> right -> left -> up -> right",
+            "hint2_C++_hrv": "right -> up -> right -> left -> up -> right",
             "pages": 2,
             "blocks": [
                 [
@@ -5770,7 +6523,7 @@
             "input_text_Python": "mob = Mob(3, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {3, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(3, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 17.",
                     "",
@@ -5824,7 +6577,60 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 17",
+                    "",
+                    "U ovoj razini nau\u010dit \u0107e\u0161 o petljama i",
+                    "kako ih koristiti u svom kodu.",
+                    "",
+                    "Petlje se koriste za ponavljanje bloka",
+                    "koda vi\u0161e puta. Postoji nekoliko vrsta",
+                    "petlji u programiranju, ali naj\u010de\u0161\u0107e su",
+                    "for i while petlje."
+                ],
+                [
+                    "U Pythonu, for petlja izgleda ovako:",
+                    "",
+                    "for i in range(5):",
+                    "    # kod",
+                    "",
+                    "Ovdje je 'i' varijabla koja se mijenja",
+                    "pri svakoj iteraciji petlje.",
+                    "",
+                    "Funkcija range(5) generira niz brojeva",
+                    "od 0 do 4 ([0, 1, 2, 3, 4]).",
+                    "",
+                    "Kod unutar petlje se izvr\u0161ava za svaku",
+                    "vrijednost i u ovom nizu."
+                ],
+                [
+                    "Primjer:",
+                    "",
+                    "for i in range(5):",
+                    "    print(i)",
+                    "",
+                    "Izlaz:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                [
+                    "Tvoj zadatak je pomaknuti Moba do cilja",
+                    "(vrata) koriste\u0107i samo funkciju:",
+                    "",
+                    "mob.go_up(1)",
+                    "",
+                    "To napravi ponavljanjem funkcije u",
+                    "for petlji 6 puta.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 17.",
                     "",
@@ -5878,7 +6684,57 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 17",
+                    "",
+                    "U ovoj razini nau\u010dit \u0107e\u0161 o petljama i",
+                    "kako ih koristiti u svom kodu.",
+                    "",
+                    "Petlje se koriste za ponavljanje bloka",
+                    "koda vi\u0161e puta. Postoji nekoliko vrsta",
+                    "petlji u programiranju, ali naj\u010de\u0161\u0107e su",
+                    "for i while petlje."
+                ],
+                [
+                    "U jeziku C, for petlja izgleda ovako:",
+                    "",
+                    "for (int i = 0; i < 5; i++) {",
+                    "    // kod",
+                    "}",
+                    "",
+                    "Varijabla 'i' pove\u0107ava se pri svakoj",
+                    "iteraciji (i++). Petlja po\u010dinje s 0",
+                    "(int i = 0) i radi dok ne dosegne 5 (i < 5).",
+                    " To zna\u010di da \u0107e petlja izvr\u0161iti kod za",
+                    "vrijednosti: 0, 1, 2, 3, 4."
+                ],
+                [
+                    "Primjer:",
+                    "",
+                    "for (int i = 0; i < 5; i++) {",
+                    "    printf(\"%d\\n\", i);",
+                    "}",
+                    "Izlaz:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                [
+                    "Tvoj zadatak je pomaknuti Moba do cilja",
+                    "(vrata) koriste\u0107i samo funkciju:",
+                    "   go_up(&mob, 1);",
+                    "",
+                    "To napravi ponavljanjem funkcije",
+                    " u for petlji 6 puta.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 17.",
                     "",
@@ -5933,14 +6789,75 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "for i in range(n):",
-            "hint2_Python": "Replace n with 6",
-            "hint1_C": "for (int i = 0; i < n; i++) {",
-            "hint2_C": "Replace n with 6",
-            "hint1_C++": "for (int i = 0; i < n; i++) {",
-            "hint2_C++": "Replace n with 6",
+            "text_C++_hrv": [
+                [
+                    "Razina 17",
+                    "",
+                    "U ovoj razini nau\u010dit \u0107e\u0161 o petljama i",
+                    "kako ih koristiti u svom kodu.",
+                    "",
+                    "Petlje se koriste za ponavljanje bloka",
+                    "koda vi\u0161e puta. Postoji nekoliko vrsta",
+                    "petlji u programiranju, ali naj\u010de\u0161\u0107e su",
+                    "for i while petlje."
+                ],
+                [
+                    "U jeziku C++, for petlja izgleda ovako:",
+                    "",
+                    "for (int i = 0; i < 5; i++) {",
+                    "    // kod",
+                    "}",
+                    "",
+                    "Varijabla 'i' pove\u0107ava se pri svakoj",
+                    "iteraciji (i++).",
+                    "",
+                    "Petlja po\u010dinje s 0 (int i = 0) i radi dok",
+                    "ne dosegne 5 (i < 5).",
+                    "",
+                    "To zna\u010di da \u0107e petlja izvr\u0161iti kod za",
+                    "vrijednosti: 0, 1, 2, 3, 4."
+                ],
+                [
+                    "Primjer:",
+                    "",
+                    "for (int i = 0; i < 5; i++) {",
+                    "    cout << i << endl;",
+                    "}",
+                    "",
+                    "Izlaz:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4"
+                ],
+                [
+                    "Tvoj zadatak je pomaknuti Moba do cilja",
+                    "(vrata) koriste\u0107i samo funkciju:",
+                    "",
+                    "mob.go_up(1)",
+                    "",
+                    "To napravi ponavljanjem funkcije u",
+                    "for petlji 6 puta.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "for i in range(n):",
+            "hint1_Python_hrv": "for i in range(n):",
+            "hint2_Python_eng": "Replace n with 6",
+            "hint2_Python_hrv": "Zamijeni n sa 6",
+            "hint1_C_eng": "for (int i = 0; i < n; i++) {",
+            "hint1_C_hrv": "for (int i = 0; i < n; i++) {",
+            "hint2_C_eng": "Replace n with 6",
+            "hint2_C_hrv": "Zamijeni n sa 6",
+            "hint1_C++_eng": "for (int i = 0; i < n; i++) {",
+            "hint1_C++_hrv": "for (int i = 0; i < n; i++) {",
+            "hint2_C++_eng": "Replace n with 6",
+            "hint2_C++_hrv": "Zamijeni n sa 6",
             "pages": 4,
             "blocks": [
                 [
@@ -6173,14 +7090,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Code in your loop should run twice",
-            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
-            "hint1_C": "Code in your loop should run twice",
-            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
-            "hint1_C++": "Code in your loop should run twice",
-            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Code in the loop should run twice",
+            "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_Python_hrv": "mob.go_up(n) i mob.go_right(n)",
+            "hint1_C_eng": "Code in the loop should run twice",
+            "hint1_C_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C_eng": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint2_C_hrv": "go_up(&mob, n) i go_right(&mob, n)",
+            "hint1_C++_eng": "Code in the loop should run twice",
+            "hint1_C++_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C++_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_C++_hrv": "mob.go_up(n) i mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -6413,14 +7336,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Code in your loop should run twice",
-            "hint2_Python": "mob.go_right(n) and mob.go_down(n)",
-            "hint1_C": "Code in your loop should run twice",
-            "hint2_C": "go_right(&mob, n) and go_down(&mob, n)",
-            "hint1_C++": "Code in your loop should run twice",
-            "hint2_C++": "mob.go_right(n) and mob.go_down(n)",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Code in the loop should run twice",
+            "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_Python_eng": "mob.go_right(n) and mob.go_down(n)",
+            "hint2_Python_hrv": "mob.go_right(n) i mob.go_down(n)",
+            "hint1_C_eng": "Code in the loop should run twice",
+            "hint1_C_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C_eng": "go_right(&mob, n) and go_down(&mob, n)",
+            "hint2_C_hrv": "go_right(&mob, n) i go_down(&mob, n)",
+            "hint1_C++_eng": "Code in the loop should run twice",
+            "hint1_C++_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C++_eng": "mob.go_right(n) and mob.go_down(n)",
+            "hint2_C++_hrv": "mob.go_right(n) i mob.go_down(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -6653,14 +7582,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Code in your loop should run 6 times",
-            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
-            "hint1_C": "Code in your loop should run 6 times",
-            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
-            "hint1_C++": "Code in your loop should run 6 times",
-            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Code in the loop should run 6 times",
+            "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
+            "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_Python_hrv": "mob.go_up(n) i mob.go_right(n)",
+            "hint1_C_eng": "Code in the loop should run 6 times",
+            "hint1_C_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
+            "hint2_C_eng": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint2_C_hrv": "go_up(&mob, n) i go_right(&mob, n)",
+            "hint1_C++_eng": "Code in the loop should run 6 times",
+            "hint1_C++_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
+            "hint2_C++_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_C++_hrv": "mob.go_up(n) i mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -6738,7 +7673,7 @@
             "input_text_Python": "mob = Mob(3, 0)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {3, 0};\n\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(3, 0);\n\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 21.",
                     "",
@@ -6783,7 +7718,55 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 21",
+                    "",
+                    "U ovoj razini nau\u010dit \u0107e\u0161 o while petljama",
+                    "i kako ih koristiti u svom kodu.",
+                    "",
+                    "While petlje su jo\u0161 jedna vrsta petlje u",
+                    "Pythonu. Omogu\u0107uju ponavljanje bloka",
+                    "koda sve dok je odre\u0111eni uvjet istinit."
+                ],
+                [
+                    "Primjer:",
+                    "",
+                    "i = 0",
+                    "while i < 6:",
+                    "    print(i)",
+                    "    i += 1",
+                    "",
+                    "Izlaz:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                [
+                    "Primjer beskona\u010dne petlje:",
+                    "",
+                    "while True:",
+                    "    print(\"Hello, World!\")",
+                    "",
+                    "Ovaj kod \u0107e ispisivati \"Hello, World!\"",
+                    "zauvijek, jer je uvjet uvijek istinit."
+                ],
+                [
+                    "Tvoj zadatak je pomaknuti Moba do cilja",
+                    "(vrata) koriste\u0107i samo funkciju:",
+                    "   mob.go_up(1)",
+                    "",
+                    "To napravi ponavljanjem funkcije u while",
+                    "petlji 6 puta.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 21.",
                     "",
@@ -6830,7 +7813,57 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 21",
+                    "",
+                    "U ovoj razini nau\u010dit \u0107e\u0161 o while petljama",
+                    "i kako ih koristiti u svom kodu.",
+                    "",
+                    "While petlje su jo\u0161 jedna vrsta petlje u",
+                    "jeziku C. Omogu\u0107uju ponavljanje bloka",
+                    "koda sve dok je odre\u0111eni uvjet istinit."
+                ],
+                [
+                    "Primjer:",
+                    "",
+                    "int i = 0;",
+                    "while (i < 6) {",
+                    "    printf(\"%d\\n\", i);",
+                    "    i++;",
+                    "}",
+                    "",
+                    "Izlaz:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                [
+                    "Primjer beskona\u010dne petlje:",
+                    "",
+                    "while (1) {",
+                    "    printf(\"Hello, World!\\n\");",
+                    "}",
+                    "",
+                    "Ovaj kod \u0107e ispisivati \"Hello, World!\"",
+                    "zauvijek, jer je uvjet uvijek istinit."
+                ],
+                [
+                    "Tvoj zadatak je pomaknuti Moba do cilja",
+                    "(vrata) koriste\u0107i samo funkciju:",
+                    "   go_up(&mob, 1);",
+                    "",
+                    "To napravi ponavljanjem funkcije u while",
+                    "petlji 6 puta.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 21.",
                     "",
@@ -6877,14 +7910,70 @@
                     "To close this book, press Ctrl + E."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Don't forget i = 0",
-            "hint2_Python": "while i < n:",
-            "hint1_C": "Don't forget int i = 0;",
-            "hint2_C": "while (i < n) {",
-            "hint1_C++": "Don't forget int i = 0;",
-            "hint2_C++": "while (i < n) {",
+            "text_C++_hrv": [
+                [
+                    "Razina 21",
+                    "",
+                    "U ovoj razini nau\u010dit \u0107e\u0161 o while petljama",
+                    "i kako ih koristiti u svom kodu.",
+                    "",
+                    "While petlje su jo\u0161 jedna vrsta petlje u",
+                    "jeziku C++. Omogu\u0107uju ponavljanje bloka",
+                    "koda sve dok je odre\u0111eni uvjet istinit."
+                ],
+                [
+                    "Primjer:",
+                    "",
+                    "int i = 0;",
+                    "while (i < 6) {",
+                    "    cout << i << endl;",
+                    "    i++;",
+                    "}",
+                    "",
+                    "Izlaz:",
+                    "0",
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                ],
+                [
+                    "Primjer beskona\u010dne petlje:",
+                    "",
+                    "while (true) {",
+                    "    cout << \"Hello, World!\" << endl;",
+                    "}",
+                    "",
+                    "Ovaj kod \u0107e ispisivati \"Hello, World!\"",
+                    "zauvijek, jer je uvjet uvijek istinit."
+                ],
+                [
+                    "Tvoj zadatak je pomaknuti Moba do cilja",
+                    "(zamke) koriste\u0107i samo funkciju:",
+                    "   mob.go_up(1);",
+                    "",
+                    "To napravi ponavljanjem funkcije u while",
+                    "petlji 6 puta.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Don't forget i = 0",
+            "hint1_Python_hrv": "Nemoj zaboraviti i = 0",
+            "hint2_Python_eng": "while i < n:",
+            "hint2_Python_hrv": "while i < n:",
+            "hint1_C_eng": "Don't forget int i = 0;",
+            "hint1_C_hrv": "Nemoj zaboraviti int i = 0;",
+            "hint2_C_eng": "while (i < n) {",
+            "hint2_C_hrv": "while (i < n) {",
+            "hint1_C++_eng": "Don't forget int i = 0;",
+            "hint1_C++_hrv": "Nemoj zaboraviti int i = 0;",
+            "hint2_C++_eng": "while (i < n) {",
+            "hint2_C++_hrv": "while (i < n) {",
             "pages": 4,
             "blocks": [
                 [
@@ -7117,14 +8206,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Code in your loop should run twice",
-            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
-            "hint1_C": "Code in your loop should run twice",
-            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
-            "hint1_C++": "Code in your loop should run twice",
-            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Code in the loop should run twice",
+            "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_Python_hrv": "mob.go_up(n) i mob.go_right(n)",
+            "hint1_C_eng": "Code in the loop should run twice",
+            "hint1_C_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C_eng": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint2_C_hrv": "go_up(&mob, n) i go_right(&mob, n)",
+            "hint1_C++_eng": "Code in the loop should run twice",
+            "hint1_C++_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C++_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_C++_hrv": "mob.go_up(n) i mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -7357,14 +8452,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Code in your loop should run twice",
-            "hint2_Python": "mob.go_right(n) and mob.go_down(n)",
-            "hint1_C": "Code in your loop should run twice",
-            "hint2_C": "go_right(&mob, n) and go_down(&mob, n)",
-            "hint1_C++": "Code in your loop should run twice",
-            "hint2_C++": "mob.go_right(n) and mob.go_down(n)",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Code in the loop should run twice",
+            "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_Python_eng": "mob.go_right(n) and mob.go_down(n)",
+            "hint2_Python_hrv": "mob.go_right(n) i mob.go_down(n)",
+            "hint1_C_eng": "Code in the loop should run twice",
+            "hint1_C_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C_eng": "go_right(&mob, n) and go_down(&mob, n)",
+            "hint2_C_hrv": "go_right(&mob, n) i go_down(&mob, n)",
+            "hint1_C++_eng": "Code in the loop should run twice",
+            "hint1_C++_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
+            "hint2_C++_eng": "mob.go_right(n) and mob.go_down(n)",
+            "hint2_C++_hrv": "mob.go_right(n) i mob.go_down(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -7597,14 +8698,20 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Code in your loop should run 6 times",
-            "hint2_Python": "mob.go_up(n) and mob.go_right(n)",
-            "hint1_C": "Code in your loop should run 6 times",
-            "hint2_C": "go_up(&mob, n) and go_right(&mob, n)",
-            "hint1_C++": "Code in your loop should run 6 times",
-            "hint2_C++": "mob.go_up(n) and mob.go_right(n)",
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Code in the loop should run 6 times",
+            "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
+            "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_Python_hrv": "mob.go_up(n) i mob.go_right(n)",
+            "hint1_C_eng": "Code in the loop should run 6 times",
+            "hint1_C_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
+            "hint2_C_eng": "go_up(&mob, n) and go_right(&mob, n)",
+            "hint2_C_hrv": "go_up(&mob, n) i go_right(&mob, n)",
+            "hint1_C++_eng": "Code in the loop should run 6 times",
+            "hint1_C++_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
+            "hint2_C++_eng": "mob.go_up(n) and mob.go_right(n)",
+            "hint2_C++_hrv": "mob.go_up(n) i mob.go_right(n)",
             "pages": 2,
             "blocks": [
                 [
@@ -7766,7 +8873,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 25.",
                     "",
@@ -7789,7 +8896,30 @@
                     "and fix it."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 25",
+                    "",
+                    "Od ove razine nadalje, nau\u010dit \u0107emo ne\u0161to",
+                    "o debuggiranju, jer je to klju\u010dni dio",
+                    "programiranja.",
+                    "",
+                    "Debuggiranje je proces prepoznavanja i",
+                    "ispravljanja pogre\u0161aka ili \"bugova\" u",
+                    "kodu koji sprje\u010davaju njegovo ispravno",
+                    "funkcioniranje.",
+                    "",
+                    "Pogre\u0161ke mogu biti jednostavne, poput",
+                    "tipfelera, ili slo\u017eenije, poput logi\u010dkih",
+                    "pogre\u0161aka koje uzrokuju neo\u010dekivano",
+                    "pona\u0161anje koda."
+                ],
+                [
+                    "Poku\u0161aj prona\u0107i tipfeler u zadanom kodu",
+                    "i ispravi ga."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 25.",
                     "",
@@ -7812,7 +8942,30 @@
                     "and fix it."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 25",
+                    "",
+                    "Od ove razine nadalje, nau\u010dit \u0107emo ne\u0161to",
+                    "o debuggiranju, jer je to klju\u010dni dio",
+                    "programiranja.",
+                    "",
+                    "Debuggiranje je proces prepoznavanja i",
+                    "ispravljanja pogre\u0161aka ili \"bugova\" u",
+                    "kodu koji sprje\u010davaju njegovo ispravno",
+                    "funkcioniranje.",
+                    "",
+                    "Pogre\u0161ke mogu biti jednostavne, poput",
+                    "tipfelera, ili slo\u017eenije, poput logi\u010dkih",
+                    "pogre\u0161aka koje uzrokuju neo\u010dekivano",
+                    "pona\u0161anje koda."
+                ],
+                [
+                    "Poku\u0161aj prona\u0107i tipfeler u zadanom kodu",
+                    "i ispravi ga."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 25.",
                     "",
@@ -7835,14 +8988,43 @@
                     "and fix it."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "print()",
-            "hint2_Python": "print() instead of pritn()",
-            "hint1_C": "printf()",
-            "hint2_C": "printf() instead of pritnf()",
-            "hint1_C++": "cout",
-            "hint2_C++": "cout instead of cuot",
+            "text_C++_hrv": [
+                [
+                    "Razina 25",
+                    "",
+                    "Od ove razine nadalje, nau\u010dit \u0107emo ne\u0161to",
+                    "o debuggiranju, jer je to klju\u010dni dio",
+                    "programiranja.",
+                    "",
+                    "Debuggiranje je proces prepoznavanja i",
+                    "ispravljanja pogre\u0161aka ili \"bugova\" u",
+                    "kodu koji sprje\u010davaju njegovo ispravno",
+                    "funkcioniranje.",
+                    "",
+                    "Pogre\u0161ke mogu biti jednostavne, poput",
+                    "tipfelera, ili slo\u017eenije, poput logi\u010dkih",
+                    "pogre\u0161aka koje uzrokuju neo\u010dekivano",
+                    "pona\u0161anje koda."
+                ],
+                [
+                    "Poku\u0161aj prona\u0107i tipfeler u zadanom kodu",
+                    "i ispravi ga."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "print()",
+            "hint1_Python_hrv": "print()",
+            "hint2_Python_eng": "print() instead of pritn()",
+            "hint2_Python_hrv": "print() umjesto pritn()",
+            "hint1_C_eng": "printf()",
+            "hint1_C_hrv": "printf()",
+            "hint2_C_eng": "printf() instead of pritnf()",
+            "hint2_C_hrv": "printf() umjesto pritnf()",
+            "hint1_C++_eng": "cout",
+            "hint1_C++_hrv": "cout",
+            "hint2_C++_eng": "cout instead of cuot",
+            "hint2_C++_hrv": "cout umjesto cuot",
             "pages": 2,
             "blocks": [
                 [
@@ -8007,7 +9189,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 26.",
                     "",
@@ -8015,7 +9197,15 @@
                     "in this code. Try to fix it."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 26",
+                    "",
+                    "Postoji problem s komentarom u ovom",
+                    "kodu. Poku\u0161aj ga ispraviti."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 26.",
                     "",
@@ -8023,7 +9213,15 @@
                     "in this code. Try to fix it."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 26",
+                    "",
+                    "Postoji problem s komentarom u ovom",
+                    "kodu. Poku\u0161aj ga ispraviti."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 26.",
                     "",
@@ -8031,14 +9229,28 @@
                     "in this code. Try to fix it."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "#",
-            "hint2_Python": "# instead od //",
-            "hint1_C": "//",
-            "hint2_C": "There is one / missing",
-            "hint1_C++": "//",
-            "hint2_C++": "There is one / missing",
+            "text_C++_hrv": [
+                [
+                    "Razina 26",
+                    "",
+                    "Postoji problem s komentarom u ovom",
+                    "kodu. Poku\u0161aj ga ispraviti."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "#",
+            "hint1_Python_hrv": "#",
+            "hint2_Python_eng": "# instead od //",
+            "hint2_Python_hrv": "# umjesto //",
+            "hint1_C_eng": "//",
+            "hint1_C_hrv": "//",
+            "hint2_C_eng": "There is one / missing",
+            "hint2_C_hrv": "Jedna / nedostaje",
+            "hint1_C++_eng": "//",
+            "hint1_C++_hrv": "//",
+            "hint2_C++_eng": "There is one / missing",
+            "hint2_C++_hrv": "Jedna / nedostaje",
             "pages": 1,
             "blocks": [
                 [
@@ -8205,7 +9417,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 27.",
                     "",
@@ -8214,7 +9426,16 @@
                     "an issue in its declaration."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 27",
+                    "",
+                    "Varijabla a trebala bi biti float s",
+                    "vrijedno\u0161\u0107u pet i pol, ali postoji",
+                    "problem u njezinoj deklaraciji."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 27.",
                     "",
@@ -8223,7 +9444,16 @@
                     "an issue in its declaration."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 27",
+                    "",
+                    "Varijabla a trebala bi biti float s",
+                    "vrijedno\u0161\u0107u pet i pol, ali postoji",
+                    "problem u njezinoj deklaraciji."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 27.",
                     "",
@@ -8232,14 +9462,29 @@
                     "an issue in its declaration."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "There is one = extra",
-            "hint2_Python": ". instead of :",
-            "hint1_C": "float",
-            "hint2_C": ". instead of :",
-            "hint1_C++": "float",
-            "hint2_C++": ". instead of :",
+            "text_C++_hrv": [
+                [
+                    "Razina 27",
+                    "",
+                    "Varijabla a trebala bi biti float s",
+                    "vrijedno\u0161\u0107u pet i pol, ali postoji",
+                    "problem u njezinoj deklaraciji."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "There is one = extra",
+            "hint1_Python_hrv": "Jedan = je vi\u0161ak",
+            "hint2_Python_eng": ". instead of :",
+            "hint2_Python_hrv": ". umjesto :",
+            "hint1_C_eng": "float",
+            "hint1_C_hrv": "float",
+            "hint2_C_eng": ". instead of :",
+            "hint2_C_hrv": ". umjesto :",
+            "hint1_C++_eng": "float",
+            "hint1_C++_hrv": "float",
+            "hint2_C++_eng": ". instead of :",
+            "hint2_C++_hrv": ". umjesto :",
             "pages": 1,
             "blocks": [
                 [
@@ -8409,7 +9654,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 28.",
                     "",
@@ -8418,7 +9663,16 @@
                     "its declaration."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 28",
+                    "",
+                    "Varijabla a trebala bi biti string s",
+                    "vrijedno\u0161\u0107u \"Steve\", ali postoji problem",
+                    "u njezinoj deklaraciji."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 28.",
                     "",
@@ -8427,7 +9681,16 @@
                     "its declaration."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 28",
+                    "",
+                    "Varijabla a trebala bi biti string s",
+                    "vrijedno\u0161\u0107u \"Steve\", ali postoji problem",
+                    "u njezinoj deklaraciji."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 28.",
                     "",
@@ -8436,14 +9699,29 @@
                     "its declaration."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "\"",
-            "hint2_Python": "One \" is missing",
-            "hint1_C": "\"",
-            "hint2_C": "One \" is missing",
-            "hint1_C++": "\"",
-            "hint2_C++": "One \" is missing",
+            "text_C++_hrv": [
+                [
+                    "Razina 28",
+                    "",
+                    "Varijabla a trebala bi biti string s",
+                    "vrijedno\u0161\u0107u \"Steve\", ali postoji problem",
+                    "u njezinoj deklaraciji."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "\"",
+            "hint1_Python_hrv": "\"",
+            "hint2_Python_eng": "One \" is missing",
+            "hint2_Python_hrv": "Jedan \" nedostaje",
+            "hint1_C_eng": "\"",
+            "hint1_C_hrv": "\"",
+            "hint2_C_eng": "One \" is missing",
+            "hint2_C_hrv": "Jedan \" nedostaje",
+            "hint1_C++_hrv": "\"",
+            "hint1_C++_eng": "\"",
+            "hint2_C++_eng": "One \" is missing",
+            "hint2_C++_hrv": "Jedan \" nedostaje",
             "pages": 1,
             "blocks": [
                 [
@@ -8664,7 +9942,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 29.",
                     "",
@@ -8674,7 +9952,16 @@
                     "error in the code."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 29",
+                    "",
+                    "Ovaj kod bi trebao ispisati varijable",
+                    "name i age na istoj liniji s razmakom",
+                    "izme\u0111u njih, ali postoji pogre\u0161ka u kodu."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 29.",
                     "",
@@ -8684,7 +9971,16 @@
                     "error in the code."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 29",
+                    "",
+                    "Ovaj kod bi trebao ispisati varijable",
+                    "name i age na istoj liniji s razmakom",
+                    "izme\u0111u njih, ali postoji pogre\u0161ka u kodu."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 29.",
                     "",
@@ -8694,14 +9990,29 @@
                     "error in the code."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": ",",
-            "hint2_Python": ", instead of ;",
-            "hint1_C": "%d <-> %s",
-            "hint2_C": "switch %d and %s",
-            "hint1_C++": "<<",
-            "hint2_C++": "<< instead of ,",
+            "text_C++_hrv": [
+                [
+                    "Razina 29",
+                    "",
+                    "Ovaj kod bi trebao ispisati varijable",
+                    "name i age na istoj liniji s razmakom",
+                    "izme\u0111u njih, ali postoji pogre\u0161ka u kodu."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": ",",
+            "hint1_Python_hrv": ",",
+            "hint2_Python_eng": ", instead of ;",
+            "hint2_Python_hrv": ", umjesto ;",
+            "hint1_C_eng": "%d <-> %s",
+            "hint1_C_hrv": "%d <-> %s",
+            "hint2_C_eng": "Switch %d and %s",
+            "hint2_C_hrv": "Zamijeni %d i %s",
+            "hint1_C++_eng": "<<",
+            "hint1_C++_hrv": "<<",
+            "hint2_C++_eng": "<< instead of ,",
+            "hint2_C++_hrv": "<< umjesto ,",
             "pages": 1,
             "blocks": [
                 [
@@ -8904,7 +10215,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 30.",
                     "",
@@ -8913,7 +10224,16 @@
                     "in the print() function."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 30",
+                    "",
+                    "Ovaj kod bi trebao ispisati drugo slovo 'C'",
+                    "iz varijable a, ali postoje pogre\u0161ke",
+                    "u funkciji print()."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 30.",
                     "",
@@ -8922,7 +10242,16 @@
                     "in the printf() function."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 30",
+                    "",
+                    "Ovaj kod bi trebao ispisati drugo slovo 'C'",
+                    "iz varijable a, ali postoje pogre\u0161ke",
+                    "u funkciji printf()."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 30.",
                     "",
@@ -8931,14 +10260,29 @@
                     "in the cout."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "[] are used for indexing",
-            "hint2_Python": "Index is too big",
-            "hint1_C": "[] are used for indexing",
-            "hint2_C": "Index is too big",
-            "hint1_C++": "[] are used for indexing",
-            "hint2_C++": "Index is too big",
+            "text_C++_hrv": [
+                [
+                    "Razina 30",
+                    "",
+                    "Ovaj kod bi trebao ispisati drugo slovo 'C'",
+                    "iz varijable a, ali postoje pogre\u0161ke",
+                    "u cout."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "[] are used for indexing",
+            "hint1_Python_hrv": "[] se koriste za indeksiranje",
+            "hint2_Python_eng": "Index is too big",
+            "hint2_Python_hrv": "Indeks je prevelik",
+            "hint1_C_eng": "[] are used for indexing",
+            "hint1_C_hrv": "[] se koriste za indeksiranje",
+            "hint2_C_eng": "Index is too big",
+            "hint2_C_hrv": "Indeks je prevelik",
+            "hint1_C++_eng": "[] are used for indexing",
+            "hint1_C++_hrv": "[] se koriste za indeksiranje",
+            "hint2_C++_eng": "Index is too big",
+            "hint2_C++_hrv": "Indeks je prevelik",
             "pages": 1,
             "blocks": [
                 [
@@ -9119,7 +10463,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 31.",
                     "",
@@ -9128,7 +10472,16 @@
                     "an error in it."
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 31",
+                    "",
+                    "Varijabla a bi trebala imati vrijednost 15",
+                    "nakon izvr\u0161avanja ovog koda, ali postoji",
+                    "pogre\u0161ka u njemu."
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 31.",
                     "",
@@ -9137,7 +10490,16 @@
                     "an error in it."
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 31",
+                    "",
+                    "Varijabla a bi trebala imati vrijednost 15",
+                    "nakon izvr\u0161avanja ovog koda, ali postoji",
+                    "pogre\u0161ka u njemu."
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 31.",
                     "",
@@ -9146,14 +10508,29 @@
                     "an error in it."
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "+=",
-            "hint2_Python": "+= instead of =+",
-            "hint1_C": "+=",
-            "hint2_C": "+= instead of =+",
-            "hint1_C++": "+=",
-            "hint2_C++": "+= instead of =+",
+            "text_C++_hrv": [
+                [
+                    "Razina 31",
+                    "",
+                    "Varijabla a bi trebala imati vrijednost 15",
+                    "nakon izvr\u0161avanja ovog koda, ali postoji",
+                    "pogre\u0161ka u njemu."
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "+=",
+            "hint1_Python_hrv": "+=",
+            "hint2_Python_eng": "+= instead of =+",
+            "hint2_Python_hrv": "+= umjesto =+",
+            "hint1_C_eng": "+=",
+            "hint1_C_hrv": "+=",
+            "hint2_C_eng": "+= instead of =+",
+            "hint2_C_hrv": "+= umjesto =+",
+            "hint1_C++_eng": "+=",
+            "hint1_C++_hrv": "+=",
+            "hint2_C++_eng": "+= instead of =+",
+            "hint2_C++_hrv": "+= umjesto =+",
             "pages": 1,
             "blocks": [
                 [
@@ -9387,7 +10764,7 @@
                     ]
                 ]
             ],
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 32.",
                     "",
@@ -9397,7 +10774,17 @@
                     "\"a is smaller than b\""
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 32",
+                    "",
+                    "Zamijeni operator usporedbe u if",
+                    "i ispravi ga kako bi kod bio ispravan,",
+                    "tako da ispisuje:",
+                    "\"a je manje od b\""
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 32.",
                     "",
@@ -9407,7 +10794,17 @@
                     "\"a is smaller than b\""
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 32.",
+                    "",
+                    "Zamijeni operator usporedbe u if",
+                    "i ispravi ga kako bi kod bio ispravan,",
+                    "tako da ispisuje:",
+                    "\"a je manje od b\""
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 32.",
                     "",
@@ -9417,14 +10814,30 @@
                     "\"a is smaller than b\""
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "Missing :",
-            "hint2_Python": "< instead of >",
-            "hint1_C": "Missing { and }",
-            "hint2_C": "< instead of >",
-            "hint1_C++": "Missing { and }",
-            "hint2_C++": "< instead of >",
+            "text_C++_hrv": [
+                [
+                    "Razina 32",
+                    "",
+                    "Zamijeni operator usporedbe u if",
+                    "i ispravi ga kako bi kod bio ispravan,",
+                    "tako da ispisuje:",
+                    "\"a je manje od b\""
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "Missing :",
+            "hint1_Python_hrv": "Nedostaje :",
+            "hint2_Python_eng": "< instead of >",
+            "hint2_Python_hrv": "< umjesto >",
+            "hint1_C_eng": "Missing { and }",
+            "hint1_C_hrv": "Nedostaju { i }",
+            "hint2_C_eng": "< instead of >",
+            "hint2_C_hrv": "< umjesto >",
+            "hint1_C++_eng": "Missing { and }",
+            "hint1_C++_hrv": "Nedostaju { i }",
+            "hint2_C++_eng": "< instead of >",
+            "hint2_C++_hrv": "< umjesto >",
             "pages": 1,
             "blocks": [
                 [
@@ -9502,7 +10915,7 @@
             "input_text_Python": "mob = Mob(0, 0)\nmob:go-left[7]\nmob;godown{5}",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    go-left[&mob, 7];\n    go_down{&mob, 5};\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    mob:go-left[7];\n    mob;godown{5};\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 33.",
                     "",
@@ -9513,7 +10926,18 @@
                     "Mob can only go on grass!"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 33",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po travi!"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 33.",
                     "",
@@ -9524,7 +10948,18 @@
                     "Mob can only go on grass!"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 33.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po travi!"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 33.",
                     "",
@@ -9535,14 +10970,31 @@
                     "Mob can only go on grass!"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "mob.go_direction(n)",
-            "hint2_Python": "right -> up",
-            "hint1_C": "go_direction(&mob, n)",
-            "hint2_C": "right -> up",
-            "hint1_C++": "mob.go_direction(n)",
-            "hint2_C++": "right -> up",
+            "text_C++_hrv": [
+                [
+                    "Razina 33.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po travi!"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "mob.go_direction(n)",
+            "hint1_Python_hrv": "mob.go_smjer(n)",
+            "hint2_Python_eng": "right -> up",
+            "hint2_Python_hrv": "right -> up",
+            "hint1_C_eng": "go_direction(&mob, n)",
+            "hint1_C_hrv": "go_smjer(&mob, n)",
+            "hint2_C_eng": "right -> up",
+            "hint2_C_hrv": "right -> up",
+            "hint1_C++_eng": "mob.go_direction(n)",
+            "hint1_C++_hrv": "mob.go_smjer(n)",
+            "hint2_C++_eng": "right -> up",
+            "hint2_C++_hrv": "right -> up",
             "pages": 1,
             "blocks": [
                 [
@@ -9620,7 +11072,7 @@
             "input_text_Python": "mob = Mob(0, 0)\nmob.goright(6)\nmob:go_up(3)\nmob.go_left(2)\nmob.go_up(3)\nmob.go-lef(4)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    goright(&mob, 6);\n    go_up(&mob, 3);\n    go_left(&mob, 2);\n    go_up(&mob, 3);\n    go-lef(&mob, 4);\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    mob.goright(6);\n    mob:go_up(3);\n    mob.go_left(2);\n    mob.go_up(3);\n    mob.go-lef(4);\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 34.",
                     "",
@@ -9631,7 +11083,18 @@
                     "Mob can only go on grass!"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 34.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po travi!"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 34.",
                     "",
@@ -9642,7 +11105,18 @@
                     "Mob can only go on grass!"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 34.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po travi!"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 34.",
                     "",
@@ -9653,14 +11127,31 @@
                     "Mob can only go on grass!"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "mob.go_direction(n)",
-            "hint2_Python": "right -> up",
-            "hint1_C": "go_direction(&mob, n)",
-            "hint2_C": "right -> up",
-            "hint1_C++": "mob.go_direction(n)",
-            "hint2_C++": "right -> up",
+            "text_C++_hrv": [
+                [
+                    "Razina 34.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po travi!"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "mob.go_direction(n)",
+            "hint1_Python_hrv": "mob.go_smjer(n)",
+            "hint2_Python_eng": "right -> up -> left -> up -> left",
+            "hint2_Python_hrv": "right -> up -> left -> up -> left",
+            "hint1_C_eng": "go_direction(&mob, n)",
+            "hint1_C_hrv": "go_smjer(&mob, n)",
+            "hint2_C_eng": "right -> up -> left -> up -> left",
+            "hint2_C_hrv": "right -> up -> left -> up -> left",
+            "hint1_C++_eng": "mob.go_direction(n)",
+            "hint1_C++_hrv": "mob.go_smjer(n)",
+            "hint2_C++_eng": "right -> up -> left -> up -> left",
+            "hint2_C++_hrv": "right -> up -> left -> up -> left",
             "pages": 1,
             "blocks": [
                 [
@@ -9738,7 +11229,7 @@
             "input_text_Python": "mob = Mob(0, 0)\nn = 4\nfor i in range[2]:\n    mob.go_up(n)\n    mob.go_right(n)",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        go_up(&mob, n);\n        go_right(&mob, n);\n    }\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    int n = 4;\n    for (int i = 1; i < 2; i++) {\n        mob.go_up(n);\n        mob.go_right(n);\n    }\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 35.",
                     "",
@@ -9749,7 +11240,19 @@
                     "Mob can only go on bedrock!"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 35.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po blokovima",
+                    "temelja!"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 35.",
                     "",
@@ -9760,7 +11263,19 @@
                     "Mob can only go on bedrock!"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 35.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po blokovima",
+                    "temelja!"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 35.",
                     "",
@@ -9771,14 +11286,32 @@
                     "Mob can only go on bedrock!"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "n is too big",
-            "hint2_Python": "() instead of []",
-            "hint1_C": "n is too big",
-            "hint2_C": "i is too big",
-            "hint1_C++": "n is too big",
-            "hint2_C++": "i is too big",
+            "text_C++_hrv": [
+                [
+                    "Razina 35.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po blokovima",
+                    "temelja!"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "n is too big",
+            "hint1_Python_hrv": "n je prevelik",
+            "hint2_Python_eng": "() instead of []",
+            "hint2_Python_hrv": "() umjesto []",
+            "hint1_C_eng": "n is too big",
+            "hint1_C_hrv": "n je prevelik",
+            "hint2_C_eng": "i is too big",
+            "hint2_C_hrv": "i je prevelik",
+            "hint1_C++_eng": "n is too big",
+            "hint1_C++_hrv": "n je prevelik",
+            "hint2_C++_eng": "i is too big",
+            "hint2_C++_hrv": "i je prevelik",
             "pages": 1,
             "blocks": [
                 [
@@ -9856,7 +11389,7 @@
             "input_text_Python": "mob = Mob(0, 0)\ni = 0\nwhile i < 6:\n    mob.go_up(2)\n    mob.go_right(2)\n",
             "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n    int i = 0;\n    while (i < 6) {\n        go_up(&mob, 2);\n        go_right(&mob, 2);\n    }\n    return 0;\n}",
             "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n    int i = 0;\n    while (i < 6) {\n        mob.go_up(2);\n        mob.go_right(2);\n    }\n    return 0;\n}",
-            "text_Python": [
+            "text_Python_eng": [
                 [
                     "Level 36.",
                     "",
@@ -9867,7 +11400,19 @@
                     "Mob can only go on purpur blocks!"
                 ]
             ],
-            "text_C": [
+            "text_Python_hrv": [
+                [
+                    "Razina 36.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po blokovima",
+                    "purpura!"
+                ]
+            ],
+            "text_C_eng": [
                 [
                     "Level 36.",
                     "",
@@ -9878,7 +11423,19 @@
                     "Mob can only go on purpur blocks!"
                 ]
             ],
-            "text_C++": [
+            "text_C_hrv": [
+                [
+                    "Razina 36.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po blokovima",
+                    "purpura!"
+                ]
+            ],
+            "text_C++_eng": [
                 [
                     "Level 36.",
                     "",
@@ -9889,14 +11446,32 @@
                     "Mob can only go on purpur blocks!"
                 ]
             ],
-            "hint1_unlocked": false,
-            "hint2_unlocked": false,
-            "hint1_Python": "i is never updated",
-            "hint2_Python": "Parameters in functions are too big",
-            "hint1_C": "i is never updated",
-            "hint2_C": "Parameters in functions are too big",
-            "hint1_C++": "i is never updated",
-            "hint2_C++": "Parameters in functions are too big",
+            "text_C++_hrv": [
+                [
+                    "Razina 36.",
+                    "",
+                    "Ovaj kod bi trebao pomaknuti Moba do",
+                    "vrata, ali postoje neke gre\u0161ke koje",
+                    "ga sprje\u010davaju u tome.",
+                    "",
+                    "Mob mo\u017ee i\u0107i samo po blokovima",
+                    "purpura!"
+                ]
+            ],
+            "hint1_unlocked": true,
+            "hint2_unlocked": true,
+            "hint1_Python_eng": "i is never updated",
+            "hint1_Python_hrv": "i se nikada ne a\u017eurira",
+            "hint2_Python_eng": "Parameters in functions are too big",
+            "hint2_Python_hrv": "Parameteri u funkcijama su preveliki",
+            "hint1_C_eng": "i is never updated",
+            "hint1_C_hrv": "i se nikada ne a\u017eurira",
+            "hint2_C_eng": "Parameters in functions are too big",
+            "hint2_C_hrv": "Parameteri u funkcijama su preveliki",
+            "hint1_C++_eng": "i is never updated",
+            "hint1_C++_hrv": "i se nikada ne a\u017eurira",
+            "hint2_C++_eng": "Parameters in functions are too big",
+            "hint2_C++_hrv": "Parameteri u funkcijama su preveliki",
             "pages": 1,
             "blocks": [
                 [
