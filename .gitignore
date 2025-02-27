@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+
+codecraftenv/
+
+.DS_Store
+
+run.cpp
+run

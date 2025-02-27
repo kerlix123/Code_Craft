@@ -17,7 +17,7 @@ from classes.ccrpg import *
 #!!!
 
 pygame.display.set_caption("Code_Craft")
-pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "crafting_table.png"))
+pygame.display.set_icon(pygame.image.load(PATH / "drawable" / "villager_hq.png"))
 pygame.key.set_repeat(200, 25)
 clock = pygame.time.Clock()
 
@@ -1182,7 +1182,7 @@ def game(level, player_l = False, random_l = False):
         pygame.display.update()
         clock.tick(60)
 
-#loaders.loading_screen()
+loaders.loading_screen()
 if data["first_play"]:
     data["first_play"] = False
     game_utils.write_to_json(PATH / "data.json", data)

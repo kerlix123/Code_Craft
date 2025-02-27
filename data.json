@@ -4,7 +4,7 @@
     "code_lang": 0,
     "lang": "hrv",
     "first_play": false,
-    "skin": "stevo",
+    "skin": "villager",
     "skins": {
         "stevo": [
             30,
@@ -28,7 +28,7 @@
             330,
             30,
             15,
-            false
+            true
         ],
         "creeper": [
             430,
@@ -79,5 +79,5 @@
             false
         ]
     },
-    "emeralds": 20
+    "emeralds": 70
 }

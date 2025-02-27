@@ -1,10 +1,24 @@
 {
-    "last_level": 1,
+    "last_level": 3,
     "level_p": [
         [
             30,
             30,
             1,
+            80,
+            false
+        ],
+        [
+            130,
+            30,
+            2,
+            80,
+            false
+        ],
+        [
+            230,
+            30,
+            3,
             80,
             false
         ]
@@ -217,6 +231,430 @@
                     "cobblestone.png",
                     "cobblestone.png",
                     "cobblestone.png"
+                ]
+            ]
+        }
+    ],
+    "level2": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "grass_top.png",
+            "text_Python_eng": [
+                [
+                    "In this level you will use functions from",
+                    "the Mob class to move mob around the",
+                    "map.",
+                    "",
+                    "The functions you can use are:",
+                    "   - mob.go_up(n) - moves mob up by",
+                    "   n blocks",
+                    "   - mob.go_down(n) - moves mob",
+                    "   down by n blocks",
+                    "   - mob.go_right(n) - moves mob",
+                    "   right by n blocks",
+                    "   - mob.go_left(n) - moves mob left",
+                    "   by n blocks"
+                ],
+                [
+                    "Finish is the trapdoor.",
+                    "",
+                    "To close this book use:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_Python_hrv": [
+                [
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
+                [
+                    "In this level you will use functions",
+                    "to move mob around the map.",
+                    "",
+                    "The functions you can use are:",
+                    "   - go_up(&mob, n) - moves mob up by",
+                    "   n blocks",
+                    "   - go_down(&mob, n) - moves mob",
+                    "   down by n blocks",
+                    "   - go_right(&mob, n) - moves",
+                    "   mob right by n blocks",
+                    "   - go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
+                ],
+                [
+                    "Finish is the trapdoor.",
+                    "",
+                    "To close this book use:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_hrv": [
+                [
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije za",
+                    "pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_left(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
+                [
+                    "In this level you will use functions from",
+                    "the Mob class to move mob around the",
+                    "map.",
+                    "",
+                    "The functions you can use are:",
+                    "   - mob.go_up(n) - moves mob up by",
+                    "   n blocks",
+                    "   - mob.go_down(n) - moves mob",
+                    "   down by n blocks",
+                    "   - mob.go_right(n) - moves mob",
+                    "   right by n blocks",
+                    "   - mob.go_left(n) - moves mob left",
+                    "   by n blocks"
+                ],
+                [
+                    "Finish is the trapdoor.",
+                    "",
+                    "To close this book use:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ]
+            ]
+        }
+    ],
+    "level3": [
+        {
+            "steve_xy": [
+                0,
+                6
+            ],
+            "input_text_Python": "mob = Mob(0, 0)",
+            "input_text_C": "#include <stdio.h>\n\nint main() {\n    struct Mob mob = {0, 0};\n\n    return 0;\n}",
+            "input_text_C++": "#include <iostream>\nusing namespace std;\n\nint main() {\n    Mob mob(0, 0);\n\n    return 0;\n}",
+            "path_block": "grass_top.png",
+            "text_Python_eng": [
+                [
+                    "In this level you will use functions from",
+                    "the Mob class to move mob around the",
+                    "map.",
+                    "",
+                    "The functions you can use are:",
+                    "   - mob.go_up(n) - moves mob up by",
+                    "   n blocks",
+                    "   - mob.go_down(n) - moves mob",
+                    "   down by n blocks",
+                    "   - mob.go_right(n) - moves mob",
+                    "   right by n blocks",
+                    "   - mob.go_left(n) - moves mob left",
+                    "   by n blocks"
+                ],
+                [
+                    "Finish is the trapdoor.",
+                    "",
+                    "To close this book use:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_Python_hrv": [
+                [
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_eng": [
+                [
+                    "In this level you will use functions",
+                    "to move mob around the map.",
+                    "",
+                    "The functions you can use are:",
+                    "   - go_up(&mob, n) - moves mob up by",
+                    "   n blocks",
+                    "   - go_down(&mob, n) - moves mob",
+                    "   down by n blocks",
+                    "   - go_right(&mob, n) - moves",
+                    "   mob right by n blocks",
+                    "   - go_left(&mob, n) - moves mob",
+                    "   left by n blocks"
+                ],
+                [
+                    "Finish is the trapdoor.",
+                    "",
+                    "To close this book use:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C_hrv": [
+                [
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije za",
+                    "pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - go_up(&mob, n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - go_down(&mob, n) - pomi\u010de lika",
+                    "   prema dolje za n blokova",
+                    "   - go_right(&mob, n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - go_left(&mob, n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_eng": [
+                [
+                    "In this level you will use functions from",
+                    "the Mob class to move mob around the",
+                    "map.",
+                    "",
+                    "The functions you can use are:",
+                    "   - mob.go_up(n) - moves mob up by",
+                    "   n blocks",
+                    "   - mob.go_down(n) - moves mob",
+                    "   down by n blocks",
+                    "   - mob.go_right(n) - moves mob",
+                    "   right by n blocks",
+                    "   - mob.go_left(n) - moves mob left",
+                    "   by n blocks"
+                ],
+                [
+                    "Finish is the trapdoor.",
+                    "",
+                    "To close this book use:",
+                    "Ctrl+E"
+                ]
+            ],
+            "text_C++_hrv": [
+                [
+                    "U ovoj razini koristiti \u0107e\u0161 funkcije iz",
+                    "klase Mob za pokretanje lika po mapi.",
+                    "",
+                    "Funkcije koje mo\u017ee\u0161 koristiti su:",
+                    "   - mob.go_up(n) - pomi\u010de lika prema",
+                    "   gore za n blokova",
+                    "   - mob.go_down(n) - pomi\u010de lika prema",
+                    "   dolje za n blokova",
+                    "   - mob.go_right(n) - pomi\u010de lika u",
+                    "   desno za n blokova",
+                    "   - mob.go_left(n) - pomi\u010de lika u",
+                    "   lijevo za n blokova"
+                ],
+                [
+                    "Kraj su vrata.",
+                    "",
+                    "Da zatvori\u0161 ovu knjigu pritisni:",
+                    "Ctrl+E"
+                ]
+            ],
+            "pages": 2,
+            "blocks": [
+                [
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "grass_top.png",
+                    "oak_trapdoor.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
+                ],
+                [
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png",
+                    "plus.png"
                 ]
             ]
         }
