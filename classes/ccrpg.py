@@ -1,7 +1,6 @@
 import random
 import heapq
 
-# Directions for neighbors (up, down, left, right)
 class RandomPathGenerator:
     def __init__(self, grid_size):
         self.grid_size = grid_size
@@ -27,7 +26,6 @@ class RandomPathGenerator:
         return neighbors
 
     def random_path(self, start, end):
-        # Initialize distances to infinity and parent pointers
         distances = { (x, y): float('inf') for x in range(self.grid_size) for y in range(self.grid_size) }
         distances[start] = 0
         parents = { (x, y): None for x in range(self.grid_size) for y in range(self.grid_size) }
@@ -49,21 +47,16 @@ class RandomPathGenerator:
             
             visited.add(current_node)
             
-            # Get neighbors (adjacent blocks)
+            # Get neighbors
             neighbors = self.get_neighbors(current_node[0], current_node[1])
             
             for neighbor in neighbors:
                 if neighbor in visited:
                     continue
-                
-                # Calculate the tentative distance to the neighbor
-                new_distance = current_distance + 1  # assuming each move costs 1 (uniform grid)
-                
+                new_distance = current_distance + 1
                 if new_distance < distances[neighbor]:
                     distances[neighbor] = new_distance
                     parents[neighbor] = current_node
-                    
-                    # Add neighbor to the priority queue
                     heapq.heappush(pq, (new_distance, neighbor))
                 elif new_distance == distances[neighbor]:
                     # Randomly decide between the neighbors with the same distance

@@ -33,7 +33,7 @@ if not music_on:
 game_utils = GameUtils(window, playlist, current_song_index, minecraft_font_small, minecraft_font_book, minecraft_font_smaller, clock, data, stevexy, levels, player_levels, time, PATH, languages)
 loaders = Loaders(window, minecraft_font_small, clock, time, PATH)
 rpg = RandomPathGenerator(7)
-code_input = Textbox(595, 0, 645, 620, PATH / "Minecraft.ttf")
+code_input = Textbox(595, 0, 645, 620, PATH / "fonts" / "Minecraft.ttf")
 
 def menu():
     big_title = get_scaled_img(PATH / "drawable" / "Code_Craft.png", (491, 127))
@@ -508,6 +508,7 @@ def options_win():
                     data["music_on"] = True
                     data["fx_on"] = True
                     data["code_lang"] = 0
+                    data["lang"] = "eng"
                     levels["last_finished_level"] = 0
                     for k in data["skins"]:
                         if k != "stevo":
@@ -895,7 +896,7 @@ def game(level, player_l = False, random_l = False):
             game_utils.trans_surface(20, 20, (170, 170, 170, 120), 599, 598)
 
         #restart_button
-        game_utils.button(restart_button, 595, 595)
+        game_utils.button(restart_button, 596, 595)
 
         if not player_l:
             #hint1_button

@@ -4,9 +4,9 @@ from classes.classes_ import *
 
 PATH = Path.cwd()
 
-minecraft_font_small = pygame.font.Font(PATH / "bitcell_memesbruh03.ttf", 40)
-minecraft_font_smaller = pygame.font.Font(PATH / "bitcell_memesbruh03.ttf", 24)
-minecraft_font_book = pygame.font.Font(PATH / "bitcell_memesbruh03.ttf", 30)
+minecraft_font_small = pygame.font.Font(PATH / "fonts" / "bitcell_memesbruh03.ttf", 40)
+minecraft_font_smaller = pygame.font.Font(PATH  / "fonts" / "bitcell_memesbruh03.ttf", 24)
+minecraft_font_book = pygame.font.Font(PATH / "fonts" / "bitcell_memesbruh03.ttf", 30)
 
 
 def get_scaled_img(img, size):
@@ -17,7 +17,7 @@ play_level_button = get_scaled_img(PATH / "drawable" / "select.png", (80, 80))
 close_button = get_scaled_img(PATH / "drawable" / "close.png", (22, 22))
 run_button = get_scaled_img(PATH / "drawable" / "select.png", (28, 28))
 accept_button = get_scaled_img(PATH / "drawable" / "accept.png", (29, 29))
-restart_button = get_scaled_img(PATH / "drawable" / "reject.png", (26, 26))
+restart_button = get_scaled_img(PATH / "drawable" / "reject.png", (24, 24))
 torch1_button = get_scaled_img(PATH / "drawable" / "torch1.png", (31, 31))
 torch2_button = get_scaled_img(PATH / "drawable" / "torch2.png", (31, 31))
 close_1v1_button = get_scaled_img(PATH / "drawable" / "close.png", (16, 16))

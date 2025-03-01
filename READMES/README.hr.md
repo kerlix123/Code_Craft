@@ -14,7 +14,10 @@ Za uređivanje i stvaranje vizualnih elemenata korišten je GIMP i besplatni ass
 
 Glazba u igri napravljena je u FL Studiu.
 
-Font u igri preuzet je s: https://www.fontget.com/font/bit-cell/.
+Fontovi u igri preuzeti su s: 
+
+- Bit Cell font - https://www.fontget.com/font/bit-cell/
+- Minecraft font - https://www.dafont.com/minecraft.font#null
 
 ## Instalacija i korištenje
 Provjeri imaš li instaliran barem Python 3.7.

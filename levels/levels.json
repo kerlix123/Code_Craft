@@ -1,5 +1,5 @@
 {
-    "last_finished_level": 36,
+    "last_finished_level": 0,
     "level_p": [
         [
             30,
@@ -724,8 +724,8 @@
                     "Ctrl+K"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Use print() function",
             "hint1_Python_hrv": "Iskoristi print() funkciju",
             "hint2_Python_eng": "Inside of print() type \"Hello, World!\"",
@@ -1053,8 +1053,8 @@
                     "pretvoriti u komentar."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "#",
             "hint1_Python_hrv": "#",
             "hint2_Python_eng": "Type # before print(\"Steve\")",
@@ -1604,8 +1604,8 @@
                     "prebacio u novi red."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "variable = value",
             "hint1_Python_hrv": "varijabla = vrijednost",
             "hint2_Python_eng": "print(variable)",
@@ -2014,8 +2014,8 @@
                     "podataka koji smo do sada pokrili."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "bool, int, str, float",
             "hint1_Python_hrv": "bool, int, str, float",
             "hint2_Python_eng": "variable = value",
@@ -2480,8 +2480,8 @@
                     "razmakom izme\u0111u njih."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Separate name and age with ,",
             "hint1_Python_hrv": "Razdvoji name i age s ,",
             "hint2_Python_eng": "Type name, age in print()",
@@ -2988,8 +2988,8 @@
                     "znak, svaki u novom retku."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Use two print() functions",
             "hint1_Python_hrv": "Upotrijebi dvije print() funkcije",
             "hint2_Python_eng": "Indexes are 1 and 2",
@@ -3656,7 +3656,7 @@
                     "Ispi\u0161ite b u novom retku."
                 ]
             ],
-            "hint1_unlocked": true,
+            "hint1_unlocked": false,
             "hint2_unlocked": false,
             "hint1_Python_eng": "Use += in 1st task and > in 2nd task",
             "hint1_Python_hrv": "Upotrijebi += u prvom zadatku i > u drugom",
@@ -4255,8 +4255,8 @@
                     "\"Hello, World!\" ako je 5 > 3."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "You need to have print() inside of if",
             "hint1_Python_hrv": "Mora\u0161 imati print() unutar if",
             "hint2_Python_eng": "if x > y: ...",
@@ -4701,8 +4701,8 @@
                     "                           // blok"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Just press run",
             "hint1_Python_hrv": "Samo stisni Pokreni",
             "hint2_Python_eng": "...",
@@ -4944,8 +4944,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "mob.go_right(x) and mob.go_up(y)",
             "hint1_Python_hrv": "mob.go_right(x) i mob.go_up(y)",
             "hint2_Python_eng": "x and y are number of blocks to move",
@@ -5187,8 +5187,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "2x mob.go_right(x) and mob.go_up(y)",
             "hint1_Python_hrv": "2x mob.go_right(x) i mob.go_up(y)",
             "hint2_Python_eng": "right -> up -> right",
@@ -5430,8 +5430,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "mob.go_right(x), 2x mob.go_up(y) and 2x mob.go_left(z)",
             "hint1_Python_hrv": "mob.go_right(x), 2x mob.go_up(y) i 2x mob.go_left(z)",
             "hint2_Python_eng": "right -> up -> left -> up -> left",
@@ -5673,8 +5673,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "mob.go_right(x), 2x mob.go_down(y) and 2x mob.go_left(z)",
             "hint1_Python_hrv": "mob.go_right(x), 2x mob.go_down(y) i 2x mob.go_left(z)",
             "hint2_Python_eng": "right -> down -> left -> down -> left",
@@ -5926,8 +5926,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "mob.go_up(x)",
             "hint1_Python_hrv": "mob.go_up(x)",
             "hint2_Python_eng": "up 6",
@@ -6179,8 +6179,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "2x mob.go_right(x), 3x mob.go_up(y) and mob.go_left(z)",
             "hint1_Python_hrv": "2x mob.go_right(x), 3x mob.go_up(y) i mob.go_left(z)",
             "hint2_Python_eng": "right -> up -> left -> up -> right -> up",
@@ -6432,8 +6432,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
             "hint1_Python_hrv": "3x mob.go_right(x), 2x mob.go_up(y) and mob.go_left(z)",
             "hint2_Python_eng": "right -> up -> right -> left -> up -> right",
@@ -6844,8 +6844,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "for i in range(n):",
             "hint1_Python_hrv": "for i in range(n):",
             "hint2_Python_eng": "Replace n with 6",
@@ -7090,8 +7090,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Code in the loop should run twice",
             "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
             "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
@@ -7336,8 +7336,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Code in the loop should run twice",
             "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
             "hint2_Python_eng": "mob.go_right(n) and mob.go_down(n)",
@@ -7582,8 +7582,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Code in the loop should run 6 times",
             "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
             "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
@@ -7960,8 +7960,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Don't forget i = 0",
             "hint1_Python_hrv": "Nemoj zaboraviti i = 0",
             "hint2_Python_eng": "while i < n:",
@@ -8206,8 +8206,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Code in the loop should run twice",
             "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
             "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
@@ -8452,8 +8452,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Code in the loop should run twice",
             "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti dvaput",
             "hint2_Python_eng": "mob.go_right(n) and mob.go_down(n)",
@@ -8698,8 +8698,8 @@
                     "Ctrl+E"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Code in the loop should run 6 times",
             "hint1_Python_hrv": "Kod unutar petlje treba se izvr\u0161iti 6 puta",
             "hint2_Python_eng": "mob.go_up(n) and mob.go_right(n)",
@@ -9011,8 +9011,8 @@
                     "i ispravi ga."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "print()",
             "hint1_Python_hrv": "print()",
             "hint2_Python_eng": "print() instead of pritn()",
@@ -9237,8 +9237,8 @@
                     "kodu. Poku\u0161aj ga ispraviti."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "#",
             "hint1_Python_hrv": "#",
             "hint2_Python_eng": "# instead od //",
@@ -9471,8 +9471,8 @@
                     "problem u njezinoj deklaraciji."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "There is one = extra",
             "hint1_Python_hrv": "Jedan = je vi\u0161ak",
             "hint2_Python_eng": ". instead of :",
@@ -9708,8 +9708,8 @@
                     "u njezinoj deklaraciji."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "\"",
             "hint1_Python_hrv": "\"",
             "hint2_Python_eng": "One \" is missing",
@@ -9999,8 +9999,8 @@
                     "izme\u0111u njih, ali postoji pogre\u0161ka u kodu."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": ",",
             "hint1_Python_hrv": ",",
             "hint2_Python_eng": ", instead of ;",
@@ -10269,8 +10269,8 @@
                     "u cout."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "[] are used for indexing",
             "hint1_Python_hrv": "[] se koriste za indeksiranje",
             "hint2_Python_eng": "Index is too big",
@@ -10517,8 +10517,8 @@
                     "pogre\u0161ka u njemu."
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "+=",
             "hint1_Python_hrv": "+=",
             "hint2_Python_eng": "+= instead of =+",
@@ -10824,8 +10824,8 @@
                     "\"a je manje od b\""
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "Missing :",
             "hint1_Python_hrv": "Nedostaje :",
             "hint2_Python_eng": "< instead of >",
@@ -10981,8 +10981,8 @@
                     "Mob mo\u017ee i\u0107i samo po travi!"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "mob.go_direction(n)",
             "hint1_Python_hrv": "mob.go_smjer(n)",
             "hint2_Python_eng": "right -> up",
@@ -11138,8 +11138,8 @@
                     "Mob mo\u017ee i\u0107i samo po travi!"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "mob.go_direction(n)",
             "hint1_Python_hrv": "mob.go_smjer(n)",
             "hint2_Python_eng": "right -> up -> left -> up -> left",
@@ -11298,8 +11298,8 @@
                     "temelja!"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "n is too big",
             "hint1_Python_hrv": "n je prevelik",
             "hint2_Python_eng": "() instead of []",
@@ -11458,8 +11458,8 @@
                     "purpura!"
                 ]
             ],
-            "hint1_unlocked": true,
-            "hint2_unlocked": true,
+            "hint1_unlocked": false,
+            "hint2_unlocked": false,
             "hint1_Python_eng": "i is never updated",
             "hint1_Python_hrv": "i se nikada ne a\u017eurira",
             "hint2_Python_eng": "Parameters in functions are too big",

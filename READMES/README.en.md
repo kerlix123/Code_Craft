@@ -14,7 +14,10 @@ For making and editing visual elements we used GIMP and free asset downloaded fr
 
 Music in the game was made in FL Studio.
 
-Font in the game is downloaded from: https://www.fontget.com/font/bit-cell/.
+Fonts in the game are downloaded from: 
+    
+- Bit Cell font - https://www.fontget.com/font/bit-cell/
+- Minecraft font - https://www.dafont.com/minecraft.font#null
 
 ## Installation & Usage
 Make sure you have atleast Python 3.7 installed.
